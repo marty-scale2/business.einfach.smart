@@ -6,7 +6,7 @@
     <title>KI Business Club · Konzeptpapier</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         @media print {
             @page { margin: 2cm 2.5cm; size: A4; }
@@ -82,14 +82,25 @@
         }
 
         h1 {
-            font-family: 'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif;
-            font-size: 72px;
+            font-size: 80px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-family: 'Black Ops One', 'Impact', sans-serif;
             font-weight: 400;
             color: var(--dark);
-            line-height: 0.95;
-            letter-spacing: 0.04em;
-            margin-bottom: 20px;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
+        }
+
+        .accent-title {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 0.65em;
+            letter-spacing: 0;
         }
 
         .promise {
@@ -555,7 +566,7 @@
 
         @media (max-width: 640px) {
             body { padding: 44px 28px; }
-            h1 { font-size: 40px; }
+            h1 { font-size: 48px; }
             .subtitle { font-size: 16px; }
             .hosts { grid-template-columns: 1fr; }
             .two-col { grid-template-columns: 1fr; }
@@ -577,7 +588,7 @@
 
     <!-- Title -->
     <div class="title-block">
-        <h1>KI Business Club</h1>
+        <h1><span class="main-title">KI</span> <span class="accent-title">Business Club</span></h1>
         <p class="promise">Das KI Business System für Selbstständige mit Expertenbusiness (Coaches, Creator, Onlinekursersteller, Dienstleister)</p>
     </div>
 
