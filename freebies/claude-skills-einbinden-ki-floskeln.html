@@ -89,11 +89,9 @@
   .hero {
     background: #fff;
     padding: 72px 48px 80px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 64px;
-    align-items: center;
-    max-width: 1240px;
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
     margin: 0 auto;
   }
   .hero-kicker {
@@ -195,6 +193,8 @@
     border-radius: 16px;
     padding: 36px 32px 32px;
     position: relative;
+    width: 100%;
+    margin-bottom: 36px;
   }
   .hero-optin::before {
     content: '';
@@ -821,8 +821,6 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 960px) {
     .hero {
-      grid-template-columns: 1fr;
-      gap: 40px;
       padding: 48px 32px 56px;
     }
     .stats-bar {
@@ -873,21 +871,10 @@
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="hero">
 
-  <!-- Links: Copy -->
-  <div>
-    <div class="hero-kicker">0€ Skill-Download</div>
-    <h1>Kein Text mehr,<br>der nach<br><em>KI klingt.</em></h1>
-    <p class="hero-sub">
-      Der Skill arbeitet mit 45 Regeln, erkennt typische KI-Formulierungen und Floskeln automatisch, erklärt warum die beim Leser auffliegen und liefert sofort die menschlichere Alternative. Dein Text. Deine Stimme.
-    </p>
-    <ul class="hero-benefits">
-      <li>45 Regeln gegen typische KI-Formulierungen und Floskeln</li>
-      <li>Konkrete Alternativ-Formulierungen direkt im Chat</li>
-      <li>Dein Text klingt nach dir, nicht nach ChatGPT</li>
-    </ul>
-  </div>
+  <div class="hero-kicker">0€ Skill-Download</div>
+  <h1>Kein Text mehr,<br>der nach<br><em>KI klingt.</em></h1>
 
-  <!-- Rechts: Optin-Box -->
+  <!-- Optin-Box -->
   <div class="hero-optin">
     <div class="optin-label">0€ herunterladen</div>
     <div class="optin-title">KI Floskel-Vermeider<br><em>Skill sichern.</em></div>
@@ -897,6 +884,15 @@
     </div>
     <div class="optin-trust">Kein Spam &nbsp;·&nbsp; Jederzeit abmeldbar</div>
   </div>
+
+  <p class="hero-sub">
+    Der Skill arbeitet mit 45 Regeln, erkennt typische KI-Formulierungen und Floskeln automatisch, erklärt warum die beim Leser auffliegen und liefert sofort die menschlichere Alternative. Dein Text. Deine Stimme.
+  </p>
+  <ul class="hero-benefits">
+    <li>45 Regeln gegen typische KI-Formulierungen und Floskeln</li>
+    <li>Konkrete Alternativ-Formulierungen direkt im Chat</li>
+    <li>Dein Text klingt nach dir, nicht nach ChatGPT oder Claude</li>
+  </ul>
 
 </section>
 
@@ -1134,6 +1130,7 @@
   </div>
 </div>
 
+<script src="../assets/consent.js"></script>
 <script>
   // Tab switching logic
   document.querySelectorAll('.tab-btn').forEach(function(btn) {
