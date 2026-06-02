@@ -502,69 +502,6 @@
     .footer-links { flex-wrap: wrap; gap: 14px; }
   }
 
-  /* ─── COOKIE BANNER ─── */
-  .cookie-banner {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: var(--warm-black);
-    border-top: 2px solid var(--orange);
-    z-index: 9999;
-    padding: 20px 40px;
-    box-shadow: 0 -8px 32px rgba(22,12,5,.35);
-  }
-  .cookie-banner-inner {
-    max-width: 780px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .cookie-banner-text { flex: 1; min-width: 200px; }
-  .cookie-banner-text strong {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--orange);
-    display: block;
-    margin-bottom: 5px;
-  }
-  .cookie-banner-text p {
-    font-size: 13px;
-    color: rgba(251,247,242,.6);
-    line-height: 1.5;
-    margin: 0;
-  }
-  .cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
-  .cookie-btn {
-    font-family: var(--font-sans);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all .2s;
-    border: none;
-  }
-  .cookie-btn--decline {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,.2);
-    color: rgba(255,255,255,.55);
-  }
-  .cookie-btn--decline:hover { border-color: rgba(255,255,255,.45); color: #fff; }
-  .cookie-btn--accept { background: var(--orange); color: var(--off-white); }
-  .cookie-btn--accept:hover { background: var(--orange-deep); }
-  @media (max-width: 680px) {
-    .cookie-banner { padding: 20px 20px; }
-    .cookie-banner-inner { flex-direction: column; gap: 14px; }
-    .cookie-banner-actions { width: 100%; }
-    .cookie-btn { flex: 1; text-align: center; }
-  }
-
   /* ─── GEHEIMTIPP ─── */
   .geheimtipp-wrap {
     max-width: 900px;
@@ -717,7 +654,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Skill herunterladen
       </a>
-      <div class="geheimtipp-free">🔒 Kostenlos &nbsp;·&nbsp; 0€</div>
+      <div class="geheimtipp-free">🔒 0€</div>
     </div>
   </div>
 </div>
@@ -910,7 +847,7 @@
         <div class="pitch-eye">Skill-Download</div>
         <h3>Alle 43 Regeln.<br><em>Automatisch geprüft.</em></h3>
         <p class="pitch-text">
-          Dieser kostenlose Claude-Skill kennt jede Regel auf dieser Liste. Du kopierst deinen Text rein, tippst einen Slash-Befehl, und Claude zeigt dir sofort, was auffliegt und wie die menschlichere Formulierung lautet.
+          Dieser Claude-Skill kennt jede Regel auf dieser Liste. Du kopierst deinen Text rein, tippst einen Slash-Befehl, und Claude zeigt dir sofort, was auffliegt und wie die menschlichere Formulierung lautet.
         </p>
         <div class="pitch-features">
           <div class="pitch-feature">Alle 43 Regeln in einem einzigen Skill hinterlegt</div>
@@ -1273,7 +1210,7 @@
       <div class="pitch-eye" style="justify-content: center;">Skill-Download</div>
       <h3 style="font-size: clamp(36px, 5.5vw, 64px);">Du hast alle 43 Regeln.<br><em>Jetzt prüft Claude sie automatisch.</em></h3>
       <p class="pitch-text" style="max-width: 520px; margin: 0 auto 28px;">
-        Einmal einrichten, dauerhaft nutzen. Der kostenlose Skill kennt jede Regel auf dieser Liste und zeigt dir direkt, was in deinem Text auffliegt.
+        Einmal einrichten, dauerhaft nutzen. Der Skill kennt jede Regel auf dieser Liste und zeigt dir direkt, was in deinem Text auffliegt.
       </p>
       <a href="https://www.hannamarzian.com/freebies/claude-skills-einbinden-ki-floskeln" target="_blank" rel="noopener" class="pitch-btn" style="display: inline-flex; margin: 8px auto 0;">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -1305,66 +1242,12 @@
     <a class="footer-link" href="https://www.hannamarzian.com/agb.html" target="_blank" rel="noopener">AGB</a>
     <a class="footer-link" href="https://www.hannamarzian.com/impressum.html" target="_blank" rel="noopener">Impressum</a>
     <a class="footer-link" href="https://www.hannamarzian.com/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+    <button id="consent-reopen" style="background:none;border:none;font-family:var(--font-body);font-size:10px;font-weight:300;color:rgba(122,106,90,.4);text-decoration:underline;cursor:pointer;">Cookie-Einstellungen</button>
   </div>
 </footer>
 
 
-<!-- ─── COOKIE BANNER ─── -->
-<div id="cookie-banner" class="cookie-banner" style="display:none;">
-  <div class="cookie-banner-inner">
-    <div class="cookie-banner-text">
-      <strong>Cookies &amp; Tracking</strong>
-      <p>Wir nutzen den Facebook Pixel, um dir relevante Inhalte zu zeigen. Du entscheidest, was du erlaubst. <a href="https://www.hannamarzian.com/datenschutz.html" style="color:var(--orange-mid);">Datenschutz</a></p>
-    </div>
-    <div class="cookie-banner-actions">
-      <button class="cookie-btn cookie-btn--decline" onclick="declineCookies()">Nur notwendige</button>
-      <button class="cookie-btn cookie-btn--accept" onclick="acceptCookies()">Alles akzeptieren</button>
-    </div>
-  </div>
-</div>
-
-<!-- FB Pixel & Consent -->
-<script>
-  var FB_PIXEL_ID = '1418911535795598';
-
-  function loadFBPixel() {
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', FB_PIXEL_ID);
-    fbq('track', 'PageView');
-  }
-
-  function acceptCookies() {
-    localStorage.setItem('cookie_consent', 'accepted');
-    document.getElementById('cookie-banner').style.display = 'none';
-    loadFBPixel();
-  }
-
-  function declineCookies() {
-    localStorage.setItem('cookie_consent', 'declined');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  function showCookieBanner() {
-    document.getElementById('cookie-banner').style.display = 'block';
-  }
-
-  (function() {
-    var consent = localStorage.getItem('cookie_consent');
-    if (consent === 'accepted') {
-      loadFBPixel();
-    } else if (!consent) {
-      setTimeout(function() {
-        document.getElementById('cookie-banner').style.display = 'block';
-      }, 800);
-    }
-  })();
-</script>
+<script src="../assets/consent.js"></script>
 
 </body>
 </html>
