@@ -542,13 +542,17 @@
         /* ─── Footer ─── */
 
         footer {
-            margin-top: 56px;
-            padding-top: 28px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: var(--dark);
+            color: rgba(255,255,255,0.55);
+            text-align: center;
+            padding: 48px 24px;
+            font-size: 13.5px;
+            position: relative;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin-top: 72px;
         }
+
+        footer strong { color: rgba(255,255,255,0.85); }
 
         .footer-brand {
             font-size: 11px;
@@ -828,8 +832,12 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-brand">Hanna Marzian &times; Martin Thun &nbsp;&middot;&nbsp; 2026</div>
-        <div class="footer-handles">@hanna.gpt &nbsp;&middot;&nbsp; @martin_thun_</div>
+        <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; align-items: center;">
+            <span>© 2026 Hanna Marzian &amp; Martin Thun</span>
+            <a href="/impressum.html" style="color:rgba(255,255,255,0.55); text-decoration:none;">Impressum</a>
+            <a href="/datenschutz.html" style="color:rgba(255,255,255,0.55); text-decoration:none;">Datenschutz</a>
+            <a href="/agb.html" style="color:rgba(255,255,255,0.55); text-decoration:none;">AGB</a>
+        </div>
     </footer>
 
 </body>
