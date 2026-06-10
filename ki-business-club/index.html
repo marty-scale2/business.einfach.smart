@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI Business Club · BUSINESS.EINFACH.SMART</title>
+<meta name="description" content="6 Monate enge 1:1 Betreuung von Hanna Marzian und Martin Thun. Wir bauen dein KI-gestütztes Business-System für planbare 5-stellige Monate. Nur 8 Plätze.">
+<meta property="og:title" content="KI Business Club · BUSINESS.EINFACH.SMART">
+<meta property="og:description" content="Dein Expertenbusiness auf einem KI-System, das zu 80 % von allein läuft. 6 Monate, 2 Mentoren, 8 Plätze.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#160C05">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════
+   DESIGN TOKENS
+   ════════════════════════════════════════════ */
+:root {
+  /* Brand */
+  --orange:        #D8622A;
+  --orange-bright: #E8894E;
+  --orange-deep:   #B24E1E;
+  --ink:           #160C05;
+  --ink-soft:      #2A1C10;
+  --cream:         #FBF7F2;
+  --paper:         #FFFDFA;
+
+  /* Tints (derived, perceptual) */
+  --orange-100: color-mix(in oklab, var(--orange), white 88%);
+  --orange-200: color-mix(in oklab, var(--orange), white 74%);
+  --orange-300: color-mix(in oklab, var(--orange), white 55%);
+
+  /* Text */
+  --text-primary:   #1E140C;
+  --text-secondary: #5C5048;
+  --text-tertiary:  #8E8076;
+  --line:           rgba(22, 12, 5, 0.09);
+
+  /* Dark surfaces */
+  --d-text:      #FBF7F2;
+  --d-text-soft: rgba(251, 247, 242, 0.68);
+  --d-text-dim:  rgba(251, 247, 242, 0.42);
+  --d-line:      rgba(251, 247, 242, 0.10);
+
+  /* Spacing scale */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+  --s-6: 1.5rem;  --s-8: 2rem;   --s-12: 3rem;   --s-16: 4rem;
+  --s-24: 6rem;   --s-32: 8rem;
+
+  /* Fluid type */
+  --t-xs:   clamp(0.72rem, 0.68rem + 0.2vw, 0.8rem);
+  --t-sm:   clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
+  --t-base: clamp(1rem, 0.95rem + 0.3vw, 1.1rem);
+  --t-lg:   clamp(1.1rem, 1rem + 0.6vw, 1.3rem);
+  --t-xl:   clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+  --t-2xl:  clamp(1.7rem, 1.4rem + 1.5vw, 2.4rem);
+  --t-3xl:  clamp(2.1rem, 1.6rem + 2.6vw, 3.4rem);
+  --t-4xl:  clamp(2.8rem, 2rem + 4.2vw, 5rem);
+  --t-hero: clamp(3.1rem, 1.6rem + 8.5vw, 8.2rem);
+
+  /* Shadows: layered, warm */
+  --shadow-sm:
+    0 1px 2px rgba(22,12,5,0.04),
+    0 2px 5px rgba(22,12,5,0.04);
+  --shadow-md:
+    0 1px 2px rgba(22,12,5,0.04),
+    0 4px 9px rgba(22,12,5,0.05),
+    0 14px 28px rgba(22,12,5,0.07);
+  --shadow-lg:
+    0 1px 2px rgba(22,12,5,0.03),
+    0 4px 9px rgba(22,12,5,0.05),
+    0 18px 36px rgba(22,12,5,0.09),
+    0 36px 70px rgba(22,12,5,0.05);
+  --shadow-brand:
+    0 1px 2px rgba(22,12,5,0.06),
+    0 5px 12px rgba(216,98,42,0.22),
+    0 18px 38px rgba(216,98,42,0.24);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.4, 1);
+  --fast: 160ms; --normal: 280ms; --slow: 480ms;
+
+  /* Fonts */
+  --f-serif: 'Cormorant', Georgia, serif;
+  --f-sans:  'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --f-brand: 'Montserrat', 'Inter', sans-serif;
+}
+
+/* ════════════════════════════════════════════
+   BASE
+   ════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--f-sans);
+  font-size: var(--t-base);
+  color: var(--text-primary);
+  line-height: 1.7;
+  background:
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(216,98,42,0.05), transparent 65%),
+    linear-gradient(175deg, var(--paper) 0%, var(--cream) 100%);
+  overflow-x: hidden;
+}
+
+::selection { background: var(--orange); color: #fff; }
+
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; }
+p { text-wrap: pretty; }
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+
+.wrap {
+  width: min(1120px, 100% - clamp(2.5rem, 8vw, 6rem));
+  margin-inline: auto;
+}
+
+.wrap--narrow { width: min(820px, 100% - clamp(2.5rem, 8vw, 6rem)); margin-inline: auto; }
+
+/* Noise texture utility */
+.has-noise { position: relative; isolation: isolate; }
+.has-noise::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Scroll reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s var(--ease-expo), transform 0.7s var(--ease-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* ════════════════════════════════════════════
+   SCROLL PROGRESS
+   ════════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed; top: 0; left: 0;
+  width: var(--progress, 0%);
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--orange-bright), var(--orange), var(--orange-deep));
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(216,98,42,0.55);
+}
+
+/* ════════════════════════════════════════════
+   NAV
+   ════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: clamp(0.6rem, 2vw, 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1120px, 100% - 1.6rem);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-3) var(--s-6);
+  background: rgba(255, 253, 250, 0.72);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(22,12,5,0.07);
+  border-radius: 18px;
+  box-shadow:
+    0 1px 2px rgba(22,12,5,0.04),
+    0 6px 16px rgba(22,12,5,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.brandmark {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: clamp(0.72rem, 0.6rem + 0.5vw, 0.92rem);
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brandmark .dot { color: var(--orange); }
+
+.nav__cta {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange) 55%, var(--orange-deep));
+  padding: 0.6em 1.4em;
+  border-radius: 999px;
+  box-shadow: var(--shadow-brand);
+  transition: transform var(--fast) var(--ease-spring), box-shadow var(--normal) var(--ease-expo);
+  white-space: nowrap;
+}
+.nav__cta:hover { transform: translateY(-2px) scale(1.02); }
+.nav__cta:active { transform: translateY(0) scale(0.98); box-shadow: var(--shadow-sm); }
+
+/* ════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: calc(var(--s-24) + 2rem) 0 var(--s-16);
+}
+
+.hero__bg { position: absolute; inset: 0; pointer-events: none; }
+.hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  animation: orb-drift 14s ease-in-out infinite alternate;
+}
+.hero__orb--1 {
+  width: 640px; height: 640px;
+  top: -260px; left: 52%;
+  background: radial-gradient(circle, rgba(216,98,42,0.30), rgba(232,137,78,0.10) 70%);
+}
+.hero__orb--2 {
+  width: 460px; height: 460px;
+  bottom: -160px; left: -140px;
+  background: radial-gradient(circle, rgba(216,98,42,0.16), transparent 70%);
+  animation-delay: -7s;
+}
+@keyframes orb-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-50px, 36px) scale(1.1); }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  background: rgba(255,253,250,0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(216,98,42,0.25);
+  border-radius: 999px;
+  padding: 0.55em 1.3em;
+  box-shadow: 0 2px 8px rgba(216,98,42,0.10), inset 0 1px 0 rgba(255,255,255,0.8);
+  margin-bottom: var(--s-8);
+  animation: rise-in 0.9s var(--ease-expo) both;
+}
+.hero__badge .pulse {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 0 rgba(216,98,42,0.5);
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(216,98,42,0.5); }
+  70%  { box-shadow: 0 0 0 9px rgba(216,98,42,0); }
+  100% { box-shadow: 0 0 0 0 rgba(216,98,42,0); }
+}
+
+.hero h1 {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-hero);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: var(--s-8);
+}
+.hero h1 .line {
+  display: block;
+  overflow: hidden;
+}
+.hero h1 .line > span {
+  display: inline-block;
+  animation: line-up 1s var(--ease-expo) both;
+}
+.hero h1 .line:nth-child(1) > span { animation-delay: 0.12s; }
+.hero h1 .line:nth-child(2) > span { animation-delay: 0.26s; }
+.hero h1 .line:nth-child(3) > span { animation-delay: 0.40s; }
+@keyframes line-up {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 .serif {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.015em;
+  font-size: 1.12em;
+  color: var(--ink-soft);
+}
+.hero h1 .glow {
+  background: linear-gradient(120deg, var(--orange-bright) 0%, var(--orange) 45%, var(--orange-deep) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero h1 .dot { color: var(--orange); -webkit-text-fill-color: var(--orange); -webkit-text-stroke: 0; }
+
+.hero__sub {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--t-xl);
+  color: var(--text-secondary);
+  margin-bottom: var(--s-6);
+  animation: rise-in 0.9s var(--ease-expo) 0.5s both;
+}
+
+.hero__body {
+  max-width: 56ch;
+  font-size: var(--t-lg);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--s-12);
+  animation: rise-in 0.9s var(--ease-expo) 0.62s both;
+}
+.hero__body strong { color: var(--text-primary); font-weight: 600; }
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-4);
+  margin-bottom: var(--s-16);
+  animation: rise-in 0.9s var(--ease-expo) 0.74s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--f-brand);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 1.05em 2.2em;
+  cursor: pointer;
+  border: none;
+  transition:
+    transform var(--fast) var(--ease-spring),
+    box-shadow var(--normal) var(--ease-expo),
+    background-color var(--normal) var(--ease-out);
+  will-change: transform;
+}
+.btn--primary {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange) 55%, var(--orange-deep));
+  box-shadow: var(--shadow-brand);
+  overflow: hidden;
+}
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 50%; height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  animation: btn-sheen 4s ease-in-out infinite;
+}
+@keyframes btn-sheen {
+  0%, 60%  { left: -80%; }
+  100%     { left: 160%; }
+}
+.btn--primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 2px 4px rgba(22,12,5,0.06),
+    0 10px 22px rgba(216,98,42,0.30),
+    0 28px 56px rgba(216,98,42,0.26);
+}
+.btn--primary:active { transform: translateY(0) scale(0.98); box-shadow: var(--shadow-sm); }
+.btn--primary:focus-visible, .btn--ghost:focus-visible, .nav__cta:focus-visible {
+  outline: 3px solid rgba(216,98,42,0.45);
+  outline-offset: 3px;
+}
+
+.btn--ghost {
+  color: var(--text-primary);
+  background: rgba(255,253,250,0.6);
+  border: 1.5px solid rgba(22,12,5,0.14);
+  backdrop-filter: blur(8px);
+}
+.btn--ghost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216,98,42,0.5);
+  box-shadow: var(--shadow-md);
+}
+.btn--ghost:active { transform: translateY(0) scale(0.98); }
+
+/* Stats bar */
+.stats {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  padding: var(--s-4) clamp(1.4rem, 4vw, 3rem);
+  background: rgba(255,253,250,0.65);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(22,12,5,0.07);
+  border-radius: 24px;
+  box-shadow: 0 3px 12px rgba(22,12,5,0.05), inset 0 1px 0 rgba(255,255,255,0.7);
+  animation: rise-in 0.9s var(--ease-expo) 0.86s both;
+}
+.stats__item { text-align: center; }
+.stats__value {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-2xl);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.stats__value .suffix { color: var(--orange); }
+.stats__label {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+/* ════════════════════════════════════════════
+   TICKER
+   ════════════════════════════════════════════ */
+.ticker {
+  position: relative;
+  background: var(--ink);
+  color: var(--cream);
+  overflow: hidden;
+  padding: var(--s-4) 0;
+  transform: rotate(-1.2deg) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  z-index: 5;
+}
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 26s linear infinite;
+}
+.ticker__group {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: var(--f-brand);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.ticker__group span { padding: 0 1.4em; }
+.ticker__group .star { color: var(--orange-bright); font-size: 1.1em; padding: 0; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ════════════════════════════════════════════
+   SECTION SCAFFOLD
+   ════════════════════════════════════════════ */
+.section { padding: var(--s-32) 0; position: relative; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  margin-bottom: var(--s-6);
+}
+.kicker::before {
+  content: '';
+  width: 2.4em; height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-bright));
+  border-radius: 2px;
+}
+
+.h2 {
+  font-family: var(--f-serif);
+  font-weight: 600;
+  font-size: var(--t-3xl);
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: var(--s-6);
+}
+.h2 em {
+  font-style: italic;
+  background: linear-gradient(120deg, var(--orange-bright), var(--orange) 60%, var(--orange-deep));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lede {
+  font-size: var(--t-lg);
+  color: var(--text-secondary);
+  max-width: 60ch;
+  line-height: 1.75;
+}
+
+.divider {
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(22,12,5,0.12) 25%, rgba(22,12,5,0.16) 50%, rgba(22,12,5,0.12) 75%, transparent);
+}
+
+/* ════════════════════════════════════════════
+   PROBLEM
+   ════════════════════════════════════════════ */
+.problems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+
+.p-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: var(--s-8);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--normal) var(--ease-spring),
+    box-shadow var(--normal) var(--ease-expo),
+    border-color var(--normal) var(--ease-out);
+}
+.p-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(216,98,42,0.3);
+}
+.p-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange-bright), var(--orange-deep));
+  opacity: 0;
+  transition: opacity var(--normal) var(--ease-out);
+}
+.p-card:hover::before { opacity: 1; }
+/* spotlight */
+.p-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(216,98,42,0.07), transparent 65%);
+  opacity: 0;
+  transition: opacity var(--slow) var(--ease-out);
+  pointer-events: none;
+}
+.p-card:hover::after { opacity: 1; }
+
+.p-card__num {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: var(--t-3xl);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--orange-200);
+  margin-bottom: var(--s-4);
+  transition: color var(--normal) var(--ease-out);
+}
+.p-card:hover .p-card__num { color: var(--orange); }
+
+.p-card h3 {
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--s-3);
+  color: var(--ink);
+}
+.p-card p { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.75; }
+
+.pullquote {
+  margin-top: var(--s-16);
+  text-align: center;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--t-2xl);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 28ch;
+  margin-inline: auto;
+}
+.pullquote em {
+  background: linear-gradient(120deg, var(--orange-bright), var(--orange-deep));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ════════════════════════════════════════════
+   APPROACH (DARK)
+   ════════════════════════════════════════════ */
+.approach {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(216,98,42,0.16), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 100%, rgba(232,137,78,0.10), transparent 55%),
+    linear-gradient(160deg, #1C1008 0%, var(--ink) 55%, #100802 100%);
+  color: var(--d-text);
+  overflow: hidden;
+}
+.approach .kicker { color: var(--orange-bright); }
+.approach .h2 { color: var(--d-text); }
+.approach .lede { color: var(--d-text-soft); }
+.approach .lede strong { color: var(--d-text); font-weight: 600; }
+
+/* 80/20 bar */
+.split-bar { margin: var(--s-16) 0; }
+.split-bar__title {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--d-text-dim);
+  margin-bottom: var(--s-4);
+}
+.split-bar__track {
+  display: flex;
+  height: 78px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--d-line);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.35);
+}
+.split-bar__ai {
+  width: 12%;
+  background: linear-gradient(110deg, var(--orange-bright), var(--orange) 55%, var(--orange-deep));
+  display: flex;
+  align-items: center;
+  padding-left: clamp(0.9rem, 3vw, 2rem);
+  transition: width 1.6s var(--ease-expo) 0.2s;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+.split-bar__ai::after {
+  content: '';
+  position: absolute; top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-18deg);
+  animation: btn-sheen 3.4s ease-in-out infinite;
+}
+.split-bar.is-visible .split-bar__ai { width: 80%; }
+.split-bar__you {
+  flex: 1;
+  background: rgba(251,247,242,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.split-bar__pct {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-2xl);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.split-bar__ai .split-bar__pct { color: #fff; }
+.split-bar__you .split-bar__pct { color: var(--d-text-soft); }
+.split-bar__legend {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-top: var(--s-3);
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+}
+.split-bar__legend b { color: var(--d-text); font-weight: 600; }
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--s-6);
+}
+.a-card {
+  position: relative;
+  padding: var(--s-8);
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgba(251,247,242,0.07), rgba(251,247,242,0.025));
+  border: 1px solid var(--d-line);
+  box-shadow:
+    inset 0 1px 0 rgba(251,247,242,0.10),
+    0 12px 30px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: transform var(--normal) var(--ease-spring), border-color var(--normal) var(--ease-out);
+}
+.a-card:hover { transform: translateY(-4px); border-color: rgba(232,137,78,0.35); }
+.a-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,137,78,0.55), transparent);
+}
+.a-card h3 {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--t-xl);
+  color: var(--orange-bright);
+  margin-bottom: var(--s-3);
+}
+.a-card p { font-size: var(--t-sm); color: var(--d-text-soft); line-height: 1.75; }
+
+.cred-line {
+  margin-top: var(--s-12);
+  padding: var(--s-6) var(--s-8);
+  border-left: 3px solid var(--orange);
+  background: rgba(251,247,242,0.045);
+  border-radius: 0 16px 16px 0;
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.8;
+}
+.cred-line b { color: var(--d-text); font-weight: 600; }
+
+/* ════════════════════════════════════════════
+   BENTO: DELIVERABLES
+   ════════════════════════════════════════════ */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+.b-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: var(--s-8);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition:
+    transform var(--normal) var(--ease-spring),
+    box-shadow var(--normal) var(--ease-expo),
+    border-color var(--normal) var(--ease-out);
+}
+.b-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(216,98,42,0.28);
+}
+.b-card--featured { grid-column: span 2; }
+
+/* animated gradient border on featured */
+.b-card--featured {
+  border: none;
+  padding: 1.5px;
+  background: linear-gradient(var(--angle, 120deg), var(--orange-bright), rgba(216,98,42,0.12) 38%, rgba(216,98,42,0.12) 62%, var(--orange-deep));
+  animation: border-spin 7s linear infinite;
+}
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 120deg;
+}
+@keyframes border-spin {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+.b-card__inner {
+  background:
+    radial-gradient(ellipse 70% 60% at 85% -10%, rgba(216,98,42,0.08), transparent 60%),
+    var(--paper);
+  border-radius: 22.5px;
+  padding: var(--s-8);
+  height: 100%;
+}
+.b-card:not(.b-card--featured) .b-card__inner { padding: 0; background: none; border-radius: 0; }
+
+.b-tag {
+  display: inline-block;
+  font-family: var(--f-brand);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  background: var(--orange-100);
+  border: 1px solid rgba(216,98,42,0.22);
+  border-radius: 999px;
+  padding: 0.4em 1.1em;
+  margin-bottom: var(--s-4);
+}
+
+.b-card h3 {
+  font-size: var(--t-lg);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--s-3);
+}
+.b-card--featured h3 { font-size: var(--t-xl); }
+.b-card p { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.75; }
+
+.b-num {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-4xl);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--s-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ════════════════════════════════════════════
+   MODULES
+   ════════════════════════════════════════════ */
+.modules { margin-top: var(--s-12); border-top: 1px solid var(--line); }
+.module {
+  display: grid;
+  grid-template-columns: minmax(70px, 110px) 1fr;
+  gap: clamp(1rem, 4vw, 3rem);
+  align-items: baseline;
+  padding: clamp(1.4rem, 3vw, 2.2rem) var(--s-3);
+  border-bottom: 1px solid var(--line);
+  transition: background var(--normal) var(--ease-out), padding-left var(--normal) var(--ease-out);
+  border-radius: 4px;
+}
+.module:hover {
+  background: linear-gradient(90deg, rgba(216,98,42,0.05), transparent 70%);
+  padding-left: var(--s-6);
+}
+.module__num {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--t-3xl);
+  line-height: 1;
+  color: var(--orange-300);
+  transition: color var(--normal) var(--ease-out), transform var(--normal) var(--ease-spring);
+}
+.module:hover .module__num { color: var(--orange); transform: translateX(4px) rotate(-3deg); }
+.module h3 {
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: var(--s-2);
+}
+.module p { font-size: var(--t-sm); color: var(--text-secondary); max-width: 62ch; line-height: 1.75; }
+
+/* ════════════════════════════════════════════
+   HOSTS
+   ════════════════════════════════════════════ */
+.hosts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+.host {
+  position: relative;
+  background: linear-gradient(155deg, var(--paper), var(--cream));
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: var(--s-12) var(--s-8) var(--s-8);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--normal) var(--ease-spring), box-shadow var(--normal) var(--ease-expo);
+}
+.host:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.host::before {
+  content: '';
+  position: absolute;
+  top: -90px; right: -90px;
+  width: 230px; height: 230px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216,98,42,0.13), transparent 70%);
+  transition: transform var(--slow) var(--ease-expo);
+}
+.host:hover::before { transform: scale(1.35); }
+
+.host__mono {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  box-shadow: 0 6px 18px rgba(216,98,42,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+  margin-bottom: var(--s-6);
+}
+.host__mono--dark {
+  background: linear-gradient(135deg, #3A281A, var(--ink));
+  box-shadow: 0 6px 18px rgba(22,12,5,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.host h3 {
+  font-family: var(--f-serif);
+  font-weight: 600;
+  font-size: var(--t-2xl);
+  color: var(--ink);
+  line-height: 1.1;
+}
+.host__handle {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--orange-deep);
+  margin: var(--s-2) 0 var(--s-4);
+}
+.host__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-bottom: var(--s-6);
+}
+.host__tags span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--line);
+  background: rgba(255,253,250,0.7);
+  border-radius: 999px;
+  padding: 0.35em 0.95em;
+}
+.host p { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.8; position: relative; }
+
+/* ════════════════════════════════════════════
+   FIT (für wen / nicht für)
+   ════════════════════════════════════════════ */
+.fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+.fit__col {
+  border-radius: 24px;
+  padding: var(--s-8);
+  border: 1px solid var(--line);
+}
+.fit__col--yes {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(216,98,42,0.08), transparent 60%),
+    var(--paper);
+  border-color: rgba(216,98,42,0.22);
+  box-shadow: var(--shadow-md);
+}
+.fit__col--no { background: transparent; }
+.fit__col h3 {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--t-xl);
+  margin-bottom: var(--s-6);
+  color: var(--ink);
+}
+.fit__list { list-style: none; }
+.fit__list li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.fit__list li:last-child { border-bottom: none; }
+.fit__mark {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.fit__mark--yes { background: var(--orange-100); color: var(--orange-deep); border: 1px solid rgba(216,98,42,0.3); }
+.fit__mark--no  { background: rgba(22,12,5,0.05); color: var(--text-tertiary); border: 1px solid var(--line); }
+
+/* ════════════════════════════════════════════
+   PRICING (DARK)
+   ════════════════════════════════════════════ */
+.pricing-section {
+  background:
+    radial-gradient(ellipse 60% 45% at 80% 0%, rgba(216,98,42,0.14), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 5% 90%, rgba(232,137,78,0.09), transparent 55%),
+    linear-gradient(165deg, #1A0F07 0%, var(--ink) 60%, #0E0701 100%);
+  color: var(--d-text);
+}
+.pricing-section .kicker { color: var(--orange-bright); }
+.pricing-section .h2 { color: var(--d-text); }
+.pricing-section .lede { color: var(--d-text-soft); }
+
+.price-card {
+  position: relative;
+  margin-top: var(--s-12);
+  border-radius: 28px;
+  background: linear-gradient(150deg, rgba(251,247,242,0.08), rgba(251,247,242,0.025));
+  border: 1px solid rgba(232,137,78,0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(251,247,242,0.12),
+    0 30px 70px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(216,98,42,0.10);
+  padding: clamp(2rem, 5vw, 4rem);
+  overflow: hidden;
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255,225,200,0.8), transparent);
+  animation: card-shimmer 3.5s ease-in-out infinite;
+}
+@keyframes card-shimmer {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+.price-card__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.price-badge {
+  display: inline-block;
+  font-family: var(--f-brand);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  border-radius: 999px;
+  padding: 0.5em 1.3em;
+  box-shadow: 0 4px 14px rgba(216,98,42,0.4);
+  margin-bottom: var(--s-6);
+}
+
+.price-value {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: clamp(3.4rem, 2.5rem + 5vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #FFF4EA 20%, var(--orange-bright) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.price-meta {
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  margin-top: var(--s-3);
+  line-height: 1.7;
+}
+.price-meta b { color: var(--d-text); font-weight: 600; }
+.price-warning {
+  margin-top: var(--s-6);
+  padding: var(--s-4) var(--s-6);
+  border-left: 3px solid var(--orange);
+  background: rgba(216,98,42,0.10);
+  border-radius: 0 14px 14px 0;
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.7;
+  max-width: 44ch;
+}
+.price-warning b { color: var(--orange-bright); font-weight: 600; }
+
+.perks { list-style: none; }
+.perks__title {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--d-text-dim);
+  margin-bottom: var(--s-4);
+}
+.perks li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--d-line);
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.65;
+}
+.perks li:last-child { border-bottom: none; }
+.perks li b { color: var(--d-text); font-weight: 600; }
+.perks__check {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(216,98,42,0.18);
+  border: 1px solid rgba(232,137,78,0.45);
+  color: var(--orange-bright);
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* slots */
+.slots {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-top: var(--s-8);
+  flex-wrap: wrap;
+}
+.slots__dots { display: flex; gap: 7px; }
+.slots__dot {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  box-shadow: 0 0 10px rgba(216,98,42,0.5);
+  animation: dot-breathe 2.6s ease-in-out infinite;
+}
+.slots__dot:nth-child(2) { animation-delay: 0.2s; }
+.slots__dot:nth-child(3) { animation-delay: 0.4s; }
+.slots__dot:nth-child(4) { animation-delay: 0.6s; }
+.slots__dot:nth-child(5) { animation-delay: 0.8s; }
+.slots__dot:nth-child(6) { animation-delay: 1.0s; }
+.slots__dot:nth-child(7) { animation-delay: 1.2s; }
+.slots__dot:nth-child(8) { animation-delay: 1.4s; }
+@keyframes dot-breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(0.78); opacity: 0.65; }
+}
+.slots__label { font-size: var(--t-sm); color: var(--d-text-soft); }
+.slots__label b { color: var(--d-text); }
+
+.price-cta-row {
+  margin-top: var(--s-8);
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+}
+
+.expect {
+  margin-top: var(--s-12);
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--d-line);
+}
+.expect h4 {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--d-text-dim);
+  margin-bottom: var(--s-3);
+}
+.expect p { font-size: var(--t-sm); color: var(--d-text-soft); line-height: 1.75; max-width: 75ch; }
+
+/* honesty block */
+.honesty {
+  margin-top: var(--s-12);
+  border-radius: 24px;
+  border: 1px solid rgba(232,137,78,0.22);
+  background: rgba(251,247,242,0.04);
+  padding: clamp(1.8rem, 4vw, 3rem);
+}
+.honesty h3 {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--t-xl);
+  color: var(--orange-bright);
+  margin-bottom: var(--s-4);
+}
+.honesty p { font-size: var(--t-sm); color: var(--d-text-soft); line-height: 1.8; margin-bottom: var(--s-3); max-width: 80ch; }
+.honesty p:last-child { margin-bottom: 0; }
+.honesty b { color: var(--d-text); font-weight: 600; }
+
+.smallprint {
+  margin-top: var(--s-8);
+  font-size: 0.72rem;
+  color: var(--d-text-dim);
+  line-height: 1.7;
+  max-width: 90ch;
+}
+.smallprint b { color: var(--d-text-soft); }
+
+/* ════════════════════════════════════════════
+   FAQ
+   ════════════════════════════════════════════ */
+.faq { margin-top: var(--s-12); }
+.faq details {
+  border-bottom: 1px solid var(--line);
+  transition: background var(--normal) var(--ease-out);
+}
+.faq details[open] {
+  background: linear-gradient(90deg, rgba(216,98,42,0.04), transparent 75%);
+  border-radius: 6px;
+}
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  padding: var(--s-6) var(--s-3);
+  font-size: var(--t-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color var(--fast) var(--ease-out);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--orange-deep); }
+.faq__icon {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(216,98,42,0.35);
+  display: grid;
+  place-items: center;
+  color: var(--orange-deep);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform var(--normal) var(--ease-spring), background var(--normal) var(--ease-out), color var(--normal) var(--ease-out);
+}
+.faq details[open] .faq__icon {
+  transform: rotate(45deg);
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+.faq__body {
+  padding: 0 var(--s-3) var(--s-6);
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 72ch;
+  animation: faq-open 0.45s var(--ease-expo);
+}
+@keyframes faq-open {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════════
+   FINAL CTA
+   ════════════════════════════════════════════ */
+.final {
+  position: relative;
+  background:
+    radial-gradient(ellipse 75% 60% at 25% 40%, rgba(216,98,42,0.25), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 85% 15%, rgba(232,137,78,0.16), transparent 55%),
+    linear-gradient(150deg, #200F04 0%, var(--ink) 55%, #0C0500 100%);
+  color: var(--d-text);
+  text-align: center;
+  overflow: hidden;
+}
+.final__content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+.final .h2 { color: var(--d-text); max-width: 22ch; margin-inline: auto; }
+.final__body {
+  font-size: var(--t-lg);
+  color: var(--d-text-soft);
+  max-width: 52ch;
+  margin: 0 auto var(--s-12);
+  line-height: 1.75;
+}
+
+/* countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.6rem, 2.5vw, 1.4rem);
+  margin-bottom: var(--s-12);
+  flex-wrap: wrap;
+}
+.countdown__cell {
+  min-width: clamp(68px, 18vw, 104px);
+  padding: var(--s-4) var(--s-2);
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(251,247,242,0.09), rgba(251,247,242,0.03));
+  border: 1px solid var(--d-line);
+  box-shadow: inset 0 1px 0 rgba(251,247,242,0.12), 0 10px 26px rgba(0,0,0,0.3);
+}
+.countdown__num {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-2xl);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, #FFF4EA, var(--orange-bright));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+.countdown__label {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--d-text-dim);
+}
+.countdown__title {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange-bright);
+  margin-bottom: var(--s-4);
+}
+
+.final .btn--primary { font-size: var(--t-base); padding: 1.15em 2.8em; }
+.final__note {
+  margin-top: var(--s-4);
+  font-size: var(--t-sm);
+  color: var(--d-text-dim);
+}
+
+.date-chips {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-12);
+}
+.date-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6em;
+  padding: 0.7em 1.4em;
+  border-radius: 999px;
+  border: 1px solid var(--d-line);
+  background: rgba(251,247,242,0.05);
+  font-size: var(--t-xs);
+  color: var(--d-text-soft);
+}
+.date-chip b {
+  font-family: var(--f-brand);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange-bright);
+  font-size: 0.64rem;
+}
+
+/* ════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════ */
+.footer {
+  padding: var(--s-16) 0 var(--s-8);
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.footer__brand {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-sm);
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  margin-bottom: var(--s-3);
+}
+.footer__brand .dot { color: var(--orange); }
+.footer__jv {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: var(--t-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--s-8);
+}
+.footer__jv b { color: var(--ink); font-weight: 600; }
+.footer__jv .x { color: var(--orange); font-style: normal; padding: 0 0.4em; }
+.footer__handles {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--orange-deep);
+  margin-bottom: var(--s-8);
+}
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--s-6);
+  margin-bottom: var(--s-6);
+}
+.footer__links a {
+  font-size: var(--t-xs);
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color var(--fast) var(--ease-out);
+}
+.footer__links a:hover { color: var(--orange-deep); }
+.footer__copy { font-size: var(--t-xs); color: var(--text-tertiary); }
+
+/* ════════════════════════════════════════════
+   STICKY MOBILE CTA
+   ════════════════════════════════════════════ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
+  background: rgba(22,12,5,0.88);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-top: 1px solid rgba(232,137,78,0.25);
+  transform: translateY(110%);
+  transition: transform var(--slow) var(--ease-expo);
+}
+.sticky-cta.is-shown { transform: translateY(0); }
+.sticky-cta__info { line-height: 1.3; }
+.sticky-cta__title {
+  font-family: var(--f-brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.sticky-cta__sub { font-size: 0.7rem; color: rgba(251,247,242,0.55); }
+.sticky-cta .btn { padding: 0.8em 1.5em; font-size: 0.74rem; flex-shrink: 0; }
+@media (min-width: 900px) { .sticky-cta { display: none; } }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .bento { grid-template-columns: 1fr; }
+  .b-card--featured { grid-column: span 1; }
+  .price-card__grid { grid-template-columns: 1fr; gap: var(--s-8); }
+}
+@media (max-width: 640px) {
+  .section { padding: var(--s-24) 0; }
+  .module { grid-template-columns: 1fr; gap: var(--s-2); }
+  .module__num { font-size: var(--t-2xl); }
+  .nav { padding: var(--s-3) var(--s-4); }
+  .stats { gap: var(--s-6); border-radius: 20px; }
+  .split-bar__track { height: 64px; }
+  .hero__actions { width: 100%; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+  .price-cta-row .btn { width: 100%; justify-content: center; }
+  .final .btn--primary { width: 100%; justify-content: center; }
+}
+
+/* ════════════════════════════════════════════
+   REDUCED MOTION
+   ════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
+  .split-bar .split-bar__ai { width: 80%; }
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav">
+  <a href="#top" class="brandmark">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</a>
+  <a class="nav__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe3lQXYR31Su8pnUEEOR3F5ucz4iMs8aAz5bHP96OM50VZV7w/viewform?usp=publish-editor" target="_blank" rel="noopener">Platz sichern</a>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero has-noise" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+  </div>
+
+  <div class="wrap hero__content">
+    <h1>
+      <span class="line"><span>KI BUSINESS</span></span>
+      <span class="line"><span class="glow">CLUB</span></span>
+    </h1>
+
+    <p class="hero__sub">von Hanna Marzian &amp; Martin Thun</p>
+
+    <p class="hero__body">In 6 Monaten bauen wir gemeinsam dein <strong>KI-gestütztes Business-System</strong>: eine Positionierung, die sitzt, Angebote, die sich ohne Dauererklärung verkaufen, und Content, der über Prozesse läuft statt über deine Abende. Das Fundament für planbare 5-stellige Monate.</p>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSe3lQXYR31Su8pnUEEOR3F5ucz4iMs8aAz5bHP96OM50VZV7w/viewform?usp=publish-editor" target="_blank" rel="noopener">Einen der 8 Plätze sichern</a>
+      <a class="btn btn--ghost" href="#leistungen">Zeig mir erst, was drin ist ↓</a>
+    </div>
+
+    <div class="stats">
+      <div class="stats__item">
+        <div class="stats__value"><span data-count="100000">0</span><span class="suffix">+</span></div>
+        <div class="stats__label">Follower Community</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__value"><span data-count="7">0</span></div>
+        <div class="stats__label">Jahre Online-Business</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__value"><span data-count="150">0</span><span class="suffix">k&nbsp;€</span></div>
+        <div class="stats__label">Umsatz-Launches</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__value"><span data-count="24">0</span></div>
+        <div class="stats__label">Live-Calls</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ TICKER ═══════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <div class="ticker__group">
+      <span>Positionierung</span><span class="star">✦</span>
+      <span>Angebotsstrategie</span><span class="star">✦</span>
+      <span>Content &amp; Reichweite</span><span class="star">✦</span>
+      <span>Sales</span><span class="star">✦</span>
+      <span>KI &amp; Technik</span><span class="star">✦</span>
+      <span>Dein digitaler Zwilling</span><span class="star">✦</span>
+    </div>
+    <div class="ticker__group">
+      <span>Positionierung</span><span class="star">✦</span>
+      <span>Angebotsstrategie</span><span class="star">✦</span>
+      <span>Content &amp; Reichweite</span><span class="star">✦</span>
+      <span>Sales</span><span class="star">✦</span>
+      <span>KI &amp; Technik</span><span class="star">✦</span>
+      <span>Dein digitaler Zwilling</span><span class="star">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PROBLEM ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">Kennst du das?</div>
+      <h2 class="h2">Du arbeitest viel. Und trotzdem fängt <em>jeder Monat wieder bei null</em> an.</h2>
+    </div>
+
+    <div class="problems">
+      <article class="p-card spotlight-card" data-reveal>
+        <div class="p-card__num">01</div>
+        <h3>Das Hamsterrad dreht sich</h3>
+        <p>Du kreierst Content, postest fleißig, beantwortest Nachrichten. Und sobald ein neuer Kunde da ist, fehlt dir wieder die Zeit für die Kundengewinnung. Der Kreislauf hält dich beschäftigt, aber er bringt dich nicht voran.</p>
+      </article>
+      <article class="p-card spotlight-card" data-reveal style="--reveal-delay: 90ms;">
+        <div class="p-card__num">02</div>
+        <h3>Dir fehlt keine Zeit, dir fehlt Struktur</h3>
+        <p>Job, Familie, Alltag: Du denkst, du bräuchtest 5 Stunden mehr am Tag. Brauchst du nicht. Mit KI und smarten Prozessen kriegst du in 2 Stunden mehr gebacken als andere in 6 (wenn du weißt, worauf du achten musst).</p>
+      </article>
+      <article class="p-card spotlight-card" data-reveal style="--reveal-delay: 180ms;">
+        <div class="p-card__num">03</div>
+        <h3>Dein Business ist ein Flickenteppich</h3>
+        <p>Instagram, E-Mail-Tool, Website, dazu zwölf offene ChatGPT-Tabs. Alles ist irgendwie da, aber nichts greift ineinander. Was fehlt, ist das System, das dein Business organisiert und zusammenhält.</p>
+      </article>
+    </div>
+
+    <p class="pullquote" data-reveal>Du brauchst nicht mehr Disziplin. Du brauchst <em>ein System</em>, das dir Arbeit abnimmt.</p>
+  </div>
+</section>
+
+<!-- ═══════════ APPROACH (DARK) ═══════════ -->
+<section class="section approach has-noise">
+  <div class="wrap" style="position: relative; z-index: 2;">
+    <div data-reveal>
+      <div class="kicker">Unser Ansatz</div>
+      <h2 class="h2">Wir bauen deinen <em>digitalen Zwilling</em>.</h2>
+      <p class="lede">Klingt nach Science-Fiction, ist aber ziemlich bodenständig: Wir erarbeiten gemeinsam deine Positionierung, deine Angebote, dein Branding und deinen Content-Stil und füttern all das in deine persönliche KI. Danach führt sie dein Business zu großen Teilen von allein. Sie schreibt Content, der klingt wie du, und hält deine Prozesse am Laufen. <strong>Du kümmerst dich um die Dinge, für die du das Ganze mal angefangen hast: deine Kunden und dein Leben.</strong></p>
+    </div>
+
+    <div class="split-bar" data-reveal data-splitbar>
+      <div class="split-bar__title">So sieht dein Business danach aus</div>
+      <div class="split-bar__track">
+        <div class="split-bar__ai"><span class="split-bar__pct">80&thinsp;%</span></div>
+        <div class="split-bar__you"><span class="split-bar__pct">20&thinsp;%</span></div>
+      </div>
+      <div class="split-bar__legend">
+        <span><b>Dein KI-System übernimmt</b> (Content, Prozesse, Routine)</span>
+        <span><b>Du entscheidest</b></span>
+      </div>
+    </div>
+
+    <div class="approach-grid">
+      <article class="a-card" data-reveal>
+        <h3>Kein Videokurs-Friedhof</h3>
+        <p>Die KI-Welt bewegt sich schnell. Deshalb bekommst du keinen aufgeblähten Kurs, der in 6 Monaten veraltet ist. Inhalte entstehen on-demand, genau dann, wenn du sie brauchst.</p>
+      </article>
+      <article class="a-card" data-reveal style="--reveal-delay: 90ms;">
+        <h3>Keine Schablone</h3>
+        <p>Wir gehen individuell auf dich, deine Angebote und deinen unternehmerischen Stil ein. Was bei hundert anderen funktioniert, interessiert uns nur, wenn es auch zu dir passt.</p>
+      </article>
+      <article class="a-card" data-reveal style="--reveal-delay: 180ms;">
+        <h3>Kein Theorie-Programm</h3>
+        <p>Wir bauen mit dir echte Systeme. Du verlässt den Club nicht mit einem Zertifikat, sondern mit einem Business, das läuft.</p>
+      </article>
+    </div>
+
+    <div class="cred-line" data-reveal>
+      Keine generischen KI-Tipps von der Stange. Dahinter stecken <b>10+ Jahre Online-Coaching-Markt</b>, eine Community mit <b>100.000 Followern</b>, mehrfach 5-stellige Monate und begleitete Launches bis <b>150.000&nbsp;€</b>.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DELIVERABLES (BENTO) ═══════════ -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">Was du bekommst</div>
+      <h2 class="h2">Betreuung, die ihren <em>Namen verdient</em>.</h2>
+      <p class="lede">Die meisten Programme lassen dich nach dem Kauf mit einem Mitgliederbereich allein. Wir machen das Gegenteil.</p>
+    </div>
+
+    <div class="bento">
+      <article class="b-card b-card--featured" data-reveal>
+        <div class="b-card__inner">
+          <span class="b-tag">Herzstück</span>
+          <h3>1:1 Betreuung über volle 6 Monate</h3>
+          <p>Kein Witz: Wir sind per Telegram dauerhaft mit dir in Kontakt. Wir schauen uns deinen Content an, geben dir die richtigen Impulse und wenn es sein muss, auch mal einen liebevollen Arschtritt. Du hängst irgendwo fest? Dann nehmen wir dir Bildschirmvideos auf und lösen das Ding gemeinsam.</p>
+        </div>
+      </article>
+      <article class="b-card" data-reveal style="--reveal-delay: 90ms;">
+        <div class="b-card__inner">
+          <div class="b-num"><span data-count="24">0</span></div>
+          <h3>Live-Calls</h3>
+          <p>Jede Woche ein Call mit klarem Thema, kein Q&amp;A-Chaos. Hanna übernimmt Content und Reichweite, Martin Technik, Angebot und Sales.</p>
+        </div>
+      </article>
+      <article class="b-card" data-reveal>
+        <div class="b-card__inner">
+          <span class="b-tag">Community</span>
+          <h3>Private Telegram-Gruppe</h3>
+          <p>Direkter Zugang zu uns beiden, plus Austausch mit Leuten, die gerade dasselbe bauen wie du.</p>
+        </div>
+      </article>
+      <article class="b-card" data-reveal style="--reveal-delay: 90ms;">
+        <div class="b-card__inner">
+          <span class="b-tag">On-Demand</span>
+          <h3>Videoinhalte, wenn du sie brauchst</h3>
+          <p>Neue Tools, KI-Updates und Business-Konzepte teilen wir, sobald sie für dich relevant sind (und nur dann).</p>
+        </div>
+      </article>
+      <article class="b-card" data-reveal style="--reveal-delay: 180ms;">
+        <div class="b-card__inner">
+          <span class="b-tag">Fundament</span>
+          <h3>Grundlagenkurs mit 5 Themen</h3>
+          <p>Die Basis, damit du in den Live-Calls sofort ansetzen kannst. Kurz, strukturiert und auf den Punkt.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="divider wrap">
+
+<!-- ═══════════ MODULES ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">Die 5 Themenschwerpunkte</div>
+      <h2 class="h2">Fünf Bausteine, <em>ein System</em>.</h2>
+    </div>
+
+    <div class="modules">
+      <div class="module" data-reveal>
+        <div class="module__num">01</div>
+        <div>
+          <h3>Positionierung &amp; Branding</h3>
+          <p>Wer du bist, für wen du das machst und warum genau das zählt. Die Grundlage für alles andere.</p>
+        </div>
+      </div>
+      <div class="module" data-reveal style="--reveal-delay: 60ms;">
+        <div class="module__num">02</div>
+        <div>
+          <h3>Angebotsstrategie</h3>
+          <p>Angebote, die perfekt aufeinander abgestimmt sind und gekauft werden, ohne dass du druckbehaftet verkaufen musst.</p>
+        </div>
+      </div>
+      <div class="module" data-reveal style="--reveal-delay: 120ms;">
+        <div class="module__num">03</div>
+        <div>
+          <h3>Content &amp; Reichweite</h3>
+          <p>Content, der dein Angebot verkauft, ohne dass du jeden Post von Hand schreibst und jeden Tag auf der Plattform kämpfst.</p>
+        </div>
+      </div>
+      <div class="module" data-reveal style="--reveal-delay: 180ms;">
+        <div class="module__num">04</div>
+        <div>
+          <h3>Sales</h3>
+          <p>Vom ersten Kontakt bis zum Ja. Ein Verkaufsprozess, der sich nicht wie Verkaufen anfühlt, weder für dich noch für deinen Kunden.</p>
+        </div>
+      </div>
+      <div class="module" data-reveal style="--reveal-delay: 240ms;">
+        <div class="module__num">05</div>
+        <div>
+          <h3>KI &amp; Technik</h3>
+          <p>Die konkreten Systeme, die deinen digitalen Zwilling bauen und am Laufen halten. Keine Vorkenntnisse nötig. Wir halten dich über die KI-Entwicklungen auf dem Laufenden, die wirklich relevant für dein Business sind (nicht die Spielereien und Zeitfresser).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HOSTS ═══════════ -->
+<section class="section" style="padding-top: var(--s-12);">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">Wer dahinter steckt</div>
+      <h2 class="h2">Zwei, die das nicht nur <em>erzählen</em>.</h2>
+    </div>
+
+    <div class="hosts">
+      <article class="host" data-reveal>
+        <div class="host__mono">H</div>
+        <h3>Hanna Marzian</h3>
+        <div class="host__handle">@hanna.gpt</div>
+        <div class="host__tags"><span>Content</span><span>Reichweite</span><span>Instagram</span></div>
+        <p>100.000 Follower auf Instagram. Hanna hat ihr eigenes Business von manueller Schwerstarbeit auf ein KI-gesteuertes System umgebaut und diesen Weg öffentlich dokumentiert. Sie zeigt dir, wie Reichweite entsteht und wie aus deinem Content ein System wird, das verkauft.</p>
+      </article>
+      <article class="host" data-reveal style="--reveal-delay: 120ms;">
+        <div class="host__mono host__mono--dark">M</div>
+        <h3>Martin Thun</h3>
+        <div class="host__handle">@martin_thun_</div>
+        <div class="host__tags"><span>Funnel</span><span>Technik</span><span>Angebot</span><span>Sales</span></div>
+        <p>7 Jahre Online-Unternehmer und Gründer der KI-Agentur scale². Hat selbst mehrfach 5-stellige Launches gemacht und Kunden mit 150.000-€-Umsatzmonaten begleitet. Martin bringt die technische Tiefe und die Angebots-Mechanik mit, die aus einem Kurs ein funktionierendes System machen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FIT ═══════════ -->
+<section class="section" style="padding-top: var(--s-12);">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">Ehrlichkeits-Check</div>
+      <h2 class="h2">Der Club ist <em>nicht für jeden</em>. Absicht.</h2>
+    </div>
+
+    <div class="fit">
+      <div class="fit__col fit__col--yes" data-reveal>
+        <h3>Für dich, wenn …</h3>
+        <ul class="fit__list">
+          <li><span class="fit__mark fit__mark--yes">✓</span> du Coach, Creator, Onlinekursersteller oder Dienstleister mit bestehendem Angebot bist</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> du schon etwas verkaufst oder kurz davor stehst</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> du monatlich zwischen 1.000 und 10.000&nbsp;€ machst, aber noch unregelmäßig und unplanbar</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> du echte Systeme bauen willst, nicht nur lernen</li>
+        </ul>
+      </div>
+      <div class="fit__col fit__col--no" data-reveal style="--reveal-delay: 120ms;">
+        <h3>Nichts für dich, wenn …</h3>
+        <ul class="fit__list">
+          <li><span class="fit__mark fit__mark--no">×</span> du noch keinen zahlenden Kunden hast und hoffst, der Club ändert das automatisch</li>
+          <li><span class="fit__mark fit__mark--no">×</span> du Kurse kaufst, sie nie fertig schaust und „irgendwann&ldquo; weitermachst</li>
+          <li><span class="fit__mark fit__mark--no">×</span> du den nächsten KI-Hack suchst statt das Fundament</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PRICING (DARK) ═══════════ -->
+<section class="section pricing-section has-noise" id="investition">
+  <div class="wrap" style="position: relative; z-index: 2;">
+    <div data-reveal>
+      <div class="kicker">Deine Investition</div>
+      <h2 class="h2">Gründungsrunde heißt: <em>so günstig wie nie wieder</em>.</h2>
+    </div>
+
+    <div class="price-card" data-reveal>
+      <div class="price-card__grid">
+        <div>
+          <span class="price-badge">KI Business Club · Erste Runde</span>
+          <div class="price-value">1.900&nbsp;€</div>
+          <p class="price-meta">für <b>6 Monate</b> Betreuung<br>Einmalige Zahlung oder flexible Raten <b>auf bis zu 12 Monate</b>.</p>
+          <div class="price-warning"><b>Das ist der niedrigste Preis, den dieser Club je haben wird.</b> Die nächste Runde startet mit Cases, Ergebnissen und Testimonials und mit einem anderen Preisschild.</div>
+        </div>
+        <div>
+          <div class="perks__title">Deine Vorteile als Gründungsmitglied</div>
+          <ul class="perks">
+            <li><span class="perks__check">✓</span><span><b>Direkter Einfluss:</b> Du gestaltest mit, was hier entsteht. Dein Feedback formt das Programm.</span></li>
+            <li><span class="perks__check">✓</span><span><b>Maximale Nähe:</b> Wir gehen individueller auf dein Business ein als in jeder späteren Runde.</span></li>
+            <li><span class="perks__check">✓</span><span><b>Sonderstatus:</b> Auch nach den 6 Monaten behältst du Zugang zu Hanna und Martin, mit der Option auf weitere erschwingliche Betreuung.</span></li>
+            <li><span class="perks__check">✓</span><span><b>Bewusster Qualitätsfilter:</b> Wir wählen aus, wer dabei ist. Wir wollen nah dran sein und echte Ergebnisse sehen, keine Masse.</span></li>
+          </ul>
+          <div class="slots">
+            <div class="slots__dots" aria-hidden="true">
+              <span class="slots__dot"></span><span class="slots__dot"></span><span class="slots__dot"></span><span class="slots__dot"></span><span class="slots__dot"></span><span class="slots__dot"></span><span class="slots__dot"></span><span class="slots__dot"></span>
+            </div>
+            <span class="slots__label">Nur noch <b>8 Plätze</b> verfügbar</span>
+          </div>
+          <div class="price-cta-row">
+            <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSe3lQXYR31Su8pnUEEOR3F5ucz4iMs8aAz5bHP96OM50VZV7w/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="expect">
+        <h4>Was wir von dir erwarten</h4>
+        <p>Aktive Teilnahme in den Calls. Ehrliches Feedback an uns (keine halbe Stunde, aber ehrlich). Und die Bereitschaft, das zu nutzen, was wir gemeinsam aufbauen. Wer Ergebnisse erzielt und möchte, kann uns als Referenz zur Verfügung stehen.</p>
+      </div>
+    </div>
+
+    <div class="honesty" data-reveal>
+      <h3>Damit wir uns richtig verstehen</h3>
+      <p><b>Du wirst im kompletten Zeitraum 1:1 betreut.</b> Wir arbeiten mit dir an allen relevanten Business-Themen, egal ob Mindset, Strategie oder Technik. Das hier ist kein klassisches Coaching-Programm, sondern ähnelt einem „Done With You&ldquo;-Format: Wir setzen uns intensiv mit deinen Prozessen auseinander und analysieren alle deine Online-Kanäle gemeinsam.</p>
+      <p>Wir leisten sogar per Bildschirmaufzeichnung und 1:1 Telegram-Chat direkte Unterstützung bei deinen Challenges. Wir werden nicht alle deine Probleme lösen, aber wir arbeiten sehr eng mit dir zusammen und geben unser Bestes, dich auf Kurs zu bringen.</p>
+    </div>
+
+    <p class="smallprint"><b>Kein Fernunterricht im rechtlichen Sinne:</b> Der KI Business Club ist ein interaktives Live-Betreuungsprogramm. Die Wissensvermittlung findet überwiegend in gemeinsamen Live-Calls und durch direkte 1:1 Kommunikation statt, nicht durch selbstständig zu bearbeitende Kursmaterialien.</p>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section">
+  <div class="wrap--narrow">
+    <div data-reveal>
+      <div class="kicker">Noch Fragen?</div>
+      <h2 class="h2">Was du sonst noch <em>wissen willst</em>.</h2>
+    </div>
+
+    <div class="faq" data-reveal>
+      <details>
+        <summary>Brauche ich technische Vorkenntnisse?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Nein. Der Themenschwerpunkt KI &amp; Technik ist genau dafür da. Wir halten dich über die Entwicklungen auf dem Laufenden, die wirklich relevant für dein Business sind, und lassen die Spielereien und Zeitfresser weg.</div>
+      </details>
+      <details>
+        <summary>Wie viel Zeit muss ich einplanen?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Einen Live-Call pro Woche (dienstags um 20:00 Uhr) plus die Umsetzung an deinem eigenen Business. Das Schöne daran: Die Systeme, die wir bauen, holen dir Schritt für Schritt mehr Zeit zurück, als du reinsteckst.</div>
+      </details>
+      <details>
+        <summary>Ich habe noch keine zahlenden Kunden. Passt das?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Ehrliche Antwort: nein. Der Club ist für Selbstständige, die schon verkaufen (oder kurz davor sind) und zwischen 1.000 und 10.000&nbsp;€ im Monat machen. Wenn du noch ganz am Anfang stehst, wäre das hier nicht die richtige Investition für dich.</div>
+      </details>
+      <details>
+        <summary>Kann ich in Raten zahlen?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Ja. Du zahlst entweder einmalig 1.900&nbsp;€ oder flexibel in Raten, verteilt auf bis zu 12 Monate.</div>
+      </details>
+      <details>
+        <summary>Wie läuft die Bewerbung ab?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Kein langer Bewerbungsprozess: Du füllst das Formular aus, wir schauen drüber und melden uns bei dir. Falls per Text nicht alles zu klären ist, gibt es die Möglichkeit auf ein persönliches Klarheits-Gespräch.</div>
+      </details>
+      <details>
+        <summary>Was passiert nach den 6 Monaten?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Als Mitglied der ersten Runde genießt du Sonderstatus: Aufgrund der engen Zusammenarbeit behältst du auch danach Zugang zu Hanna und Martin, mit der Möglichkeit auf weitere erschwingliche Business-Betreuung.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINAL CTA ═══════════ -->
+<section class="section final has-noise" id="bewerbung">
+  <div class="wrap final__content" style="position: relative; z-index: 2;">
+    <div class="kicker" style="color: var(--orange-bright); justify-content: center;">Nächster Schritt</div>
+    <h2 class="h2" data-reveal>Einer der 8 Plätze kann <em>deiner</em> sein.</h2>
+    <p class="final__body" data-reveal>Fülle das Formular aus (dauert keine 5 Minuten). Wir schauen uns deine Bewerbung an und melden uns persönlich bei dir. Kein Verkaufsdruck, kein langer Prozess.</p>
+
+    <div data-reveal>
+      <div class="countdown__title" id="countdown-title">Kickoff in</div>
+      <div class="countdown" id="countdown">
+        <div class="countdown__cell"><div class="countdown__num" id="cd-days">–</div><div class="countdown__label">Tage</div></div>
+        <div class="countdown__cell"><div class="countdown__num" id="cd-hours">–</div><div class="countdown__label">Stunden</div></div>
+        <div class="countdown__cell"><div class="countdown__num" id="cd-mins">–</div><div class="countdown__label">Minuten</div></div>
+        <div class="countdown__cell"><div class="countdown__num" id="cd-secs">–</div><div class="countdown__label">Sekunden</div></div>
+      </div>
+    </div>
+
+    <div data-reveal>
+      <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSe3lQXYR31Su8pnUEEOR3F5ucz4iMs8aAz5bHP96OM50VZV7w/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Formular ausfüllen</a>
+      <p class="final__note">Bei offenen Fragen gibt es ein persönliches Klarheits-Gespräch.</p>
+    </div>
+
+    <div class="date-chips" data-reveal>
+      <span class="date-chip"><b>Start</b> 18. Juni 2026</span>
+      <span class="date-chip"><b>Kickoff-Call</b> 18.06. um 20:00 Uhr</span>
+      <span class="date-chip"><b>Live-Calls</b> dienstags, 20:00 Uhr</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__brand">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</div>
+    <div class="footer__jv"><b>Hanna Marzian</b><span class="x">×</span><b>Martin Thun</b></div>
+    <div class="footer__handles">@hanna.gpt &nbsp;·&nbsp; @martin_thun_</div>
+    <div class="footer__links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+    </div>
+    <div class="footer__copy">© 2026 Hanna Marzian &amp; Martin Thun · Alle Rechte vorbehalten</div>
+  </div>
+</footer>
+
+<!-- ═══════════ STICKY MOBILE CTA ═══════════ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta__info">
+    <div class="sticky-cta__title">KI Business Club</div>
+    <div class="sticky-cta__sub">1.900&nbsp;€ · 6 Monate · 8 Plätze</div>
+  </div>
+  <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe3lQXYR31Su8pnUEEOR3F5ucz4iMs8aAz5bHP96OM50VZV7w/viewform?usp=publish-editor" target="_blank" rel="noopener">Platz sichern</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Scroll progress ── */
+  var bar = document.querySelector('.scroll-progress');
+  var ticking = false;
+  function updateProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.setProperty('--progress', (max > 0 ? (window.scrollY / max) * 100 : 0) + '%');
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive: true });
+
+  /* ── Reveal on scroll ── */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { revealObserver.observe(el); });
+
+  /* ── 80/20 split bar ── */
+  var splitbar = document.querySelector('[data-splitbar]');
+  if (splitbar) {
+    new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 }).observe(splitbar);
+  }
+
+  /* ── Animated counters ── */
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.count, 10);
+    if (reduceMotion) { el.textContent = target.toLocaleString('de-DE'); return; }
+    var duration = 1400;
+    var start = performance.now();
+    function tick(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(2, -10 * progress);
+      el.textContent = Math.floor(eased * target).toLocaleString('de-DE');
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString('de-DE');
+    }
+    requestAnimationFrame(tick);
+  }
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { counterObserver.observe(el); });
+
+  /* ── Countdown to Kickoff ── */
+  var kickoff = new Date('2026-06-18T20:00:00+02:00').getTime();
+  var cdDays = document.getElementById('cd-days');
+  var cdHours = document.getElementById('cd-hours');
+  var cdMins = document.getElementById('cd-mins');
+  var cdSecs = document.getElementById('cd-secs');
+  var cdTitle = document.getElementById('countdown-title');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function updateCountdown() {
+    var diff = kickoff - Date.now();
+    if (diff <= 0) {
+      cdTitle.textContent = 'Die erste Runde ist gestartet';
+      cdDays.textContent = '00'; cdHours.textContent = '00';
+      cdMins.textContent = '00'; cdSecs.textContent = '00';
+      return;
+    }
+    cdDays.textContent = pad(Math.floor(diff / 86400000));
+    cdHours.textContent = pad(Math.floor(diff / 3600000) % 24);
+    cdMins.textContent = pad(Math.floor(diff / 60000) % 60);
+    cdSecs.textContent = pad(Math.floor(diff / 1000) % 60);
+    setTimeout(updateCountdown, 1000);
+  }
+  updateCountdown();
+
+  /* ── Pointer-only effects ── */
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (finePointer && !reduceMotion) {
+    /* Magnetic buttons */
+    document.querySelectorAll('.btn--magnetic').forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + x * 0.28 + 'px, ' + y * 0.28 + 'px) scale(1.03)';
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transform = 'translate(0, 0) scale(1)';
+      });
+    });
+
+    /* Card spotlight follows cursor */
+    document.querySelectorAll('.spotlight-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+        card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+      });
+    });
+  }
+
+  /* ── Sticky mobile CTA (appears after hero) ── */
+  var stickyCta = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  var finalSection = document.getElementById('bewerbung');
+  var heroVisible = true, finalVisible = false;
+  function syncSticky() {
+    stickyCta.classList.toggle('is-shown', !heroVisible && !finalVisible);
+  }
+  new IntersectionObserver(function (entries) {
+    heroVisible = entries[0].isIntersecting; syncSticky();
+  }, { threshold: 0.05 }).observe(hero);
+  new IntersectionObserver(function (entries) {
+    finalVisible = entries[0].isIntersecting; syncSticky();
+  }, { threshold: 0.1 }).observe(finalSection);
+
+  /* ── FAQ: only one open at a time ── */
+  var allDetails = document.querySelectorAll('.faq details');
+  allDetails.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) allDetails.forEach(function (other) { if (other !== d) other.open = false; });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
