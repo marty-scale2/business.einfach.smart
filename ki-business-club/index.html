@@ -1271,6 +1271,83 @@ a { color: inherit; }
 .smallprint b { color: var(--d-text-soft); }
 
 /* ════════════════════════════════════════════
+   STEPS (nach dem Kauf)
+   ════════════════════════════════════════════ */
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+/* Verbindungslinie hinter den Nummern (Desktop) */
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 34px;
+  left: 12%; right: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange-300) 15%, var(--orange) 50%, var(--orange-300) 85%, transparent);
+  z-index: 0;
+}
+.step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 var(--s-4);
+  transition: transform var(--normal) var(--ease-spring);
+}
+.step:hover { transform: translateY(-4px); }
+.step__num {
+  width: 68px; height: 68px;
+  margin: 0 auto var(--s-6);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--orange-deep);
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(216,98,42,0.12), transparent 70%),
+    var(--paper);
+  border: 1.5px solid rgba(216,98,42,0.35);
+  box-shadow: var(--shadow-md), 0 0 0 6px var(--cream);
+  transition: background-color var(--normal) var(--ease-out), color var(--normal) var(--ease-out), border-color var(--normal) var(--ease-out), box-shadow var(--normal) var(--ease-expo);
+}
+.step:hover .step__num {
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--shadow-brand), 0 0 0 6px var(--cream);
+}
+.step h3 {
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: var(--s-3);
+}
+.step p {
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 34ch;
+  margin-inline: auto;
+}
+.step p b { color: var(--text-primary); font-weight: 600; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; gap: var(--s-12); }
+  .steps::before {
+    top: 8%; bottom: 8%;
+    left: 50%; right: auto;
+    width: 2px; height: auto;
+    background: linear-gradient(180deg, transparent, var(--orange-300) 15%, var(--orange) 50%, var(--orange-300) 85%, transparent);
+  }
+}
+
+/* ════════════════════════════════════════════
    FAQ
    ════════════════════════════════════════════ */
 .faq { margin-top: var(--s-12); }
@@ -1909,6 +1986,34 @@ a { color: inherit; }
     </div>
 
     <p class="smallprint"><b>Kein Fernunterricht im rechtlichen Sinne:</b> Der KI Business Club ist ein interaktives Live-Betreuungsprogramm. Die Wissensvermittlung findet überwiegend in gemeinsamen Live-Calls und durch direkte 1:1 Kommunikation statt, nicht durch selbstständig zu bearbeitende Kursmaterialien.</p>
+  </div>
+</section>
+
+<!-- ═══════════ STEPS ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <div data-reveal style="text-align: center;">
+      <div class="kicker" style="justify-content: center;">Wie geht es nach dem Kauf weiter?</div>
+      <h2 class="h2">In 3 Schritten zu deinem <em>KI-Business-System</em>.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step" data-reveal>
+        <div class="step__num">01</div>
+        <h3>Du bewirbst dich</h3>
+        <p>Formular ausfüllen dauert keine 5 Minuten. Wir schauen drüber und melden uns persönlich bei dir.</p>
+      </div>
+      <div class="step" data-reveal style="--reveal-delay: 120ms;">
+        <div class="step__num">02</div>
+        <h3>Du bekommst deinen Plan</h3>
+        <p>Direkt nach dem Kauf erhältst du von uns eine <b>Analyse deines Business</b> plus einen <b>konkreten Umsetzungsplan</b> mit deinen ersten Schritten, im 1:1 Chat mit Hanna und Martin.</p>
+      </div>
+      <div class="step" data-reveal style="--reveal-delay: 240ms;">
+        <div class="step__num">03</div>
+        <h3>Wir legen los</h3>
+        <p>Kickoff-Call am 18. Juni um 20:00 Uhr. Ab dann bauen wir Woche für Woche dein System (Live-Calls immer dienstags).</p>
+      </div>
+    </div>
   </div>
 </section>
 
