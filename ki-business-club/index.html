@@ -950,22 +950,11 @@ a { color: inherit; }
 .host:hover::before { transform: scale(1.35); }
 
 .host__mono {
-  width: 76px; height: 76px;
+  width: 96px; height: 96px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: var(--f-serif);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 2rem;
-  color: #fff;
-  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
-  box-shadow: 0 6px 18px rgba(216,98,42,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(216,98,42,0.28), 0 0 0 3px var(--orange), 0 0 0 6px rgba(216,98,42,0.12);
   margin-bottom: var(--s-6);
-}
-.host__mono--dark {
-  background: linear-gradient(135deg, #3A281A, var(--ink));
-  box-shadow: 0 6px 18px rgba(22,12,5,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
 }
 
 .host h3 {
@@ -1890,14 +1879,14 @@ a { color: inherit; }
 
     <div class="hosts">
       <article class="host" data-reveal>
-        <div class="host__mono">H</div>
+        <img class="host__mono" src="hanna-portrait.jpg" alt="Hanna Marzian">
         <h3>Hanna Marzian</h3>
         <div class="host__handle">@hanna.gpt</div>
         <div class="host__tags"><span>Content</span><span>Reichweite</span><span>Instagram</span></div>
         <p>100.000 Follower auf Instagram. Hanna hat ihr eigenes Business von manueller Schwerstarbeit auf ein KI-gesteuertes System umgebaut und diesen Weg öffentlich dokumentiert. Sie zeigt dir, wie Reichweite entsteht und wie aus deinem Content ein System wird, das verkauft.</p>
       </article>
       <article class="host" data-reveal style="--reveal-delay: 120ms;">
-        <div class="host__mono host__mono--dark">M</div>
+        <img class="host__mono" src="martin-portrait.jpg" alt="Martin Thun">
         <h3>Martin Thun</h3>
         <div class="host__handle">@martin_thun_</div>
         <div class="host__tags"><span>Funnel</span><span>Technik</span><span>Angebot</span><span>Sales</span></div>
