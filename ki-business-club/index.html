@@ -1486,6 +1486,54 @@ a { color: inherit; }
   margin-bottom: var(--s-4);
 }
 
+/* ── Price countdown (inside card) ── */
+.price-countdown {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-top: var(--s-6);
+  padding: var(--s-4) var(--s-6);
+  border-radius: 14px;
+  background: rgba(216,98,42,0.10);
+  border: 1px solid rgba(216,98,42,0.22);
+}
+.price-countdown__label {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange-bright);
+  white-space: nowrap;
+}
+.price-countdown__cells { display: flex; gap: var(--s-2); }
+.price-countdown__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 46px;
+  padding: 0.4em 0.5em;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+.price-countdown__num {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-xl);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--d-text);
+  line-height: 1;
+}
+.price-countdown__sub {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--d-text-dim);
+  margin-top: 3px;
+}
+
 .final .btn--primary { font-size: var(--t-base); padding: 1.15em 2.8em; }
 .final__note {
   margin-top: var(--s-4);
@@ -1968,6 +2016,27 @@ a { color: inherit; }
           <div class="price-value">1.900&nbsp;€</div>
           <p class="price-meta">für <b>6 Monate</b> Betreuung<br>Einmalige Zahlung oder flexible Raten <b>auf bis zu 12 Monate</b>.</p>
           <div class="price-warning"><b>Das ist der niedrigste Preis, den dieser Club je haben wird.</b> Die nächste Runde startet mit Cases, Ergebnissen und Testimonials und mit einem anderen Preisschild.</div>
+          <div class="price-countdown">
+            <span class="price-countdown__label">Dieser Preis gilt noch:</span>
+            <div class="price-countdown__cells">
+              <div class="price-countdown__cell">
+                <span class="price-countdown__num" id="pc-days">00</span>
+                <span class="price-countdown__sub">Tage</span>
+              </div>
+              <div class="price-countdown__cell">
+                <span class="price-countdown__num" id="pc-hours">00</span>
+                <span class="price-countdown__sub">Std</span>
+              </div>
+              <div class="price-countdown__cell">
+                <span class="price-countdown__num" id="pc-mins">00</span>
+                <span class="price-countdown__sub">Min</span>
+              </div>
+              <div class="price-countdown__cell">
+                <span class="price-countdown__num" id="pc-secs">00</span>
+                <span class="price-countdown__sub">Sek</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <div class="perks__title">Deine Vorteile als Gründungsmitglied</div>
@@ -2209,6 +2278,27 @@ a { color: inherit; }
     setTimeout(updateCountdown, 1000);
   }
   updateCountdown();
+
+  /* ── Price countdown (17.06.2026 23:59) ── */
+  var priceDeadline = new Date('2026-06-17T23:59:00+02:00').getTime();
+  var pcDays = document.getElementById('pc-days');
+  var pcHours = document.getElementById('pc-hours');
+  var pcMins = document.getElementById('pc-mins');
+  var pcSecs = document.getElementById('pc-secs');
+  function updatePriceCountdown() {
+    var diff = priceDeadline - Date.now();
+    if (diff <= 0) {
+      pcDays.textContent = '00'; pcHours.textContent = '00';
+      pcMins.textContent = '00'; pcSecs.textContent = '00';
+      return;
+    }
+    pcDays.textContent = pad(Math.floor(diff / 86400000));
+    pcHours.textContent = pad(Math.floor(diff / 3600000) % 24);
+    pcMins.textContent = pad(Math.floor(diff / 60000) % 60);
+    pcSecs.textContent = pad(Math.floor(diff / 1000) % 60);
+    setTimeout(updatePriceCountdown, 1000);
+  }
+  updatePriceCountdown();
 
   /* ── Pointer-only effects ── */
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
