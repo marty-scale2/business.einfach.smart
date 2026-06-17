@@ -86,42 +86,6 @@
       100% { background-position: 300% 0%; }
     }
 
-    /* ── NAV ── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      height: 64px;
-      display: flex; align-items: center; justify-content: center;
-      padding: 0 24px;
-    }
-
-    /* Nav BES Logo */
-    .nav-bes {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 0; line-height: 1; text-decoration: none;
-    }
-    .nav-bes-b {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 800;
-      font-size: 11px; letter-spacing: 0.18em; color: #160C05;
-      text-transform: uppercase;
-    }
-    .nav-bes-mid {
-      display: flex; align-items: center; gap: 5px;
-      margin-top: 2px;
-    }
-    .nav-bes-e {
-      font-family: 'Cormorant', Georgia, serif; font-style: italic;
-      font-weight: 500; font-size: 14px; color: #160C05; letter-spacing: 0.01em;
-    }
-    .nav-bes-dot { color: #D8622A; font-family: 'Space Grotesk', sans-serif; font-style: normal; }
-    .nav-bes-s {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 800;
-      font-size: 11px; letter-spacing: 0.18em; color: #D8622A;
-      text-transform: uppercase;
-    }
 
     /* ── HERO ── */
     .hero {
@@ -187,40 +151,31 @@
     }
     .bes-logo {
       display: inline-flex; flex-direction: column;
-      align-items: center; gap: 0;
+      align-items: center; gap: 0; line-height: 1;
       animation: fadeUp 0.9s var(--ease) 0.15s both;
     }
     .bes-w1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 900;
-      font-size: clamp(58px, 16vw, 148px);
-      letter-spacing: -0.045em; line-height: 0.9;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 900;
+      font-size: clamp(52px, 14vw, 128px);
+      letter-spacing: -0.04em; line-height: 1;
       color: #160C05;
-      text-shadow: 0 6px 80px rgba(216,98,42,0.14);
     }
-    .bes-divider {
-      display: flex; align-items: center;
-      width: min(520px, 88vw);
-      margin: 10px auto 9px;
+    .bes-mid {
+      font-family: 'Cormorant', Georgia, serif; font-style: italic;
+      font-weight: 500;
+      font-size: clamp(38px, 10vw, 96px);
+      letter-spacing: 0.01em; line-height: 1.05;
+      color: #2A1608;
     }
-    .bes-line {
-      flex: 1; height: 1.5px;
-      background: linear-gradient(to right, transparent, #D8622A);
+    .bes-w3 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 900;
+      font-size: clamp(52px, 14vw, 128px);
+      letter-spacing: -0.04em; line-height: 1;
+      color: #D8622A;
     }
-    .bes-line-r {
-      flex: 1; height: 1.5px;
-      background: linear-gradient(to left, transparent, #D8622A);
-    }
-    .bes-w2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: clamp(19px, 4.8vw, 44px);
-      letter-spacing: 0.09em;
-      color: #160C05;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-    .bes-dot { color: #D8622A; margin: 0 1px; font-style: normal; }
+    .bes-dot-dark  { color: #D8622A; font-style: normal; }
+    .bes-dot-mid   { color: #2A1608; font-style: normal; }
+    .bes-dot-orange{ color: #D8622A; font-style: normal; }
 
     .hero-sub {
       font-size: clamp(16px, 2.2vw, 18px);
@@ -255,7 +210,9 @@
     }
     .team-circle img {
       width: 100%; height: 100%; object-fit: cover;
-      object-position: center top;
+      object-position: center 15%;
+      transform: scale(1.35);
+      transform-origin: center 25%;
     }
     .team-names {
       margin-top: 18px;
@@ -664,27 +621,13 @@
 
 <div class="scroll-progress" id="sp"></div>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-bes" aria-label="Business. einfach. smart.">
-    <span class="nav-bes-b">Business<span class="nav-bes-dot">.</span></span>
-    <span class="nav-bes-mid">
-      <span class="nav-bes-e">einfach<span class="nav-bes-dot">.</span></span>
-      <span class="nav-bes-s">Smart<span class="nav-bes-dot">.</span></span>
-    </span>
-  </a>
-</nav>
-
 <!-- HERO -->
 <section class="hero">
   <p class="hero-welcome">Willkommen bei</p>
-  <div class="bes-logo" role="img" aria-label="Business Einfach Smart">
-    <div class="bes-w1">BUSINESS</div>
-    <div class="bes-divider">
-      <span class="bes-line"></span>
-      <span class="bes-line-r"></span>
-    </div>
-    <div class="bes-w2">EINFACH<em class="bes-dot">.</em>SMART</div>
+  <div class="bes-logo" role="img" aria-label="Business. einfach. Smart.">
+    <div class="bes-w1">BUSINESS<span class="bes-dot-dark">.</span></div>
+    <div class="bes-mid">einfach<span class="bes-dot-mid">.</span></div>
+    <div class="bes-w3">SMART<span class="bes-dot-orange">.</span></div>
   </div>
 </section>
 
