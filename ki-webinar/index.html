@@ -89,7 +89,7 @@ src="https://www.facebook.com/tr?id=1698164877859527&ev=PageView&noscript=1"
 
 /* ════════════════════════════════════════════ BASE ═══ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; width: 100%; }
 body {
   font-family: var(--f-sans);
   font-size: var(--t-base);
@@ -329,7 +329,12 @@ a { color: inherit; }
 }
 
 @media (max-width: 640px) {
-  .hero h1 { font-size: clamp(2rem, 1.5rem + 4.5vw, 2.6rem); }
+  .hero { padding: calc(var(--s-16) + 0.5rem) 0 var(--s-12); }
+  .hero__head { margin-bottom: var(--s-8); }
+  .hero h1 { font-size: clamp(2rem, 1.5rem + 4.5vw, 2.6rem); margin-bottom: var(--s-3); }
+  .hero__eyebrow { margin-bottom: var(--s-3); }
+  .hero__when { margin-top: var(--s-4); }
+  .hero__cta-mobile { margin-top: var(--s-4); }
 }
 
 /* ════════════════════════════════════════════ PROOF BAND ═══ */
@@ -474,7 +479,7 @@ a { color: inherit; }
   color: var(--text-secondary); border: 1px solid var(--line); background: rgba(255,253,250,0.7);
   border-radius: 999px; padding: 0.35em 0.95em;
 }
-.tmember__bio { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.8; }
+.tmember__bio { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.8; margin-top: var(--s-6); }
 @media (max-width: 720px) { .team { grid-template-columns: 1fr; gap: var(--s-12); } }
 
 /* ════════════════════════════════════════════ FINAL CTA ═══ */
@@ -772,7 +777,7 @@ body.modal-open { overflow: hidden; }
             <div class="tmember__role">Funnel · Technik · Marketing &amp; Sales</div>
           </div>
         </div>
-        <p class="tmember__bio">10 Jahre Online-Unternehmer und Gründer der KI-Agentur scale². Mehrfach 5-stellige Launches, Kunden mit 150.000-€-Monaten begleitet. Martin versteht, wie Menschen wirklich Entscheidungen treffen und kaufen, und bringt die Angebots- und Verkaufs-Mechanik mit, die aus Aufmerksamkeit zahlende Kunden macht.</p>
+        <p class="tmember__bio">Über 7 Jahre Erfahrung und Gründer der KI-Agentur scale². Als Berater und Marketingagentur-Inhaber über 50 Kunden begleitet und hunderte Marketingprojekte zur Kundengewinnung umgesetzt. Martin versteht, wie Menschen wirklich Entscheidungen treffen und kaufen, und bringt die Angebots- und Verkaufs-Mechanik mit, die aus Aufmerksamkeit zahlende Kunden macht.</p>
       </article>
     </div>
   </div>
