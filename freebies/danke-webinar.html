@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/consent.css">
 <style>
 :root {
   --orange:        #D8622A;
@@ -284,9 +285,9 @@ a { color: inherit; }
 
       <!-- STEP 0: Einladung zur Umfrage -->
       <div class="step active" data-q="0">
-        <div class="survey__kicker">Bevor du gehst</div>
-        <h2 class="q-title">4 kurze Fragen, damit das Webinar für dich Gold wert wird.</h2>
-        <p class="q-sub">Dauert keine 30 Sekunden. So können wir das Webinar genau auf dich zuschneiden. Anonyme Umfrage, damit wir den Abend für dich genial machen.</p>
+        <div class="survey__kicker">Bevor du gehst: Anonyme Umfrage</div>
+        <h2 class="q-title">4 kurze Fragen, damit wir den Abend für dich genial machen.</h2>
+        <p class="q-sub">Dauert keine Minute. So können wir das Webinar auf dich zuschneiden.</p>
         <button type="button" class="btn" data-next>Umfrage starten</button>
       </div>
 
@@ -367,10 +368,39 @@ a { color: inherit; }
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>
       <a href="/agb.html">AGB</a>
+      <button id="consent-reopen" style="background:none;border:none;font-family:var(--f-sans);font-size:11px;font-weight:400;color:var(--text-tertiary);text-decoration:underline;cursor:pointer;">Cookie-Einstellungen</button>
     </div>
     <div class="footer__copy">© 2026 Hanna Marzian &amp; Martin Thun · Alle Rechte vorbehalten</div>
   </div>
 </footer>
+
+<!-- CONSENT + PIXEL -->
+<script>window.fbqSkipPageView = true;</script>
+<script src="../assets/consent.js"></script>
+<script>
+  /* Feuert Lead-Event sobald der FB Pixel geladen & initialisiert ist.
+     Greift sowohl bei bekanntem Consent (sofortiges Laden) als auch
+     bei frisch erteiltem Consent (verzögertes Laden). */
+  (function () {
+    var fired  = false;
+    var waited = 0;
+    var MAX    = 8000;
+    var TICK   = 150;
+
+    function tryFire() {
+      if (fired) return;
+      if (window.fbq && window.fbq.loaded) {
+        fired = true;
+        window.fbq('track', 'Lead');
+        return;
+      }
+      waited += TICK;
+      if (waited < MAX) setTimeout(tryFire, TICK);
+    }
+
+    setTimeout(tryFire, 300);
+  })();
+</script>
 
 <script>
 (function () {
