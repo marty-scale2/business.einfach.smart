@@ -451,7 +451,7 @@ a { color: inherit; }
 .team { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: var(--s-16); }
 .tmember { position: relative; }
 .tmember__photo {
-  position: relative; border-radius: 1.6rem; overflow: hidden; aspect-ratio: 4/5;
+  position: relative; border-radius: 1.6rem; overflow: hidden; aspect-ratio: 4/3.4;
   box-shadow: var(--shadow-lg); border: 1px solid var(--line);
 }
 .tmember__photo img {
@@ -459,8 +459,8 @@ a { color: inherit; }
   transition: transform var(--slow) var(--ease-expo);
 }
 .tmember:hover .tmember__photo img { transform: scale(1.04); }
-.tmember__photo--hanna img { object-position: center 22%; }
-.tmember__photo--martin img { object-position: center 12%; }
+.tmember__photo--hanna img { object-position: center 18%; }
+.tmember__photo--martin img { object-position: center 15%; }
 .tmember__overlay {
   position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
   padding: var(--s-8) var(--s-8) var(--s-6);
@@ -761,7 +761,6 @@ body.modal-open { overflow: hidden; }
             <div class="tmember__role">Content · Reichweite · Community</div>
           </div>
         </div>
-        <div class="tmember__tags"><span>Content</span><span>Reichweite</span><span>Instagram</span></div>
         <p class="tmember__bio">Hanna ist eine der bekanntesten KI-Unternehmerinnen im deutschsprachigen Raum. Was sie von anderen unterscheidet: Sie macht KI verständlich, auch für Menschen ohne technischen Hintergrund.</p>
         <p class="tmember__bio" style="margin-top: var(--s-4);">Ihr Ansatz ist radikal pragmatisch. Kein Tech-Jargon, keine komplizierten Setups. Nur das, was wirklich funktioniert. Das hat ihr in kurzer Zeit über 100.000 Follower eingebracht und ihrem Business echte Sichtbarkeit verschafft.</p>
       </article>
