@@ -67,6 +67,15 @@ Nicht KI-Tipps – sondern die Rückkehr zur mentalen Gesundheit durch technolog
 
 ---
 
+## GitHub & Domain
+
+- **Git-Remote:** `marty-scale2/business.einfach.smart` (GitHub Account: marty-scale2)
+- **Live-Domain:** `www.business-einfach-smart.com` – ALLE Pushes aus diesem Ordner gehen auf diese Domain
+- Unterseiten-Beispiele: `www.business-einfach-smart.com/freebies/virale-formate/`, `/ki-business-club/`, `/webinar/`
+- NICHT mit `HannaKI7/Hanna-Marzian-Website` (hannamarzian.com) verwechseln – das ist ein anderes Repo
+
+---
+
 ## Dateien im Ordner
 - `Hanna Essenz.docx` – Positionierungs-Dokument
 - `Business_Architect_Hanna_Stufe1_2.docx`
