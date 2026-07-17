@@ -55,6 +55,7 @@
   --t-lg:   clamp(1.1rem, 1rem + 0.6vw, 1.3rem);
   --t-xl:   clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
   --t-2xl:  clamp(1.7rem, 1.4rem + 1.5vw, 2.4rem);
+  --t-4xl:  clamp(2.8rem, 2rem + 4.2vw, 5rem);
   --t-hero: clamp(3.1rem, 1.6rem + 8.5vw, 8.2rem);
 
   /* Shadows: layered, warm */
@@ -406,36 +407,125 @@ a { color: inherit; }
 }
 .btn--ghost:active { transform: translateY(0) scale(0.98); }
 
-/* Stats bar */
-.stats {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: clamp(1.2rem, 4vw, 3rem);
-  padding: var(--s-4) clamp(1.4rem, 4vw, 3rem);
-  background: rgba(255,253,250,0.65);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(22,12,5,0.07);
-  border-radius: 24px;
-  box-shadow: 0 3px 12px rgba(22,12,5,0.05), inset 0 1px 0 rgba(255,255,255,0.7);
-  animation: rise-in 0.9s var(--ease-expo) 0.86s both;
+/* ════════════════════════════════════════════
+   OFFER
+   ════════════════════════════════════════════ */
+.offer { padding: var(--s-16) 0 var(--s-24); position: relative; }
+.offer__card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
-.stats__item { text-align: center; }
-.stats__value {
+.offer__includes {
+  padding: clamp(1.8rem, 4vw, 3rem);
+}
+.offer__kicker {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  margin-bottom: var(--s-6);
+}
+.offer__list { list-style: none; }
+.offer__list li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--t-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.offer__list li:last-child { border-bottom: none; }
+.offer__list li strong { color: var(--text-primary); font-weight: 700; }
+.offer__mark {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--orange-100);
+  color: var(--orange-deep);
+  border: 1px solid rgba(216,98,42,0.3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.offer__price {
+  background:
+    radial-gradient(ellipse 90% 60% at 30% -10%, rgba(216,98,42,0.10), transparent 60%),
+    var(--cream);
+  border-left: 1px solid var(--line);
+  padding: clamp(1.8rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.offer__price-old {
+  font-size: var(--t-base);
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+  margin-bottom: var(--s-3);
+}
+.offer__price-badge {
+  display: inline-block;
+  font-family: var(--f-brand);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--orange-bright), var(--orange-deep));
+  border-radius: 999px;
+  padding: 0.5em 1.2em;
+  margin-bottom: var(--s-4);
+  box-shadow: 0 4px 14px rgba(216,98,42,0.3);
+}
+.offer__price-value {
   font-family: var(--f-brand);
   font-weight: 800;
-  font-size: var(--t-2xl);
+  font-size: var(--t-4xl);
   letter-spacing: -0.03em;
   color: var(--ink);
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-bottom: var(--s-3);
 }
-.stats__value .suffix { color: var(--orange); }
-.stats__label {
+.offer__price-note {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.offer__slots {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  font-family: var(--f-brand);
   font-size: var(--t-xs);
-  font-weight: 500;
-  color: var(--text-tertiary);
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+}
+.offer__slots-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 0 rgba(216,98,42,0.5);
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+@media (max-width: 760px) {
+  .offer__card { grid-template-columns: 1fr; }
+  .offer__price { border-left: none; border-top: 1px solid var(--line); }
 }
 
 /* ════════════════════════════════════════════
@@ -586,26 +676,32 @@ a { color: inherit; }
       <a class="btn btn--ghost" href="https://www.business-einfach-smart.com/ki-business-club/">Zeig mir erst, was drin ist ↓</a>
     </div>
 
-    <div class="stats">
-      <div class="stats__item">
-        <div class="stats__value"><span data-count="100000">0</span><span class="suffix">+</span></div>
-        <div class="stats__label">Follower Community</div>
+  </div>
+</header>
+
+<!-- ═══════════ OFFER ═══════════ -->
+<section class="offer">
+  <div class="wrap">
+    <div class="offer__card">
+      <div class="offer__includes">
+        <div class="offer__kicker">Das bekommst du</div>
+        <ul class="offer__list">
+          <li><span class="offer__mark">✓</span><span><strong>1:1 VIP-Begleitung</strong></span></li>
+          <li><span class="offer__mark">✓</span><span><strong>2 Calls / Woche</strong> — Reichweite, Angebot, Verkauf, KI &amp; Technik</span></li>
+          <li><span class="offer__mark">✓</span><span>Zusätzlich <strong>1 Live-Call / Monat mit Hanna</strong></span></li>
+          <li><span class="offer__mark">✓</span><span><strong>1:1-Telegram-Support-Gruppe</strong> für individuelles Feedback zu deinen Ausarbeitungen</span></li>
+        </ul>
       </div>
-      <div class="stats__item">
-        <div class="stats__value"><span data-count="7">0</span></div>
-        <div class="stats__label">Jahre Online-Business</div>
-      </div>
-      <div class="stats__item">
-        <div class="stats__value"><span data-count="150">0</span><span class="suffix">k&nbsp;€</span></div>
-        <div class="stats__label">Launch-Expertise</div>
-      </div>
-      <div class="stats__item">
-        <div class="stats__value"><span data-count="48">0</span></div>
-        <div class="stats__label">Live-Calls</div>
+      <div class="offer__price">
+        <div class="offer__price-old">Normalpreis 7.500&nbsp;€</div>
+        <div class="offer__price-badge">Webinar-Preis bis 19.07.26</div>
+        <div class="offer__price-value">4.000&nbsp;€</div>
+        <div class="offer__price-note">Ratenzahlung ab 159&nbsp;€ möglich</div>
+        <div class="offer__slots"><span class="offer__slots-dot"></span>5 Plätze verfügbar</div>
       </div>
     </div>
   </div>
-</header>
+</section>
 
 <!-- ═══════════ TICKER ═══════════ -->
 <div class="ticker" aria-hidden="true">
@@ -668,31 +764,6 @@ a { color: inherit; }
   window.addEventListener('scroll', function () {
     if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
   }, { passive: true });
-
-  /* ── Animated counters ── */
-  function animateCounter(el) {
-    var target = parseInt(el.dataset.count, 10);
-    if (reduceMotion) { el.textContent = target.toLocaleString('de-DE'); return; }
-    var duration = 1400;
-    var start = performance.now();
-    function tick(now) {
-      var progress = Math.min((now - start) / duration, 1);
-      var eased = 1 - Math.pow(2, -10 * progress);
-      el.textContent = Math.floor(eased * target).toLocaleString('de-DE');
-      if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target.toLocaleString('de-DE');
-    }
-    requestAnimationFrame(tick);
-  }
-  var counterObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('[data-count]').forEach(function (el) { counterObserver.observe(el); });
 
   /* ── Pointer-only effects ── */
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
