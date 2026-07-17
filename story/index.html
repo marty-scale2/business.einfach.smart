@@ -59,15 +59,6 @@ a { color: inherit; }
 
 .wrap { width: min(560px, 100% - clamp(2rem, 8vw, 4rem)); margin-inline: auto; flex: 1; display: flex; flex-direction: column; }
 
-/* NAV */
-.nav { display: flex; align-items: center; justify-content: center; padding: var(--s-6) 0 var(--s-4); }
-.brandmark {
-  font-family: var(--f-brand); font-weight: 800;
-  font-size: clamp(0.72rem, 0.6rem + 0.5vw, 0.9rem);
-  letter-spacing: 0.14em; color: var(--ink); text-decoration: none;
-}
-.brandmark .dot { color: var(--orange); }
-
 /* HEADLINE */
 .headline {
   text-align: center;
@@ -76,7 +67,7 @@ a { color: inherit; }
   font-size: var(--t-lg);
   color: var(--ink);
   line-height: 1.28;
-  margin: var(--s-4) 0 var(--s-8);
+  margin: var(--s-8) 0 var(--s-8);
   text-wrap: balance;
 }
 .headline em {
@@ -102,19 +93,28 @@ a { color: inherit; }
   width: 100%; height: 100%;
   object-fit: cover;
 }
-.story-frame .poster { background: linear-gradient(160deg, #2A1608, var(--ink) 70%); }
+.story-frame .poster {
+  background: url('cover.jpg') center top / cover no-repeat, linear-gradient(160deg, #2A1608, var(--ink) 70%);
+}
+.story-frame .poster::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(22,12,5,0.05) 0%, rgba(22,12,5,0.05) 55%, rgba(22,12,5,0.4) 100%);
+}
 
 .play-btn {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 68px; height: 68px; border-radius: 50%;
+  width: 72px; height: 72px; border-radius: 50%;
   background: var(--orange);
-  border: none; cursor: pointer;
+  border: 3px solid rgba(255,255,255,0.85);
+  cursor: pointer;
   display: grid; place-items: center;
-  box-shadow: var(--shadow-brand);
+  box-shadow: var(--shadow-brand), 0 4px 16px rgba(0,0,0,0.35);
   transition: transform var(--fast) var(--ease-out);
+  z-index: 2;
 }
 .play-btn:hover { transform: translate(-50%, -50%) scale(1.06); }
-.play-btn svg { width: 24px; height: 24px; margin-left: 3px; fill: #fff; }
+.play-btn svg { width: 26px; height: 26px; margin-left: 3px; fill: #fff; }
 .play-btn.hidden { display: none; }
 
 /* SUBTEXT */
@@ -127,24 +127,27 @@ a { color: inherit; }
 }
 
 /* FOOTER */
-.footer { padding: var(--s-12) 0 var(--s-8); text-align: center; }
-.footer__jv {
-  display: inline-flex; align-items: center; gap: var(--s-3);
-  font-family: var(--f-serif); font-style: italic; font-size: var(--t-base);
-  color: var(--text-secondary); margin-bottom: var(--s-3);
+.footer { background: var(--ink); padding: var(--s-12) 0 var(--s-8); text-align: center; }
+.footer__logo-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  align-self: center;
+  background: #fff; border-radius: 12px; padding: 10px 16px;
+  margin-bottom: var(--s-6);
 }
-.footer__jv .x { color: var(--orange); font-style: normal; }
-.footer__links { display: flex; justify-content: center; gap: var(--s-6); margin-bottom: var(--s-3); flex-wrap: wrap; }
-.footer__links a { font-size: var(--t-xs); color: var(--text-secondary); text-decoration: none; }
-.footer__links a:hover { color: var(--orange); }
-.footer__copy { font-size: var(--t-xs); color: var(--text-tertiary); }
+.footer__logo { height: 26px; width: auto; }
+.footer__jv {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-3);
+  font-family: var(--f-serif); font-style: italic; font-size: var(--t-base);
+  color: rgba(255,255,255,0.75); margin-bottom: var(--s-3);
+}
+.footer__jv .x { color: var(--orange-bright); font-style: normal; }
+.footer__links { display: flex; justify-content: center; align-items: center; gap: var(--s-6); margin-bottom: var(--s-3); flex-wrap: wrap; }
+.footer__links a { font-size: var(--t-xs); color: rgba(255,255,255,0.55); text-decoration: none; }
+.footer__links a:hover { color: var(--orange-bright); }
+.footer__copy { font-size: var(--t-xs); color: rgba(255,255,255,0.35); }
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <a class="brandmark" href="/">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</a>
-</nav>
 
 <div class="wrap">
 
@@ -167,12 +170,15 @@ a { color: inherit; }
 
 <footer class="footer">
   <div class="wrap">
+    <a class="footer__logo-chip" href="/">
+      <img class="footer__logo" src="../bes-logo.png" alt="business. einfach. smart">
+    </a>
     <div class="footer__jv"><b>Hanna Marzian</b><span class="x">×</span><b>Martin Thun</b></div>
     <div class="footer__links">
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>
       <a href="/agb.html">AGB</a>
-      <button id="consent-reopen" style="background:none;border:none;font-family:var(--f-sans);font-size:11px;font-weight:400;color:var(--text-tertiary);text-decoration:underline;cursor:pointer;">Cookie-Einstellungen</button>
+      <button id="consent-reopen" style="background:none;border:none;font-family:var(--f-sans);font-size:11px;font-weight:400;color:rgba(255,255,255,0.35);text-decoration:underline;cursor:pointer;">Cookie-Einstellungen</button>
     </div>
     <div class="footer__copy">© 2026 Hanna Marzian &amp; Martin Thun · Alle Rechte vorbehalten</div>
   </div>
