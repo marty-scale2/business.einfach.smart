@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story · BUSINESS.EINFACH.SMART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/consent.css">
+<style>
+:root {
+  --orange:        #D8622A;
+  --orange-bright: #E8894E;
+  --orange-deep:   #B24E1E;
+  --ink:           #160C05;
+  --cream:         #FBF7F2;
+  --paper:         #FFFDFA;
+
+  --text-primary:   #1E140C;
+  --text-secondary: #5C5048;
+  --text-tertiary:  #8E8076;
+  --line:           rgba(22, 12, 5, 0.09);
+
+  --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+  --s-6: 1.5rem; --s-8: 2rem; --s-12: 3rem; --s-16: 4rem;
+
+  --t-xs:   clamp(0.72rem, 0.68rem + 0.2vw, 0.8rem);
+  --t-sm:   clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
+  --t-base: clamp(1rem, 0.95rem + 0.3vw, 1.1rem);
+  --t-lg:   clamp(1.25rem, 1.1rem + 0.7vw, 1.7rem);
+
+  --shadow-md: 0 1px 2px rgba(22,12,5,0.04), 0 4px 9px rgba(22,12,5,0.05), 0 14px 28px rgba(22,12,5,0.07);
+  --shadow-brand: 0 10px 30px rgba(216,98,42,0.28);
+
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --fast: 160ms;
+
+  --f-serif: 'Cormorant', Georgia, serif;
+  --f-sans:  'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --f-brand: 'Montserrat', 'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--f-sans);
+  color: var(--text-primary);
+  line-height: 1.6;
+  background:
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(216,98,42,0.06), transparent 65%),
+    linear-gradient(175deg, var(--paper) 0%, var(--cream) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+.wrap { width: min(560px, 100% - clamp(2rem, 8vw, 4rem)); margin-inline: auto; flex: 1; display: flex; flex-direction: column; }
+
+/* NAV */
+.nav { display: flex; align-items: center; justify-content: center; padding: var(--s-6) 0 var(--s-4); }
+.brandmark {
+  font-family: var(--f-brand); font-weight: 800;
+  font-size: clamp(0.72rem, 0.6rem + 0.5vw, 0.9rem);
+  letter-spacing: 0.14em; color: var(--ink); text-decoration: none;
+}
+.brandmark .dot { color: var(--orange); }
+
+/* HEADLINE */
+.headline {
+  text-align: center;
+  font-family: var(--f-serif);
+  font-weight: 600;
+  font-size: var(--t-lg);
+  color: var(--ink);
+  line-height: 1.28;
+  margin: var(--s-4) 0 var(--s-8);
+  text-wrap: balance;
+}
+.headline em {
+  font-style: italic;
+  color: var(--orange-deep);
+}
+
+/* VIDEO / STORY FRAME */
+.story-frame {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #2A1608, var(--ink) 70%);
+  box-shadow: var(--shadow-md);
+}
+.story-frame video,
+.story-frame .poster {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.story-frame .poster { background: linear-gradient(160deg, #2A1608, var(--ink) 70%); }
+
+.play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--orange);
+  border: none; cursor: pointer;
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-brand);
+  transition: transform var(--fast) var(--ease-out);
+}
+.play-btn:hover { transform: translate(-50%, -50%) scale(1.06); }
+.play-btn svg { width: 24px; height: 24px; margin-left: 3px; fill: #fff; }
+.play-btn.hidden { display: none; }
+
+/* SUBTEXT */
+.subtext {
+  text-align: center;
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  max-width: 40ch;
+  margin: var(--s-8) auto 0;
+}
+
+/* FOOTER */
+.footer { padding: var(--s-12) 0 var(--s-8); text-align: center; }
+.footer__jv {
+  display: inline-flex; align-items: center; gap: var(--s-3);
+  font-family: var(--f-serif); font-style: italic; font-size: var(--t-base);
+  color: var(--text-secondary); margin-bottom: var(--s-3);
+}
+.footer__jv .x { color: var(--orange); font-style: normal; }
+.footer__links { display: flex; justify-content: center; gap: var(--s-6); margin-bottom: var(--s-3); flex-wrap: wrap; }
+.footer__links a { font-size: var(--t-xs); color: var(--text-secondary); text-decoration: none; }
+.footer__links a:hover { color: var(--orange); }
+.footer__copy { font-size: var(--t-xs); color: var(--text-tertiary); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brandmark" href="/">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</a>
+</nav>
+
+<div class="wrap">
+
+  <h1 class="headline">Schau dir dieses Video an, um zu erfahren, <em>worum es hier geht</em></h1>
+
+  <div class="story-frame" id="storyFrame">
+    <!-- TODO: echtes Video einsetzen, sobald verfügbar -->
+    <div class="poster"></div>
+    <button class="play-btn" id="playBtn" type="button" aria-label="Video abspielen">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <video id="storyVideo" playsinline preload="none" style="display:none;">
+      <!-- <source src="VIDEO_URL_HIER" type="video/mp4"> -->
+    </video>
+  </div>
+
+  <p class="subtext">Mehr dazu bald an dieser Stelle.</p>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__jv"><b>Hanna Marzian</b><span class="x">×</span><b>Martin Thun</b></div>
+    <div class="footer__links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+      <button id="consent-reopen" style="background:none;border:none;font-family:var(--f-sans);font-size:11px;font-weight:400;color:var(--text-tertiary);text-decoration:underline;cursor:pointer;">Cookie-Einstellungen</button>
+    </div>
+    <div class="footer__copy">© 2026 Hanna Marzian &amp; Martin Thun · Alle Rechte vorbehalten</div>
+  </div>
+</footer>
+
+<script src="../assets/consent.js"></script>
+<script>
+(function () {
+  var frame = document.getElementById('storyFrame');
+  var playBtn = document.getElementById('playBtn');
+  var video = document.getElementById('storyVideo');
+
+  playBtn.addEventListener('click', function () {
+    var hasSource = video.querySelector('source[src]');
+    if (!hasSource) return; // Video noch nicht hinterlegt
+    video.style.display = 'block';
+    video.controls = true;
+    video.play();
+    playBtn.classList.add('hidden');
+  });
+})();
+</script>
+
+</body>
+</html>
