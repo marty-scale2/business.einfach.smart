@@ -103,18 +103,21 @@ a { color: inherit; }
   font-size: var(--t-sm);
   color: var(--text-secondary);
   max-width: 40ch;
-  margin: var(--s-8) auto 0;
+  margin: var(--s-8) auto var(--s-16);
 }
 
 /* FOOTER */
 .footer { background: var(--ink); padding: var(--s-12) 0 var(--s-8); text-align: center; }
-.footer__logo-chip {
-  display: inline-flex; align-items: center; justify-content: center;
-  align-self: center;
-  background: #fff; border-radius: 12px; padding: 10px 16px;
+.footer__logo {
+  display: inline-block;
+  font-family: var(--f-brand); font-weight: 800;
+  font-size: clamp(1.3rem, 1.1rem + 1.2vw, 1.8rem);
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-decoration: none;
   margin-bottom: var(--s-6);
 }
-.footer__logo { height: 26px; width: auto; }
+.footer__logo .dot { color: var(--orange-bright); }
 .footer__jv {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--s-3);
   font-family: var(--f-serif); font-style: italic; font-size: var(--t-base);
@@ -131,7 +134,7 @@ a { color: inherit; }
 
 <div class="wrap">
 
-  <h1 class="headline">Schau dir dieses Video an, um zu erfahren, <em>worum es hier geht</em></h1>
+  <h1 class="headline">Behind the scenes: <em>Business oder Familie?</em></h1>
 
   <div class="story-frame">
     <wistia-player media-id="gasrjr0rde" aspect="0.5625"></wistia-player>
@@ -143,9 +146,7 @@ a { color: inherit; }
 
 <footer class="footer">
   <div class="wrap">
-    <a class="footer__logo-chip" href="/">
-      <img class="footer__logo" src="../bes-logo.png" alt="business. einfach. smart">
-    </a>
+    <a class="footer__logo" href="/">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</a>
     <div class="footer__jv"><b>Hanna Marzian</b><span class="x">×</span><b>Martin Thun</b></div>
     <div class="footer__links">
       <a href="/impressum.html">Impressum</a>
