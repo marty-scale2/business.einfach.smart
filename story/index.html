@@ -99,12 +99,18 @@ a { color: inherit; }
 
 /* SUBTEXT */
 .subtext {
+  display: block;
   text-align: center;
   font-size: var(--t-sm);
+  font-weight: 600;
   color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
   max-width: 40ch;
   margin: var(--s-8) auto var(--s-16);
+  transition: color var(--fast) var(--ease-out);
 }
+.subtext:hover { color: var(--orange-deep); }
 
 /* FOOTER */
 .footer { background: var(--ink); padding: var(--s-12) 0 var(--s-8); text-align: center; }
@@ -140,7 +146,7 @@ a { color: inherit; }
     <wistia-player media-id="gasrjr0rde" aspect="0.5625"></wistia-player>
   </div>
 
-  <p class="subtext">Mehr dazu bald an dieser Stelle.</p>
+  <a class="subtext" href="https://www.business-einfach-smart.com/kbc-webinar-special/">6 Monate KI- &amp; Business-Begleitung mit Hanna &amp; Martin (hier klicken)</a>
 
 </div>
 
