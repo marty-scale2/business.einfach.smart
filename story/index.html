@@ -8,6 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/consent.css">
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/gasrjr0rde.js" async type="module"></script>
+<style>
+wistia-player[media-id='gasrjr0rde']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/gasrjr0rde/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
+</style>
 <style>
 :root {
   --orange:        #D8622A;
@@ -77,45 +87,15 @@ a { color: inherit; }
 
 /* VIDEO / STORY FRAME */
 .story-frame {
-  position: relative;
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 9 / 16;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
-  background: linear-gradient(160deg, #2A1608, var(--ink) 70%);
+  background: var(--ink);
   box-shadow: var(--shadow-md);
 }
-.story-frame video,
-.story-frame .poster {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.story-frame .poster {
-  background: url('cover.jpg') center top / cover no-repeat, linear-gradient(160deg, #2A1608, var(--ink) 70%);
-}
-.story-frame .poster::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(22,12,5,0.05) 0%, rgba(22,12,5,0.05) 55%, rgba(22,12,5,0.4) 100%);
-}
-
-.play-btn {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 72px; height: 72px; border-radius: 50%;
-  background: var(--orange);
-  border: 3px solid rgba(255,255,255,0.85);
-  cursor: pointer;
-  display: grid; place-items: center;
-  box-shadow: var(--shadow-brand), 0 4px 16px rgba(0,0,0,0.35);
-  transition: transform var(--fast) var(--ease-out);
-  z-index: 2;
-}
-.play-btn:hover { transform: translate(-50%, -50%) scale(1.06); }
-.play-btn svg { width: 26px; height: 26px; margin-left: 3px; fill: #fff; }
-.play-btn.hidden { display: none; }
+.story-frame wistia-player { display: block; width: 100%; }
 
 /* SUBTEXT */
 .subtext {
@@ -153,15 +133,8 @@ a { color: inherit; }
 
   <h1 class="headline">Schau dir dieses Video an, um zu erfahren, <em>worum es hier geht</em></h1>
 
-  <div class="story-frame" id="storyFrame">
-    <!-- TODO: echtes Video einsetzen, sobald verfügbar -->
-    <div class="poster"></div>
-    <button class="play-btn" id="playBtn" type="button" aria-label="Video abspielen">
-      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-    </button>
-    <video id="storyVideo" playsinline preload="none" style="display:none;">
-      <!-- <source src="VIDEO_URL_HIER" type="video/mp4"> -->
-    </video>
+  <div class="story-frame">
+    <wistia-player media-id="gasrjr0rde" aspect="0.5625"></wistia-player>
   </div>
 
   <p class="subtext">Mehr dazu bald an dieser Stelle.</p>
@@ -185,22 +158,6 @@ a { color: inherit; }
 </footer>
 
 <script src="../assets/consent.js"></script>
-<script>
-(function () {
-  var frame = document.getElementById('storyFrame');
-  var playBtn = document.getElementById('playBtn');
-  var video = document.getElementById('storyVideo');
-
-  playBtn.addEventListener('click', function () {
-    var hasSource = video.querySelector('source[src]');
-    if (!hasSource) return; // Video noch nicht hinterlegt
-    video.style.display = 'block';
-    video.controls = true;
-    video.play();
-    playBtn.classList.add('hidden');
-  });
-})();
-</script>
 
 </body>
 </html>
