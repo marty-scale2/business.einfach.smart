@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram Marketing Studio · Hanna Marzian × Martin Thun</title>
-  <meta name="description" content="11 spezialisierte KI-Tools für deinen kompletten Instagram-Workflow. Von der Hook über die Caption bis zum recycelten Post. Für Claude und ChatGPT. Einmalig 39 €.">
+  <meta name="description" content="11 spezialisierte KI-Tools für deinen kompletten Instagram-Workflow. Von der Hook über die Caption bis zum recycelten Post. Für Claude und ChatGPT. Summer Sale: statt 39 € nur 19 €.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
@@ -48,6 +48,19 @@
 
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
+
+    /* ── SUMMER SALE ── */
+    .price-sale { display: inline-flex; align-items: baseline; gap: 0.45em; flex-wrap: wrap; }
+    .price-sale__old { font-size: 0.6em; font-weight: 400; text-decoration: line-through; opacity: 0.6; }
+    .price-sale__tag {
+      font-family: var(--font-accent); font-size: 0.38em; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+      background: #fff; color: var(--orange-deep);
+      padding: 0.35em 0.6em; border-radius: 2px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+      align-self: center;
+    }
+    .price-sale__new { font-weight: 700; }
 
     /* ============================================================
        GRAIN TEXTURE OVERLAY (Hero)
@@ -2124,7 +2137,7 @@
         <!-- Preis-Badge -->
         <div class="reveal" style="margin-bottom:2rem;">
           <div style="display:inline-flex;align-items:center;gap:0.85rem;padding:0.8rem 1.4rem;background:var(--orange);border-radius:3px;box-shadow:0 6px 24px rgba(216,98,42,0.4);">
-            <span style="font-family:var(--font-heading);font-size:1.75rem;font-weight:400;line-height:1;color:#fff;">39 €</span>
+            <span class="price-sale" style="font-family:var(--font-heading);font-size:1.75rem;font-weight:400;line-height:1;color:#fff;"><s class="price-sale__old">49 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span>
             <span style="width:1px;height:2rem;background:rgba(255,255,255,0.3);flex-shrink:0;"></span>
             <div style="font-family:var(--font-accent);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;white-space:nowrap;">Einmalig · sofortiger Zugang</div>
           </div>
@@ -2141,12 +2154,12 @@
         <div class="reveal reveal--delay-3">
           <div class="dual-cta">
             <a href="https://copecart.com/products/3b487266/checkout" class="btn btn-primary btn--large" data-track="cta_claude" data-position="hero">
-              <span class="btn__main">Claude Edition · 39 €</span>
+              <span class="btn__main">Claude Edition · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
               <span class="btn__sub">11 Skills für Claude</span>
             </a>
             <span class="dual-cta__or">oder</span>
             <a href="https://copecart.com/products/9b02bcf5/checkout" class="btn btn-dark btn--large" data-track="cta_chatgpt" data-position="hero">
-              <span class="btn__main">ChatGPT Edition · 39 €</span>
+              <span class="btn__main">ChatGPT Edition · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
               <span class="btn__sub">11 Custom GPTs für ChatGPT</span>
             </a>
           </div>
@@ -2162,7 +2175,7 @@
             <span class="hero__meta-label">Zugang per E-Mail</span>
           </div>
           <div class="hero__meta-item">
-            <span class="hero__meta-value" style="color:var(--orange);">39 €</span>
+            <span class="hero__meta-value" style="color:var(--orange);"><s style="text-decoration:line-through;opacity:0.55;font-size:0.65em;">49 €</s> 19 €</span>
             <span class="hero__meta-label">Einmalig</span>
           </div>
         </div>
@@ -2411,7 +2424,7 @@
         <p class="lead reveal reveal--delay-1" style="margin:0 auto 1.5rem;">Beide Versionen, identische Inhalte. Du wählst die KI, mit der du eh schon arbeitest.</p>
 
         <div class="reveal reveal--delay-1" style="margin-bottom:1.75rem;display:inline-flex;align-items:center;gap:1rem;padding:0.9rem 1.5rem;background:rgba(216,98,42,0.07);border:1px solid rgba(216,98,42,0.3);border-radius:2px;">
-          <span style="font-family:var(--font-heading);font-size:2rem;font-weight:400;color:var(--orange);line-height:1;">39 €</span>
+          <span class="price-sale" style="font-family:var(--font-heading);font-size:2rem;font-weight:400;color:var(--orange);line-height:1;"><s class="price-sale__old">49 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span>
           <div style="text-align:left;">
             <div style="font-family:var(--font-accent);font-size:0.55rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--warm-brown);">Einmalig · sofortiger Zugang</div>
           </div>
@@ -2420,12 +2433,12 @@
         <div class="reveal reveal--delay-2">
           <div class="dual-cta" style="justify-content:center;">
             <a href="https://copecart.com/products/3b487266/checkout" class="btn btn-primary btn--large" data-track="cta_claude" data-position="bridge">
-              <span class="btn__main">Claude Edition · 39 €</span>
+              <span class="btn__main">Claude Edition · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
               <span class="btn__sub">11 Skills für Claude</span>
             </a>
             <span class="dual-cta__or">oder</span>
             <a href="https://copecart.com/products/9b02bcf5/checkout" class="btn btn-dark btn--large" data-track="cta_chatgpt" data-position="bridge">
-              <span class="btn__main">ChatGPT Edition · 39 €</span>
+              <span class="btn__main">ChatGPT Edition · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
               <span class="btn__sub">11 Custom GPTs für ChatGPT</span>
             </a>
           </div>
@@ -2461,7 +2474,7 @@
           </ul>
 
           <a href="https://copecart.com/products/3b487266/checkout" class="btn btn-primary" style="width:100%;padding:1.1rem;" data-track="cta_claude" data-position="platform">
-            <span class="btn__main">Claude Edition holen · 39 €</span>
+            <span class="btn__main">Claude Edition holen · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
           </a>
         </div>
 
@@ -2477,7 +2490,7 @@
           </ul>
 
           <a href="https://copecart.com/products/9b02bcf5/checkout" class="btn btn-dark" style="width:100%;padding:1.1rem;" data-track="cta_chatgpt" data-position="platform">
-            <span class="btn__main">ChatGPT Edition holen · 39 €</span>
+            <span class="btn__main">ChatGPT Edition holen · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
           </a>
         </div>
 
@@ -2494,7 +2507,7 @@
           </ul>
 
           <a href="https://copecart.com/products/3b487266/checkout" class="btn btn-primary" style="width:100%;padding:1.1rem;background:linear-gradient(135deg,var(--orange-mid),var(--orange-deep));" data-track="cta_kombi" data-position="platform">
-            <span class="btn__main">Kombi Edition holen · 59 €</span>
+            <span class="btn__main">Kombi Edition holen · <span class="price-sale"><s class="price-sale__old">59 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29 €</span></span></span>
           </a>
           <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--mid-brown);text-align:center;line-height:1.5;">Im Bestellformular einfach die ChatGPT-Erweiterung auswählen, um beide Editionen zu kaufen.</p>
         </div>
@@ -2654,7 +2667,7 @@
           </button>
           <div class="faq-item__a" role="region">
             <div class="faq-item__a-inner">
-              ChatGPT Edition: ja, ChatGPT Plus (20 $/Monat) ist Voraussetzung für Custom GPTs. Claude Edition: nein, du brauchst kein bezahltes Abo. Free reicht für die meisten Tools. Wir empfehlen ein Pro-Abo jedoch, damit du längeren Output erhältst und nicht so schnell ans Limit kommst. Beides ist separat von den 39 € für das Studio.
+              ChatGPT Edition: ja, ChatGPT Plus (20 $/Monat) ist Voraussetzung für Custom GPTs. Claude Edition: nein, du brauchst kein bezahltes Abo. Free reicht für die meisten Tools. Wir empfehlen ein Pro-Abo jedoch, damit du längeren Output erhältst und nicht so schnell ans Limit kommst. Beides ist separat von den aktuell 19 € für das Studio (Summer Sale, statt 39 €).
             </div>
           </div>
         </div>
@@ -2718,7 +2731,7 @@
       <div class="reveal reveal--delay-3">
         <div style="display:inline-flex;align-items:center;gap:1.25rem;margin-bottom:2rem;padding:1rem 1.75rem;background:rgba(216,98,42,0.14);border:1px solid rgba(216,98,42,0.4);border-radius:3px;">
           <div>
-            <div style="font-family:var(--font-heading);font-size:2.75rem;font-weight:400;color:#fff;line-height:1;">39 €</div>
+            <div class="price-sale" style="font-family:var(--font-heading);font-size:2.75rem;font-weight:400;color:#fff;line-height:1;"><s class="price-sale__old">49 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></div>
             <div style="font-family:var(--font-accent);font-size:0.5rem;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:4px;">Einmalig · kein Abo</div>
           </div>
           <div style="width:1px;height:3.5rem;background:rgba(216,98,42,0.4);flex-shrink:0;"></div>
@@ -2730,16 +2743,16 @@
 
         <div class="dual-cta" style="justify-content:center;">
           <a href="https://copecart.com/products/3b487266/checkout" class="btn btn-primary btn--large" data-track="cta_claude" data-position="final">
-            <span class="btn__main">Claude Edition · 39 €</span>
+            <span class="btn__main">Claude Edition · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
             <span class="btn__sub">11 Skills für Claude</span>
           </a>
           <span class="dual-cta__or" style="color:var(--mid-brown);">oder</span>
           <a href="https://copecart.com/products/9b02bcf5/checkout" class="btn btn-dark btn--large" data-track="cta_chatgpt" data-position="final">
-            <span class="btn__main">ChatGPT Edition · 39 €</span>
+            <span class="btn__main">ChatGPT Edition · <span class="price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">19 €</span></span></span>
             <span class="btn__sub">11 Custom GPTs</span>
           </a>
         </div>
-        <p class="final-cta__footer-note" style="font-size:0.68rem;letter-spacing:1.5px;color:var(--orange-mid);margin-top:1.25rem;">39 € einmalig · sofortiger Zugang · 14-Tage Geld-zurück-Garantie</p>
+        <p class="final-cta__footer-note" style="font-size:0.68rem;letter-spacing:1.5px;color:var(--orange-mid);margin-top:1.25rem;">Summer Sale: statt 39 € nur 19 € einmalig · sofortiger Zugang · 14-Tage Geld-zurück-Garantie</p>
       </div>
     </div>
   </section>

@@ -44,6 +44,18 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 20px; }
 
+    /* ── SUMMER SALE ── */
+    .price-sale { display: inline-flex; align-items: baseline; gap: 0.45em; flex-wrap: wrap; }
+    .price-sale__old { font-size: 0.6em; font-weight: 400; text-decoration: line-through; opacity: 0.6; }
+    .price-sale__tag {
+      font-family: 'Inter', sans-serif; font-size: 0.36em; font-weight: 800;
+      letter-spacing: 1.2px; text-transform: uppercase; white-space: nowrap;
+      background: #fff; color: var(--accent-deep); border: 1px solid var(--accent);
+      padding: 0.4em 0.7em; border-radius: 100px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      align-self: center;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--surface);
@@ -1385,7 +1397,7 @@
   <div class="orb orb-3"></div>
 
   <div class="container">
-    <a href="https://www.hannamarzian.com" aria-label="business. einfach. smart" style="display:inline-block; margin-bottom:24px;"><img src="../bes-logo.png" alt="business. einfach. smart" style="height:60px; width:auto; display:block; margin:0 auto;"></a>
+    <a href="https://www.hannamarzian.com" aria-label="business. einfach. smart" style="display:block; margin-bottom:24px;"><img src="../bes-logo.png" alt="business. einfach. smart" style="height:100px; width:auto; display:block; margin:0 auto;"></a>
     <div class="hero-badge">
       Hanna Marzian &amp; Martin Thun präsentieren:
     </div>
@@ -1402,7 +1414,7 @@
     </p>
 
     <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" class="btn-primary magnetic">
-      Jetzt für 22 € sichern
+      Jetzt für <span class="price-sale" style="font-size:1em;"><s class="price-sale__old" style="font-size:0.8em;">39 €</s><span class="price-sale__tag" style="font-size:0.5em;">Summer Sale</span><span class="price-sale__new">11 €</span></span> sichern
     </a>
   </div>
 </section>
@@ -1481,7 +1493,7 @@
       </div>
       <div class="split-bridge reveal reveal-delay-4" style="display: flex; align-items: center; justify-content: center;">
         <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" class="btn-primary magnetic" style="display: inline-flex; animation: none; background: #fff; color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-          Jetzt für 22 € sichern
+          Jetzt für <span class="price-sale" style="font-size:1em;"><s class="price-sale__old" style="font-size:0.8em;">39 €</s><span class="price-sale__tag" style="font-size:0.5em;">Summer Sale</span><span class="price-sale__new">11 €</span></span> sichern
         </a>
       </div>
     </div>
@@ -1564,7 +1576,7 @@
 
     <div class="text-center reveal" style="margin-top: 56px;">
       <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" class="btn-primary magnetic" style="display: inline-flex; animation: none;">
-        Jetzt für 22 € sichern
+        Jetzt für <span class="price-sale" style="font-size:1em;"><s class="price-sale__old" style="font-size:0.8em;">39 €</s><span class="price-sale__tag" style="font-size:0.5em;">Summer Sale</span><span class="price-sale__new">11 €</span></span> sichern
       </a>
     </div>
   </div>
@@ -1630,7 +1642,7 @@
       <p style="font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 10px; letter-spacing: -0.02em;">Bereit, das Setup zu holen, das KI wirklich nutzbar macht?</p>
       <p style="font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 36px;">Einmalig. Kein Abo.</p>
       <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" class="btn-primary magnetic" style="display: inline-flex; animation: none;">
-        Jetzt für 22 € sichern
+        Jetzt für <span class="price-sale" style="font-size:1em;"><s class="price-sale__old" style="font-size:0.8em;">39 €</s><span class="price-sale__tag" style="font-size:0.5em;">Summer Sale</span><span class="price-sale__new">11 €</span></span> sichern
       </a>
     </div>
   </div>
@@ -1677,7 +1689,7 @@
     </div>
 
     <div class="price-box reveal">
-      <p class="price-amount">22 €</p>
+      <p class="price-amount price-sale"><s class="price-sale__old">39 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">11 €</span></p>
       <p class="price-regular">Einmalzahlung</p>
 
       <ul class="price-features">
@@ -1686,7 +1698,7 @@
         <li><span class="pf-check">✓</span> Inklusive übersichtlicher PDF-Guides und Übersichten für das neue Setup</li>
       </ul>
 
-      <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" class="btn-price magnetic">Jetzt Zugang sichern · 22 €</a>
+      <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" class="btn-price magnetic">Jetzt Zugang sichern · <span class="price-sale" style="font-size:1em;"><s class="price-sale__old" style="font-size:0.8em;">39 €</s><span class="price-sale__tag" style="font-size:0.5em;">Summer Sale</span><span class="price-sale__new">11 €</span></span></a>
 
 
     </div>

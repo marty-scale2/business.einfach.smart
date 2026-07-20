@@ -40,6 +40,18 @@
     overflow-x: hidden;
   }
 
+  /* ── SUMMER SALE ── */
+  .price-sale { display: inline-flex; align-items: baseline; gap: 0.45em; flex-wrap: wrap; }
+  .price-sale__old { font-size: 0.5em; font-weight: 400; text-decoration: line-through; opacity: 0.55; }
+  .price-sale__tag {
+    font-family: var(--font-ui); font-size: 0.28em; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap;
+    background: #fff; color: var(--orange-deep);
+    padding: 0.5em 0.8em; border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    align-self: center;
+  }
+
   /* ── UTILITIES ── */
   .label {
     font-family: var(--font-ui);
@@ -1189,7 +1201,7 @@
       <div class="hero-tag">Für Anfänger</div>
       <div class="hero-tag">Sofort umsetzbar</div>
     </div>
-    <a href="https://copecart.com/products/64198c1b/checkout" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Jetzt für 49€ sichern!</a>
+    <a href="https://copecart.com/products/64198c1b/checkout" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Jetzt für <span class="price-sale"><s class="price-sale__old">59€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29€</span></span> sichern!</a>
   </div>
   <div class="hero-image">
     <img src="Photos Hanna/5292012897317884903.jpg" alt="Hanna – KI-generiertes Foto">
@@ -1260,7 +1272,7 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 56px;">
-      <a href="https://copecart.com/products/64198c1b/checkout" class="btn btn-primary">Jetzt für 49€ sichern!</a>
+      <a href="https://copecart.com/products/64198c1b/checkout" class="btn btn-primary">Jetzt für <span class="price-sale"><s class="price-sale__old">59€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29€</span></span> sichern!</a>
     </div>
   </div>
 </section>
@@ -1404,8 +1416,8 @@
     </div>
     <div style="max-width: 400px; margin: 0 auto;">
       <div class="price-card featured" style="text-align: center;">
-        <div class="price-amount">49 €<span> / einmalig</span></div>
-        <div class="price-cta" style="margin-top: 20px;"><a href="https://copecart.com/products/64198c1b/checkout">Jetzt für 49€ sichern!</a></div>
+        <div class="price-amount"><span class="price-sale"><s class="price-sale__old">59 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29 €</span></span><span> / einmalig</span></div>
+        <div class="price-cta" style="margin-top: 20px;"><a href="https://copecart.com/products/64198c1b/checkout">Jetzt für <span class="price-sale"><s class="price-sale__old">59€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29€</span></span> sichern!</a></div>
       </div>
     </div>
     <p class="pricing-note">Inkl. MwSt. · einmalige Zahlung · dauerhafter Zugang · Prompt-Vorlagen inklusive</p>
@@ -1456,7 +1468,7 @@
   <h2>Kein Fotoshooting.<br><em>Trotzdem professionell.</em></h2>
   <p>Sofortiger Zugang. Ab heute hast du Fotos, die zur Positionierung passen.</p>
   <div class="final-price-display" style="flex-direction: column; align-items: center;">
-    <div class="fpd-main">49 €</div>
+    <div class="fpd-main price-sale"><s class="price-sale__old">59 €</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29 €</span></div>
     <div class="fpd-sub">einmalig</div>
   </div>
   <a href="https://copecart.com/products/64198c1b/checkout" class="btn btn-primary">Jetzt kaufen</a>
