@@ -405,6 +405,18 @@
     .chip-tl { top: 14px; left: 14px; }
     .chip-tr { top: 14px; right: 14px; }
 
+    /* ── SUMMER SALE ── */
+    .price-sale { display: inline-flex; align-items: baseline; gap: 0.45em; flex-wrap: wrap; }
+    .price-sale__old { font-size: 0.55em; font-weight: 400; text-decoration: line-through; opacity: 0.55; }
+    .price-sale__tag {
+      font-family: 'Inter', sans-serif; font-size: 0.32em; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+      background: #fff; color: var(--orange); border: 1px solid rgba(216,98,42,0.35);
+      padding: 0.45em 0.7em; border-radius: 100px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      align-self: center;
+    }
+
     /* ── CARD BODY ── */
     .card-body {
       padding: 24px 26px 26px;
@@ -713,7 +725,7 @@
       <article class="product-card reveal rd1">
         <div class="card-visual cv-ig">
           <span class="chip chip-tl">GPT & Skill Sammlung</span>
-          <span class="chip chip-tr">39 &thinsp;€</span>
+          <span class="chip chip-tr"><s style="text-decoration:line-through;opacity:.55;">49&thinsp;€</s>&nbsp;29&thinsp;€</span>
           <div class="card-wordmark">
             <span class="wm-sup">Instagram</span>
             <span class="wm-script" style="font-size:48px;">Marketing</span>
@@ -730,7 +742,7 @@
             <li><span class="feat-check fc-ig">✓</span>Sofort in deinen Workflow integrierbar</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">39&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">49&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="ig-ki-marketing-studio.html" class="card-btn btn-ig">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/3b487266/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -741,7 +753,7 @@
       <article class="product-card reveal rd2">
         <div class="card-visual cv-fir">
           <span class="chip chip-tl">📸 Videokurs</span>
-          <span class="chip chip-tr">49 &thinsp;€</span>
+          <span class="chip chip-tr"><s style="text-decoration:line-through;opacity:.55;">59&thinsp;€</s>&nbsp;29&thinsp;€</span>
           <div class="card-wordmark">
             <span class="wm-bold" style="font-size:36px;">Fake it</span>
             <span class="wm-script" style="font-size:58px;margin-top:-4px;">Real</span>
@@ -757,7 +769,7 @@
             <li><span class="feat-check fc-fir">✓</span>Für Creator, Coaches und Selbstständige</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">49&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">59&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="fake-it-real.html" class="card-btn btn-fir">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/64198c1b/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -768,7 +780,7 @@
       <article class="product-card reveal rd3">
         <div class="card-visual cv-awc">
           <span class="chip chip-tl">💻 Videokurs</span>
-          <span class="chip chip-tr">99 &thinsp;€</span>
+          <span class="chip chip-tr"><s style="text-decoration:line-through;opacity:.55;">149&thinsp;€</s>&nbsp;49&thinsp;€</span>
           <div class="card-wordmark">
             <span class="wm-awc-logo">AI WEBSITE CODE</span>
           </div>
@@ -783,7 +795,7 @@
             <li><span class="feat-check fc-awc">✓</span>Absolut kein Vorwissen nötig</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">99&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">149&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">49&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="ai-website-code.html" class="card-btn btn-awc">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/b1c1cf88/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -794,7 +806,7 @@
       <article class="product-card reveal rd4">
         <div class="card-visual cv-zero">
           <span class="chip chip-tl">⚡ Minikurs</span>
-          <span class="chip chip-tr">22 &thinsp;€</span>
+          <span class="chip chip-tr"><s style="text-decoration:line-through;opacity:.55;">39&thinsp;€</s>&nbsp;11&thinsp;€</span>
           <div class="card-wordmark">
             <span class="wm-zero-logo">ZERO</span>
             <span class="wm-sub" style="margin-top:6px;color:rgba(167,243,208,0.7);">KI ohne Abo &amp; Limits</span>
@@ -810,7 +822,7 @@
             <li><span class="feat-check fc-zero">✓</span>In unter einer Stunde startklar</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">22&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">39&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">11&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="zero-ki-ohne-abo/" class="card-btn btn-zero">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
