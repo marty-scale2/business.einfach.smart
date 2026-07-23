@@ -739,6 +739,9 @@ a { color: inherit; }
   color: var(--d-text-soft);
 }
 .split-bar__legend b { color: var(--d-text); font-weight: 600; }
+@media (max-width: 640px) {
+  .split-bar__legend { flex-direction: column; gap: var(--s-2); }
+}
 
 .approach-grid {
   display: grid;
@@ -2205,13 +2208,13 @@ html:not(.gate-unlocked) body { overflow: hidden; }
     </div>
 
     <div class="split-bar" data-reveal data-splitbar>
-      <div class="split-bar__title">So entsteht dein Content danach</div>
+      <div class="split-bar__title">So verteilt sich die Arbeit danach</div>
       <div class="split-bar__track">
         <div class="split-bar__ai"><span class="split-bar__pct">80&thinsp;%</span></div>
         <div class="split-bar__you"><span class="split-bar__pct">20&thinsp;%</span></div>
       </div>
       <div class="split-bar__legend">
-        <span><b>Dein KI-Setup übernimmt</b> (Hooks, Captions, Formate, Wiederverwertung)</span>
+        <span><b>Wir übernehmen Strategie, KI-Prozesse und Umsetzung</b> (Done WITH You oder Done FOR You)</span>
         <span><b>Du: dein Gesicht, deine Gedanken</b></span>
       </div>
     </div>
