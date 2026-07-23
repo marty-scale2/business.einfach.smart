@@ -1852,9 +1852,144 @@ a { color: inherit; }
   [data-reveal] { opacity: 1; transform: none; }
   .split-bar .split-bar__ai { width: 80%; }
 }
+
+/* ════════════════════════════════════════════
+   BAUSTELLEN-SPERRE
+   ════════════════════════════════════════════ */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  padding: var(--s-6);
+  background:
+    radial-gradient(ellipse 60% 45% at 70% 0%, rgba(216,98,42,0.16), transparent 60%),
+    linear-gradient(165deg, #1A0F07 0%, #160C05 60%, #0E0701 100%);
+  color: var(--d-text);
+  text-align: center;
+}
+html.gate-unlocked .gate { display: none; }
+html:not(.gate-unlocked) body { overflow: hidden; }
+
+.gate__inner { width: 100%; max-width: 440px; }
+.gate__brand {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--d-text-dim);
+  margin-bottom: var(--s-8);
+}
+.gate__brand .dot { color: var(--orange); }
+.gate__icon { font-size: 2.2rem; margin-bottom: var(--s-4); }
+.gate__title {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: var(--s-4);
+}
+.gate__title em { font-style: italic; color: var(--orange-bright); }
+.gate__text {
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.75;
+  margin-bottom: var(--s-8);
+}
+.gate__form { display: flex; gap: var(--s-2); }
+.gate__input {
+  flex: 1;
+  font-family: var(--f-sans);
+  font-size: var(--t-base);
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  border: 1px solid rgba(232,137,78,0.32);
+  background: rgba(251,247,242,0.06);
+  color: var(--d-text);
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+}
+.gate__input::placeholder { color: var(--d-text-dim); }
+.gate__input:focus {
+  border-color: var(--orange-bright);
+  background: rgba(251,247,242,0.1);
+}
+.gate__btn {
+  font-family: var(--f-brand);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  padding: 0.85em 1.6em;
+  border-radius: 100px;
+  border: none;
+  background: var(--orange);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+.gate__btn:hover { background: var(--orange-deep); transform: translateY(-1px); }
+.gate__error {
+  margin-top: var(--s-4);
+  font-size: var(--t-sm);
+  color: var(--orange-bright);
+  min-height: 1.4em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.gate__error.is-shown { opacity: 1; }
+
+@media (max-width: 480px) {
+  .gate__form { flex-direction: column; }
+}
 </style>
+<script>
+  try {
+    if (localStorage.getItem('bes_gate') === 'open') {
+      document.documentElement.className += ' gate-unlocked';
+    }
+  } catch (e) {}
+</script>
 </head>
 <body>
+
+<!-- ═══════════ BAUSTELLEN-SPERRE ═══════════ -->
+<div class="gate" id="gate">
+  <div class="gate__inner">
+    <div class="gate__brand">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</div>
+    <div class="gate__icon">🚧</div>
+    <h1 class="gate__title">Diese Seite ist gerade <em>in Bearbeitung</em>.</h1>
+    <p class="gate__text">Wir bauen hier gerade um. Schau in Kürze nochmal vorbei.</p>
+    <form class="gate__form" id="gateForm" autocomplete="off">
+      <input class="gate__input" id="gateInput" type="password" placeholder="Passwort" aria-label="Passwort" autocomplete="off">
+      <button class="gate__btn" type="submit">Öffnen</button>
+    </form>
+    <div class="gate__error" id="gateError">Passwort stimmt nicht.</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('gateForm');
+  var input = document.getElementById('gateInput');
+  var error = document.getElementById('gateError');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (input.value.trim().toLowerCase() === 'business') {
+      try { localStorage.setItem('bes_gate', 'open'); } catch (err) {}
+      document.documentElement.className += ' gate-unlocked';
+    } else {
+      error.classList.add('is-shown');
+      input.value = '';
+      input.focus();
+    }
+  });
+
+  input.addEventListener('input', function () { error.classList.remove('is-shown'); });
+  if (!document.documentElement.classList.contains('gate-unlocked')) { input.focus(); }
+})();
+</script>
 
 <div class="scroll-progress" aria-hidden="true"></div>
 
