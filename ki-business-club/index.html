@@ -1301,6 +1301,100 @@ a { color: inherit; }
   .tiers { grid-template-columns: 1fr; }
 }
 
+/* ── Ersparnis-Block ── */
+.savings {
+  margin-top: var(--s-8);
+  border-radius: 24px;
+  border: 1px solid rgba(232,137,78,0.22);
+  background: rgba(251,247,242,0.04);
+  padding: clamp(1.8rem, 4vw, 3rem);
+}
+.savings__label {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange-bright);
+  margin-bottom: var(--s-3);
+}
+.savings h3 {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--t-xl);
+  color: var(--d-text);
+  margin-bottom: var(--s-4);
+}
+.savings > p {
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.8;
+  max-width: 80ch;
+}
+.savings b { color: var(--d-text); font-weight: 600; }
+.savings__items {
+  list-style: none;
+  margin: var(--s-6) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--s-4);
+}
+.savings__items li {
+  padding: var(--s-4);
+  border-radius: 14px;
+  background: rgba(251,247,242,0.04);
+  border: 1px solid var(--d-line);
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.6;
+}
+.savings__items b {
+  display: block;
+  font-family: var(--f-brand);
+  font-size: var(--t-lg);
+  color: var(--orange-bright);
+  margin-bottom: var(--s-1);
+}
+
+/* ── Zwei Wege (Weiche) ── */
+.paths {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+.path {
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: clamp(1.8rem, 4vw, 2.6rem);
+  box-shadow: var(--shadow-md);
+}
+.path__label {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  margin-bottom: var(--s-3);
+}
+.path h3 {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--t-xl);
+  color: var(--ink);
+  margin-bottom: var(--s-4);
+}
+.path p { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.75; }
+.path p + p { margin-top: var(--s-3); }
+.path b { color: var(--text-primary); font-weight: 600; }
+@media (max-width: 768px) {
+  .paths { grid-template-columns: 1fr; }
+}
+
 /* slots */
 .slots {
   display: flex;
@@ -2012,7 +2106,7 @@ html:not(.gate-unlocked) body { overflow: hidden; }
   </div>
 
   <div class="wrap hero__content">
-    <div class="kicker" style="margin-bottom: var(--s-6);">Für Experten, die längst liefern, online aber unsichtbar sind</div>
+    <div class="kicker" style="margin-bottom: var(--s-6);">Für Selbstständige, deren Business läuft und deren Sichtbarkeit hinterherhinkt</div>
 
     <h1>
       <span class="line"><span>KI BUSINESS</span></span>
@@ -2021,7 +2115,7 @@ html:not(.gate-unlocked) body { overflow: hidden; }
 
     <p class="hero__sub">von Hanna Marzian &amp; Martin Thun</p>
 
-    <p class="hero__body"><strong>Das ist kein Coaching und kein Kurs.</strong> Wir setzen uns mit dir persönlich hin, erarbeiten deine Positionierung und deine Content-Strategie gemeinsam und richten dir dein komplettes KI-Setup ein. Damit du online endlich so sichtbar wirst, wie dein Business es längst verdient hat.</p>
+    <p class="hero__body"><strong>Das ist kein Coaching und kein Kurs.</strong> Wir setzen uns mit dir persönlich hin, erarbeiten deine Positionierung und deine Content-Strategie und bauen dir ein KI-Setup, das dir Arbeit abnimmt. Mehr Reichweite, weniger Tool-Chaos, und Abläufe, die auch dann weiterlaufen, wenn du gerade keine Zeit hast.</p>
 
     <div class="hero__actions">
       <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
@@ -2076,28 +2170,28 @@ html:not(.gate-unlocked) body { overflow: hidden; }
   <div class="wrap">
     <div data-reveal>
       <div class="kicker">Kennst du das?</div>
-      <h2 class="h2">Dein Business läuft. <em>Online sieht dich trotzdem keiner.</em></h2>
+      <h2 class="h2">Dein Business läuft. <em>Aber alles hängt an dir.</em></h2>
     </div>
 
     <div class="problems">
       <article class="p-card spotlight-card" data-reveal>
         <div class="p-card__num">01</div>
-        <h3>Dein Auftritt passt nicht zu deinem Business</h3>
-        <p>Du hast Kunden, Umsatz und ein Angebot, das funktioniert. Aber wer dich googelt oder auf Instagram findet, sieht einen Account, der seit Wochen still steht und nach Nebenprojekt aussieht. Die Lücke zwischen dem, was du wirklich kannst, und dem, was online davon ankommt, wird jeden Monat größer.</p>
+        <h3>Wachstum ist bei dir ein Kraftakt</h3>
+        <p>Du postest, wenn du zwischendurch Zeit findest. Du gibst für einen Launch alles und stehst danach wieder bei null. Es gibt keinen Ablauf, der ohne dich weiterläuft, deshalb wächst auch nichts von allein. Jeder gute Monat kostet dich persönlich Substanz.</p>
       </article>
       <article class="p-card spotlight-card" data-reveal style="--reveal-delay: 90ms;">
         <div class="p-card__num">02</div>
-        <h3>Du willst kein Content-Mensch werden</h3>
-        <p>Du bist Experte in deinem Fach, nicht Creator. Hooks schreiben, Formate testen, Reels schneiden, Captions tippen: Das ist ein eigener Vollzeitjob, und einen hast du schon. Also bleibt der Content liegen, oder du machst ihn zwischen Tür und Angel und merkst selbst, dass er nicht sitzt.</p>
+        <h3>Dein Setup ist ein Flickenteppich</h3>
+        <p>E-Mail-Tool, CRM, Kursbereich, Website, dazu ein Dutzend offene ChatGPT-Tabs. Alles ist irgendwie da, aber nichts greift ineinander. Du zahlst Monat für Monat für Tools, die du halb nutzt, und verlierst Zeit an Übergängen, die nie jemand gebaut hat.</p>
       </article>
       <article class="p-card spotlight-card" data-reveal style="--reveal-delay: 180ms;">
         <div class="p-card__num">03</div>
-        <h3>KI hast du probiert, aber es klingt nicht nach dir</h3>
-        <p>Ein paar Prompts, ein paar Tools, ein paar offene Tabs. Was rauskommt, ist entweder generisch oder du schreibst es am Ende doch selbst um. Was fehlt, ist ein Setup, das deine Sprache kennt und Content ausspuckt, den du ohne Bauchschmerzen veröffentlichst.</p>
+        <h3>Online sehen dich zu wenige</h3>
+        <p>Du bist richtig gut in dem, was du tust, und trotzdem kennen dich zu wenige. Wer dich googelt oder auf Instagram findet, sieht nicht das, was du wirklich draufhast. Sichtbar sind gerade andere, die weniger können als du.</p>
       </article>
     </div>
 
-    <p class="pullquote" data-reveal>Du brauchst keinen weiteren Kurs, der dir erklärt, wie es geht. Du brauchst <em>jemanden, der es mit dir baut</em>.</p>
+    <p class="pullquote" data-reveal>Du brauchst keinen weiteren Kurs, der dir erklärt, wie es geht. Du brauchst <em>eine Struktur, die auch ohne dich läuft</em>.</p>
   </div>
 </section>
 
@@ -2107,7 +2201,7 @@ html:not(.gate-unlocked) body { overflow: hidden; }
     <div data-reveal>
       <div class="kicker">Unser Ansatz</div>
       <h2 class="h2">Wir erklären es dir nicht. <em>Wir bauen es mit dir.</em></h2>
-      <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Vorlagen und die Aufgabe, den Rest allein hinzukriegen. Bei uns setzen wir uns mit dir hin. Wir erarbeiten deine Positionierung, entwickeln deine Content-Strategie, schreiben Hooks und Captions mit dir und richten dir dein KI-Setup ein, das genau deine Sprache trifft. <strong>Du lieferst dein Gesicht und deine Gedanken. Den Rest bauen wir.</strong></p>
+      <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Vorlagen und die Aufgabe, den Rest allein hinzukriegen. Bei uns setzen wir uns mit dir hin. Wir erarbeiten deine Positionierung, entwickeln deine Content-Strategie und räumen dein Setup auf, damit Tools, Technik und KI endlich ineinandergreifen. <strong>Am Ende steht eine Struktur, die dir Reichweite bringt, ohne dich jeden Tag persönlich zu kosten.</strong></p>
     </div>
 
     <div class="split-bar" data-reveal data-splitbar>
@@ -2143,13 +2237,41 @@ html:not(.gate-unlocked) body { overflow: hidden; }
   </div>
 </section>
 
+<!-- ═══════════ ZWEI WEGE ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">Zwei Wege</div>
+      <h2 class="h2">Wie viel du selbst machst, <em>entscheidest du</em>.</h2>
+      <p class="lede">Das Ergebnis ist in beiden Fällen dasselbe: eine Sichtbarkeit, die zu deinem Können passt, und Abläufe, die dir Arbeit abnehmen. Der Unterschied liegt nur darin, wie viel davon bei dir bleibt.</p>
+    </div>
+
+    <div class="paths">
+      <article class="path" data-reveal>
+        <div class="path__label">Weg 1</div>
+        <h3>Wir bauen es gemeinsam</h3>
+        <p>Wir erarbeiten Positionierung, Content-Strategie und dein KI-Setup zusammen mit dir. Wir gehen deine Hooks durch, bevor du drehst, und schauen auf alles, was du veröffentlichst.</p>
+        <p><b>Drehen und posten machst du selbst</b>, aber nie mehr allein und nie mehr ohne Plan. Für alle, die selbst am Steuer bleiben wollen.</p>
+      </article>
+      <article class="path" data-reveal style="--reveal-delay: 120ms;">
+        <div class="path__label">Weg 2</div>
+        <h3>Wir übernehmen die Umsetzung</h3>
+        <p>Unser Team produziert für dich: Redaktionsplan, Hooks, Captions, die komplette Technik und die KI-Prozesse im Hintergrund.</p>
+        <p><b>Du lieferst dein Gesicht und deine Gedanken</b>, den Rest machen wir. Für alle, die weder Zeit noch Lust haben, sich selbst darum zu kümmern.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="divider wrap">
+
 <!-- ═══════════ DELIVERABLES (BENTO) ═══════════ -->
 <section class="section" id="leistungen">
   <div class="wrap">
     <div data-reveal>
       <div class="kicker">Was du bekommst</div>
       <h2 class="h2">Betreuung, die ihren <em>Namen verdient</em>.</h2>
-      <p class="lede">Die meisten Programme lassen dich nach dem Kauf mit einem Mitgliederbereich allein. Wir machen das Gegenteil.</p>
+      <p class="lede">Die meisten Programme lassen dich nach dem Kauf mit einem Mitgliederbereich allein. Wir machen das Gegenteil. Das Folgende steckt in beiden Wegen drin.</p>
     </div>
 
     <div class="bento">
@@ -2227,8 +2349,8 @@ html:not(.gate-unlocked) body { overflow: hidden; }
       <div class="module" data-reveal style="--reveal-delay: 180ms;">
         <div class="module__num">04</div>
         <div>
-          <h3>Dein KI-Setup</h3>
-          <p>Die Agenten, die deine Sprache kennen und dir zuarbeiten: Hooks generieren, Captions schreiben, einen Dreh in mehrere Formate zerlegen. Keine Vorkenntnisse nötig, wir richten alles ein.</p>
+          <h3>KI-Setup, Technik &amp; Prozesse</h3>
+          <p>Wir räumen deinen Tool-Dschungel auf und bauen dir die Agenten, die deine Sprache kennen: Hooks generieren, Captions schreiben, einen Dreh in mehrere Formate zerlegen. Statt zwölf Werkzeuge, die nebeneinander herlaufen, hast du am Ende ein Setup, das ineinandergreift (und meistens auch spürbar weniger kostet).</p>
         </div>
       </div>
       <div class="module" data-reveal style="--reveal-delay: 240ms;">
@@ -2287,6 +2409,7 @@ html:not(.gate-unlocked) body { overflow: hidden; }
         <ul class="fit__list">
           <li><span class="fit__mark fit__mark--yes">✓</span> dein Business bereits läuft und du regelmäßig verkaufst</li>
           <li><span class="fit__mark fit__mark--yes">✓</span> dein Auftritt online nicht zu dem passt, was du wirklich kannst</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> du für Tools zahlst, die nicht ineinandergreifen, und das endlich geradeziehen willst</li>
           <li><span class="fit__mark fit__mark--yes">✓</span> du Umsetzung willst statt noch einen Kurs, den du nie zu Ende schaust</li>
           <li><span class="fit__mark fit__mark--yes">✓</span> du bereit bist, dein Gesicht zu zeigen und regelmäßig Material zu liefern</li>
         </ul>
@@ -2307,9 +2430,9 @@ html:not(.gate-unlocked) body { overflow: hidden; }
 <section class="section pricing-section has-noise" id="investition">
   <div class="wrap" style="position: relative; z-index: 2;">
     <div data-reveal>
-      <div class="kicker">Deine Optionen</div>
-      <h2 class="h2">Zwei Wege. <em>Du entscheidest, wie viel wir übernehmen.</em></h2>
-      <p class="lede">Beide Wege führen zum selben Ergebnis: ein Auftritt, der zu deinem Business passt. Der Unterschied liegt nur darin, wie viel Arbeit bei dir bleibt und wie viel bei uns.</p>
+      <div class="kicker">Investition</div>
+      <h2 class="h2">Klare Preise. <em>Keine Überraschungen.</em></h2>
+      <p class="lede">Kein Preis, den wir dir erst nach drei Gesprächen verraten. Du siehst hier, woran du bist, und entscheidest danach, ob du überhaupt mit uns sprechen willst.</p>
     </div>
 
     <div class="tiers">
@@ -2352,6 +2475,18 @@ html:not(.gate-unlocked) body { overflow: hidden; }
           <a class="btn btn--ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Unverbindlich anfragen</a>
         </div>
       </article>
+    </div>
+
+    <div class="savings" data-reveal>
+      <div class="savings__label">Nebeneffekt</div>
+      <h3>Was du dir nebenbei sparst</h3>
+      <p>Wenn wir dein Setup aufräumen, fällt fast immer Ballast weg. Tools, die parallel laufen und dasselbe können. Texte, die du extern einkaufst. Handarbeit, die eine Automatisierung übernimmt. Typische Größenordnungen, die wir bei anderen gefunden haben:</p>
+      <ul class="savings__items">
+        <li><b>40 bis 150 €</b>Tools im Monat, die doppelt laufen oder kaum genutzt werden</li>
+        <li><b>300 bis 800 €</b>Texter oder VA im Monat für Captions, Hooks und Beiträge</li>
+        <li><b>Mehrere Stunden</b>pro Woche an Handarbeit, die künftig automatisch läuft</li>
+      </ul>
+      <p>Über ein Jahr kommt bei den meisten ein deutlich vierstelliger Betrag zusammen, der einen erheblichen Teil der Investition zurückholt. <b>Was bei dir konkret drin ist, rechnen wir im Analyse-Gespräch gemeinsam durch</b>, bevor du dich entscheidest.</p>
     </div>
 
     <div class="honesty" data-reveal>
@@ -2408,6 +2543,10 @@ html:not(.gate-unlocked) body { overflow: hidden; }
       <details>
         <summary>Was kostet das?<span class="faq__icon">+</span></summary>
         <div class="faq__body"><b>Done with you</b> kostet 4.000&nbsp;€ zzgl. MwSt. für die kompletten 6 Monate, wahlweise als Einmalzahlung oder in Raten. <b>Done for you</b> setzt sich aus einer einmaligen Setup-Fee und einem monatlichen Retainer zusammen, weil der Aufwand vom Umfang abhängt. Den genauen Preis dafür besprechen wir im Gespräch.</div>
+      </details>
+      <details>
+        <summary>Ihr sprecht von Einsparungen. Wie realistisch ist das?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Realistisch, aber wir versprechen dir keine feste Summe. Bei fast jedem, der jahrelang Tools gesammelt hat, laufen Abos parallel, die dasselbe können, und es wird Arbeit extern eingekauft, die eine Automatisierung übernehmen kann. Wie viel bei dir zusammenkommt, hängt von deinem Setup ab. Deshalb schauen wir uns das im Analyse-Gespräch konkret an und rechnen es dir vor, statt eine Zahl zu behaupten.</div>
       </details>
       <details>
         <summary>Was ist der Unterschied zwischen den beiden Optionen?<span class="faq__icon">+</span></summary>
