@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KI Business Club · BUSINESS.EINFACH.SMART</title>
-<meta name="description" content="6 Monate enge 1:1 Betreuung von Hanna Marzian und Martin Thun. Wir bauen dein KI-gestütztes Business-System für planbare 5-stellige Monate.">
+<meta name="description" content="Kein Coaching, kein Kurs. Hanna Marzian und Martin Thun bauen mit dir deine Positionierung, deine Content-Strategie und dein komplettes KI-Setup. Für Experten, die online sichtbar werden wollen.">
 <meta property="og:title" content="KI Business Club · BUSINESS.EINFACH.SMART">
-<meta property="og:description" content="Dein Expertenbusiness auf einem KI-System, das zu 80 % von allein läuft. 6 Monate, 2 Mentoren, intensive 1:1 Betreuung.">
+<meta property="og:description" content="Kein Coaching, kein Kurs. Wir setzen uns mit dir hin und bauen deine Sichtbarkeit: Positionierung, Content-Strategie und dein KI-Setup. Done with you oder komplett für dich.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#160C05">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1198,6 +1198,109 @@ a { color: inherit; }
   margin-top: 2px;
 }
 
+/* ── Zwei Optionen (Tiers) ── */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+  align-items: start;
+}
+.tier {
+  position: relative;
+  border-radius: 26px;
+  padding: clamp(1.8rem, 3.5vw, 2.8rem);
+  background: rgba(251,247,242,0.04);
+  border: 1px solid var(--d-line);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.tier--featured {
+  background: linear-gradient(150deg, rgba(251,247,242,0.09), rgba(251,247,242,0.03));
+  border-color: rgba(232,137,78,0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(251,247,242,0.12),
+    0 30px 70px rgba(0,0,0,0.4);
+}
+.tier__flag {
+  position: absolute;
+  top: -13px; left: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-family: var(--f-brand);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--orange);
+  padding: 0.45em 0.9em;
+  border-radius: 100px;
+}
+.tier__label {
+  font-family: var(--f-brand);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--d-text-dim);
+  margin-bottom: var(--s-2);
+}
+.tier__name {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--t-2xl);
+  color: var(--d-text);
+  line-height: 1.1;
+  margin-bottom: var(--s-4);
+}
+.tier--featured .tier__name { color: var(--orange-bright); }
+.tier__price {
+  font-family: var(--f-brand);
+  font-weight: 800;
+  font-size: var(--t-3xl);
+  color: var(--d-text);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.tier__price small {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--d-text-dim);
+  margin-top: var(--s-2);
+  line-height: 1.5;
+}
+.tier__desc {
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.75;
+  margin: var(--s-6) 0;
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--d-line);
+}
+.tier__list { list-style: none; margin-bottom: var(--s-8); }
+.tier__list li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-2) 0;
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+  line-height: 1.6;
+}
+.tier__list b { color: var(--d-text); font-weight: 600; }
+.tier__list .perks__check { width: 19px; height: 19px; font-size: 0.6rem; }
+.tier__foot { margin-top: auto; }
+.tier .btn { width: 100%; justify-content: center; }
+
+@media (max-width: 860px) {
+  .tiers { grid-template-columns: 1fr; }
+}
+
 /* slots */
 .slots {
   display: flex;
@@ -1760,8 +1863,8 @@ a { color: inherit; }
   <a href="#top" class="brandmark">KI BUSINESS<span class="dot">.</span>CLUB</a>
   <div class="nav__links">
     <a href="#ansatz" class="nav__link">Ansatz</a>
-    <a href="#leistungen" class="nav__link">Inhalte</a>
-    <a href="#investition" class="nav__link">Programm</a>
+    <a href="#leistungen" class="nav__link">Leistungen</a>
+    <a href="#investition" class="nav__link">Preise</a>
   </div>
   <a class="nav__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
 </nav>
@@ -1774,6 +1877,8 @@ a { color: inherit; }
   </div>
 
   <div class="wrap hero__content">
+    <div class="kicker" style="margin-bottom: var(--s-6);">Für Experten, die längst liefern, online aber unsichtbar sind</div>
+
     <h1>
       <span class="line"><span>KI BUSINESS</span></span>
       <span class="line"><span class="glow">CLUB</span></span>
@@ -1781,11 +1886,11 @@ a { color: inherit; }
 
     <p class="hero__sub">von Hanna Marzian &amp; Martin Thun</p>
 
-    <p class="hero__body">In 6 Monaten bauen wir gemeinsam dein <strong>KI-gestütztes Business-System</strong>: eine Positionierung, die sitzt, Angebote, die sich ohne Dauererklärung verkaufen, und Content, der mit Klarheit und Freude erstellt wird statt über Frust. Damit 5-stellige Monate zum neuen Normal für dich werden.</p>
+    <p class="hero__body"><strong>Das ist kein Coaching und kein Kurs.</strong> Wir setzen uns mit dir persönlich hin, erarbeiten deine Positionierung und deine Content-Strategie gemeinsam und richten dir dein komplettes KI-Setup ein. Damit du online endlich so sichtbar wirst, wie dein Business es längst verdient hat.</p>
 
     <div class="hero__actions">
       <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
-      <a class="btn btn--ghost" href="#leistungen">Zeig mir erst, was drin ist ↓</a>
+      <a class="btn btn--ghost" href="#investition">Preise ansehen ↓</a>
     </div>
 
     <div class="stats">
@@ -1799,7 +1904,7 @@ a { color: inherit; }
       </div>
       <div class="stats__item">
         <div class="stats__value"><span data-count="150">0</span><span class="suffix">k&nbsp;€</span></div>
-        <div class="stats__label">Launch-Expertise</div>
+        <div class="stats__label">Begleitete Launches</div>
       </div>
       <div class="stats__item">
         <div class="stats__value"><span data-count="48">0</span></div>
@@ -1814,19 +1919,19 @@ a { color: inherit; }
   <div class="ticker__track">
     <div class="ticker__group">
       <span>Positionierung</span><span class="star">✦</span>
-      <span>Angebotsstrategie</span><span class="star">✦</span>
-      <span>Content &amp; Reichweite</span><span class="star">✦</span>
-      <span>Sales</span><span class="star">✦</span>
-      <span>KI &amp; Technik</span><span class="star">✦</span>
-      <span>Dein digitaler Zwilling</span><span class="star">✦</span>
+      <span>Content-Strategie</span><span class="star">✦</span>
+      <span>Hooks &amp; Captions</span><span class="star">✦</span>
+      <span>Reichweite</span><span class="star">✦</span>
+      <span>KI-Setup</span><span class="star">✦</span>
+      <span>Sichtbarkeit</span><span class="star">✦</span>
     </div>
     <div class="ticker__group">
       <span>Positionierung</span><span class="star">✦</span>
-      <span>Angebotsstrategie</span><span class="star">✦</span>
-      <span>Content &amp; Reichweite</span><span class="star">✦</span>
-      <span>Sales</span><span class="star">✦</span>
-      <span>KI &amp; Technik</span><span class="star">✦</span>
-      <span>Dein digitaler Zwilling</span><span class="star">✦</span>
+      <span>Content-Strategie</span><span class="star">✦</span>
+      <span>Hooks &amp; Captions</span><span class="star">✦</span>
+      <span>Reichweite</span><span class="star">✦</span>
+      <span>KI-Setup</span><span class="star">✦</span>
+      <span>Sichtbarkeit</span><span class="star">✦</span>
     </div>
   </div>
 </div>
@@ -1836,28 +1941,28 @@ a { color: inherit; }
   <div class="wrap">
     <div data-reveal>
       <div class="kicker">Kennst du das?</div>
-      <h2 class="h2">Du arbeitest viel. Und trotzdem fängt <em>jeder Monat wieder bei null</em> an.</h2>
+      <h2 class="h2">Dein Business läuft. <em>Online sieht dich trotzdem keiner.</em></h2>
     </div>
 
     <div class="problems">
       <article class="p-card spotlight-card" data-reveal>
         <div class="p-card__num">01</div>
-        <h3>Das Hamsterrad dreht sich</h3>
-        <p>Du kreierst Content, postest fleißig, beantwortest Nachrichten. Und sobald ein neuer Kunde da ist, fehlt dir wieder die Zeit für die Kundengewinnung. Der Kreislauf hält dich beschäftigt, aber er bringt dich nicht voran.</p>
+        <h3>Dein Auftritt passt nicht zu deinem Business</h3>
+        <p>Du hast Kunden, Umsatz und ein Angebot, das funktioniert. Aber wer dich googelt oder auf Instagram findet, sieht einen Account, der seit Wochen still steht und nach Nebenprojekt aussieht. Die Lücke zwischen dem, was du wirklich kannst, und dem, was online davon ankommt, wird jeden Monat größer.</p>
       </article>
       <article class="p-card spotlight-card" data-reveal style="--reveal-delay: 90ms;">
         <div class="p-card__num">02</div>
-        <h3>Dir fehlt keine Zeit, dir fehlt Struktur</h3>
-        <p>Job, Familie, Alltag: Du denkst, du bräuchtest 5 Stunden mehr am Tag. Brauchst du nicht. Mit KI und smarten Prozessen kriegst du in 2 Stunden mehr gebacken als andere in 6 (wenn du weißt, worauf du achten musst).</p>
+        <h3>Du willst kein Content-Mensch werden</h3>
+        <p>Du bist Experte in deinem Fach, nicht Creator. Hooks schreiben, Formate testen, Reels schneiden, Captions tippen: Das ist ein eigener Vollzeitjob, und einen hast du schon. Also bleibt der Content liegen, oder du machst ihn zwischen Tür und Angel und merkst selbst, dass er nicht sitzt.</p>
       </article>
       <article class="p-card spotlight-card" data-reveal style="--reveal-delay: 180ms;">
         <div class="p-card__num">03</div>
-        <h3>Dein Business ist ein Flickenteppich</h3>
-        <p>Instagram, E-Mail-Tool, Website, dazu zwölf offene ChatGPT-Tabs. Alles ist irgendwie da, aber nichts greift ineinander. Was fehlt, ist das System, das dein Business organisiert und zusammenhält.</p>
+        <h3>KI hast du probiert, aber es klingt nicht nach dir</h3>
+        <p>Ein paar Prompts, ein paar Tools, ein paar offene Tabs. Was rauskommt, ist entweder generisch oder du schreibst es am Ende doch selbst um. Was fehlt, ist ein Setup, das deine Sprache kennt und Content ausspuckt, den du ohne Bauchschmerzen veröffentlichst.</p>
       </article>
     </div>
 
-    <p class="pullquote" data-reveal>Du brauchst nicht mehr Disziplin. Du brauchst <em>ein System</em>, das dir Arbeit abnimmt.</p>
+    <p class="pullquote" data-reveal>Du brauchst keinen weiteren Kurs, der dir erklärt, wie es geht. Du brauchst <em>jemanden, der es mit dir baut</em>.</p>
   </div>
 </section>
 
@@ -1866,19 +1971,19 @@ a { color: inherit; }
   <div class="wrap" style="position: relative; z-index: 2;">
     <div data-reveal>
       <div class="kicker">Unser Ansatz</div>
-      <h2 class="h2">Wir bauen deinen <em>digitalen Zwilling</em>.</h2>
-      <p class="lede">Wir erarbeiten gemeinsam deine Positionierung, deine Angebote und deinen Content-Stil und bauen daraus KI-Agenten, die dich wirklich kennen. Sie helfen dir beim Branding, erstellen Salespages und Website-Texte, übernehmen Instagram-Prozesse und arbeiten dir überall dort zu, wo du sonst Stunden verlierst. <strong>Du behältst das Steuer und das letzte Wort. Aber du fängst nicht mehr bei null an.</strong></p>
+      <h2 class="h2">Wir erklären es dir nicht. <em>Wir bauen es mit dir.</em></h2>
+      <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Vorlagen und die Aufgabe, den Rest allein hinzukriegen. Bei uns setzen wir uns mit dir hin. Wir erarbeiten deine Positionierung, entwickeln deine Content-Strategie, schreiben Hooks und Captions mit dir und richten dir dein KI-Setup ein, das genau deine Sprache trifft. <strong>Du lieferst dein Gesicht und deine Gedanken. Den Rest bauen wir.</strong></p>
     </div>
 
     <div class="split-bar" data-reveal data-splitbar>
-      <div class="split-bar__title">So sieht dein Business danach aus</div>
+      <div class="split-bar__title">So entsteht dein Content danach</div>
       <div class="split-bar__track">
         <div class="split-bar__ai"><span class="split-bar__pct">80&thinsp;%</span></div>
         <div class="split-bar__you"><span class="split-bar__pct">20&thinsp;%</span></div>
       </div>
       <div class="split-bar__legend">
-        <span><b>Dein KI-Agent arbeitet zu</b> (Content, Prozesse, Routine)</span>
-        <span><b>Du steuerst und entscheidest</b></span>
+        <span><b>Dein KI-Setup übernimmt</b> (Hooks, Captions, Formate, Wiederverwertung)</span>
+        <span><b>Du: dein Gesicht, deine Gedanken</b></span>
       </div>
     </div>
 
@@ -1886,8 +1991,8 @@ a { color: inherit; }
       <div class="coach-callout__badge">24/7</div>
       <div>
         <span class="coach-callout__label">Immer verfügbar</span>
-        <h3 class="coach-callout__title">Dein KI-Strategie-Coach</h3>
-        <p class="coach-callout__body">Ein KI-Coach, der deine Positionierung, deine Angebote und deinen Markt in- und auswendig kennt. Du hast abends einen Strategiegedanken, den du einordnen willst? Du fragst dich, ob ein neues Angebot zu deiner Positionierung passt? Der KI-Strategie-Coach gibt dir sofort Klarheit, auf Basis deines spezifischen Business, nicht von der Stange.</p>
+        <h3 class="coach-callout__title">Dein KI-Content-Coach</h3>
+        <p class="coach-callout__body">Ein KI-Coach, der deine Positionierung, deine Themen und deine Sprache in- und auswendig kennt. Du hast eine Idee für ein Reel und willst wissen, ob der Hook trägt? Du brauchst um Mitternacht zehn Varianten einer Caption? Du kommst vom Dreh und weißt nicht, wie du daraus drei Formate machst? Der Coach liefert sofort, auf Basis deiner Marke, nicht von der Stange.</p>
       </div>
     </div>
 
@@ -1898,16 +2003,16 @@ a { color: inherit; }
       </article>
       <article class="a-card" data-reveal style="--reveal-delay: 90ms;">
         <h3>Keine Schablone</h3>
-        <p>Wir gehen individuell auf dich, deine Angebote und deinen unternehmerischen Stil ein. Was bei hundert anderen funktioniert, interessiert uns nur, wenn es auch zu dir passt.</p>
+        <p>Wir gehen individuell auf dich, deine Themen und deinen Stil ein. Was bei hundert anderen funktioniert, interessiert uns nur, wenn es auch zu dir passt.</p>
       </article>
       <article class="a-card" data-reveal style="--reveal-delay: 180ms;">
-        <h3>Kein Theorie-Programm</h3>
-        <p>Wir bauen mit dir echte Systeme. Du verlässt den Club nicht mit einem Zertifikat, sondern mit einem Business, das läuft.</p>
+        <h3>Kein Selbstlern-Programm</h3>
+        <p>Du bekommst keine Hausaufgaben, die du allein wegarbeitest. Wir sitzen mit dir dran, bis dein Setup steht und deine Formate laufen.</p>
       </article>
     </div>
 
     <div class="cred-line" data-reveal>
-      Keine generischen KI-Tipps von der Stange. Dahinter stecken <b>10+ Jahre Online-Coaching-Markt</b>, eine Community mit <b>100.000 Followern</b>, mehrfach 5-stellige Monate und begleitete Launches bis <b>150.000&nbsp;€</b>.
+      Keine generischen KI-Tipps von der Stange. Dahinter stecken <b>10+ Jahre Online-Markt</b>, eine Community mit <b>100.000 Followern</b>, die genau so aufgebaut wurde, und begleitete Launches bis <b>150.000&nbsp;€</b>.
     </div>
   </div>
 </section>
@@ -1926,35 +2031,35 @@ a { color: inherit; }
         <div class="b-card__inner">
           <span class="b-tag">Herzstück</span>
           <h3>1:1 Betreuung über volle 6 Monate</h3>
-          <p>Kein Witz: Wir sind per Telegram dauerhaft mit dir in Kontakt. Wir schauen uns deinen Content an, geben dir die richtigen Impulse und wenn es sein muss, auch mal einen liebevollen Arschtritt. Du hängst irgendwo fest? Dann nehmen wir dir Bildschirmvideos auf und lösen das Ding gemeinsam.</p>
+          <p>Kein Witz: Wir sind per Telegram dauerhaft mit dir in Kontakt. Wir schauen uns deinen Content an, gehen deine Hooks durch, bevor du drehst, und geben dir die richtigen Impulse. Du hängst irgendwo fest? Dann nehmen wir dir Bildschirmvideos auf und lösen das Ding gemeinsam.</p>
         </div>
       </article>
       <article class="b-card" data-reveal style="--reveal-delay: 90ms;">
         <div class="b-card__inner">
           <div class="b-num"><span data-count="48">0</span></div>
           <h3>Live-Calls</h3>
-          <p>Jede Woche ein offener Q&amp;A-Call, bei dem wir individuell auf das eingehen, was gerade brennt. Du profitierst nicht nur von Hanna und Martin, sondern auch vom Blickwinkel der anderen: Gleichgesinnte, die dir ein paar Schritte voraus sind, beschleunigen deinen Fortschritt mehr als jedes strukturierte Lehrformat.</p>
+          <p>Offene Q&amp;A-Calls, bei denen wir individuell auf das eingehen, was gerade brennt. Du profitierst nicht nur von Hanna und Martin, sondern auch vom Blickwinkel der anderen: Leute, die dir ein paar Schritte voraus sind, beschleunigen dich mehr als jedes strukturierte Lehrformat.</p>
         </div>
       </article>
       <article class="b-card" data-reveal>
         <div class="b-card__inner">
-          <span class="b-tag">Community</span>
-          <h3>Private Telegram-Gruppe</h3>
-          <p>Direkter Zugang zu uns beiden, plus Austausch mit Leuten, die gerade dasselbe bauen wie du.</p>
+          <span class="b-tag">Done with you</span>
+          <h3>Deine Content-Strategie, gemeinsam erarbeitet</h3>
+          <p>Wir legen zusammen fest, welche Formate zu dir passen, worüber du sprichst und was du wann drehst. Kein Raten mehr, was du posten sollst.</p>
         </div>
       </article>
       <article class="b-card" data-reveal style="--reveal-delay: 90ms;">
         <div class="b-card__inner">
-          <span class="b-tag">On-Demand</span>
-          <h3>Videoinhalte, wenn du sie brauchst</h3>
-          <p>Neue Tools, KI-Updates und Business-Konzepte teilen wir, sobald sie für dich relevant sind (und nur dann).</p>
+          <span class="b-tag">Technik</span>
+          <h3>Dein KI-Setup, fertig eingerichtet</h3>
+          <p>Wir bauen dir die Agenten, die deine Sprache kennen: Hooks, Captions, Wiederverwertung deiner Inhalte. Du bekommst kein Tutorial, du bekommst ein laufendes Setup.</p>
         </div>
       </article>
       <article class="b-card" data-reveal style="--reveal-delay: 180ms;">
         <div class="b-card__inner">
-          <span class="b-tag">Fundament</span>
-          <h3>Grundlagenkurs mit 5 Themen</h3>
-          <p>Die Basis, damit du in den Live-Calls sofort ansetzen kannst. Kurz, strukturiert und auf den Punkt.</p>
+          <span class="b-tag">Community</span>
+          <h3>Private Telegram-Gruppe</h3>
+          <p>Direkter Zugang zu uns beiden, plus Austausch mit Leuten, die gerade dasselbe bauen wie du.</p>
         </div>
       </article>
     </div>
@@ -1968,43 +2073,43 @@ a { color: inherit; }
   <div class="wrap">
     <div data-reveal>
       <div class="kicker">Die 5 Themenschwerpunkte</div>
-      <h2 class="h2">Fünf Bausteine, <em>ein System</em>.</h2>
+      <h2 class="h2">Fünf Bausteine, <em>ein Auftritt</em>.</h2>
     </div>
 
     <div class="modules">
       <div class="module" data-reveal>
         <div class="module__num">01</div>
         <div>
-          <h3>Positionierung &amp; Branding</h3>
-          <p>Wer du bist, für wen du das machst und warum genau das zählt. Die Grundlage für alles andere.</p>
+          <h3>Positionierung &amp; Markenkern</h3>
+          <p>Wofür du stehst, für wen du sprichst und warum sich das jemand merkt. Ohne diesen Kern ist jeder Post nur Rauschen.</p>
         </div>
       </div>
       <div class="module" data-reveal style="--reveal-delay: 60ms;">
         <div class="module__num">02</div>
         <div>
-          <h3>Angebotsstrategie</h3>
-          <p>Angebote, die perfekt aufeinander abgestimmt sind und gekauft werden, ohne dass du druckbehaftet verkaufen musst.</p>
+          <h3>Content-Strategie &amp; Formate</h3>
+          <p>Welche Formate zu dir und deinem Thema passen, was du wann drehst und wie dein Redaktionsplan aussieht. Damit du nie wieder vor einem leeren Feed sitzt und überlegst, was du posten könntest.</p>
         </div>
       </div>
       <div class="module" data-reveal style="--reveal-delay: 120ms;">
         <div class="module__num">03</div>
         <div>
-          <h3>Content &amp; Reichweite</h3>
-          <p>Content, der dein Angebot verkauft, ohne dass du jeden Post von Hand schreibst und jeden Tag auf der Plattform kämpfst.</p>
+          <h3>Hooks, Captions &amp; Storytelling</h3>
+          <p>Das Handwerk hinter Reichweite. Die ersten drei Sekunden entscheiden, ob jemand bleibt, und genau daran arbeiten wir mit dir, bis es sitzt.</p>
         </div>
       </div>
       <div class="module" data-reveal style="--reveal-delay: 180ms;">
         <div class="module__num">04</div>
         <div>
-          <h3>Sales</h3>
-          <p>Vom ersten Kontakt bis zum Ja. Ein Verkaufsprozess, der sich nicht wie Verkaufen anfühlt, weder für dich noch für deinen Kunden.</p>
+          <h3>Dein KI-Setup</h3>
+          <p>Die Agenten, die deine Sprache kennen und dir zuarbeiten: Hooks generieren, Captions schreiben, einen Dreh in mehrere Formate zerlegen. Keine Vorkenntnisse nötig, wir richten alles ein.</p>
         </div>
       </div>
       <div class="module" data-reveal style="--reveal-delay: 240ms;">
         <div class="module__num">05</div>
         <div>
-          <h3>KI &amp; Technik</h3>
-          <p>Die konkreten Systeme, die deinen digitalen Zwilling bauen und am Laufen halten. Keine Vorkenntnisse nötig. Wir halten dich über die KI-Entwicklungen auf dem Laufenden, die wirklich relevant für dein Business sind (nicht die Spielereien und Zeitfresser).</p>
+          <h3>Angebot &amp; Verkauf</h3>
+          <p>Damit aus Sichtbarkeit auch Anfragen werden. Wir schärfen dein Angebot und den Weg vom Profil zum Gespräch, sodass die neue Reichweite nicht nur Applaus bleibt.</p>
         </div>
       </div>
     </div>
@@ -2027,7 +2132,7 @@ a { color: inherit; }
         <h3>Hanna Marzian</h3>
         <div class="host__handle">@hanna.gpt</div>
         <div class="host__tags"><span>Content</span><span>Reichweite</span><span>Instagram</span></div>
-        <p>100.000 Follower auf Instagram. Hanna hat ihr eigenes Business von manueller Schwerstarbeit auf ein KI-gesteuertes System umgebaut und diesen Weg öffentlich dokumentiert. Sie zeigt dir, wie Reichweite entsteht und wie aus deinem Content ein System wird, das verkauft.</p>
+        <p>100.000 Follower auf Instagram, organisch aufgebaut. Hanna weiß aus eigener Erfahrung, welche Hooks tragen, welche Formate laufen und wie ein Profil aussehen muss, damit Leute hängen bleiben. Genau dieses Handwerk gibt sie an dich weiter, statt dir Theorie über Reichweite zu erzählen.</p>
       </article>
       <article class="host" data-reveal style="--reveal-delay: 120ms;">
         <div class="host__photo-wrap">
@@ -2035,8 +2140,8 @@ a { color: inherit; }
         </div>
         <h3>Martin Thun</h3>
         <div class="host__handle">@martin_thun_</div>
-        <div class="host__tags"><span>Funnel</span><span>Technik</span><span>Angebot</span><span>Sales</span></div>
-        <p>7 Jahre Online-Unternehmer und Gründer der KI-Agentur scale². Hat selbst mehrfach 5-stellige Launches gemacht und Kunden mit 150.000-€-Umsatzmonaten begleitet. Martin bringt die technische Tiefe und die Angebots-Mechanik mit, die aus einem Kurs ein funktionierendes System machen.</p>
+        <div class="host__tags"><span>KI-Setup</span><span>Technik</span><span>Angebot</span><span>Sales</span></div>
+        <p>7 Jahre Online-Unternehmer und Gründer der KI-Agentur scale². Hat als Agentur jahrelang die Umsetzung für Kunden übernommen und Launches bis 150.000&nbsp;€ begleitet. Martin baut dir das KI-Setup, das im Hintergrund arbeitet, und sorgt dafür, dass aus Sichtbarkeit auch Anfragen werden.</p>
       </article>
     </div>
   </div>
@@ -2054,18 +2159,18 @@ a { color: inherit; }
       <div class="fit__col fit__col--yes" data-reveal>
         <h3>Für dich, wenn …</h3>
         <ul class="fit__list">
-          <li><span class="fit__mark fit__mark--yes">✓</span> du Coach, Creator, Onlinekursersteller oder Dienstleister mit bestehendem Angebot bist</li>
-          <li><span class="fit__mark fit__mark--yes">✓</span> du schon etwas verkaufst oder kurz davor stehst</li>
-          <li><span class="fit__mark fit__mark--yes">✓</span> du monatlich zwischen 1.000 und 10.000&nbsp;€ machst, aber noch unregelmäßig und unplanbar</li>
-          <li><span class="fit__mark fit__mark--yes">✓</span> du echte Systeme bauen willst, nicht nur lernen</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> dein Business bereits läuft und du regelmäßig verkaufst</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> dein Auftritt online nicht zu dem passt, was du wirklich kannst</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> du Umsetzung willst statt noch einen Kurs, den du nie zu Ende schaust</li>
+          <li><span class="fit__mark fit__mark--yes">✓</span> du bereit bist, dein Gesicht zu zeigen und regelmäßig Material zu liefern</li>
         </ul>
       </div>
       <div class="fit__col fit__col--no" data-reveal style="--reveal-delay: 120ms;">
         <h3>Nichts für dich, wenn …</h3>
         <ul class="fit__list">
-          <li><span class="fit__mark fit__mark--no">×</span> du noch keinen zahlenden Kunden hast und hoffst, der Club ändert das automatisch</li>
-          <li><span class="fit__mark fit__mark--no">×</span> du Kurse kaufst, sie nie fertig schaust und „irgendwann&ldquo; weitermachst</li>
-          <li><span class="fit__mark fit__mark--no">×</span> du den nächsten KI-Hack suchst statt das Fundament</li>
+          <li><span class="fit__mark fit__mark--no">×</span> du noch keinen zahlenden Kunden hast und hoffst, Reichweite löst das automatisch</li>
+          <li><span class="fit__mark fit__mark--no">×</span> du die günstigste Lösung suchst</li>
+          <li><span class="fit__mark fit__mark--no">×</span> du erwartest, dass Sichtbarkeit ganz ohne dich vor der Kamera entsteht</li>
         </ul>
       </div>
     </div>
@@ -2076,29 +2181,57 @@ a { color: inherit; }
 <section class="section pricing-section has-noise" id="investition">
   <div class="wrap" style="position: relative; z-index: 2;">
     <div data-reveal>
-      <div class="kicker">Das Programm</div>
-      <h2 class="h2">6 Monate. 2 Mentoren. <em>Intensive 1:1 Betreuung.</em></h2>
+      <div class="kicker">Deine Optionen</div>
+      <h2 class="h2">Zwei Wege. <em>Du entscheidest, wie viel wir übernehmen.</em></h2>
+      <p class="lede">Beide Wege führen zum selben Ergebnis: ein Auftritt, der zu deinem Business passt. Der Unterschied liegt nur darin, wie viel Arbeit bei dir bleibt und wie viel bei uns.</p>
     </div>
 
-    <div class="price-card" data-reveal>
-      <div>
-        <div class="perks__title">Was du bekommst</div>
-        <ul class="perks">
-<li><span class="perks__check">✓</span><span><b>Maximale Nähe:</b> Wir gehen intensiv auf dein Business ein und arbeiten wirklich nah mit dir zusammen.</span></li>
-          <li><span class="perks__check">✓</span><span><b>Langfristige Verbindung:</b> Auch nach den 6 Monaten behältst du Zugang zu Hanna und Martin, mit der Option auf weitere Betreuung.</span></li>
-          <li><span class="perks__check">✓</span><span><b>Bewusster Qualitätsfilter:</b> Wir wählen aus, wer dabei ist. Wir wollen nah dran sein und echte Ergebnisse sehen, keine Masse.</span></li>
+    <div class="tiers">
+      <article class="tier tier--featured" data-reveal>
+        <span class="tier__flag">Der Klassiker</span>
+        <div class="tier__label">Option 1</div>
+        <div class="tier__name">Done with you</div>
+        <div class="tier__price">4.000&nbsp;€
+          <small>zzgl. MwSt. · einmalig für 6 Monate · Ratenzahlung möglich</small>
+        </div>
+        <p class="tier__desc">Wir bauen es gemeinsam mit dir. Du bekommst 6 Monate lang persönliche 1:1 Betreuung, wir erarbeiten deine Positionierung und Content-Strategie mit dir und richten dir dein komplettes KI-Setup ein. Drehen und posten machst du selbst, aber nie mehr allein und nie mehr ohne Plan.</p>
+        <ul class="tier__list">
+          <li><span class="perks__check">✓</span><span><b>1:1 Betreuung</b> über Telegram, die kompletten 6 Monate</span></li>
+          <li><span class="perks__check">✓</span><span><b>48 Live-Calls</b> mit Hanna und Martin</span></li>
+          <li><span class="perks__check">✓</span><span><b>Positionierung und Content-Strategie</b>, gemeinsam erarbeitet</span></li>
+          <li><span class="perks__check">✓</span><span><b>Dein KI-Setup</b>, von uns eingerichtet</span></li>
+          <li><span class="perks__check">✓</span><span><b>Feedback auf deine Hooks</b>, bevor du drehst</span></li>
+          <li><span class="perks__check">✓</span><span>Private Telegram-Gruppe und Grundlagenkurs</span></li>
         </ul>
-        <div class="price-cta-row">
+        <div class="tier__foot">
           <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
         </div>
-      </div>
+      </article>
 
+      <article class="tier" data-reveal style="--reveal-delay: 120ms;">
+        <div class="tier__label">Option 2</div>
+        <div class="tier__name">Done for you</div>
+        <div class="tier__price">Individuell
+          <small>Setup-Fee plus monatlicher Retainer · Preis nach Umfang</small>
+        </div>
+        <p class="tier__desc">Wir übernehmen die Umsetzung. Du lieferst dein Gesicht, deine Gedanken und Rohmaterial, den Rest macht unser Team: Strategie, Hooks, Captions, Redaktionsplan und die komplette Technik. Für alle, die weder Zeit noch Lust haben, sich selbst um Content zu kümmern.</p>
+        <ul class="tier__list">
+          <li><span class="perks__check">✓</span><span><b>Alles aus Option 1</b>, plus:</span></li>
+          <li><span class="perks__check">✓</span><span><b>Content-Produktion durch unser Team</b> statt durch dich</span></li>
+          <li><span class="perks__check">✓</span><span><b>Fertiger Redaktionsplan</b>, du bekommst gesagt, was du drehst</span></li>
+          <li><span class="perks__check">✓</span><span><b>Hooks und Captions</b> werden für dich geschrieben</span></li>
+          <li><span class="perks__check">✓</span><span>Fester Ansprechpartner und laufende Betreuung</span></li>
+        </ul>
+        <div class="tier__foot">
+          <a class="btn btn--ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Unverbindlich anfragen</a>
+        </div>
+      </article>
     </div>
 
     <div class="honesty" data-reveal>
       <h3>Damit wir uns richtig verstehen</h3>
-      <p><b>Du wirst im kompletten Zeitraum 1:1 betreut.</b> Wir arbeiten mit dir an allen relevanten Business-Themen, egal ob Mindset, Strategie oder Technik. Das hier ist kein klassisches Coaching-Programm, sondern ähnelt einem „Done With You&ldquo;-Format: Wir setzen uns intensiv mit deinen Prozessen auseinander und analysieren alle deine Online-Kanäle gemeinsam.</p>
-      <p>Wir leisten sogar per Bildschirmaufzeichnung und 1:1 Telegram-Chat direkte Unterstützung bei deinen Challenges. Wir werden nicht alle deine Probleme lösen, aber wir arbeiten sehr eng mit dir zusammen und geben unser Bestes, dich auf Kurs zu bringen.</p>
+      <p><b>Das hier ist kein Coaching-Programm.</b> Wir setzen uns mit dir hin und bauen mit dir. Wir schauen uns deine Kanäle an, gehen deine Formate durch, schreiben Hooks mit dir und richten dein Setup ein. Bei Option 2 übernehmen wir die Umsetzung sogar komplett.</p>
+      <p>Wir leisten per Bildschirmaufzeichnung und direktem Telegram-Chat konkrete Unterstützung bei deinen Baustellen. Was wir dir nicht abnehmen können: vor der Kamera stehen und deine Gedanken liefern. Das bleibt bei dir, und genau deshalb klingt es am Ende auch nach dir.</p>
     </div>
 
     <p class="smallprint"><b>Kein Fernunterricht im rechtlichen Sinne:</b> Der KI Business Club ist ein interaktives Live-Betreuungsprogramm. Die Wissensvermittlung findet überwiegend in gemeinsamen Live-Calls und durch direkte 1:1 Kommunikation statt, nicht durch selbstständig zu bearbeitende Kursmaterialien.</p>
@@ -2110,7 +2243,7 @@ a { color: inherit; }
   <div class="wrap">
     <div data-reveal style="text-align: center;">
       <div class="kicker" style="justify-content: center;">Wie läuft es ab?</div>
-      <h2 class="h2">In 3 Schritten zu deinem <em>KI-Business-System</em>.</h2>
+      <h2 class="h2">In 3 Schritten zu deinem <em>neuen Auftritt</em>.</h2>
     </div>
 
     <div class="steps">
@@ -2121,13 +2254,13 @@ a { color: inherit; }
       </div>
       <div class="step" data-reveal style="--reveal-delay: 120ms;">
         <div class="step__num">02</div>
-        <h3>Du bekommst deinen Plan</h3>
-        <p>Du erhältst von uns eine <b>Analyse deines Business</b> plus einen <b>konkreten Umsetzungsplan</b> mit deinen ersten Schritten, im 1:1 Chat mit Hanna und Martin.</p>
+        <h3>Wir schauen uns deinen Auftritt an</h3>
+        <p>Du bekommst von uns eine <b>ehrliche Analyse deiner Kanäle</b> plus einen <b>konkreten Plan</b>, was als Erstes passieren muss. Danach entscheiden wir gemeinsam, welche der beiden Optionen zu dir passt.</p>
       </div>
       <div class="step" data-reveal style="--reveal-delay: 240ms;">
         <div class="step__num">03</div>
         <h3>Wir legen los</h3>
-        <p>Wir starten gemeinsam mit einem Kickoff-Call und bauen dann Woche für Woche dein System auf. Live-Calls immer dienstags.</p>
+        <p>Kickoff-Call, dann bauen wir Woche für Woche: erst Positionierung und Strategie, dann dein KI-Setup, dann laufen deine Formate. Live-Calls immer dienstags.</p>
       </div>
     </div>
   </div>
@@ -2143,28 +2276,36 @@ a { color: inherit; }
 
     <div class="faq" data-reveal>
       <details>
+        <summary>Ist das ein Coaching oder ein Onlinekurs?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Weder noch. Bei einem Coaching bekommst du Ratschläge, bei einem Kurs bekommst du Videos, und die Umsetzung bleibt in beiden Fällen komplett bei dir. Wir setzen uns stattdessen mit dir hin und bauen mit dir: Positionierung, Content-Strategie, Hooks, dein KI-Setup. Bei Option 2 übernehmen wir die Umsetzung sogar vollständig.</div>
+      </details>
+      <details>
+        <summary>Was kostet das?<span class="faq__icon">+</span></summary>
+        <div class="faq__body"><b>Done with you</b> kostet 4.000&nbsp;€ zzgl. MwSt. für die kompletten 6 Monate, wahlweise als Einmalzahlung oder in Raten. <b>Done for you</b> setzt sich aus einer einmaligen Setup-Fee und einem monatlichen Retainer zusammen, weil der Aufwand vom Umfang abhängt. Den genauen Preis dafür besprechen wir im Gespräch.</div>
+      </details>
+      <details>
+        <summary>Was ist der Unterschied zwischen den beiden Optionen?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Bei <b>Done with you</b> erarbeiten wir alles gemeinsam, aber du drehst und postest selbst. Bei <b>Done for you</b> übernimmt unser Team die Produktion: Redaktionsplan, Hooks, Captions, Technik. Du lieferst nur noch Rohmaterial und deine Gedanken. Was in beiden Fällen bei dir bleibt: dein Gesicht vor der Kamera.</div>
+      </details>
+      <details>
+        <summary>Muss ich wirklich vor die Kamera?<span class="faq__icon">+</span></summary>
+        <div class="faq__body">Ja. Menschen folgen Menschen, und dein Gesicht ist das Einzige an deinem Auftritt, das niemand kopieren kann. Wir nehmen dir alles drumherum ab, von der Idee über den Hook bis zum fertigen Text. Aber wenn du grundsätzlich nicht sichtbar sein willst, sind wir nicht die Richtigen für dich.</div>
+      </details>
+      <details>
         <summary>Brauche ich technische Vorkenntnisse?<span class="faq__icon">+</span></summary>
-        <div class="faq__body">Nein. Der Themenschwerpunkt KI &amp; Technik ist genau dafür da. Wir halten dich über die Entwicklungen auf dem Laufenden, die wirklich relevant für dein Business sind, und lassen die Spielereien und Zeitfresser weg.</div>
+        <div class="faq__body">Nein. Wir richten dein KI-Setup ein, du bekommst kein Tutorial, sondern ein laufendes System. Und wir halten dich nur bei den Entwicklungen auf dem Laufenden, die wirklich relevant für dich sind, ohne die Spielereien und Zeitfresser.</div>
       </details>
       <details>
         <summary>Wie viel Zeit muss ich einplanen?<span class="faq__icon">+</span></summary>
-        <div class="faq__body">Einen Live-Call pro Woche (dienstags um 20:00 Uhr) plus die Umsetzung an deinem eigenen Business. Das Schöne daran: Die Systeme, die wir bauen, holen dir Schritt für Schritt mehr Zeit zurück, als du reinsteckst.</div>
+        <div class="faq__body">Einen Live-Call pro Woche (dienstags um 20:00 Uhr) plus Drehzeit für dein Material. Der Aufwand fürs Denken, Schreiben und Planen fällt weitgehend weg, weil das bei uns liegt. Bei Option 2 reduziert sich dein Anteil auf das Drehen selbst.</div>
       </details>
       <details>
         <summary>Ich habe noch keine zahlenden Kunden. Passt das?<span class="faq__icon">+</span></summary>
-        <div class="faq__body">Ehrliche Antwort: nein. Der Club ist für Selbstständige, die schon verkaufen (oder kurz davor sind) und zwischen 1.000 und 10.000&nbsp;€ im Monat machen. Wenn du noch ganz am Anfang stehst, wäre das hier nicht die richtige Investition für dich.</div>
-      </details>
-      <details>
-        <summary>Was kostet das Programm?<span class="faq__icon">+</span></summary>
-        <div class="faq__body">Den genauen Preis teilen wir dir nach deiner Bewerbung mit und er ist abhängig davon, wie intensiv die Begleitung ist. Wir bieten sowohl eine Einmalzahlung als auch flexible Raten an.</div>
-      </details>
-      <details>
-        <summary>Wie läuft die Bewerbung ab?<span class="faq__icon">+</span></summary>
-        <div class="faq__body">Kein langer Bewerbungsprozess: Du füllst das Formular aus, wir schauen drüber und melden uns bei dir. Falls per Text nicht alles zu klären ist, gibt es die Möglichkeit auf ein persönliches Klarheits-Gespräch.</div>
+        <div class="faq__body">Ehrliche Antwort: nein. Das hier ist für Leute, deren Business bereits trägt und deren Auftritt online hinterherhinkt. Wenn du noch ganz am Anfang stehst, wäre das die falsche Investition für dich.</div>
       </details>
       <details>
         <summary>Was passiert nach den 6 Monaten?<span class="faq__icon">+</span></summary>
-        <div class="faq__body">Die enge Zusammenarbeit hört nicht abrupt auf. Du behältst Zugang zu Hanna und Martin, mit der Möglichkeit auf weitere Business-Betreuung.</div>
+        <div class="faq__body">Dein Setup gehört dir und läuft weiter. Wenn du danach möchtest, dass wir die Umsetzung dauerhaft übernehmen, geht das über Option 2. Ein Zwang dazu besteht nicht.</div>
       </details>
     </div>
   </div>
@@ -2174,12 +2315,12 @@ a { color: inherit; }
 <section class="section final has-noise" id="bewerbung">
   <div class="wrap final__content" style="position: relative; z-index: 2;">
     <div class="kicker" style="color: var(--orange-bright); justify-content: center;">Nächster Schritt</div>
-    <h2 class="h2" data-reveal>Bewirb dich <em>jetzt</em>.</h2>
-    <p class="final__body" data-reveal>Fülle das Formular aus (dauert keine 5 Minuten). Wir schauen uns deine Bewerbung an und melden uns persönlich bei dir. Kein Verkaufsdruck, kein langer Prozess.</p>
+    <h2 class="h2" data-reveal>Werde <em>sichtbar</em>.</h2>
+    <p class="final__body" data-reveal>Fülle das Formular aus (dauert keine 5 Minuten). Wir schauen uns deine Kanäle an und melden uns persönlich bei dir, mit einer ehrlichen Einschätzung. Kein Verkaufsdruck, kein langer Prozess.</p>
 
     <div data-reveal>
       <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Formular ausfüllen</a>
-      <p class="final__note">Bei offenen Fragen gibt es ein persönliches Klarheits-Gespräch.</p>
+      <p class="final__note">Bei offenen Fragen gibt es ein persönliches 0&nbsp;€ Analyse-Gespräch.</p>
     </div>
   </div>
 </section>
@@ -2202,7 +2343,7 @@ a { color: inherit; }
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta__info">
     <div class="sticky-cta__title">KI Business Club</div>
-    <div class="sticky-cta__sub">6 Monate · 2 Mentoren · 1:1 Betreuung</div>
+    <div class="sticky-cta__sub">6 Monate · 1:1 Betreuung · ab 4.000 €</div>
   </div>
   <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
 </div>
