@@ -1358,6 +1358,74 @@ a { color: inherit; }
   margin-bottom: var(--s-1);
 }
 
+/* ── Bild neben dem Ansatz-Text ── */
+.approach-header {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.approach-header__img {
+  border-radius: 1.4rem;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  border: 1px solid rgba(232,137,78,0.18);
+}
+.approach-header__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+@media (max-width: 860px) {
+  .approach-header { grid-template-columns: 1fr; }
+  .approach-header__img { aspect-ratio: 3 / 2; }
+}
+
+/* ── Bausteine mit Fotos ── */
+.modules-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+  margin-top: var(--s-12);
+}
+.modules-layout__col { display: flex; flex-direction: column; gap: var(--s-8); }
+.modules-layout__img {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 24px 60px rgba(22,12,5,0.14);
+}
+.modules-layout__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+@media (max-width: 768px) {
+  .modules-layout { grid-template-columns: 1fr; gap: var(--s-8); }
+  .modules-layout__img { aspect-ratio: 3 / 2; }
+}
+
+/* ── Gesichter im Abschluss ── */
+.final__faces {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--s-6);
+}
+.final__faces img {
+  width: clamp(56px, 9vw, 76px);
+  height: clamp(56px, 9vw, 76px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(251,247,242,0.9);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+.final__faces img + img { margin-left: -18px; }
+
 /* ── Zwei Wege (Weiche) ── */
 .paths {
   display: grid;
@@ -2199,10 +2267,15 @@ html:not(.gate-unlocked) body { overflow: hidden; }
 <!-- ═══════════ APPROACH (DARK) ═══════════ -->
 <section class="section approach has-noise" id="ansatz">
   <div class="wrap" style="position: relative; z-index: 2;">
-    <div data-reveal>
-      <div class="kicker">Unser Ansatz</div>
-      <h2 class="h2">Wir erklären es dir nicht. <em>Wir bauen es mit dir.</em></h2>
-      <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Vorlagen und die Aufgabe, den Rest allein hinzukriegen. Bei uns setzen wir uns mit dir hin. Wir erarbeiten deine Positionierung, entwickeln deine Content-Strategie und räumen dein Setup auf, damit Tools, Technik und KI endlich ineinandergreifen. <strong>Am Ende steht eine Struktur, die dir Reichweite bringt, ohne dich jeden Tag persönlich zu kosten.</strong></p>
+    <div class="approach-header" data-reveal>
+      <div>
+        <div class="kicker">Unser Ansatz</div>
+        <h2 class="h2">Wir erklären es dir nicht. <em>Wir bauen es mit dir.</em></h2>
+        <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Vorlagen und die Aufgabe, den Rest allein hinzukriegen. Bei uns setzen wir uns mit dir hin. Wir erarbeiten deine Positionierung, entwickeln deine Content-Strategie und räumen dein Setup auf, damit Tools, Technik und KI endlich ineinandergreifen. <strong>Am Ende steht eine Struktur, die dir Reichweite bringt, ohne dich jeden Tag persönlich zu kosten.</strong></p>
+      </div>
+      <div class="approach-header__img">
+        <img src="img-team.jpg" alt="Hanna Marzian und Martin Thun" loading="lazy">
+      </div>
     </div>
 
     <div class="split-bar" data-reveal data-splitbar>
@@ -2326,33 +2399,49 @@ html:not(.gate-unlocked) body { overflow: hidden; }
       <h2 class="h2">Vier Bausteine, <em>ein Auftritt</em>.</h2>
     </div>
 
-    <div class="modules">
-      <div class="module" data-reveal>
-        <div class="module__num">01</div>
-        <div>
-          <h3>Positionierung &amp; Markenkern</h3>
-          <p>Wofür du stehst, für wen du sprichst und warum sich das jemand merkt. Ohne diesen Kern ist jeder Post nur Rauschen.</p>
+    <div class="modules-layout">
+      <!-- Spalte 1: 01 und 02, darunter Hanna -->
+      <div class="modules-layout__col">
+        <div class="modules">
+          <div class="module" data-reveal>
+            <div class="module__num">01</div>
+            <div>
+              <h3>Positionierung &amp; Markenkern</h3>
+              <p>Wofür du stehst, für wen du sprichst und warum sich das jemand merkt. Ohne diesen Kern ist jeder Post nur Rauschen.</p>
+            </div>
+          </div>
+          <div class="module" data-reveal style="--reveal-delay: 60ms;">
+            <div class="module__num">02</div>
+            <div>
+              <h3>Content-Strategie &amp; Formate</h3>
+              <p>Welche Formate zu dir und deinem Thema passen, was du wann drehst und wie dein Redaktionsplan aussieht. Damit du nie wieder vor einem leeren Feed sitzt und überlegst, was du posten könntest.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modules-layout__img" data-reveal>
+          <img src="img-hanna.jpg" alt="Hanna Marzian" loading="lazy">
         </div>
       </div>
-      <div class="module" data-reveal style="--reveal-delay: 60ms;">
-        <div class="module__num">02</div>
-        <div>
-          <h3>Content-Strategie &amp; Formate</h3>
-          <p>Welche Formate zu dir und deinem Thema passen, was du wann drehst und wie dein Redaktionsplan aussieht. Damit du nie wieder vor einem leeren Feed sitzt und überlegst, was du posten könntest.</p>
+      <!-- Spalte 2: Martin, darunter 03 und 04 -->
+      <div class="modules-layout__col">
+        <div class="modules-layout__img" data-reveal>
+          <img src="img-martin.jpg" alt="Martin Thun" loading="lazy">
         </div>
-      </div>
-      <div class="module" data-reveal style="--reveal-delay: 120ms;">
-        <div class="module__num">03</div>
-        <div>
-          <h3>Hooks, Captions &amp; Storytelling</h3>
-          <p>Das Handwerk hinter Reichweite. Die ersten drei Sekunden entscheiden, ob jemand bleibt, und genau daran arbeiten wir mit dir, bis es sitzt.</p>
-        </div>
-      </div>
-      <div class="module" data-reveal style="--reveal-delay: 180ms;">
-        <div class="module__num">04</div>
-        <div>
-          <h3>KI-Setup, Technik &amp; Prozesse</h3>
-          <p>Wir räumen deinen Tool-Dschungel auf und bauen dir die Agenten, die deine Sprache kennen. Statt zwölf Werkzeuge, die nebeneinander herlaufen, hast du am Ende ein Setup, das ineinandergreift (und meistens auch spürbar weniger kostet).</p>
+        <div class="modules">
+          <div class="module" data-reveal style="--reveal-delay: 120ms;">
+            <div class="module__num">03</div>
+            <div>
+              <h3>Hooks, Captions &amp; Storytelling</h3>
+              <p>Das Handwerk hinter Reichweite. Die ersten drei Sekunden entscheiden, ob jemand bleibt, und genau daran arbeiten wir mit dir, bis es sitzt.</p>
+            </div>
+          </div>
+          <div class="module" data-reveal style="--reveal-delay: 180ms;">
+            <div class="module__num">04</div>
+            <div>
+              <h3>KI-Setup, Technik &amp; Prozesse</h3>
+              <p>Wir räumen deinen Tool-Dschungel auf und bauen dir die Agenten, die deine Sprache kennen. Statt zwölf Werkzeuge, die nebeneinander herlaufen, hast du am Ende ein Setup, das ineinandergreift (und meistens auch spürbar weniger kostet).</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2379,7 +2468,7 @@ html:not(.gate-unlocked) body { overflow: hidden; }
       </article>
       <article class="host" data-reveal style="--reveal-delay: 120ms;">
         <div class="host__photo-wrap">
-          <img class="host__photo host__photo--martin" src="martin-portrait.jpg" alt="Martin Thun">
+          <img class="host__photo host__photo--martin" src="img-martin.jpg" alt="Martin Thun">
         </div>
         <h3>Martin Thun</h3>
         <div class="host__handle">@martin_thun_</div>
@@ -2573,6 +2662,10 @@ html:not(.gate-unlocked) body { overflow: hidden; }
 <!-- ═══════════ FINAL CTA ═══════════ -->
 <section class="section final has-noise" id="bewerbung">
   <div class="wrap final__content" style="position: relative; z-index: 2;">
+    <div class="final__faces" data-reveal>
+      <img src="img-hanna.jpg" alt="Hanna Marzian" loading="lazy">
+      <img src="img-martin.jpg" alt="Martin Thun" loading="lazy">
+    </div>
     <div class="kicker" style="color: var(--orange-bright); justify-content: center;">Nächster Schritt</div>
     <h2 class="h2" data-reveal>Werde <em>sichtbar</em>.</h2>
     <p class="final__body" data-reveal>Fülle das Formular aus (dauert keine 5 Minuten). Wir schauen uns deine Kanäle an und melden uns persönlich bei dir, mit einer ehrlichen Einschätzung. Kein Verkaufsdruck, kein langer Prozess.</p>
