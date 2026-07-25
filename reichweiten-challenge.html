@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 Tage Reichweite – Live Challenge | business. einfach. smart</title>
+<meta name="description" content="21 Tage, 21 Kurzvideos, 3 Live Calls mit Hanna und Martin. Du lernst, warum Content Reichweite bekommt und wie du das für deinen Account nutzt. Einmalig 30 Euro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Montserrat:wght@300;400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+/* ─────────────────────────────────────────────
+   BRAND TOKENS
+───────────────────────────────────────────── */
+:root {
+  --orange:       #D8622A;
+  --orange-mid:   #E8894E;
+  --orange-pale:  #F5CFA8;
+  --orange-deep:  #B84E1E;
+  --warm-black:   #160C05;
+  --warm-dark:    #2A1608;
+  --warm-brown:   #472B18;
+  --mid-brown:    #6B4530;
+  --tan:          #A88960;
+  --sand:         #D0B896;
+  --beige:        #EDE4D7;
+  --cream:        #F6F0E6;
+  --off-white:    #FBF7F2;
+  --warm-gray:    #7A6A5A;
+  --mid-gray:     #BDB0A0;
+  --light-gray:   #D8CFC4;
+
+  --font-heading: 'Cormorant', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-accent:  'Montserrat', sans-serif;
+  --font-hand:    'Caveat', cursive;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #FFFFFF;
+  color: var(--warm-black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+/* ─────────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────────── */
+.container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+.container--wide { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+section { padding: 88px 0; }
+section.tight { padding: 56px 0; }
+.bg-cream { background: var(--off-white); }
+.bg-dark { background: var(--warm-black); color: var(--off-white); }
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-accent);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3.5px; text-transform: uppercase;
+  color: var(--orange);
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-bottom: 22px;
+}
+.eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--orange); opacity: .6; }
+.eyebrow--lg {
+  font-size: 14px; letter-spacing: 2.6px; font-weight: 700;
+  margin-bottom: 20px;
+}
+.eyebrow--lg::after { width: 44px; }
+@media (max-width: 480px) { .eyebrow--lg { font-size: 12px; letter-spacing: 2px; } }
+
+h1.hero-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 400; line-height: 1.06; letter-spacing: -.8px;
+  margin-bottom: 22px;
+}
+h1.hero-headline em { font-style: italic; color: var(--orange-mid); }
+
+h2.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 400; line-height: 1.14; margin-bottom: 18px;
+}
+h2.section-title em { font-style: italic; color: var(--orange-mid); }
+
+h3.sub-title {
+  font-family: var(--font-heading);
+  font-size: clamp(21px, 2.8vw, 27px);
+  font-weight: 500; color: var(--warm-brown); margin-bottom: 12px;
+}
+
+.lead { font-size: 17px; font-weight: 300; color: var(--warm-gray); line-height: 1.85; max-width: 620px; }
+.lead strong { color: var(--warm-black); font-weight: 600; }
+.lead--hero { font-weight: 400; color: var(--warm-brown); }
+.lead--hero strong { font-weight: 700; }
+.center { text-align: center; }
+.center .lead, .center .eyebrow { margin-left: auto; margin-right: auto; }
+
+/* Handschrift-Notiz */
+.hand {
+  font-family: var(--font-hand);
+  font-size: 23px; line-height: 1.35; color: var(--orange);
+  transform: rotate(-1.6deg); display: inline-block;
+}
+.hand--note {
+  border-left: 2px solid var(--orange-pale);
+  padding-left: 18px; margin: 30px 0; max-width: 480px;
+  transform: rotate(-.7deg);
+}
+
+/* ─────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-accent);
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 17px 38px; border-radius: 1px; border: none;
+  cursor: pointer; text-decoration: none; transition: all 200ms ease;
+}
+.btn-primary { background: var(--orange); color: #FFF; }
+.btn-primary:hover { background: var(--orange-deep); transform: translateY(-1px); }
+.btn--large { padding: 21px 50px; font-size: 12px; letter-spacing: 3px; }
+.btn--full { width: 100%; }
+
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--beige); padding: 12px 0;
+}
+.nav__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1120px; margin: 0 auto; padding: 0 24px;
+}
+.nav__logo { display: block; flex-shrink: 0; }
+.nav__logo img { width: 260px; height: auto; }
+.nav__right { display: flex; align-items: center; gap: 18px; }
+.nav__hint {
+  font-family: var(--font-accent); font-size: 10px; letter-spacing: 1.5px;
+  color: var(--warm-gray); text-transform: uppercase;
+}
+@media (max-width: 900px) { .nav__logo img { width: 205px; } }
+@media (max-width: 640px) {
+  .nav__hint { display: none; }
+  .nav__logo img { width: 150px; }
+  .nav .btn { padding: 13px 20px; font-size: 10px; letter-spacing: 1.6px; }
+}
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
+.hero { padding: 64px 0 72px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; top: -200px; left: -180px;
+  width: 480px; height: 480px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(216,98,42,.09) 0%, rgba(216,98,42,0) 70%);
+  pointer-events: none;
+}
+.hero__grid {
+  display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center;
+  max-width: 1120px; margin: 0 auto; padding: 0 24px; position: relative;
+}
+@media (max-width: 900px) { .hero__grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.hero__photo { position: relative; }
+.hero__photo img {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  border-radius: 3px;
+}
+.hero__photo-tag {
+  position: absolute; bottom: -18px; left: -18px;
+  background: #FFF; border: 1px solid var(--beige);
+  padding: 12px 20px; box-shadow: 0 12px 32px rgba(22,12,5,.09);
+}
+.hero__photo-tag strong {
+  display: block; font-family: var(--font-heading); font-size: 19px; font-weight: 600; color: var(--warm-black);
+}
+.hero__photo-tag span {
+  font-family: var(--font-accent); font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--warm-brown);
+}
+@media (max-width: 900px) { .hero__photo-tag { left: 12px; bottom: -14px; } }
+
+.hero__facts { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0 30px; }
+.fact {
+  font-family: var(--font-accent); font-size: 10px; font-weight: 600;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--warm-brown);
+  border: 1px solid var(--light-gray); border-radius: 999px; padding: 8px 16px;
+  background: #FFF;
+}
+.hero__cta-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.hero__price { display: flex; align-items: baseline; gap: 8px; }
+.hero__price-num { font-family: var(--font-heading); font-size: 42px; line-height: 1; }
+.hero__price-note { font-family: var(--font-accent); font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--warm-gray); }
+.hero__trust { display: flex; align-items: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.hero__stars { color: #F5B800; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-shadow: 0 0 .5px currentColor; }
+.hero__trust-text { font-size: 13px; color: var(--warm-gray); }
+.hero__trust-text strong { color: var(--warm-black); font-weight: 600; }
+
+/* ─────────────────────────────────────────────
+   TESTIMONIAL WALL
+───────────────────────────────────────────── */
+.testimonials-head { margin-bottom: 6px; }
+.testimonial-wall {
+  columns: 4 240px; column-gap: 16px; margin-top: 40px;
+}
+@media (max-width: 900px) { .testimonial-wall { columns: 2 240px; } }
+@media (max-width: 560px) { .testimonial-wall { columns: 1; } }
+.testimonial-wall img {
+  width: 100%; display: block; margin: 0 0 16px; border-radius: 6px;
+  break-inside: avoid; box-shadow: 0 8px 24px rgba(22,12,5,.08);
+  border: 1px solid var(--beige);
+}
+
+/* ─────────────────────────────────────────────
+   BRIEF (persönlicher Block)
+───────────────────────────────────────────── */
+.letter-grid {
+  display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start;
+}
+@media (max-width: 880px) { .letter-grid { grid-template-columns: 1fr; gap: 36px; } }
+.letter__photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 3px; }
+.letter__caption {
+  font-family: var(--font-hand); font-size: 20px; color: var(--tan);
+  margin-top: 14px; transform: rotate(-1deg); line-height: 1.3;
+}
+.letter__body p { font-size: 17px; color: var(--warm-brown); font-weight: 300; margin-bottom: 20px; }
+.letter__body p strong { color: var(--warm-black); font-weight: 600; }
+.letter__body p.big {
+  font-family: var(--font-heading); font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.3; color: var(--warm-black); font-weight: 500;
+}
+.signature {
+  font-family: var(--font-hand); font-size: 34px; color: var(--warm-black);
+  margin-top: 26px; transform: rotate(-2deg); display: inline-block;
+}
+.signature small {
+  display: block; font-family: var(--font-accent); font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray);
+  transform: rotate(2deg); margin-top: 4px;
+}
+
+/* ─────────────────────────────────────────────
+   PAIN LIST
+───────────────────────────────────────────── */
+.pain-list { list-style: none; margin-top: 32px; max-width: 640px; }
+.pain-list li {
+  position: relative; padding-left: 30px; margin-bottom: 15px;
+  font-size: 16px; color: var(--warm-brown);
+}
+.pain-list li::before {
+  content: ''; position: absolute; left: 0; top: 13px;
+  width: 14px; height: 1.5px; background: var(--orange);
+}
+
+/* ─────────────────────────────────────────────
+   CARDS
+───────────────────────────────────────────── */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 44px; }
+.card {
+  background: #FFF; border: 1px solid var(--beige); padding: 30px 26px;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.card:hover { border-color: var(--orange-pale); transform: translateY(-2px); }
+.card__num {
+  font-family: var(--font-heading); font-size: 34px; color: var(--orange);
+  line-height: 1; margin-bottom: 12px; display: block;
+}
+.card p { font-size: 15px; color: var(--warm-gray); font-weight: 300; }
+
+/* ─────────────────────────────────────────────
+   ABLAUF: Timeline + Foto
+───────────────────────────────────────────── */
+.ablauf-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: start; margin-top: 44px; }
+@media (max-width: 900px) { .ablauf-grid { grid-template-columns: 1fr; gap: 36px; } }
+.ablauf__side { position: sticky; top: 100px; }
+.ablauf__side img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 3px; }
+.ablauf__quote {
+  font-family: var(--font-heading); font-size: 21px; font-style: italic;
+  color: var(--warm-brown); line-height: 1.45; margin-top: 20px;
+}
+.ablauf__quote-name {
+  font-family: var(--font-accent); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--orange); margin-top: 10px;
+}
+
+.timeline { border-left: 1.5px solid var(--beige); }
+.tl-item { position: relative; padding: 0 0 36px 32px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ''; position: absolute; left: -6.5px; top: 9px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--orange); border: 2.5px solid var(--off-white);
+}
+.tl-item--soft::before { background: var(--sand); }
+.tl-day {
+  font-family: var(--font-accent); font-size: 10px; font-weight: 700;
+  letter-spacing: 2.2px; text-transform: uppercase; color: var(--orange);
+  display: block; margin-bottom: 5px;
+}
+.tl-item h4 { font-family: var(--font-heading); font-size: 24px; font-weight: 500; margin-bottom: 6px; }
+.tl-item p { font-size: 15px; color: var(--warm-gray); font-weight: 300; }
+
+/* ─────────────────────────────────────────────
+   PREIS
+───────────────────────────────────────────── */
+.price-card {
+  max-width: 560px; margin: 42px auto 0; background: #FFF;
+  border: 1.5px solid var(--warm-black); padding: 46px 40px; text-align: center;
+}
+.price-card__tag {
+  font-family: var(--font-accent); font-size: 10px; font-weight: 700;
+  letter-spacing: 2.6px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px;
+}
+.price-card__amount { font-family: var(--font-heading); font-size: 80px; line-height: 1; }
+.price-card__sub { font-family: var(--font-accent); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 30px; }
+.price-card ul { list-style: none; text-align: left; margin-bottom: 32px; }
+.price-card li {
+  font-size: 15px; color: var(--warm-brown); font-weight: 300;
+  padding: 12px 0 12px 28px; border-bottom: 1px solid var(--beige); position: relative;
+}
+.price-card li:last-child { border-bottom: none; }
+.price-card li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-size: 13px; }
+.price-card__note { font-size: 12px; color: var(--warm-gray); margin-top: 16px; }
+
+/* ─────────────────────────────────────────────
+   FAQ
+───────────────────────────────────────────── */
+.faq { margin-top: 38px; max-width: 720px; }
+.faq details { border-bottom: 1px solid var(--beige); padding: 20px 0; }
+.faq summary {
+  font-family: var(--font-heading); font-size: 21px; font-weight: 500;
+  cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--orange); font-family: var(--font-body); font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: '−'; }
+.faq details p { font-size: 15px; color: var(--warm-gray); font-weight: 300; margin-top: 12px; max-width: 640px; }
+
+/* ─────────────────────────────────────────────
+   FINAL CTA
+───────────────────────────────────────────── */
+.final { text-align: center; padding: 92px 0; }
+.final h2 { font-family: var(--font-heading); font-size: clamp(32px, 5vw, 58px); font-weight: 400; line-height: 1.1; color: var(--off-white); margin-bottom: 18px; }
+.final h2 em { font-style: italic; color: var(--orange-mid); }
+.final p { font-size: 16px; color: rgba(251,247,242,.65); font-weight: 300; max-width: 520px; margin: 0 auto 34px; }
+.final .hand { color: var(--orange-mid); margin-bottom: 26px; }
+.final .btn-primary { margin-bottom: 16px; }
+.final small { display: block; font-size: 12px; color: rgba(251,247,242,.45); }
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+.footer { background: var(--off-white); padding: 40px 24px; text-align: center; border-top: 1px solid var(--light-gray); }
+.footer img { height: 46px; width: auto; margin: 0 auto 20px; }
+.footer__links { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; align-items: center; }
+.footer__links a, .footer__links span { font-size: 11px; color: var(--warm-gray); text-decoration: none; }
+.footer__links a:hover { color: var(--orange); }
+.footer__handle { font-family: var(--font-accent); font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--tan); margin-top: 16px; }
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="business. einfach. smart">
+      <img src="bes-logo-flach.png" alt="business. einfach. smart">
+    </a>
+    <div class="nav__right">
+      <span class="nav__hint">10.–31.08. · nur 30 €</span>
+      <a href="#checkout" class="btn btn-primary">Platz sichern</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="hero__grid">
+    <div>
+      <span class="eyebrow eyebrow--lg">21-Tage Reichweiten-Challenge</span>
+      <h1 class="hero-headline"><em>Planbar</em> mehr Reichweite<br>in 3 Wochen.</h1>
+      <p class="lead lead--hero">
+        KI-gestützt und ohne Technik-Vorwissen: Mit diesem einfachen <strong>Reichweiten-System</strong> erstellst du
+        ab sofort Content, der deine Zielgruppe erreicht und wirklich gesehen wird, anstatt nur weitergeswiped.
+        Während andere das „Sommerloch" als Ausrede nutzen, sorgst du für <strong>virale Inhalte</strong>.
+      </p>
+
+      <div class="hero__facts">
+        <span class="fact">10. bis 31. August</span>
+        <span class="fact">21 tägliche Kurzvideos</span>
+        <span class="fact">3 Live Calls</span>
+      </div>
+
+      <div class="hero__cta-row">
+        <a href="#checkout" class="btn btn-primary btn--large">Ich bin dabei! 😍</a>
+        <div class="hero__price">
+          <span class="hero__price-num">30 €</span>
+          <span class="hero__price-note">einmalig</span>
+        </div>
+      </div>
+
+      <div class="hero__trust">
+        <span class="hero__stars">★★★★★</span>
+        <span class="hero__trust-text">Bereits über <strong>300 begeisterte Teilnehmer</strong> bei der letzten Live Challenge</span>
+      </div>
+    </div>
+
+    <div class="hero__photo">
+      <img src="img-team.jpg" alt="Hanna Marzian und Martin Thun">
+      <div class="hero__photo-tag">
+        <strong>Hanna &amp; Martin</strong>
+        <span>100.000 Follower / 1.000+ Kunden</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ TESTIMONIALS A ══ -->
+<section>
+  <div class="container--wide center testimonials-head">
+    <h2 class="section-title">Das sagen <em>Teilnehmerinnen</em>.</h2>
+    <p class="lead">Echte Nachrichten aus der Community der letzten Challenge, unbearbeitet außer den Namen.</p>
+  </div>
+  <div class="container--wide">
+    <div class="testimonial-wall">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5993.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5995.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6007.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6079.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6226.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6001.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6269_converted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ══ BRIEF VON HANNA ══ -->
+<!-- ANPASSEN: Die Details in Hannas Story (zwei Jahre, 200 Views, nachts um zwei) sind Platzhalter.
+     Ersetzt sie durch das, was wirklich passiert ist. Je konkreter, desto besser. -->
+<section class="bg-cream">
+  <div class="container--wide">
+    <div class="letter-grid">
+      <div class="letter__photo">
+        <img src="hanna-portrait.jpg" alt="Hanna Marzian">
+        <p class="letter__caption">Hanna, ungefähr 98.000 Follower<br>nach dem ersten guten Post</p>
+      </div>
+      <div class="letter__body">
+        <p class="big">Ich habe fast zwei Jahre lang gepostet, bevor irgendetwas passiert ist.</p>
+        <p>
+          Und ich meine wirklich gepostet. Fast täglich. Ich habe Reels geschnitten bis nachts um zwei
+          und am nächsten Morgen standen da 200 Views. Ich habe mir eingeredet, dass das eben so ist
+          und dass Reichweite einfach Zeit braucht.
+        </p>
+        <p>
+          Es lag aber nicht an der Zeit. Es lag daran, dass ich nicht verstanden habe, was ich da eigentlich tue.
+          Ich habe kopiert, was bei anderen funktioniert hat, ohne zu wissen warum es funktioniert.
+          Und wenn du das nicht weißt, kannst du es auch nicht wiederholen.
+        </p>
+        <p>
+          <strong>Der Moment, an dem es gekippt ist, war kein besseres Video.</strong>
+          Es war der Moment, an dem ich zum ersten Mal auf einen Post geschaut habe, der gelaufen ist,
+          und benennen konnte warum. Ab da war es kein Raten mehr.
+        </p>
+        <p>
+          Bis zu den 100.000 Followern hat es danach trotzdem gedauert. Aber es war nie wieder Zufall.
+        </p>
+        <p>
+          Genau an diesen Punkt will ich dich in 21 Tagen bringen. Nicht zu deinem viralen Moment
+          (den kann dir ehrlich gesagt niemand versprechen), sondern an den Punkt, an dem du weißt,
+          warum etwas läuft. Alles danach wird deutlich einfacher.
+        </p>
+        <div class="signature">
+          Hanna
+          <small>Hanna Marzian</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROBLEM ══ -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Das Problem ist selten<br>dein <em>Content</em>.</h2>
+    <p class="lead">
+      Du schneidest, schreibst, denkst dir Hooks aus. Und dann stehen da wieder 340 Views.
+      Irgendwann fragst du dich, ob das alles überhaupt noch Sinn hat.
+      Der Grund ist meistens nicht das Video, sondern dass du rätst, statt zu wissen.
+    </p>
+    <ul class="pain-list">
+      <li>Du postest nach Gefühl und hoffst, dass irgendwas davon hängen bleibt.</li>
+      <li>Du siehst Accounts mit schlechterem Content, die dreimal so viel Reichweite holen.</li>
+      <li>Du hast hundert Tipps gehört und keinen einzigen, der zu den anderen passt.</li>
+      <li>Du weißt nach einem guten Post nicht, warum er gut war (also kannst du ihn auch nicht wiederholen).</li>
+    </ul>
+    <p class="hand hand--note">
+      Falls du beim Lesen dreimal genickt hast: willkommen im Club.<br>Genau da haben wir auch angefangen.
+    </p>
+  </div>
+</section>
+
+<!-- ══ MECHANISMUS ══ -->
+<section class="bg-cream">
+  <div class="container">
+    <h2 class="section-title">Reichweite ist kein Glück.<br>Sie ist ein <em>System</em>.</h2>
+    <p class="lead">
+      Jede Plattform bewertet deinen Content nach denselben paar Signalen. Wer die kennt, muss nicht mehr raten,
+      sondern trifft Entscheidungen. In der Challenge bekommst du diese Signale nicht als Theorie,
+      sondern als tägliche Aufgabe. 21 Tage lang, jeden Tag ein Baustein.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="card__num">21</span>
+        <h3 class="sub-title">Kurzvideos</h3>
+        <p>Jeden Morgen ein Video von uns. Fünf bis zehn Minuten, kein Rumgeschwafel. Ein Prinzip, eine Aufgabe, fertig.</p>
+      </div>
+      <div class="card">
+        <span class="card__num">3</span>
+        <h3 class="sub-title">Live Calls</h3>
+        <p>Start, Mitte, Ende. Wir sind beide dabei, du stellst deine Fragen zu deinem Account und bekommst eine Antwort.</p>
+      </div>
+      <div class="card">
+        <span class="card__num">∞</span>
+        <h3 class="sub-title">Aufzeichnungen</h3>
+        <p>Keine Zeit live? Alles wird aufgezeichnet. Du bleibst dabei, auch wenn dein Kalender voll ist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABLAUF ══ -->
+<section>
+  <div class="container--wide">
+    <h2 class="section-title">Der <em>Ablauf</em>:</h2>
+
+    <div class="ablauf-grid">
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-day">Tag 1 · 10. August · Live</span>
+          <h4>Onboarding Call</h4>
+          <p>Wir gehen gemeinsam durch, wo du gerade stehst, was du in den nächsten drei Wochen konkret machst und worauf du ab sofort achtest. Danach weißt du, wofür du diese 21 Tage nutzt.</p>
+        </div>
+        <div class="tl-item tl-item--soft">
+          <span class="tl-day">Tag 1 bis 21 · Täglich</span>
+          <h4>Ein Kurzvideo pro Tag</h4>
+          <p>Hooks, Formate, Wiedergabezeit, Themenwahl, Postfrequenz, Profil, Timing. Jeden Tag ein Stück davon, direkt zum Umsetzen. Zusammen ergibt das ein komplettes Bild statt hundert loser Tipps.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Tag 11 · 20. August · Live</span>
+          <h4>Zwischen Call</h4>
+          <p>Der Punkt, an dem die meisten aussteigen. Genau deshalb liegt hier der zweite Call. Wir schauen, was bei dir schon zieht, was noch hakt und korrigieren, bevor du drei Wochen in die falsche Richtung läufst.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">Tag 21 · 31. August · Live</span>
+          <h4>Abschluss Call</h4>
+          <p>Was hat funktioniert, was nicht und wie sieht dein Plan für die nächsten Monate aus. Du gehst nicht mit einem guten Gefühl raus, sondern mit einer Vorgehensweise, die du weiter benutzen kannst.</p>
+        </div>
+      </div>
+
+      <aside class="ablauf__side">
+        <img src="img-martin.jpg" alt="Martin Thun">
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS B ══ -->
+<section class="bg-cream">
+  <div class="container--wide center testimonials-head">
+    <h2 class="section-title">Noch mehr <em>Stimmen</em> aus der Community.</h2>
+  </div>
+  <div class="container--wide">
+    <div class="testimonial-wall">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5994.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5996.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5997.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5998.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6078.PNG" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6227.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6228.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6229.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ══ PREIS ══ -->
+<section id="checkout">
+  <div class="container center">
+    <span class="eyebrow">Deine Teilnahme</span>
+    <h2 class="section-title">Ein Abend Essen gehen.<br>Oder <em>21 Tage</em> Reichweite.</h2>
+
+    <div class="price-card">
+      <div class="price-card__tag">Live Challenge</div>
+      <div class="price-card__amount">30 €</div>
+      <div class="price-card__sub">Einmalig</div>
+      <ul>
+        <li>21 tägliche Kurzvideos, jeden Morgen frisch</li>
+        <li>Live Onboarding Call zum Start</li>
+        <li>Live Zwischen Call zur Halbzeit</li>
+        <li>Live Abschluss Call mit deinem Plan danach</li>
+        <li>Alle Aufzeichnungen, falls du live nicht kannst</li>
+      </ul>
+      <!-- ANPASSEN: CopeCart Link -->
+      <a href="[CHECKOUT-LINK]" class="btn btn-primary btn--large btn--full">Platz sichern</a>
+      <p class="price-card__note">Start am 10. August. Danach schließt die Runde bis zum nächsten Durchgang.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section>
+  <div class="container">
+    <span class="eyebrow">Kurz geklärt</span>
+    <h2 class="section-title">Fragen, die <em>immer</em> kommen.</h2>
+
+    <div class="faq">
+      <details open>
+        <summary>Muss ich bei den Live Calls dabei sein?</summary>
+        <p>Schön wäre es, nötig ist es nicht. Alle drei Calls werden aufgezeichnet und du bekommst die Aufnahme. Live bringt dir allerdings den Vorteil, dass du deine Fragen direkt loswirst.</p>
+      </details>
+      <details>
+        <summary>Für welche Plattform gilt das?</summary>
+        <p>Der Schwerpunkt liegt auf Instagram. Die Prinzipien dahinter funktionieren aber genauso auf TikTok, YouTube Shorts und LinkedIn, weil überall dieselben Signale bewertet werden.</p>
+      </details>
+      <details>
+        <summary>Wie viel Zeit brauche ich am Tag?</summary>
+        <p>Video anschauen dauert fünf bis zehn Minuten. Umsetzen etwa 20 Minuten. Wenn du keine 30 Minuten am Tag frei hast, wird es eng, dann warte lieber auf die nächste Runde.</p>
+      </details>
+      <details>
+        <summary>Ich fange gerade erst an, passt das trotzdem?</summary>
+        <p>Ja, solange du wirklich bereit bist zu posten. Die Challenge funktioniert nur, wenn dein Account läuft. Reines Zuschauen bringt dir hier nichts.</p>
+      </details>
+      <details>
+        <summary>Warum kostet das nur 30 Euro?</summary>
+        <p>Ehrliche Antwort: weil wir wollen, dass du reinkommst und siehst, wie wir arbeiten. Wenn dir das gefällt, reden wir am Ende über den KI BUSINESS CLUB. Wenn nicht, hast du trotzdem 21 Tage bekommen, die deine Reichweite verändern.</p>
+      </details>
+      <details>
+        <summary>Was passiert nach den 21 Tagen?</summary>
+        <p>Im Abschluss Call zeigen wir dir, wie es weitergehen kann, wenn du dein Content-System automatisieren willst (also den KI BUSINESS CLUB). Kein Muss und kein Druck, die Challenge steht komplett für sich.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="bg-dark final">
+  <div class="container">
+    <p class="hand">Der August geht sowieso vorbei. Die Frage ist nur, mit welchen Zahlen.</p>
+    <h2>In 21 Tagen bist du<br>entweder <em>weiter</em>.<br>Oder genau hier.</h2>
+    <p>Der Unterschied kostet dich 30 Euro und eine halbe Stunde am Tag. Wir sehen uns im Onboarding Call.</p>
+    <a href="[CHECKOUT-LINK]" class="btn btn-primary btn--large">Platz sichern für 30 €</a>
+    <small>10. bis 31. August · 21 Kurzvideos · 3 Live Calls</small>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <a href="/" aria-label="business. einfach. smart"><img src="bes-logo.png" alt="business. einfach. smart"></a>
+  <div class="footer__links">
+    <span>© 2026 Hanna Marzian &amp; Martin Thun</span>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+    <a href="/agb.html">AGB</a>
+  </div>
+  <div class="footer__handle">@business.einfach.smart</div>
+</footer>
+
+</body>
+</html>
