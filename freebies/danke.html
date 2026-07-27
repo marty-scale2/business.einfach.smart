@@ -47,56 +47,8 @@
       border-bottom: 1px solid rgba(216,98,42,0.15);
       background: #FFFFFF;
     }
-    .logo-hanna {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 600;
-      font-style: italic;
-      color: var(--black);
-      letter-spacing: 0.04em;
-      line-height: 1;
-      text-align: right;
-    }
-    .logo-hanna .accent { color: var(--gold); font-style: italic; }
-    .logo-hanna span {
-      display: block;
-      font-size: 9px;
-      font-family: var(--sans);
-      font-style: normal;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 2px;
-    }
-    .logo-divider {
-      width: 1px;
-      height: 36px;
-      background: rgba(160,144,126,0.35);
-      flex-shrink: 0;
-    }
-    .logo-martin {
-      font-family: var(--sans);
-      font-size: 18px;
-      font-weight: 800;
-      font-style: normal;
-      text-transform: uppercase;
-      color: var(--black);
-      letter-spacing: 0.08em;
-      line-height: 1;
-      text-align: left;
-    }
-    .logo-martin span {
-      display: block;
-      font-size: 9px;
-      font-family: var(--sans);
-      font-style: normal;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-top: 4px;
-    }
+    .nav-logo-link { display: inline-flex; align-items: center; }
+    .nav-logo { height: 32px; width: auto; display: block; }
 
     /* ── MAIN ── */
     main {
@@ -254,9 +206,7 @@
         height: 54px;
       }
       nav { gap: 20px; padding: 0 16px; }
-      .logo-hanna { font-size: 17px; }
-      .logo-martin { font-size: 17px; }
-      .logo-divider { height: 28px; }
+      .nav-logo { height: 26px; }
       main {
         padding: 40px 16px 56px;
         align-items: flex-start;
@@ -294,15 +244,9 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo-hanna">
-      Hanna <em class="accent">Marzian</em>
-      <span>@hanna.gpt</span>
-    </div>
-    <div class="logo-divider"></div>
-    <div class="logo-martin">
-      Martin Thun
-      <span>@martin_thun_</span>
-    </div>
+    <a href="../index.html" class="nav-logo-link">
+      <img src="../bes-logo-flach.png" alt="business. einfach. smart" class="nav-logo">
+    </a>
   </nav>
 
   <!-- MAIN -->
