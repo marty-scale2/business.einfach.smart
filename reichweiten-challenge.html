@@ -106,18 +106,6 @@ h3.sub-title {
 .center { text-align: center; }
 .center .lead, .center .eyebrow { margin-left: auto; margin-right: auto; }
 
-/* Handschrift-Notiz */
-.hand {
-  font-family: var(--font-hand);
-  font-size: 23px; line-height: 1.35; color: var(--orange);
-  transform: rotate(-1.6deg); display: inline-block;
-}
-.hand--note {
-  border-left: 2px solid var(--orange-pale);
-  padding-left: 18px; margin: 30px 0; max-width: 480px;
-  transform: rotate(-.7deg);
-}
-
 /* ─────────────────────────────────────────────
    BUTTONS
 ───────────────────────────────────────────── */
@@ -257,16 +245,6 @@ h3.sub-title {
 /* ─────────────────────────────────────────────
    PAIN LIST
 ───────────────────────────────────────────── */
-.pain-list { list-style: none; margin-top: 32px; max-width: 640px; }
-.pain-list li {
-  position: relative; padding-left: 30px; margin-bottom: 15px;
-  font-size: 16px; color: var(--warm-brown);
-}
-.pain-list li::before {
-  content: ''; position: absolute; left: 0; top: 13px;
-  width: 14px; height: 1.5px; background: var(--orange);
-}
-
 /* ─────────────────────────────────────────────
    CARDS
 ───────────────────────────────────────────── */
@@ -308,7 +286,7 @@ h3.sub-title {
    FOOTER
 ───────────────────────────────────────────── */
 .footer { background: var(--off-white); padding: 40px 24px; text-align: center; border-top: 1px solid var(--light-gray); }
-.footer img { height: 46px; width: auto; margin: 0 auto 20px; }
+.footer img { height: 72px; width: auto; margin: 0 auto 20px; }
 .footer__links { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; align-items: center; }
 .footer__links a, .footer__links span { font-size: 11px; color: var(--warm-gray); text-decoration: none; }
 .footer__links a:hover { color: var(--orange); }
@@ -336,8 +314,8 @@ h3.sub-title {
   <div class="hero__grid">
     <div>
       <span class="eyebrow eyebrow--lg">14-Tage Reichweiten-Challenge</span>
-      <h1 class="hero-headline"><em>Planbar</em> mehr Reichweite<br>in 3 Wochen.</h1>
-      <p class="hero__audience">Für Coaches, Experten und Creator, die posten wie gestört, aber keine planbare Reichweite aufbauen.</p>
+      <h1 class="hero-headline"><em>Planbar</em> mehr Reichweite<br>in Einfachheit.</h1>
+      <p class="hero__audience">Für Coaches, Experten und Creator, die posten wie gestört, aber der Content trotzdem floppt.</p>
       <p class="lead lead--hero">
         KI-gestützt und ohne Technik-Vorwissen: Mit diesem einfachen <strong>Reichweiten-System</strong> erstellst du
         ab sofort Content, der deine Zielgruppe erreicht und wirklich gesehen wird, anstatt nur weitergeswiped.
@@ -383,11 +361,11 @@ h3.sub-title {
   </div>
   <div class="container--wide">
     <div class="testimonial-wall">
-      <img src="Testimonials/Hanna/Testimonials/IMG_5993.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_5995.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6007.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6079.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6226.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5993-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5995-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6007-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6079-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6226-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
       <img src="Testimonials/Hanna/Testimonials/IMG_6001.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
       <img src="Testimonials/Hanna/Testimonials/IMG_6269_converted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
     </div>
@@ -430,27 +408,6 @@ h3.sub-title {
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ══ PROBLEM ══ -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Das Problem ist selten<br>dein <em>Content</em>.</h2>
-    <p class="lead">
-      Du schneidest, schreibst, denkst dir Hooks aus. Und dann stehen da wieder 340 Views.
-      Irgendwann fragst du dich, ob das alles überhaupt noch Sinn hat.
-      Der Grund ist meistens nicht das Video, sondern dass du rätst, statt zu wissen.
-    </p>
-    <ul class="pain-list">
-      <li>Du postest nach Gefühl und hoffst, dass irgendwas davon hängen bleibt.</li>
-      <li>Du siehst Accounts mit schlechterem Content, die dreimal so viel Reichweite holen.</li>
-      <li>Du hast hundert Tipps gehört und keinen einzigen, der zu den anderen passt.</li>
-      <li>Du weißt nach einem guten Post nicht, warum er gut war (also kannst du ihn auch nicht wiederholen).</li>
-    </ul>
-    <p class="hand hand--note">
-      Falls du beim Lesen dreimal genickt hast: willkommen im Club.<br>Genau da haben wir auch angefangen.
-    </p>
   </div>
 </section>
 
@@ -509,14 +466,14 @@ h3.sub-title {
   </div>
   <div class="container--wide">
     <div class="testimonial-wall">
-      <img src="Testimonials/Hanna/Testimonials/IMG_5994.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_5996.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_5997.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5994-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5996-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_5997-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
       <img src="Testimonials/Hanna/Testimonials/IMG_5998.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6078.PNG" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6227.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6228.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
-      <img src="Testimonials/Hanna/Testimonials/IMG_6229.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6078-redacted.PNG" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6227-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6228-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+      <img src="Testimonials/Hanna/Testimonials/IMG_6229-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
     </div>
   </div>
 </section>
