@@ -49,20 +49,125 @@ body {
 }
 img { max-width: 100%; display: block; }
 
+/* Filmkorn über der ganzen Seite: nimmt den glatten Digital-Look */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  opacity: .40; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+}
+
 /* ─────────────────────────────────────────────
    LAYOUT
 ───────────────────────────────────────────── */
 .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
 .container--wide { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-section { padding: 88px 0; }
+section { padding: 88px 0; position: relative; }
 section.tight { padding: 56px 0; }
+
+/* Helle Sektion: reines Weiß + Halbton-Raster (Retro-Druck),
+   Charakter aus driftenden Farbfeldern statt flächigem Beige */
 .bg-cream {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(216,98,42,.10) 0%, transparent 55%),
-    radial-gradient(circle at 90% 90%, rgba(216,98,42,.07) 0%, transparent 55%),
-    #FFFFFF;
+  background-color: #FFFFFF;
+  background-image: radial-gradient(rgba(22,12,5,.14) 1.1px, transparent 1.2px);
+  background-size: 13px 13px;
+  overflow: hidden;
 }
-.bg-dark { background: var(--warm-black); color: var(--off-white); }
+.bg-cream::before {
+  content: '';
+  position: absolute; inset: -30% -10%;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(38% 44% at 18% 22%, rgba(216,98,42,.22) 0%, transparent 62%),
+    radial-gradient(34% 40% at 82% 72%, rgba(232,137,78,.18) 0%, transparent 64%),
+    radial-gradient(30% 36% at 62% 18%, rgba(245,184,0,.10) 0%, transparent 66%);
+  filter: blur(28px);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+.bg-cream > * { position: relative; z-index: 1; }
+@keyframes drift {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(3%, -2%, 0) scale(1.08); }
+  100% { transform: translate3d(-3%, 3%, 0) scale(1.03); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-cream::before { animation: none; }
+}
+
+.bg-dark {
+  background-color: var(--warm-black); color: var(--off-white);
+  background-image: radial-gradient(rgba(251,247,242,.13) 1.1px, transparent 1.2px);
+  background-size: 13px 13px;
+  overflow: hidden;
+}
+.bg-dark::before {
+  content: '';
+  position: absolute; inset: -40% -10%;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(40% 46% at 22% 30%, rgba(216,98,42,.42) 0%, transparent 62%),
+    radial-gradient(36% 42% at 80% 74%, rgba(184,78,30,.34) 0%, transparent 64%);
+  filter: blur(34px);
+  animation: drift 30s ease-in-out infinite alternate-reverse;
+}
+.bg-dark > * { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .bg-dark::before { animation: none; }
+}
+
+/* ─────────────────────────────────────────────
+   RETRO-DETAILS
+───────────────────────────────────────────── */
+/* Diagonal gestreiftes Band am Sektionsanfang (Retro-Druckbogen) */
+.bg-cream::after, .bg-dark::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 12px;
+  z-index: 2; pointer-events: none;
+}
+.bg-cream::after {
+  background: repeating-linear-gradient(45deg,
+    var(--warm-black) 0 7px, transparent 7px 14px);
+  border-bottom: 2px solid var(--warm-black);
+}
+.bg-dark::after {
+  background: repeating-linear-gradient(45deg,
+    var(--orange) 0 7px, transparent 7px 14px);
+  border-bottom: 2px solid var(--orange);
+}
+
+/* Sunburst hinter dem Hero */
+.hero__sun {
+  position: absolute; top: -140px; right: -180px;
+  width: 620px; height: 620px; border-radius: 50%;
+  z-index: 0; pointer-events: none; opacity: .5;
+  background: repeating-conic-gradient(from 8deg,
+    rgba(216,98,42,.16) 0deg 5deg, transparent 5deg 12deg);
+  -webkit-mask-image: radial-gradient(circle, #000 32%, transparent 70%);
+  mask-image: radial-gradient(circle, #000 32%, transparent 70%);
+  animation: spin 90s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero__sun { animation: none; } }
+@media (max-width: 900px) { .hero__sun { width: 420px; height: 420px; right: -160px; top: -110px; } }
+
+/* Doppellinie unter Sektions-Überschriften */
+h2.section-title::after {
+  content: ''; display: block;
+  width: 72px; height: 0; margin-top: 16px;
+  border-top: 4px double var(--orange);
+}
+.center h2.section-title::after { margin-left: auto; margin-right: auto; }
+
+/* Scroll-Reveal: versteckt wird NUR, wenn das Script läuft (html.js-reveal).
+   Ohne JS bleibt die Seite vollständig sichtbar. */
+.js-reveal .reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.js-reveal .reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+}
 
 /* ─────────────────────────────────────────────
    TYPOGRAPHY
@@ -80,16 +185,36 @@ section.tight { padding: 56px 0; }
   font-size: 14px; letter-spacing: 2.6px; font-weight: 700;
   margin-bottom: 20px;
 }
-.eyebrow--lg::after { width: 44px; }
+.eyebrow--lg::after { display: none; }
 @media (max-width: 480px) { .eyebrow--lg { font-size: 12px; letter-spacing: 2px; } }
 
+/* Wortmarke: Lockup aus 3D-Schriftzug + Balkenzeile */
 h1.hero-headline {
-  font-family: var(--font-heading);
-  font-size: clamp(38px, 5vw, 64px);
-  font-weight: 400; line-height: 1.06; letter-spacing: -.8px;
-  margin-bottom: 22px;
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
-h1.hero-headline em { font-style: italic; color: var(--orange-mid); }
+.wm-top {
+  display: block;
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 800; line-height: .92; letter-spacing: -1.6px;
+  color: var(--orange);
+  text-shadow: 3px 3px 0 var(--warm-black);
+}
+.wm-bar {
+  display: inline-block; margin-top: 12px;
+  background: var(--warm-black); color: var(--off-white);
+  font-size: clamp(17px, 2.4vw, 30px);
+  font-weight: 800; line-height: 1.15; letter-spacing: 1.5px;
+  padding: 7px 15px 6px;
+  border: 2px solid var(--warm-black);
+  box-shadow: 5px 5px 0 var(--orange);
+  transform: rotate(-1deg);
+}
+@media (max-width: 480px) {
+  .wm-top { text-shadow: 2px 2px 0 var(--warm-black); letter-spacing: -1px; }
+  .wm-bar { box-shadow: 4px 4px 0 var(--orange); letter-spacing: 1px; }
+}
 
 h2.section-title {
   font-family: var(--font-heading);
@@ -106,7 +231,7 @@ h3.sub-title {
 
 .lead { font-size: 17px; font-weight: 300; color: var(--warm-gray); line-height: 1.85; max-width: 620px; }
 .lead strong { color: var(--warm-black); font-weight: 600; }
-.lead--hero { font-weight: 400; color: var(--warm-brown); }
+.lead--hero { font-weight: 400; color: var(--warm-brown); margin-bottom: 18px; }
 .lead--hero strong { font-weight: 700; }
 .center { text-align: center; }
 .center .lead, .center .eyebrow { margin-left: auto; margin-right: auto; }
@@ -121,36 +246,38 @@ h3.sub-title {
   padding: 17px 38px; border-radius: 1px; border: none;
   cursor: pointer; text-decoration: none; transition: all 200ms ease;
 }
-.btn-primary { background: var(--orange); color: #FFF; }
-.btn-primary:hover { background: var(--orange-deep); transform: translateY(-1px); }
+.btn-primary {
+  background: var(--orange); color: #FFF;
+  border: 2px solid var(--warm-black);
+  box-shadow: 5px 5px 0 var(--warm-black);
+}
+.btn-primary:hover {
+  background: var(--orange-deep);
+  transform: translate(-2px,-2px);
+  box-shadow: 7px 7px 0 var(--warm-black);
+}
 .btn--large { padding: 21px 50px; font-size: 12px; letter-spacing: 3px; }
 .btn--full { width: 100%; }
+
+/* CTA-Block zwischen den Sektionen */
+.cta-mid { text-align: center; margin-top: 54px; }
+.cta-mid__note {
+  font-family: var(--font-accent); font-size: 11px; font-weight: 600;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--warm-gray); margin-top: 16px;
+}
+.bg-dark .cta-mid__note { color: rgba(251,247,242,.6); }
+.bg-dark .btn-primary { box-shadow: 5px 5px 0 var(--off-white); border-color: var(--off-white); }
+.bg-dark .btn-primary:hover { box-shadow: 7px 7px 0 var(--off-white); }
 
 /* ─────────────────────────────────────────────
    NAV
 ───────────────────────────────────────────── */
-.nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,.95); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--beige); padding: 12px 0;
-}
-.nav__inner {
-  display: flex; align-items: center; justify-content: space-between;
-  max-width: 1120px; margin: 0 auto; padding: 0 24px;
-}
-.nav__logo { display: block; flex-shrink: 0; }
-.nav__logo img { width: 260px; height: auto; }
-.nav__right { display: flex; align-items: center; gap: 18px; }
-.nav__hint {
-  font-family: var(--font-accent); font-size: 10px; letter-spacing: 1.5px;
-  color: var(--warm-gray); text-transform: uppercase;
-}
-@media (max-width: 900px) { .nav__logo img { width: 205px; } }
-@media (max-width: 640px) {
-  .nav__hint { display: none; }
-  .nav__logo img { width: 150px; }
-  .nav .btn { padding: 13px 20px; font-size: 10px; letter-spacing: 1.6px; }
-}
+.nav { padding: 30px 24px 6px; text-align: center; }
+.nav__logo { display: inline-block; }
+.nav__logo img { width: 300px; height: auto; }
+@media (max-width: 900px) { .nav__logo img { width: 240px; } }
+@media (max-width: 640px) { .nav__logo img { width: 190px; } }
 
 /* ─────────────────────────────────────────────
    HERO
@@ -171,12 +298,12 @@ h3.sub-title {
 .hero__photo { position: relative; }
 .hero__photo img {
   width: 100%; aspect-ratio: 1/1; object-fit: cover;
-  border-radius: 3px;
+  border-radius: 2px; border: 1.5px solid var(--warm-black);
 }
 .hero__photo-tag {
   position: absolute; bottom: -18px; left: -18px;
-  background: #FFF; border: 1px solid var(--beige);
-  padding: 12px 20px; box-shadow: 0 12px 32px rgba(22,12,5,.09);
+  background: #FFF; border: 1.5px solid var(--warm-black);
+  padding: 12px 20px; box-shadow: 6px 6px 0 var(--orange);
 }
 .hero__photo-tag strong {
   display: block; font-family: var(--font-heading); font-size: 19px; font-weight: 600; color: var(--warm-black);
@@ -189,10 +316,10 @@ h3.sub-title {
 
 .hero__facts { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0 30px; }
 .fact {
-  font-family: var(--font-accent); font-size: 10px; font-weight: 600;
-  letter-spacing: 1.6px; text-transform: uppercase; color: var(--warm-brown);
-  border: 1px solid var(--light-gray); border-radius: 999px; padding: 8px 16px;
-  background: #FFF;
+  font-family: var(--font-accent); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase; color: var(--warm-black);
+  border: 1.5px solid var(--warm-black); border-radius: 999px; padding: 8px 16px;
+  background: #FFF; box-shadow: 3px 3px 0 rgba(22,12,5,.16);
 }
 .hero__cta-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 .hero__price { display: flex; align-items: baseline; gap: 8px; }
@@ -214,9 +341,15 @@ h3.sub-title {
 @media (max-width: 900px) { .testimonial-wall { columns: 2 240px; } }
 @media (max-width: 560px) { .testimonial-wall { columns: 1; } }
 .testimonial-wall img {
-  width: 100%; display: block; margin: 0 0 16px; border-radius: 6px;
-  break-inside: avoid; box-shadow: 0 8px 24px rgba(22,12,5,.08);
-  border: 1px solid var(--beige);
+  width: 100%; display: block; margin: 0 0 18px; border-radius: 2px;
+  break-inside: avoid;
+  border: 1.5px solid var(--warm-black);
+  box-shadow: 5px 5px 0 rgba(22,12,5,.10);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.testimonial-wall img:hover {
+  transform: translate(-2px,-2px);
+  box-shadow: 8px 8px 0 var(--orange);
 }
 
 /* ─────────────────────────────────────────────
@@ -226,7 +359,11 @@ h3.sub-title {
   display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start;
 }
 @media (max-width: 880px) { .letter-grid { grid-template-columns: 1fr; gap: 36px; } }
-.letter__photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 3px; }
+.letter__photo img {
+  width: 100%; aspect-ratio: 4/5; object-fit: cover;
+  border-radius: 2px; border: 1.5px solid var(--warm-black);
+  box-shadow: 8px 8px 0 var(--orange);
+}
 .letter__body p { font-size: 17px; color: var(--warm-brown); font-weight: 300; margin-bottom: 20px; }
 .letter__body p strong { color: var(--warm-black); font-weight: 600; }
 .letter__body p.big {
@@ -239,33 +376,96 @@ h3.sub-title {
 }
 
 /* ─────────────────────────────────────────────
-   PAIN LIST
-───────────────────────────────────────────── */
-/* ─────────────────────────────────────────────
    CARDS
 ───────────────────────────────────────────── */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 44px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 44px; }
 .card {
-  background: #FFF; border: 1px solid var(--beige); padding: 30px 26px;
-  transition: border-color 200ms ease, transform 200ms ease;
+  background: #FFF; border: 1.5px solid var(--warm-black); padding: 32px 28px;
+  border-radius: 2px;
+  box-shadow: 6px 6px 0 var(--warm-black);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
-.card:hover { border-color: var(--orange-pale); transform: translateY(-2px); }
+.card:hover {
+  transform: translate(-3px,-3px);
+  box-shadow: 9px 9px 0 var(--orange);
+}
+.bg-dark .card { box-shadow: 6px 6px 0 var(--orange); }
+.bg-dark .card:hover { box-shadow: 9px 9px 0 var(--orange-mid); }
 .card__num {
   font-family: var(--font-heading); font-size: 34px; color: var(--orange);
   line-height: 1; margin-bottom: 12px; display: block;
 }
 .card p { font-size: 15px; color: var(--warm-gray); font-weight: 300; }
 
+/* Zahl direkt in der Überschrift, nicht als eigene Zeile */
+.sub-title .card__num {
+  display: inline; font-size: 1.25em; font-weight: 600;
+  margin-bottom: 0; margin-right: 2px;
+}
+
+/* "Das erwartet dich": Blöcke links untereinander, Foto rechts in gleicher Höhe */
+.themen-grid {
+  display: grid; grid-template-columns: 1.4fr .6fr;
+  gap: 48px; align-items: stretch; margin-top: 44px;
+}
+.themen-grid__cards { display: grid; gap: 20px; }
+.themen-grid__photo { height: 100%; }
+.themen-grid__photo img {
+  width: 100%; height: 100%; min-height: 100%; object-fit: cover; object-position: 50% 18%;
+  border-radius: 2px; border: 1.5px solid var(--warm-black);
+  box-shadow: 8px 8px 0 var(--orange);
+}
+@media (max-width: 880px) {
+  .themen-grid { grid-template-columns: 1fr; gap: 34px; }
+  .themen-grid__photo { height: auto; }
+  .themen-grid__photo img { height: auto; aspect-ratio: 16/10; object-position: 50% 16%; }
+}
+
+.call-list { list-style: none; margin-top: 4px; }
+.call-list li {
+  padding: 11px 0; border-bottom: 1px dashed var(--light-gray);
+}
+.call-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.call-list strong {
+  display: block; font-size: 14.5px; font-weight: 700;
+  color: var(--warm-black); line-height: 1.35;
+}
+.call-list span {
+  display: block; margin-top: 3px;
+  font-family: var(--font-accent); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; color: var(--orange);
+}
+
+.bonus-list { list-style: none; margin-top: 4px; }
+.bonus-list li {
+  position: relative; padding-left: 24px; margin-bottom: 14px;
+  font-size: 15px; color: var(--warm-brown); font-weight: 500; line-height: 1.6;
+}
+.bonus-list li:last-child { margin-bottom: 0; }
+.bonus-list li::before {
+  content: '+'; position: absolute; left: 0; top: -1px;
+  font-family: var(--font-accent); font-size: 17px; font-weight: 800;
+  color: var(--orange);
+}
+
 /* ─────────────────────────────────────────────
    PREIS
 ───────────────────────────────────────────── */
 .price-card {
   max-width: 560px; margin: 42px auto 0; background: #FFF;
-  border: 1.5px solid var(--warm-black); padding: 46px 40px; text-align: center;
+  border: 2px solid var(--warm-black); padding: 46px 40px; text-align: center;
+  box-shadow: 10px 10px 0 var(--orange);
 }
+@media (max-width: 560px) { .price-card { box-shadow: 6px 6px 0 var(--orange); padding: 36px 24px; } }
 .price-card__tag {
-  font-family: var(--font-accent); font-size: 10px; font-weight: 700;
-  letter-spacing: 2.6px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px;
+  display: inline-block;
+  font-family: var(--font-accent); font-size: 11px; font-weight: 800;
+  letter-spacing: 2.6px; text-transform: uppercase;
+  color: #FFF; background: var(--warm-black);
+  padding: 7px 18px; margin-bottom: 22px;
+  border: 2px solid var(--warm-black);
+  box-shadow: 4px 4px 0 var(--orange);
+  transform: rotate(-1.5deg);
 }
 .price-card__amount { font-family: var(--font-heading); font-size: 80px; line-height: 1; }
 .price-card__sub { font-family: var(--font-accent); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 30px; }
@@ -294,34 +494,34 @@ h3.sub-title {
 
 <!-- ══ NAV ══ -->
 <nav class="nav">
-  <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="business. einfach. smart">
-      <img src="bes-logo-flach.png" alt="business. einfach. smart">
-    </a>
-    <div class="nav__right">
-      <span class="nav__hint">12.–26.08. · nur 30 €</span>
-      <a href="#checkout" class="btn btn-primary">Ich starte jetzt</a>
-    </div>
-  </div>
+  <a href="/" class="nav__logo" aria-label="business. einfach. smart">
+    <img src="bes-logo-flach.png" alt="business. einfach. smart">
+  </a>
 </nav>
 
 <!-- ══ HERO ══ -->
 <header class="hero">
+  <div class="hero__sun" aria-hidden="true"></div>
   <div class="hero__grid">
     <div>
-      <span class="eyebrow eyebrow--lg">14-Tage Reichweiten-Challenge</span>
-      <h1 class="hero-headline"><em>Planbar</em> mehr Reichweite<br>in Einfachheit.</h1>
+      <span class="eyebrow eyebrow--lg">14-Tage-Challenge</span>
       <p class="hero__audience">Für Coaches, Experten und Creator, die posten wie gestört, aber der Content trotzdem floppt.</p>
+      <h1 class="hero-headline">
+        <span class="wm-top">Einfach</span>
+        <span class="wm-bar">mehr Reichweite</span>
+      </h1>
       <p class="lead lead--hero">
         KI-gestützt und ohne Technik-Vorwissen: Mit diesem einfachen <strong>Reichweiten-System</strong> erstellst du
         ab sofort Content, der deine Zielgruppe erreicht und wirklich gesehen wird, anstatt nur weitergeswiped.
+      </p>
+      <p class="lead lead--hero">
         Während andere das „Sommerloch" als Ausrede nutzen, weißt du nach den 14 Tagen sofort,
         <strong>warum ein Beitrag funktioniert oder scheitert</strong>.
       </p>
 
       <div class="hero__facts">
-        <span class="fact">12. bis 26. August</span>
-        <span class="fact">14 tägliche Kurzvideos</span>
+        <span class="fact">12.08.–26.08.</span>
+        <span class="fact">Kurzvideos, Telegram &amp; KI-Tools</span>
         <span class="fact">3 Live Calls</span>
       </div>
 
@@ -335,7 +535,7 @@ h3.sub-title {
 
       <div class="hero__trust">
         <span class="hero__stars">★★★★★</span>
-        <span class="hero__trust-text">Bereits über <strong>300 begeisterte Teilnehmer</strong> bei der letzten Live Challenge</span>
+        <span class="hero__trust-text">über <strong>300 begeisterte Teilnehmer</strong> bei der letzten Challenge</span>
       </div>
     </div>
 
@@ -352,8 +552,7 @@ h3.sub-title {
 <!-- ══ TESTIMONIALS A ══ -->
 <section>
   <div class="container--wide center testimonials-head">
-    <h2 class="section-title">Das sagen <em>Teilnehmerinnen</em>.</h2>
-    <p class="lead">Echte Nachrichten aus der Community der letzten Challenge, unbearbeitet außer den Namen.</p>
+    <h2 class="section-title">Feedback aus der <em>letzten Challenge</em></h2>
   </div>
   <div class="container--wide">
     <div class="testimonial-wall">
@@ -364,6 +563,42 @@ h3.sub-title {
       <img src="Testimonials/Hanna/Testimonials/IMG_6226-redacted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
       <img src="Testimonials/Hanna/Testimonials/IMG_6001.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
       <img src="Testimonials/Hanna/Testimonials/IMG_6269_converted.jpg" alt="Testimonial zur 30-Tage-Challenge" loading="lazy">
+    </div>
+
+    <div class="cta-mid">
+      <a href="#checkout" class="btn btn-primary btn--large">Ich will das auch</a>
+      <p class="cta-mid__note">12. bis 26. August · einmalig 30 €</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DAS BEKOMMST DU ══ -->
+<section class="bg-dark">
+  <div class="container">
+    <h2 class="section-title">Das <em>bekommst</em> du</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3 class="sub-title"><span class="card__num">14</span> Kurzvideos in 14 Tagen</h3>
+        <p>Jeden Morgen wird ein neues Video für dich freigeschaltet. Effizient auf den Punkt gebracht, mit den wichtigsten Infos, die du 2026 zum Thema Reichweite und KI wissen musst.</p>
+      </div>
+      <div class="card">
+        <h3 class="sub-title"><span class="card__num">3</span> Live Calls</h3>
+        <ul class="call-list">
+          <li><strong>Onboarding Call</strong><span>12.08.26 · 20 Uhr</span></li>
+          <li><strong>Q&amp;A &amp; Profil-Analyse-Call</strong><span>20.08.26 · 10 Uhr</span></li>
+          <li><strong>Live Q&amp;A Call</strong><span>26.08.26 · 20 Uhr</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="sub-title">Aufzeichnungen &amp; Telegram Support Gruppe</h3>
+        <p>Keine Zeit live? Alles wird aufgezeichnet. Dazu kommst du in unsere Telegram Gruppe, in der du deine Fragen jederzeit loswirst.</p>
+      </div>
+    </div>
+
+    <div class="cta-mid">
+      <a href="#checkout" class="btn btn-primary btn--large">Ich will planbare Reichweite</a>
+      <p class="cta-mid__note">Start am 12. August</p>
     </div>
   </div>
 </section>
@@ -376,50 +611,43 @@ h3.sub-title {
         <img src="hanna-portrait.jpg" alt="Hanna Marzian">
       </div>
       <div class="letter__body">
-        <p class="big">Ich habe jahrelang gepostet, was das Zeug hält.</p>
+        <p class="big">Ich habe so ziemlich alles ausprobiert, wozu einem geraten wird.</p>
         <p>
-          Mehrmals die Richtung gewechselt. Super fleißig gewesen. Alles ausprobiert.
-          Nichts hat funktioniert.
+          Ich habe mehrmals die Richtung gewechselt und vermutlich alle Content-Strategien genutzt,
+          die es gibt.
         </p>
         <p>
-          Bis ich das Geheimnis für mich entschlüsselt habe: Erst als ich drei Schlüsselelemente
-          in Harmonie gebracht habe, gingen meine Posts viral. Und nicht nur das:
-          <strong>es sind auch die richtigen Follower auf dem Account geblieben.</strong>
+          Passiert ist trotzdem nichts.
         </p>
         <p>
-          Virale Posts erstellen ist eine Sache. Aber so zu posten, dass aus Menschen Follower werden,
-          das ist die große Kunst.
+          Du kennst vielleicht die ganzen 0815 Reichweiten-Tipps. Was du noch nicht kennst,
+          ist das System, wie die wichtigsten Kern-Elemente zusammenwirken und wie du KI dafür
+          nutzen kannst, um Zeit zu sparen.
         </p>
         <p>
-          Und genau diese Faktoren zeige ich dir in 14 Tagen.
+          Als ich angefangen habe, meine Posts nach diesem <strong>klaren und einfachen System</strong>
+          aufzubauen, gingen meine Posts durch die Decke. Und das Schönste daran:
+        </p>
+        <p>
+          Ich hatte nicht nur viele Views, sondern viele Follower aus meiner Zielgruppe gewonnen.
+          <strong>100.000 Follower und 1.000 Kunden</strong> in unter einem Jahr!
+        </p>
+        <p>
+          Viral gehen kann jeder mal. So zu posten, dass aus Zuschauern echte Follower und Kunden
+          werden, das ist die eigentliche Kunst.
+        </p>
+        <p>
+          Genau dieses System zeige ich dir in 14 Tagen.
         </p>
         <div class="signature">
           Hanna.GPT
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ══ MECHANISMUS ══ -->
-<section class="bg-dark">
-  <div class="container">
-    <div class="grid-3">
-      <div class="card">
-        <span class="card__num">14</span>
-        <h3 class="sub-title">Kurzvideos</h3>
-        <p>Jeden Morgen ein Video von uns. Fünf bis zehn Minuten, kein Rumgeschwafel. Ein Prinzip, eine Aufgabe, fertig.</p>
-      </div>
-      <div class="card">
-        <span class="card__num">3</span>
-        <h3 class="sub-title">Live Calls</h3>
-        <p>Start, Mitte, Ende. Wir sind beide dabei, du stellst deine Fragen zu deinem Account und bekommst eine Antwort.</p>
-      </div>
-      <div class="card">
-        <span class="card__num">∞</span>
-        <h3 class="sub-title">Aufzeichnungen</h3>
-        <p>Keine Zeit live? Alles wird aufgezeichnet. Du bleibst dabei, auch wenn dein Kalender voll ist.</p>
-      </div>
+    <div class="cta-mid">
+      <a href="#checkout" class="btn btn-primary btn--large">Ich will dabei sein! 🚀</a>
+      <p class="cta-mid__note">14 Tage · 3 Live Calls · 30 €</p>
     </div>
   </div>
 </section>
@@ -427,24 +655,35 @@ h3.sub-title {
 <!-- ══ THEMEN ══ -->
 <section>
   <div class="container--wide">
-    <h2 class="section-title">Die Themen:</h2>
+    <h2 class="section-title">Das <em>erwartet</em> dich</h2>
 
-    <div class="grid-3">
-      <div class="card">
-        <span class="card__num">01</span>
-        <h3 class="sub-title">Fundament &amp; Content-DNA</h3>
-        <p>Bevor du ein einziges Video mehr postest, klären wir, wofür dein Account eigentlich steht. Ohne dieses Fundament ist jeder Hook nur Glücksspiel.</p>
+    <div class="themen-grid">
+      <div class="themen-grid__cards">
+        <div class="card">
+          <h3 class="sub-title"><span class="card__num">01</span> Fundament &amp; Content-DNA</h3>
+          <p>Bevor du ein einziges Video mehr postest, klären wir, wofür dein Account eigentlich steht. Ohne dieses Fundament ist jeder Hook nur Glücksspiel.</p>
+        </div>
+        <div class="card">
+          <h3 class="sub-title"><span class="card__num">02</span> Content &amp; Vertrauensaufbau</h3>
+          <p>Ab jetzt produzierst du nicht wahllos, sondern gezielt: Jedes Format zahlt auf Vertrauen ein. So wird aus Reichweite eine Community, die bleibt.</p>
+        </div>
+        <div class="card">
+          <h3 class="sub-title"><span class="card__num">Bonus</span> Test-Reels</h3>
+          <ul class="bonus-list">
+            <li>KI-Nischen-Workflow, um Nischen mit dem besten Wachstumspotential und echter Kaufbereitschaft herauszufinden</li>
+            <li>Zwei KI-Agenten für den direkten Einsatz (in Claude oder ChatGPT)</li>
+          </ul>
+        </div>
       </div>
-      <div class="card">
-        <span class="card__num">02</span>
-        <h3 class="sub-title">Content &amp; Vertrauensaufbau</h3>
-        <p>Ab jetzt produzierst du nicht wahllos, sondern gezielt: Jedes Format zahlt auf Vertrauen ein. So wird aus Reichweite eine Community, die bleibt.</p>
+
+      <div class="themen-grid__photo">
+        <img src="img-martin.jpg" alt="Martin Thun" loading="lazy">
       </div>
-      <div class="card">
-        <span class="card__num">Bonus</span>
-        <h3 class="sub-title">Test-Reels</h3>
-        <p>Du testest live, was wirklich zieht, statt wochenlang zu raten. Die Zahlen zeigen dir schwarz auf weiß, welches Format dein Account gerade braucht.</p>
-      </div>
+    </div>
+
+    <div class="cta-mid">
+      <a href="#checkout" class="btn btn-primary btn--large">Ich starte am 12. August</a>
+      <p class="cta-mid__note">Danach schließt die Runde</p>
     </div>
   </div>
 </section>
@@ -477,14 +716,13 @@ h3.sub-title {
       <div class="price-card__sub">Einmalig</div>
       <ul>
         <li>14 tägliche Kurzvideos, jeden Morgen frisch</li>
-        <li>Live Onboarding Call am 12.08.</li>
-        <li>Live Analyse Call am 19.08.</li>
-        <li>Final Q&amp;A &amp; Abschluss am 26.08.</li>
+        <li>Live Onboarding Call am 12.08. um 20 Uhr</li>
+        <li>Q&amp;A &amp; Profil-Analyse-Call am 20.08. um 10 Uhr</li>
+        <li>Live Q&amp;A Call am 26.08. um 20 Uhr</li>
         <li>Alle Aufzeichnungen, falls du live nicht kannst</li>
       </ul>
       <!-- ANPASSEN: CopeCart Link -->
       <a href="[CHECKOUT-LINK]" class="btn btn-primary btn--large btn--full">Ich starte meine 14 Tage</a>
-      <p class="price-card__note">Start am 12. August. Danach schließt die Runde bis zum nächsten Durchgang.</p>
     </div>
   </div>
 </section>
@@ -500,6 +738,67 @@ h3.sub-title {
   </div>
   <div class="footer__handle">@business.einfach.smart</div>
 </footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  // Ab hier erst verstecken -> ohne JS bleibt alles sichtbar
+  document.documentElement.classList.add('js-reveal');
+
+  var groups = [
+    'h2.section-title',
+    '.testimonials-head .lead',
+    '.grid-3 .card',
+    '.themen-grid__cards .card',
+    '.testimonial-wall img',
+    '.letter__photo',
+    '.letter__body',
+    '.themen-grid__photo',
+    '.cta-mid',
+    '.price-card'
+  ];
+
+  var items = [];
+  groups.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      el.classList.add('reveal');
+      items.push(el);
+    });
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.transitionDelay = Math.min(siblings, 5) * 70 + 'ms';
+      el.classList.add('is-in');
+      io.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+
+  items.forEach(function (el) { io.observe(el); });
+
+  // Wächter: prüft an einem unsichtbaren Testelement, ob das Einblenden
+  // im Browser wirklich greift. Wenn nicht, wird der Effekt komplett
+  // abgeschaltet, damit niemals Inhalte unsichtbar hängen bleiben.
+  var probe = document.createElement('div');
+  probe.className = 'reveal';
+  probe.setAttribute('aria-hidden', 'true');
+  probe.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:1px;';
+  document.body.appendChild(probe);
+  probe.offsetWidth;
+  probe.classList.add('is-in');
+
+  setTimeout(function () {
+    var ok = parseFloat(getComputedStyle(probe).opacity) > 0.9;
+    probe.remove();
+    if (!ok) document.documentElement.classList.remove('js-reveal');
+  }, 1600);
+})();
+</script>
 
 </body>
 </html>
