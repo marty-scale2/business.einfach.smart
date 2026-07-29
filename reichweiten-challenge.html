@@ -193,6 +193,7 @@ h1.hero-headline {
   font-family: var(--font-accent);
   text-transform: uppercase;
   margin-bottom: 24px;
+  position: relative;
 }
 .wm-top {
   display: block;
@@ -215,6 +216,21 @@ h1.hero-headline {
   .wm-top { text-shadow: 2px 2px 0 var(--warm-black); letter-spacing: -1px; }
   .wm-bar { box-shadow: 4px 4px 0 var(--orange); letter-spacing: 1px; }
 }
+
+/* Gezeichnete Rakete neben der Wortmarke */
+.hero__rocket {
+  position: absolute; right: 4px; bottom: -10px;
+  width: 104px; height: 104px;
+  pointer-events: none; overflow: visible;
+  animation: rocketWobble 5s ease-in-out infinite;
+}
+@keyframes rocketWobble {
+  0%, 100% { transform: translate(0, 0) rotate(-5deg); }
+  50%      { transform: translate(6px, -10px) rotate(5deg); }
+}
+@media (prefers-reduced-motion: reduce) { .hero__rocket { animation: none; } }
+@media (max-width: 1100px) { .hero__rocket { width: 84px; height: 84px; } }
+@media (max-width: 620px)  { .hero__rocket { width: 66px; height: 66px; right: 0; bottom: -4px; } }
 
 h2.section-title {
   font-family: var(--font-heading);
@@ -364,15 +380,18 @@ h3.sub-title {
   border-radius: 2px; border: 1.5px solid var(--warm-black);
   box-shadow: 8px 8px 0 var(--orange);
 }
-.letter__body p { font-size: 17px; color: var(--warm-brown); font-weight: 300; margin-bottom: 20px; }
-.letter__body p strong { color: var(--warm-black); font-weight: 600; }
+.letter__body p { font-size: 17px; color: var(--warm-brown); font-weight: 500; margin-bottom: 20px; }
+.letter__body p strong { color: var(--warm-black); font-weight: 700; }
 .letter__body p.big {
   font-family: var(--font-heading); font-size: clamp(24px, 3vw, 32px);
-  line-height: 1.3; color: var(--warm-black); font-weight: 500;
+  line-height: 1.3; color: var(--warm-black); font-weight: 600;
 }
 .signature {
   font-family: var(--font-hand); font-size: 34px; color: var(--warm-black);
   margin-top: 26px; transform: rotate(-2deg); display: inline-block;
+}
+.signature--under-photo {
+  margin-top: 16px; text-align: center; width: 100%;
 }
 
 /* ─────────────────────────────────────────────
@@ -405,13 +424,13 @@ h3.sub-title {
 
 /* "Das erwartet dich": Blöcke links untereinander, Foto rechts in gleicher Höhe */
 .themen-grid {
-  display: grid; grid-template-columns: 1.4fr .6fr;
-  gap: 48px; align-items: stretch; margin-top: 44px;
+  display: grid; grid-template-columns: 1.1fr .9fr;
+  gap: 40px; align-items: stretch; margin-top: 44px;
 }
 .themen-grid__cards { display: grid; gap: 20px; }
 .themen-grid__photo { height: 100%; }
 .themen-grid__photo img {
-  width: 100%; height: 100%; min-height: 100%; object-fit: cover; object-position: 50% 18%;
+  width: 100%; height: 100%; min-height: 100%; object-fit: cover; object-position: 50% 12%;
   border-radius: 2px; border: 1.5px solid var(--warm-black);
   box-shadow: 8px 8px 0 var(--orange);
 }
@@ -420,6 +439,11 @@ h3.sub-title {
   .themen-grid__photo { height: auto; }
   .themen-grid__photo img { height: auto; aspect-ratio: 16/10; object-position: 50% 16%; }
 }
+
+/* Kartentext in dieser Sektion: etwas größer, weniger Innenabstand */
+.themen-grid__cards .card { padding: 24px 22px; }
+.themen-grid__cards .card p,
+.themen-grid__cards .bonus-list li { font-size: 17px; font-weight: 300; }
 
 .call-list { list-style: none; margin-top: 4px; }
 .call-list li {
@@ -484,9 +508,9 @@ h3.sub-title {
 .footer { background: var(--off-white); padding: 40px 24px; text-align: center; border-top: 1px solid var(--light-gray); }
 .footer img { height: 72px; width: auto; margin: 0 auto 20px; }
 .footer__links { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; align-items: center; }
-.footer__links a, .footer__links span { font-size: 11px; color: var(--warm-gray); text-decoration: none; }
+.footer__links a, .footer__links span { font-size: 14px; color: var(--warm-gray); text-decoration: none; }
 .footer__links a:hover { color: var(--orange); }
-.footer__handle { font-family: var(--font-accent); font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--tan); margin-top: 16px; }
+.footer__handle { font-family: var(--font-accent); font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--tan); margin-top: 16px; }
 
 </style>
 </head>
@@ -505,10 +529,25 @@ h3.sub-title {
   <div class="hero__grid">
     <div>
       <span class="eyebrow eyebrow--lg">14-Tage-Challenge</span>
-      <p class="hero__audience">Für Coaches, Experten und Creator, die posten wie gestört, aber der Content trotzdem floppt.</p>
+      <p class="hero__audience">Für Coaches, Experten und Creator auf Instagram</p>
       <h1 class="hero-headline">
         <span class="wm-top">Einfach</span>
         <span class="wm-bar">mehr Reichweite</span>
+        <svg class="hero__rocket" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <g transform="rotate(45 50 50)" fill="none" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+            <g stroke="#160C05">
+              <path d="M50 8c10 12 15 28 15 44v16H35V52C35 36 40 20 50 8Z"/>
+              <path d="M40 30h20"/>
+              <circle cx="50" cy="43" r="8"/>
+              <circle cx="50" cy="43" r="3.6"/>
+              <path d="M35 54c-9 5-15 15-15 26 7-2 12-6 15-10"/>
+              <path d="M65 54c9 5 15 15 15 26-7-2-12-6-15-10"/>
+            </g>
+            <g stroke="#D8622A">
+              <path d="M46 70c-1 7-5 13-11 18 5-1 8-3 10-6-1 5-3 8-6 12 8-5 13-13 14-23"/>
+            </g>
+          </g>
+        </svg>
       </h1>
       <p class="lead lead--hero">
         KI-gestützt und ohne Technik-Vorwissen: Mit diesem einfachen <strong>Reichweiten-System</strong> erstellst du
@@ -521,8 +560,8 @@ h3.sub-title {
 
       <div class="hero__facts">
         <span class="fact">12.08.–26.08.</span>
-        <span class="fact">Kurzvideos, Telegram &amp; KI-Tools</span>
         <span class="fact">3 Live Calls</span>
+        <span class="fact">Kurzvideos, Telegram &amp; KI-Tools</span>
       </div>
 
       <div class="hero__cta-row">
@@ -543,7 +582,7 @@ h3.sub-title {
       <img src="img-team.jpg" alt="Hanna Marzian und Martin Thun">
       <div class="hero__photo-tag">
         <strong>Hanna &amp; Martin</strong>
-        <span>100.000 Follower / 1.000+ Kunden</span>
+        <span>100.000+ Follower</span>
       </div>
     </div>
   </div>
@@ -566,7 +605,7 @@ h3.sub-title {
     </div>
 
     <div class="cta-mid">
-      <a href="#checkout" class="btn btn-primary btn--large">Ich will das auch</a>
+      <a href="#checkout" class="btn btn-primary btn--large">Ich will das auch!</a>
       <p class="cta-mid__note">12. bis 26. August · einmalig 30 €</p>
     </div>
   </div>
@@ -586,7 +625,7 @@ h3.sub-title {
         <h3 class="sub-title"><span class="card__num">3</span> Live Calls</h3>
         <ul class="call-list">
           <li><strong>Onboarding Call</strong><span>12.08.26 · 20 Uhr</span></li>
-          <li><strong>Q&amp;A &amp; Profil-Analyse-Call</strong><span>20.08.26 · 10 Uhr</span></li>
+          <li><strong>Q&amp;A</strong><span>20.08.26 · 10 Uhr</span></li>
           <li><strong>Live Q&amp;A Call</strong><span>26.08.26 · 20 Uhr</span></li>
         </ul>
       </div>
@@ -609,18 +648,21 @@ h3.sub-title {
     <div class="letter-grid">
       <div class="letter__photo">
         <img src="hanna-portrait.jpg" alt="Hanna Marzian">
+        <div class="signature signature--under-photo">
+          Hanna.GPT
+        </div>
       </div>
       <div class="letter__body">
-        <p class="big">Ich habe so ziemlich alles ausprobiert, wozu einem geraten wird.</p>
+        <p class="big">Jahrelang gepostet, was das Zeug hält…</p>
         <p>
-          Ich habe mehrmals die Richtung gewechselt und vermutlich alle Content-Strategien genutzt,
-          die es gibt.
+          Ich habe so ziemlich alles ausprobiert, wozu einem geraten wird. Ich habe mehrmals
+          die Richtung gewechselt und vermutlich alle Content-Strategien genutzt, die es gibt.
         </p>
         <p>
           Passiert ist trotzdem nichts.
         </p>
         <p>
-          Du kennst vielleicht die ganzen 0815 Reichweiten-Tipps. Was du noch nicht kennst,
+          Du kennst vielleicht die ganzen 0815 Reichweiten-Tipps, oder? Was du noch nicht kennst,
           ist das System, wie die wichtigsten Kern-Elemente zusammenwirken und wie du KI dafür
           nutzen kannst, um Zeit zu sparen.
         </p>
@@ -633,15 +675,9 @@ h3.sub-title {
           <strong>100.000 Follower und 1.000 Kunden</strong> in unter einem Jahr!
         </p>
         <p>
-          Viral gehen kann jeder mal. So zu posten, dass aus Zuschauern echte Follower und Kunden
-          werden, das ist die eigentliche Kunst.
+          So zu posten, dass aus Zuschauern echte Follower und Kunden werden: Das ist die eigentliche Kunst.
+          Und genau dieses System zeige ich dir in 14 Tagen!
         </p>
-        <p>
-          Genau dieses System zeige ich dir in 14 Tagen.
-        </p>
-        <div class="signature">
-          Hanna.GPT
-        </div>
       </div>
     </div>
 
@@ -668,10 +704,11 @@ h3.sub-title {
           <p>Ab jetzt produzierst du nicht wahllos, sondern gezielt: Jedes Format zahlt auf Vertrauen ein. So wird aus Reichweite eine Community, die bleibt.</p>
         </div>
         <div class="card">
-          <h3 class="sub-title"><span class="card__num">Bonus</span> Test-Reels</h3>
+          <h3 class="sub-title"><span class="card__num">Bonus</span></h3>
           <ul class="bonus-list">
-            <li>KI-Nischen-Workflow, um Nischen mit dem besten Wachstumspotential und echter Kaufbereitschaft herauszufinden</li>
-            <li>Zwei KI-Agenten für den direkten Einsatz (in Claude oder ChatGPT)</li>
+            <li><strong>Test-Reels Best Practice Methoden</strong> und die aktuell einmalige Chance für deinen Wachstums-Boost</li>
+            <li><strong>KI-Nischen-Workflow,</strong> um Nischen mit dem besten Wachstumspotential und echter Kaufbereitschaft herauszufinden</li>
+            <li><strong>Zwei KI-Agenten</strong> für den direkten Einsatz (in Claude oder ChatGPT)</li>
           </ul>
         </div>
       </div>
@@ -683,7 +720,6 @@ h3.sub-title {
 
     <div class="cta-mid">
       <a href="#checkout" class="btn btn-primary btn--large">Ich starte am 12. August</a>
-      <p class="cta-mid__note">Danach schließt die Runde</p>
     </div>
   </div>
 </section>
@@ -691,7 +727,7 @@ h3.sub-title {
 <!-- ══ TESTIMONIALS B ══ -->
 <section class="bg-cream">
   <div class="container--wide center testimonials-head">
-    <h2 class="section-title">Noch mehr <em>Stimmen</em> aus der Community.</h2>
+    <h2 class="section-title">Noch mehr <em>Stimmen</em> aus der letzten Challenge</h2>
   </div>
   <div class="container--wide">
     <div class="testimonial-wall">
@@ -716,10 +752,9 @@ h3.sub-title {
       <div class="price-card__sub">Einmalig</div>
       <ul>
         <li>14 tägliche Kurzvideos, jeden Morgen frisch</li>
-        <li>Live Onboarding Call am 12.08. um 20 Uhr</li>
-        <li>Q&amp;A &amp; Profil-Analyse-Call am 20.08. um 10 Uhr</li>
-        <li>Live Q&amp;A Call am 26.08. um 20 Uhr</li>
-        <li>Alle Aufzeichnungen, falls du live nicht kannst</li>
+        <li>3 Live Calls</li>
+        <li>Telegram Support + Austausch mit anderen Teilnehmern</li>
+        <li>Bonus: Test-Reels Best Practice + KI-Tools für die direkte Nutzung</li>
       </ul>
       <!-- ANPASSEN: CopeCart Link -->
       <a href="[CHECKOUT-LINK]" class="btn btn-primary btn--large btn--full">Ich starte meine 14 Tage</a>
