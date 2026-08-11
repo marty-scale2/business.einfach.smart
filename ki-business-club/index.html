@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KI Business Club · BUSINESS.EINFACH.SMART</title>
-<meta name="description" content="Kein Coaching, kein Kurs. Hanna Marzian und Martin Thun bauen mit dir deine Positionierung, deine Content-Strategie und dein komplettes KI-Setup. Für Experten, die online sichtbar werden wollen.">
-<meta property="og:title" content="KI Business Club · BUSINESS.EINFACH.SMART">
-<meta property="og:description" content="Kein Coaching, kein Kurs. Wir setzen uns mit dir hin und bauen deine Sichtbarkeit: Positionierung, Content-Strategie und dein KI-Setup. Done with you oder komplett für dich.">
+<meta name="description" content="In 30 Tagen steht dein KI-Betriebssystem: Positionierung, Angebot und Sales-Funnel von uns ausgearbeitet. Neun Bausteine mit Lieferdatum, kein Kurs zum Abarbeiten.">
+<meta property="og:title" content="KI Business Club · Dein System in 30 Tagen">
+<meta property="og:description" content="Neun Bausteine mit Lieferdatum: Positionierungs-Manifest, Content-Strategie mit fertigen Beiträgen, Angebotsstrategie, Traumkunden-Avatar, Freebie sowie Lead-Generierung, Nurturing und Verkaufsprozess.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#160C05">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -363,13 +363,52 @@ a { color: inherit; }
   animation: rise-in 0.9s var(--ease-expo) 0.5s both;
 }
 
+.hero__claim {
+  max-width: 30ch;
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: var(--s-6);
+  animation: rise-in 0.9s var(--ease-expo) 0.62s both;
+}
+
+.hero__proof {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  padding: var(--s-4) var(--s-6);
+  margin-bottom: var(--s-12);
+  border: 1.5px solid var(--orange-200);
+  border-radius: 999px;
+  background: var(--orange-100);
+  animation: rise-in 0.9s var(--ease-expo) 0.8s both;
+}
+.hero__proof-num {
+  font-family: var(--f-brand);
+  font-size: var(--t-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--orange-deep);
+  line-height: 1;
+}
+.hero__proof-txt {
+  font-size: var(--t-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
 .hero__body {
   max-width: 56ch;
   font-size: var(--t-lg);
   color: var(--text-secondary);
   line-height: 1.75;
-  margin-bottom: var(--s-12);
-  animation: rise-in 0.9s var(--ease-expo) 0.62s both;
+  margin-bottom: var(--s-8);
+  animation: rise-in 0.9s var(--ease-expo) 0.72s both;
 }
 .hero__body strong { color: var(--text-primary); font-weight: 600; }
 
@@ -1277,14 +1316,14 @@ a { color: inherit; }
 }
 .tier__installment {
   display: block;
-  font-family: var(--f-brand);
-  font-size: var(--t-lg);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-family: var(--f-sans);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0;
   text-transform: none;
-  color: var(--orange-bright);
+  color: var(--d-text-dim);
   margin-top: var(--s-3);
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .tier__desc {
   font-size: var(--t-sm);
@@ -1399,10 +1438,20 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: start;
+  align-items: stretch;
   margin-top: var(--s-12);
 }
 .modules-layout__col { display: flex; flex-direction: column; gap: var(--s-8); }
+.modules-layout > .modules {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  height: 100%;
+  margin-top: 0;
+}
+.modules-layout > .modules .module {
+  height: 100%;
+  align-items: center;
+}
 .modules-layout__img {
   border-radius: 1.2rem;
   overflow: hidden;
@@ -2027,6 +2076,411 @@ a { color: inherit; }
   .split-bar .split-bar__ai { width: 80%; }
 }
 
+/* ═══════════════════════════════════════════
+   NEU: BETRIEBSSYSTEM-KOMPONENTEN
+   ═══════════════════════════════════════════ */
+
+/* ── Lieferung: drei Stränge ── */
+.delivery-section {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(216,98,42,0.13), transparent 32%),
+    linear-gradient(145deg, #1b0e07 0%, #0f0905 58%, #160b06 100%);
+  color: var(--d-text);
+}
+.delivery-section .kicker {
+  color: var(--orange-bright);
+  margin-bottom: var(--s-6);
+}
+.delivery-section .kicker::before { display: none; }
+.delivery-section .h2 {
+  max-width: none;
+  margin-bottom: 0;
+  font-family: var(--f-brand);
+  font-size: clamp(2.25rem, 4.6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  color: var(--d-text);
+}
+.delivery-section .h2 em {
+  font-family: var(--f-serif);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.delivery-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-12);
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+}
+.delivery-strand {
+  position: relative;
+  min-width: 0;
+}
+.delivery-strand__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding-bottom: var(--s-3);
+  margin-bottom: var(--s-4);
+  border-bottom: 2px solid rgba(216,98,42,0.48);
+}
+.delivery-strand__num {
+  font-family: var(--f-brand);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--orange-bright);
+}
+.delivery-strand__head h3 {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--d-text);
+}
+.delivery-strand__cards {
+  display: grid;
+  gap: var(--s-3);
+}
+.delivery-card {
+  min-height: 128px;
+  padding: clamp(1.2rem, 2.5vw, 1.6rem);
+  background: linear-gradient(145deg, rgba(251,247,242,0.065), rgba(251,247,242,0.025));
+  border: 1px solid rgba(251,247,242,0.16);
+  border-radius: 17px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035);
+  transition: transform var(--normal) var(--ease-spring), border-color var(--normal) var(--ease-out), background var(--normal) var(--ease-out);
+}
+.delivery-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(232,137,78,0.55);
+  background: linear-gradient(145deg, rgba(251,247,242,0.09), rgba(216,98,42,0.045));
+}
+.delivery-card__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 1.55rem;
+  padding: 0.2rem 0.45rem;
+  margin-bottom: var(--s-2);
+  border-radius: 5px;
+  background: rgba(216,98,42,0.23);
+  font-family: var(--f-brand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--orange-bright);
+}
+.delivery-card h4 {
+  margin-bottom: var(--s-1);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--d-text);
+}
+.delivery-card p {
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  color: var(--d-text-soft);
+}
+.delivery-strand:not(:last-child)::after {
+  content: '↓';
+  position: absolute;
+  left: 50%;
+  bottom: -2.2rem;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: var(--orange-bright);
+}
+@media (min-width: 980px) {
+  .delivery-map {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+  }
+  .delivery-strand:not(:last-child)::after {
+    content: '→';
+    left: auto;
+    right: -2rem;
+    bottom: auto;
+    top: 54%;
+    transform: translateY(-50%);
+  }
+}
+/* ── Fünf Leistungen ── */
+.points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2vw, var(--s-6));
+  margin-top: var(--s-12);
+}
+.point {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 250px;
+  padding: clamp(1.6rem, 3vw, 2.25rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(216,98,42,0.045), transparent 42%),
+    rgba(255,253,250,0.86);
+  border: 1px solid rgba(22,12,5,0.11);
+  border-radius: 24px;
+  box-shadow:
+    0 1px 2px rgba(22,12,5,0.04),
+    0 10px 28px rgba(22,12,5,0.055);
+  transition:
+    transform var(--normal) var(--ease-spring),
+    border-color var(--normal) var(--ease-out),
+    box-shadow var(--normal) var(--ease-expo);
+}
+.point::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+  pointer-events: none;
+}
+.point:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange-300);
+  box-shadow:
+    0 2px 4px rgba(22,12,5,0.04),
+    0 18px 42px rgba(22,12,5,0.09);
+}
+.point--lead {
+  min-height: 330px;
+  border-color: var(--orange);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(216,98,42,0.085), transparent 38%),
+    linear-gradient(145deg, var(--paper), var(--cream));
+  box-shadow:
+    0 1px 2px rgba(22,12,5,0.04),
+    0 16px 38px rgba(216,98,42,0.08);
+}
+.point--calls { min-height: 330px; }
+.point__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: clamp(1.35rem, 3vw, 2rem);
+  border: 1px solid var(--orange-200);
+  border-radius: 999px;
+  background: var(--orange-100);
+  font-family: var(--f-brand);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+}
+.point__number {
+  margin-bottom: var(--s-4);
+  font-family: var(--f-brand);
+  font-size: clamp(4.2rem, 7vw, 5.4rem);
+  font-weight: 800;
+  line-height: 0.78;
+  letter-spacing: -0.06em;
+  color: var(--orange);
+}
+.point__title {
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.point--lead .point__title { font-size: clamp(1.45rem, 2.4vw, 1.85rem); }
+.point__body {
+  margin-top: var(--s-4);
+  font-size: var(--t-sm);
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+.point--lead .point__body { max-width: 68ch; }
+@media (min-width: 700px) {
+  .points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .point--lead { grid-column: span 2; }
+}
+@media (min-width: 1040px) {
+  .points { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .point--lead { grid-column: span 2; }
+}
+/* ── 30-Tage-Bau: 3 Stränge ── */
+.build { display: grid; gap: var(--s-8); margin-top: var(--s-12); }
+.strand {
+  padding: var(--s-8);
+  border: 1.5px solid var(--d-line);
+  border-radius: 18px;
+  background: rgba(251, 247, 242, 0.03);
+}
+.strand__head {
+  display: flex; align-items: baseline; gap: var(--s-4);
+  margin-bottom: var(--s-6);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--d-line);
+}
+.strand__no {
+  font-family: var(--f-brand);
+  font-size: var(--t-2xl);
+  font-weight: 800;
+  color: var(--orange-bright);
+  line-height: 1;
+}
+.strand__title {
+  font-size: var(--t-xl);
+  font-weight: 700;
+  color: var(--d-text);
+  letter-spacing: -0.01em;
+}
+.strand__steps { display: grid; gap: var(--s-4); }
+@media (min-width: 780px) {
+  .strand__steps { grid-template-columns: repeat(3, 1fr); gap: var(--s-6); }
+}
+.strand__step { position: relative; }
+@media (min-width: 780px) {
+  .strand__step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: calc(var(--s-6) * -0.72);
+    top: 0.1rem;
+    color: var(--orange-bright);
+    font-size: var(--t-base);
+    opacity: 0.55;
+  }
+}
+.strand__step b {
+  display: block;
+  color: var(--d-text);
+  font-size: var(--t-base);
+  font-weight: 700;
+  margin-bottom: var(--s-2);
+}
+.strand__step span {
+  display: block;
+  color: var(--d-text-soft);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+}
+.strand__out {
+  margin-top: var(--s-6);
+  padding-top: var(--s-4);
+  border-top: 1px dashed var(--d-line);
+  font-size: var(--t-sm);
+  color: var(--d-text-soft);
+}
+.strand__out b { color: var(--orange-bright); font-weight: 700; }
+
+/* ── Agenten-Zeile ── */
+.agents { display: grid; gap: var(--s-4); margin-top: var(--s-8); }
+@media (min-width: 760px) { .agents { grid-template-columns: repeat(3, 1fr); } }
+.agent {
+  padding: var(--s-6);
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+}
+.agent__tag {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  background: var(--orange-100);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: var(--s-3);
+}
+.agent h4 { font-size: var(--t-base); font-weight: 700; margin-bottom: var(--s-2); }
+.agent p { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+/* ── Preis-Split (Setup + Betrieb) ── */
+.price-split {
+  display: grid;
+  gap: var(--s-4);
+  margin: var(--s-6) 0;
+  padding: var(--s-6);
+  border: 1px solid var(--d-line);
+  border-radius: 14px;
+  background: rgba(251, 247, 242, 0.04);
+}
+@media (min-width: 620px) { .price-split { grid-template-columns: 1fr auto 1fr; align-items: center; } }
+.price-split__block { text-align: center; }
+.price-split__k {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange-bright);
+  margin-bottom: var(--s-2);
+}
+.price-split__v {
+  font-family: var(--f-brand);
+  font-size: var(--t-2xl);
+  font-weight: 800;
+  color: var(--d-text);
+  line-height: 1.05;
+}
+.price-split__n { font-size: var(--t-xs); color: var(--d-text-dim); margin-top: var(--s-2); line-height: 1.5; }
+.price-split__plus {
+  font-size: var(--t-xl);
+  color: var(--d-text-dim);
+  text-align: center;
+  font-weight: 300;
+}
+
+/* ── Zeitleiste 30 Tage ── */
+.timeline { display: grid; gap: var(--s-6); margin-top: var(--s-12); }
+@media (min-width: 820px) { .timeline { grid-template-columns: repeat(3, 1fr); } }
+.tl {
+  position: relative;
+  padding-top: var(--s-6);
+  border-top: 2px solid var(--orange-200);
+}
+.tl::before {
+  content: '';
+  position: absolute;
+  top: -6px; left: 0;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.tl__when {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  margin-bottom: var(--s-3);
+}
+.tl h3 { font-size: var(--t-base); font-weight: 700; margin-bottom: var(--s-2); line-height: 1.3; }
+.tl p { font-size: var(--t-sm); color: var(--text-secondary); line-height: 1.6; margin: 0; }
+.tl ul { list-style: none; margin-top: var(--s-3); }
+.tl li {
+  position: relative;
+  padding-left: 1.1em;
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.tl li + li { margin-top: 0.4em; }
+.tl li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.6em;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+}
 </style>
 </head>
 <body>
@@ -2038,7 +2492,8 @@ a { color: inherit; }
   <a href="#top" class="brandmark">KI BUSINESS<span class="dot">.</span>CLUB</a>
   <div class="nav__links">
     <a href="#ansatz" class="nav__link">Ansatz</a>
-    <a href="#leistungen" class="nav__link">Leistungen</a>
+    <a href="#lieferung" class="nav__link">Was du bekommst</a>
+    <a href="#ablauf" class="nav__link">Ablauf</a>
     <a href="#investition" class="nav__link">Preise</a>
   </div>
   <a class="nav__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
@@ -2059,13 +2514,13 @@ a { color: inherit; }
       <span class="line"><span class="glow">CLUB</span></span>
     </h1>
 
-    <p class="hero__sub">von Hanna Marzian &amp; Martin Thun</p>
+    <p class="hero__claim">Dein schlüsselfertiges KI-Betriebssystem</p>
 
-    <p class="hero__body"><strong>Das ist kein Coaching und kein Kurs.</strong> Wir setzen uns mit dir persönlich hin, erarbeiten deine Positionierung und deine Content-Strategie und bauen dir ein KI-Setup, das dir Arbeit abnimmt. Mehr Reichweite, weniger Tool-Chaos, und Abläufe, die auch komplett ohne dich laufen.</p>
+    <p class="hero__body">Wir erarbeiten deine Positionierung, Angebots-Strategie &amp; kompletten Sales-Funnel und bauen dir maßgeschneiderte KI-Agenten und Automationen, die diese mit dir gemeinsam umsetzen. Das ist kein Do it Yourself Coaching, sondern ein fertiges Done With You Setup, das ab Tag 1 für dich arbeitet.</p>
 
     <div class="hero__actions">
       <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
-      <a class="btn btn--ghost" href="#investition">Preise ansehen ↓</a>
+      <a class="btn btn--ghost" href="#lieferung">Was du bekommst ↓</a>
     </div>
 
     <div class="stats">
@@ -2093,18 +2548,18 @@ a { color: inherit; }
 <div class="ticker" aria-hidden="true">
   <div class="ticker__track">
     <div class="ticker__group">
-      <span>1:1 Betreuung</span><span class="star">✦</span>
-      <span>6 Monate</span><span class="star">✦</span>
-      <span>2 Live-Calls / Woche</span><span class="star">✦</span>
-      <span>Done With You</span><span class="star">✦</span>
-      <span>Fertige KI-Agenten</span><span class="star">✦</span>
+      <span>Fertig in 30 Tagen</span><span class="star">✦</span>
+      <span>2 Stunden weniger Handarbeit pro Tag</span><span class="star">✦</span>
+      <span>Positionierung übernommen</span><span class="star">✦</span>
+      <span>Angebot ausgearbeitet</span><span class="star">✦</span>
+      <span>Funnel eingerichtet</span><span class="star">✦</span>
     </div>
     <div class="ticker__group">
-      <span>1:1 Betreuung</span><span class="star">✦</span>
-      <span>6 Monate</span><span class="star">✦</span>
-      <span>2 Live-Calls / Woche</span><span class="star">✦</span>
-      <span>Done With You</span><span class="star">✦</span>
-      <span>Fertige KI-Agenten</span><span class="star">✦</span>
+      <span>Fertig in 30 Tagen</span><span class="star">✦</span>
+      <span>2 Stunden weniger Handarbeit pro Tag</span><span class="star">✦</span>
+      <span>Positionierung übernommen</span><span class="star">✦</span>
+      <span>Angebot ausgearbeitet</span><span class="star">✦</span>
+      <span>Funnel eingerichtet</span><span class="star">✦</span>
     </div>
   </div>
 </div>
@@ -2145,8 +2600,9 @@ a { color: inherit; }
     <div class="approach-header" data-reveal>
       <div>
         <div class="kicker">Unser Ansatz</div>
-        <h2 class="h2">Wir erklären es dir nicht. <em>Wir bauen es mit dir.</em></h2>
-        <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Vorlagen und die Aufgabe, den Rest allein hinzukriegen. Bei uns setzen wir uns mit dir hin. Wir erarbeiten deine Positionierung, entwickeln deine Content-Strategie und räumen dein Setup auf, damit Tools, Technik und KI endlich ineinandergreifen. <strong>Am Ende steht eine Struktur, die dir Reichweite bringt, ohne dich jeden Tag persönlich zu kosten.</strong></p>
+        <h2 class="h2">Wir bauen dein <em>Business Betriebssystem</em></h2>
+        <p class="lede">In den meisten Programmen bekommst du Videos, ein paar Templates und das Ergebnis hängt davon ab, was du daraus selbst umsetzt. <strong>Nicht bei uns.</strong></p>
+        <p class="lede" style="margin-top: var(--s-6);">Deine Positionierung, Content-Strategie, Sales-Funnel uvm. werden von uns ausgearbeitet und dir übergeben, zusammen mit den KI-Agenten, die damit arbeiten. Nach 30 Tagen liegt ein fertiges System bei dir. <strong>Am Ende steht ein Setup, sodass Strategie, Technik &amp; KI endlich ineinandergreifen und dir täglich mehrere Stunden sparen.</strong></p>
       </div>
       <div class="approach-header__img">
         <img src="img-team.jpg" alt="Hanna Marzian und Martin Thun" loading="lazy">
@@ -2160,23 +2616,23 @@ a { color: inherit; }
         <div class="split-bar__you"><span class="split-bar__pct">20&thinsp;%</span></div>
       </div>
       <div class="split-bar__legend">
-        <span><b>Wir übernehmen Strategie, KI-Prozesse und Umsetzung</b> (Done WITH You oder Done FOR You)</span>
+        <span><b>Wir: Positionierung, Angebot, Funnel, Technik</b> (ausgearbeitet und eingerichtet)</span>
         <span><b>Du: dein Gesicht, deine Gedanken</b></span>
       </div>
     </div>
 
     <div class="approach-grid">
       <article class="a-card" data-reveal>
-        <h3>Kein Videokurs-Friedhof</h3>
-        <p>Die KI-Welt bewegt sich schnell. Deshalb bekommst du keinen aufgeblähten Kurs, der in 6 Monaten veraltet ist. Inhalte entstehen on-demand, genau dann, wenn du sie brauchst.</p>
+        <h3>Erprobter Prozess, deine Maße</h3>
+        <p>Wie beim Maßanzug: Der Schnittprozess ist bei jedem Kunden derselbe, weil er funktioniert. Was hinten rauskommt, passt trotzdem nur dir. Genau deshalb ist das Ergebnis verlässlich und nicht jedes Mal ein Experiment.</p>
       </article>
       <article class="a-card" data-reveal style="--reveal-delay: 90ms;">
-        <h3>Keine Schablone</h3>
-        <p>Wir gehen individuell auf dich, deine Themen und deinen Stil ein. Was bei hundert anderen funktioniert, interessiert uns nur, wenn es auch zu dir passt.</p>
+        <h3>Deine Arbeit machen wir</h3>
+        <p>Positionierung, Nische, Bio, Angebotsstruktur, Funnel-Entscheidung: Das ist Denkarbeit, die dich sonst Monate kostet. Wir liefern sie ausgearbeitet, du liest, korrigierst und gibst frei.</p>
       </article>
       <article class="a-card" data-reveal style="--reveal-delay: 180ms;">
-        <h3>Kein Selbstlern-Programm</h3>
-        <p>Du bekommst keine Hausaufgaben, die du allein wegarbeitest. Wir sitzen mit dir dran, bis dein Setup steht und deine Formate laufen.</p>
+        <h3>Kein Videokurs-Friedhof</h3>
+        <p>Die KI-Welt bewegt sich schnell. Deshalb bekommst du keinen aufgeblähten Kurs, der in 6 Monaten veraltet ist. Inhalte entstehen on-demand, genau dann, wenn du sie brauchst.</p>
       </article>
     </div>
 
@@ -2186,77 +2642,126 @@ a { color: inherit; }
   </div>
 </section>
 
-<!-- ═══════════ ZWEI WEGE ═══════════ -->
-<section class="section">
-  <div class="wrap">
+<!-- ═══════════ LIEFERUNG: DREI STRÄNGE ═══════════ -->
+<section class="section delivery-section has-noise" id="lieferung">
+  <div class="wrap" style="position: relative; z-index: 2;">
     <div data-reveal>
-      <h2 class="h2">Zwei <em>Optionen</em></h2>
-      <p class="lede">Das Ergebnis ist in beiden Fällen dasselbe: eine Sichtbarkeit, die zu deinem Können passt, und Abläufe, die dir Arbeit abnehmen. Der Unterschied liegt nur darin, wie viel davon bei dir bleibt.</p>
+      <div class="kicker">So wird gebaut</div>
+      <h2 class="h2">Drei Stränge, <em>neun fertige Ausarbeitungen</em></h2>
     </div>
 
-    <div class="paths">
-      <article class="path" data-reveal>
-        <div class="path__label">Option 1</div>
-        <h3>Wir bauen es gemeinsam</h3>
-        <p>Wir erarbeiten Positionierung, Content-Strategie und dein KI-Setup zusammen mit dir. Wir gehen deine Hooks durch, bevor du drehst, und schauen auf alles, was du veröffentlichst.</p>
-        <p><b>Drehen und posten machst du selbst</b>, aber nie mehr allein und nie mehr ohne Plan. Für alle, die selbst am Steuer bleiben wollen.</p>
-      </article>
-      <article class="path" data-reveal style="--reveal-delay: 120ms;">
-        <div class="path__label">Option 2</div>
-        <h3>Wir übernehmen die Umsetzung</h3>
-        <p>Unser Team übernimmt Content und Technik zugleich: Redaktionsplan, Hooks, Captions, dein komplettes KI-Setup und die Automationen, die im Hintergrund laufen.</p>
-        <p>Du lieferst dein Gesicht und deine Gedanken, den Rest machen wir. Für alle, die weder Zeit noch Lust haben, sich selbst um Content oder Technik zu kümmern.</p>
-        <p><b>Wir sind deine persönliche KI Boutique-Agentur für Reichweite &amp; Kundenvertrauen.</b></p>
-      </article>
+    <div class="delivery-map">
+      <div class="delivery-strand" data-reveal>
+        <div class="delivery-strand__head">
+          <span class="delivery-strand__num">1</span>
+          <h3>Positionierung</h3>
+        </div>
+        <div class="delivery-strand__cards">
+          <article class="delivery-card">
+            <span class="delivery-card__num">01</span>
+            <h4>Brand-Manifest</h4>
+            <p>Nische, Positionierung, Kernbotschaft, Marken-Identität &amp; Brand Voice</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__num">02</span>
+            <h4>Content-Strategie</h4>
+            <p>Deine Content-Säulen, konkrete Themen &amp; Formate für Instagram</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__num">03</span>
+            <h4>Fertige Beiträge</h4>
+            <p>3 bis 5 Content-Pieces pro Säule für den Transfer</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="delivery-strand" data-reveal style="--reveal-delay: 100ms;">
+        <div class="delivery-strand__head">
+          <span class="delivery-strand__num">2</span>
+          <h3>Angebot</h3>
+        </div>
+        <div class="delivery-strand__cards">
+          <article class="delivery-card">
+            <span class="delivery-card__num">04</span>
+            <h4>Angebots-Strategie</h4>
+            <p>Deine Produktwelt mit klarem Kernangebot</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__num">05</span>
+            <h4>Traumkunden-Avatar</h4>
+            <p>100&nbsp;% Klarheit, wie du welches Produkt verkaufst</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__num">06</span>
+            <h4>Freebie oder Entry Offer</h4>
+            <p>Dein Einstiegsangebot, konzipiert und ausgearbeitet</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="delivery-strand" data-reveal style="--reveal-delay: 200ms;">
+        <div class="delivery-strand__head">
+          <span class="delivery-strand__num">3</span>
+          <h3>Sales</h3>
+        </div>
+        <div class="delivery-strand__cards">
+          <article class="delivery-card">
+            <span class="delivery-card__num">07</span>
+            <h4>Lead-Generierung</h4>
+            <p>Umsetzungsplan für regelmäßig neue Leads</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__num">08</span>
+            <h4>Vertrauensaufbau &amp; Framing</h4>
+            <p>Dein Leitfaden, um Interessenten für dein Angebot aufzuwärmen</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__num">09</span>
+            <h4>Sales</h4>
+            <p>Wie du heiße Leads zum Kauf deines Hochpreis-Angebots bringst</p>
+          </article>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<hr class="divider wrap">
-
-<!-- ═══════════ DELIVERABLES (BENTO) ═══════════ -->
-<section class="section" id="leistungen">
+<!-- ═══════════ LEISTUNGEN ═══════════ -->
+<section class="section">
   <div class="wrap">
     <div data-reveal>
-      <h2 class="h2">Das bekommst <em>du</em></h2>
-      <p class="lede">Die meisten Programme lassen dich nach dem Kauf mit einem Mitgliederbereich allein. Wir machen das Gegenteil.</p>
+      <div class="kicker">Das bekommst du</div>
+      <h2 class="h2">Fünf konkrete <em>Leistungen</em></h2>
     </div>
 
-    <div class="bento">
-      <article class="b-card b-card--featured" data-reveal>
-        <div class="b-card__inner">
-          <span class="b-tag">Herzstück</span>
-          <h3>1:1 Betreuung über volle 6 Monate</h3>
-          <p>Kein Witz: Wir sind per Telegram dauerhaft mit dir in Kontakt. Wir schauen uns deinen Content an, gehen deine Hooks durch, bevor du drehst, und geben dir die richtigen Impulse. Du hängst irgendwo fest? Dann nehmen wir dir Bildschirmvideos auf und lösen das Ding gemeinsam.</p>
-        </div>
+    <div class="points">
+      <article class="point point--lead" data-reveal>
+        <div class="point__tag">Herzstück</div>
+        <h3 class="point__title">Mentoring &amp; Support über volle 6 Monate</h3>
+        <p class="point__body">Über die volle 6-Monate-Laufzeit bist du nicht allein. Wir sind an deiner Seite und helfen dir dort weiter, wo du gerade festhängst.</p>
       </article>
-      <article class="b-card" data-reveal style="--reveal-delay: 90ms;">
-        <div class="b-card__inner">
-          <div class="b-num"><span data-count="48">0</span></div>
-          <h3>Live-Calls</h3>
-          <p>Offene Q&amp;A-Calls, bei denen wir individuell auf das eingehen, was gerade brennt. Du profitierst nicht nur von Hanna und Martin, sondern auch vom Blickwinkel der anderen: Leute, die dir ein paar Schritte voraus sind, beschleunigen dich mehr als jedes strukturierte Lehrformat.</p>
-        </div>
+
+      <article class="point point--calls" data-reveal style="--reveal-delay: 90ms;">
+        <div class="point__number">48</div>
+        <h3 class="point__title">Live-Calls</h3>
+        <p class="point__body">Zwei Calls pro Woche, in denen wir gemeinsam auf deine Fragen eingehen und schnell vorankommen.</p>
       </article>
-      <article class="b-card" data-reveal>
-        <div class="b-card__inner">
-          <span class="b-tag">Auf Wunsch</span>
-          <h3>Done For You</h3>
-          <p>Wenn du willst, übernimmt unser Team die komplette Umsetzung: Redaktionsplan, Hooks, Captions, dein KI-Setup, die Automationen dahinter und die Technik, die alles zusammenhält. Du lieferst nur noch dein Gesicht und deine Gedanken.</p>
-        </div>
+
+      <article class="point" data-reveal style="--reveal-delay: 180ms;">
+        <div class="point__tag">Technik</div>
+        <h3 class="point__title">Fertiges KI-Setup</h3>
+        <p class="point__body">Innerhalb von 30 Tagen liefern wir dir dein Fundament, damit deine Umsetzung maximal erleichtert wird.</p>
       </article>
-      <article class="b-card" data-reveal style="--reveal-delay: 90ms;">
-        <div class="b-card__inner">
-          <span class="b-tag">Technik</span>
-          <h3>Dein KI-Setup, fertig eingerichtet</h3>
-          <p>Wir bauen dir die Agenten, die deine Sprache kennen: Hooks, Captions, Wiederverwertung deiner Inhalte. Du bekommst kein Tutorial, du bekommst ein laufendes Setup.</p>
-        </div>
+
+      <article class="point" data-reveal style="--reveal-delay: 270ms;">
+        <div class="point__tag">Community</div>
+        <h3 class="point__title">Private Community</h3>
+        <p class="point__body">Private Gruppe mit anderen, die gerade dasselbe aufbauen wie du. Lernen vom Erlebten anderer.</p>
       </article>
-      <article class="b-card" data-reveal style="--reveal-delay: 180ms;">
-        <div class="b-card__inner">
-          <span class="b-tag">Community</span>
-          <h3>Private Telegram-Gruppe</h3>
-          <p>Direkter Zugang zu uns beiden, plus Austausch mit Leuten, die gerade dasselbe bauen wie du.</p>
-        </div>
+
+      <article class="point" data-reveal style="--reveal-delay: 360ms;">
+        <div class="point__tag">Auf Wunsch</div>
+        <h3 class="point__title">Dauerhafte Umsetzung für dich</h3>
+        <p class="point__body">Wir werden zu deiner persönlichen Boutique-Agentur für Social Media, KI und/oder Ads.</p>
       </article>
     </div>
   </div>
@@ -2268,59 +2773,69 @@ a { color: inherit; }
 <section class="section">
   <div class="wrap">
     <div data-reveal>
-      <div class="kicker">Die 4 Themenschwerpunkte</div>
-      <h2 class="h2">Vier Bausteine, <em>ein Auftritt</em>.</h2>
+      <div class="kicker">Alles auf einen Blick</div>
+      <h2 class="h2">So ein Komplettpaket <em>gibt es nirgends</em></h2>
     </div>
 
     <div class="modules-layout">
-      <!-- Spalte 1: 01 und 02, darunter Hanna -->
-      <div class="modules-layout__col">
-        <div class="modules">
-          <div class="module" data-reveal>
-            <div class="module__num">01</div>
-            <div>
-              <h3>Positionierung &amp; richtige Nische</h3>
-              <p>Wie du dich so aufstellst, dass du möglichst viel Nachfrage abgreifst, ohne im härtesten Wettbewerb zu stehen. Die meisten stellen sich entweder zu breit auf (und gehen unter) oder zu eng (dann ist der Markt zu klein). Wir suchen die Stelle dazwischen.</p>
-            </div>
-          </div>
-          <div class="module" data-reveal style="--reveal-delay: 60ms;">
-            <div class="module__num">02</div>
-            <div>
-              <h3>Content-Strategie, Formate &amp; Hooks</h3>
-              <p>Welche Formate zu dir und deinem Thema passen, was du wann drehst und wie dein Redaktionsplan aussieht. Dazu das Handwerk an den ersten drei Sekunden, denn die entscheiden, ob jemand bleibt oder weiterwischt.</p>
-            </div>
+      <!-- Obere Reihe: Martin neben 01 bis 03 -->
+      <div class="modules-layout__img" data-reveal>
+        <img src="img-martin.jpg" alt="Martin Thun" loading="lazy">
+      </div>
+      <div class="modules">
+        <div class="module" data-reveal>
+          <div class="module__num">01</div>
+          <div>
+            <h3>Business Betriebssystem</h3>
+            <p>Positionierung, Angebot, Content und Sales greifen als ein System ineinander.</p>
           </div>
         </div>
-        <div class="modules-layout__img" data-reveal>
-          <img src="img-martin.jpg" alt="Martin Thun" loading="lazy">
+        <div class="module" data-reveal style="--reveal-delay: 60ms;">
+          <div class="module__num">02</div>
+          <div>
+            <h3>Auf dich zugeschnittenes KI-Setup + Templates</h3>
+            <p>KI-Agenten und Templates, passend zu deiner Sprache, deinem Angebot und deinen Abläufen.</p>
+          </div>
+        </div>
+        <div class="module" data-reveal style="--reveal-delay: 120ms;">
+          <div class="module__num">03</div>
+          <div>
+            <h3>Laufender Technik- und KI-Support</h3>
+            <p>Konkrete Hilfe, wenn Technik hakt oder sich bei deinen KI-Tools etwas verändert.</p>
+          </div>
         </div>
       </div>
-      <!-- Spalte 2: Hanna, darunter 03 und 04 -->
-      <div class="modules-layout__col">
-        <div class="modules-layout__img" data-reveal>
-          <img src="img-hanna.jpg" alt="Hanna Marzian" loading="lazy">
-        </div>
-        <div class="modules">
-          <div class="module" data-reveal style="--reveal-delay: 120ms;">
-            <div class="module__num">03</div>
-            <div>
-              <h3>Vertrauensaufbau &amp; Conversion</h3>
-              <p>Reichweite allein zahlt keine Rechnung. Hier geht es darum, wie aus Zuschauern Menschen werden, die dir glauben und irgendwann von selbst anfragen. Storytelling, Beweise und der Weg vom Profil bis ins Gespräch.</p>
-            </div>
-          </div>
-          <div class="module" data-reveal style="--reveal-delay: 180ms;">
-            <div class="module__num">04</div>
-            <div>
-              <h3>KI, Technik &amp; Prozesse</h3>
-              <p>Wir räumen deinen Tool-Dschungel auf und bauen dir die Agenten, die deine Sprache kennen. Statt zwölf Werkzeuge, die nebeneinander herlaufen, hast du am Ende ein Setup, das ineinandergreift (und meistens auch spürbar weniger kostet).</p>
-            </div>
+
+      <!-- Untere Reihe: 04 bis 06 neben Hanna -->
+      <div class="modules">
+        <div class="module" data-reveal style="--reveal-delay: 180ms;">
+          <div class="module__num">04</div>
+          <div>
+            <h3>6-monatige Begleitung</h3>
+            <p>Zwei Live-Calls pro Woche plus private Telegram-Gruppe – sechs Monate lang.</p>
           </div>
         </div>
+        <div class="module" data-reveal style="--reveal-delay: 240ms;">
+          <div class="module__num">05</div>
+          <div>
+            <h3>Content-Feedback</h3>
+            <p>Wir prüfen deine Hooks und Ideen, bevor dein Content rausgeht.</p>
+          </div>
+        </div>
+        <div class="module" data-reveal style="--reveal-delay: 300ms;">
+          <div class="module__num">06</div>
+          <div>
+            <h3>Individueller Support in Telegram</h3>
+            <p>Direkte Hilfe in Telegram, genau an deinem konkreten Fall.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modules-layout__img" data-reveal>
+        <img src="img-hanna.jpg" alt="Hanna Marzian" loading="lazy">
       </div>
     </div>
   </div>
 </section>
-
 <!-- ═══════════ HOSTS ═══════════ -->
 <section class="section" style="padding-top: var(--s-12);">
   <div class="wrap">
@@ -2360,20 +2875,32 @@ a { color: inherit; }
 
     <div class="tiers">
       <article class="tier tier--featured" data-reveal>
-        <span class="tier__flag">Der Klassiker</span>
-        <div class="tier__label">Option 1</div>
-        <div class="tier__name">Done with you</div>
-        <div class="tier__price">4.000&nbsp;€
-          <small>zzgl. MwSt. · einmalig für 6 Monate</small>
-          <span class="tier__installment">Ratenzahlung ab nur 159&nbsp;€ möglich!</span>
+        <span class="tier__flag">Option 1</span>
+       <div class="tier__name">Das komplette Paket</div>
+
+        <div class="price-split">
+          <div class="price-split__block">
+            <div class="price-split__k">Erst der Bau</div>
+            <div class="price-split__v" style="font-size: var(--t-xl);">30 Tage</div>
+          </div>
+          <div class="price-split__plus">+</div>
+          <div class="price-split__block">
+            <div class="price-split__k">Dann die Begleitung</div>
+            <div class="price-split__v" style="font-size: var(--t-xl);">6 Monate</div>
+          </div>
         </div>
-        <p class="tier__desc">Wir bauen es gemeinsam mit dir. Du bekommst 6 Monate lang persönliche 1:1 Betreuung, wir erarbeiten deine Positionierung und deine Content-Strategie mit dir und zeigen dir Schritt für Schritt, wie du deine KI-Prozesse aufsetzt. Drehen, posten und umsetzen machst du selbst, aber nie mehr allein und nie mehr ohne Plan.</p>
+
+        <div class="tier__price">4.000&nbsp;€
+          <small>zzgl. MwSt. · einmalig, alles enthalten</small>
+          <span class="tier__installment">Ratenzahlung möglich</span>
+        </div>
+
+        <p class="tier__desc">In den ersten 30 Tagen bauen wir dein System und übergeben es dir. Danach begleiten wir dich sechs Monate lang beim Fahren: zwei Live-Calls pro Woche, direkter Draht per Telegram und Blick auf deinen Content, bevor er rausgeht. Drehen und posten machst du selbst, aber nie mehr allein und nie mehr ohne Plan.</p>
         <ul class="tier__list">
-          <li><span class="perks__check">✓</span><span><b>1:1 Betreuung</b> über Telegram, die kompletten 6 Monate</span></li>
-          <li><span class="perks__check">✓</span><span><b>48 Live-Calls</b> mit Hanna und Martin</span></li>
-          <li><span class="perks__check">✓</span><span><b>Positionierung und Content-Strategie</b>, gemeinsam erarbeitet</span></li>
+          <li><span class="perks__check">✓</span><span><b>Business Betriebssystem + KI Setup</b></span></li>
+          <li><span class="perks__check">✓</span><span><b>2 Live-Calls pro Woche</b> mit Hanna und Martin, 6 Monate lang</span></li>
           <li><span class="perks__check">✓</span><span><b>Feedback auf deinen Content</b>, bevor du drehst</span></li>
-          <li><span class="perks__check">✓</span><span>Private Telegram-Gruppe und Grundlagenkurs</span></li>
+          <li><span class="perks__check">✓</span><span>Private Telegram-Gruppe und 1:1 Support</span></li>
         </ul>
         <div class="tier__foot">
           <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
@@ -2386,14 +2913,12 @@ a { color: inherit; }
         <div class="tier__price">Individuell
           <small>Setup-Fee plus monatlicher Retainer · Preis nach Umfang</small>
         </div>
-        <p class="tier__desc">Wir übernehmen die Umsetzung, Content und Technik zugleich. Du lieferst dein Gesicht, deine Gedanken und Rohmaterial, den Rest macht unser Team: Strategie, Hooks, Captions, Redaktionsplan, dein komplettes KI-Setup und die Automationen dahinter. Für alle, die weder Zeit noch Lust haben, sich selbst um Content oder Technik zu kümmern.</p>
+        <p class="tier__desc">Dasselbe System, nur dass die laufende Umsetzung bei uns bleibt. Du lieferst dein Gesicht, deine Gedanken und Rohmaterial, den Rest macht unser Team: Content, dein komplettes KI-Setup und die Automationen dahinter. Für alle, die weder Zeit noch Lust haben, sich selbst um Content oder Technik zu kümmern.</p>
         <ul class="tier__list">
           <li><span class="perks__check">✓</span><span><b>Alles aus Option 1</b>, plus:</span></li>
-          <li><span class="perks__check">✓</span><span><b>Content-Produktion durch unser Team</b> statt durch dich</span></li>
-          <li><span class="perks__check">✓</span><span><b>Fertiger Redaktionsplan</b>, du bekommst gesagt, was du drehst</span></li>
-          <li><span class="perks__check">✓</span><span><b>Hooks und Captions</b> werden für dich geschrieben</span></li>
-          <li><span class="perks__check">✓</span><span><b>KI-Setup &amp; Automationen</b>, von uns eingerichtet und gewartet</span></li>
-          <li><span class="perks__check">✓</span><span>Fester Ansprechpartner und laufende Betreuung</span></li>
+          <li><span class="perks__check">✓</span><span><b>Content-Produktion und Funnel-Setup (Anmeldeseiten, Salespages etc.)</b></span></li>
+          <li><span class="perks__check">✓</span><span><b>Technik, KI &amp; Automationen</b>, von uns eingerichtet und gewartet</span></li>
+          <li><span class="perks__check">✓</span><span><b>Bei Bedarf auch Ads &amp; E-Mail-Marketing</b></span></li>
         </ul>
         <p style="font-size: var(--t-sm); color: var(--d-text-soft); line-height: 1.7; margin-bottom: var(--s-6);"><b style="color: var(--d-text);">Wir sind deine persönliche KI Boutique-Agentur für Reichweite &amp; Kundenvertrauen.</b></p>
         <div class="tier__foot">
@@ -2402,52 +2927,49 @@ a { color: inherit; }
       </article>
     </div>
 
-    <div class="savings" data-reveal>
-      <div class="savings__label">Nebeneffekt</div>
-      <h3>Was du dir nebenbei sparst</h3>
-      <p>Wenn wir dein Setup aufräumen, fällt fast immer Ballast weg. Tools, die parallel laufen und dasselbe können. Texte, die du extern einkaufst. Handarbeit, die eine Automatisierung übernimmt. Typische Größenordnungen, die wir bei anderen gefunden haben:</p>
-      <ul class="savings__items">
-        <li><b>40 bis 150 €</b>Tools im Monat, die doppelt laufen oder kaum genutzt werden</li>
-        <li><b>300 bis 800 €</b>VA und Mitarbeiter im Monat für Content, Website, Salespages etc.</li>
-        <li><b>Mehrere Stunden</b>pro Woche an Handarbeit, die künftig automatisch läuft</li>
-      </ul>
-      <p>Über ein Jahr kommt bei den meisten ein deutlich vierstelliger Betrag zusammen, der einen erheblichen Teil der Investition zurückholt.</p>
-    </div>
-
-    <div class="honesty" data-reveal>
-      <h3>Damit wir uns richtig verstehen</h3>
-      <p><b>Das hier ist kein Coaching-Programm.</b> Wir setzen uns mit dir hin und bauen mit dir. Wir schauen uns deine Kanäle an, gehen deine Formate durch, schreiben Hooks mit dir und richten dein Setup ein. Bei Option 2 übernehmen wir die Umsetzung sogar komplett.</p>
-      <p>Wir leisten per Bildschirmaufzeichnung und direktem Telegram-Chat konkrete Unterstützung bei deinen Baustellen. Was wir dir nicht abnehmen können: vor der Kamera stehen und deine Gedanken liefern. Das bleibt bei dir, und genau deshalb klingt es am Ende auch nach dir.</p>
-    </div>
-
-    <p class="smallprint"><b>Kein Fernunterricht im rechtlichen Sinne:</b> Der KI Business Club ist ein interaktives Live-Betreuungsprogramm. Die Wissensvermittlung findet überwiegend in gemeinsamen Live-Calls und durch direkte 1:1 Kommunikation statt, nicht durch selbstständig zu bearbeitende Kursmaterialien.</p>
+    <p class="smallprint"><b>Kein Fernunterricht im rechtlichen Sinne:</b> Der KI Business Club ist kein Selbstlernkurs. Der Schwerpunkt der Leistung liegt in der Erstellung individueller Arbeitsergebnisse für dein Business sowie in interaktiver Live-Begleitung. Die Kommunikation findet überwiegend in gemeinsamen Live-Calls und im direkten 1:1 Austausch statt, nicht durch selbstständig zu bearbeitende Kursmaterialien.</p>
   </div>
 </section>
 
 <!-- ═══════════ STEPS ═══════════ -->
-<section class="section">
+<section class="section" id="ablauf">
   <div class="wrap">
-    <div data-reveal style="text-align: center;">
-      <h2 class="h2">In 3 Schritten zu deinem <em>neuen Auftritt</em>.</h2>
+    <div data-reveal>
+      <div class="kicker">Der Ablauf</div>
+      <h2 class="h2">Drei Phasen, <em>sechs Monate</em></h2>
     </div>
 
-    <div class="steps">
-      <div class="step" data-reveal>
-        <div class="step__num">01</div>
-        <h3>Du bewirbst dich</h3>
-        <p>Formular ausfüllen dauert keine 5 Minuten. Wir schauen drüber und melden uns persönlich bei dir.</p>
+    <div class="timeline">
+      <div class="tl" data-reveal>
+        <div class="tl__when">Vor dem Start</div>
+        <h3>Bewerbung und Einschätzung</h3>
+        <ul>
+          <li>Formular ausfüllen</li>
+          <li>Schauen, ob&rsquo;s passt</li>
+          <li>Rückfragen klären</li>
+        </ul>
       </div>
-      <div class="step" data-reveal style="--reveal-delay: 120ms;">
-        <div class="step__num">02</div>
-        <h3>Wir schauen uns deinen Auftritt an</h3>
-        <p>Du bekommst von uns eine <b>ehrliche Analyse deiner Kanäle</b> plus einen <b>konkreten Plan</b>, was als Erstes passieren muss. Danach entscheiden wir gemeinsam, welche der beiden Optionen zu dir passt.</p>
+      <div class="tl" data-reveal style="--reveal-delay: 120ms;">
+        <div class="tl__when">Tag 1 bis 30</div>
+        <h3>Kickoff und Onboarding</h3>
+        <ul>
+          <li>Kickoff-Call und Onboarding</li>
+          <li>Wir bauen deine neun Ausarbeitungen</li>
+          <li>Übergabe und Setup</li>
+        </ul>
       </div>
-      <div class="step" data-reveal style="--reveal-delay: 240ms;">
-        <div class="step__num">03</div>
-        <h3>Wir legen los</h3>
-        <p>Kickoff-Call, dann bauen wir Woche für Woche: erst Positionierung und Strategie, dann dein KI-Setup, dann laufen deine Formate. Live-Calls immer dienstags.</p>
+      <div class="tl" data-reveal style="--reveal-delay: 240ms;">
+        <div class="tl__when">Tag 30 bis 180</div>
+        <h3>Umsetzung, Begleitung und Feintuning</h3>
+        <ul>
+          <li>Zwei Live-Calls pro Woche</li>
+          <li>Content-Feedback, bevor du drehst</li>
+          <li>Nachschärfen, wo es hakt</li>
+        </ul>
       </div>
     </div>
+
+
   </div>
 </section>
 
@@ -2458,7 +2980,7 @@ a { color: inherit; }
       <img src="img-hanna.jpg" alt="Hanna Marzian" loading="lazy">
       <img src="img-martin.jpg" alt="Martin Thun" loading="lazy">
     </div>
-    <h2 class="h2" data-reveal>Sichere dir <em>deinen Platz</em></h2>
+    <h2 class="h2" data-reveal>In 30 Tagen steht <em>dein System</em></h2>
     <p class="final__body" data-reveal>Fülle das Formular aus (dauert keine 5 Minuten). Wir schauen uns deine Kanäle an und melden uns persönlich bei dir, mit einer ehrlichen Einschätzung. Kein Verkaufsdruck, kein langer Prozess.</p>
 
     <div data-reveal>
@@ -2486,7 +3008,7 @@ a { color: inherit; }
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta__info">
     <div class="sticky-cta__title">KI Business Club</div>
-    <div class="sticky-cta__sub">6 Monate · 1:1 Betreuung · ab 4.000 €</div>
+    <div class="sticky-cta__sub">System in 30 Tagen · ab 4.000 €</div>
   </div>
   <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt bewerben</a>
 </div>
