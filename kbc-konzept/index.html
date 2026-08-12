@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KI Business Club · Das Konzept</title>
+  <meta name="description" content="In 9 Minuten erklärt: Wie dein KI-Betriebssystem aufgebaut ist, was du in 30 Tagen bekommst und wie die Zusammenarbeit läuft.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="KI Business Club · Das Konzept">
+  <meta property="og:description" content="Das komplette Konzept im Video: neun fertige Ausarbeitungen, dein Setup in 30 Tagen.">
+  <meta name="theme-color" content="#FFFDFA">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:      #D8622A;
+      --orange-l:    #E8894E;
+      --orange-deep: #B24E1E;
+      --ink:         #160C05;
+      --text:        #1E140C;
+      --text-2:      #5C5048;
+      --text-3:      #8E8076;
+      --paper:       #FFFDFA;
+      --line:        rgba(22, 12, 5, 0.10);
+      --serif:       'Cormorant', Georgia, serif;
+      --sans:        'Inter', system-ui, sans-serif;
+      --brand:       'Montserrat', 'Inter', sans-serif;
+      --expo:        cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: linear-gradient(180deg, #FFFDFA 0%, #FAF3EE 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LOGO ─────────────────────────────────── */
+    .logo-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 26px 24px 0;
+    }
+
+    /* dreizeiliges Logo, deshalb höher als ein einzeiliges Wortmarken-Logo */
+    .logo-header img {
+      height: 86px;
+      width: auto;
+      display: block;
+    }
+
+    /* ── MAIN ─────────────────────────────────── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 56px 24px 80px;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Wortmarke des Clubs, gleicher Stil wie auf der Salespage */
+    .kbc-mark {
+      font-family: var(--brand);
+      font-size: clamp(15px, 2vw, 19px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .kbc-mark .dot { color: var(--orange); }
+
+    h1 {
+      font-family: var(--brand);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 18px;
+      max-width: 20ch;
+    }
+
+    h1 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 0;
+    }
+
+    .subline {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-2);
+      text-align: center;
+      max-width: 34em;
+      margin-bottom: 44px;
+    }
+
+    .subline strong { color: var(--text); font-weight: 600; }
+
+    /* ── VIDEO ────────────────────────────────── */
+    .video-wrap {
+      width: 100%;
+      max-width: 860px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 24px 60px rgba(22, 12, 5, 0.12);
+      margin-bottom: 44px;
+    }
+
+    /* Platzhalter, bis der Embed-Code drin ist */
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 40%, rgba(216, 98, 42, 0.07), transparent 70%),
+        #FAF3EE;
+    }
+
+    .video-placeholder svg { width: 52px; height: 52px; color: var(--orange); opacity: 0.55; }
+
+    .video-placeholder p {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ── TEXT UNTER DEM VIDEO ─────────────────── */
+    .next-title {
+      font-family: var(--brand);
+      font-size: clamp(19px, 2.4vw, 25px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-align: center;
+      max-width: 22ch;
+      margin-bottom: 14px;
+    }
+
+    .next-title em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 0;
+    }
+
+    .lede {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-2);
+      text-align: center;
+      max-width: 30em;
+      margin-bottom: 40px;
+    }
+
+    .lede strong { color: var(--text); font-weight: 600; }
+
+    /* ── CTA ──────────────────────────────────── */
+    .cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: #ffffff;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 21px 54px;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(216, 98, 42, 0.28);
+      transition: background 0.25s var(--expo), transform 0.3s var(--expo), box-shadow 0.3s var(--expo);
+    }
+
+    .btn-cta:hover {
+      background: var(--orange-l);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 38px rgba(216, 98, 42, 0.34);
+    }
+
+    .btn-note {
+      font-size: 12px;
+      color: var(--text-3);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: var(--ink);
+      padding: 38px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      font-family: var(--brand);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #FBF7F2;
+    }
+
+    .footer-logo .dot { color: var(--orange-l); }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: rgba(251, 247, 242, 0.62);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--orange-l); }
+
+    .footer-copy { font-size: 10px; color: rgba(251, 247, 242, 0.42); }
+
+    /* ── RESPONSIVE ───────────────────────────── */
+    @media (max-width: 600px) {
+      .logo-header { padding: 20px 20px 0; }
+      .logo-header img { height: 64px; }
+      main { padding: 34px 20px 60px; }
+      h1 { margin-bottom: 14px; }
+      .subline { font-size: 14px; margin-bottom: 32px; }
+      .video-wrap { margin-bottom: 32px; border-radius: 10px; }
+      .lede { font-size: 16px; margin-bottom: 32px; }
+      .cta-wrap { width: 100%; }
+      .btn-cta { padding: 19px 32px; font-size: 13px; display: block; width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-header">
+    <img src="../bes-logo.png" alt="business. einfach. smart">
+  </div>
+
+  <main>
+
+    <div class="kbc-mark">KI BUSINESS<span class="dot">.</span>CLUB</div>
+
+    <h1>Wir bauen deinen <em>digitalen Zwilling</em></h1>
+
+    <p class="subline">
+      Erfahre in 15 Minuten, was dich im KI Business Club erwartet und wie das KI-gestützte Betriebssystem dir ab sofort <strong>5 Std.+ pro Woche</strong> spart.
+    </p>
+
+    <div class="video-wrap">
+
+      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0d5a00bf229f4547b7468fee1c9c92db" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+    </div>
+
+    <p class="next-title">Der nächste Schritt: Deine <em>kostenlose Potenzial-Analyse</em></p>
+
+    <p class="lede">
+      Wir schauen uns dein Business an, identifizieren die größten Zeitfresser und erarbeiten deinen Fahrplan für die nächsten 6 Monate. Klicke auf den Button und fülle das Formular aus, um deine Analyse kostenlos und unverbindlich zu sichern!
+    </p>
+
+    <div class="cta-wrap">
+      <a class="btn-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">
+        Analyse anfordern →
+      </a>
+      <span class="btn-note">Dauert keine 5 Minuten · 5 Plätze für September</span>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">BUSINESS<span class="dot">.</span>EINFACH<span class="dot">.</span>SMART</div>
+      <nav class="footer-links">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+        <a href="https://www.instagram.com/business.einfach.smart" target="_blank" rel="noopener">@business.einfach.smart</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Hanna Marzian &amp; Martin Thun</p>
+    </div>
+  </footer>
+
+</body>
+</html>
