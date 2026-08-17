@@ -94,7 +94,10 @@
    ════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+
+/* Anker-Sprünge dürfen nicht unter der fixierten Nav landen */
+section[id], header[id] { scroll-margin-top: 90px; }
 
 body {
   font-family: var(--f-sans);
@@ -129,7 +132,6 @@ a { color: inherit; }
   position: absolute; inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: 0.028;
-  mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 1;
 }
@@ -171,8 +173,8 @@ a { color: inherit; }
   gap: var(--s-4);
   padding: var(--s-3) var(--s-6);
   background: rgba(255, 253, 250, 0.72);
-  backdrop-filter: blur(18px) saturate(170%);
-  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
   border: 1px solid rgba(22,12,5,0.07);
   border-radius: 18px;
   box-shadow:
@@ -248,6 +250,7 @@ a { color: inherit; }
   border-radius: 50%;
   filter: blur(90px);
   animation: orb-drift 14s ease-in-out infinite alternate;
+  will-change: transform;
 }
 .hero__orb--1 {
   width: 640px; height: 640px;
@@ -272,6 +275,51 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Zwei Spalten: Text links, Video rechts */
+.hero__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+  text-align: left;
+  margin-bottom: var(--s-16);
+}
+.hero__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero .hero__col h1 { font-size: clamp(2.4rem, 4.1vw, 4.1rem); }
+.hero__col .hero__claim { font-size: var(--t-lg); }
+.hero__col .hero__body { font-size: var(--t-base); }
+.hero__col .hero__actions { justify-content: flex-start; margin-bottom: 0; }
+
+.hero__media { animation: rise-in 0.9s var(--ease-expo) 0.8s both; }
+.hero__media-sub {
+  margin-top: var(--s-4);
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.hero__media-sub strong { color: var(--text-primary); font-weight: 600; }
+
+/* Untereinander: Text, dann Video */
+@media (max-width: 960px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--s-12);
+    text-align: center;
+    margin-bottom: var(--s-12);
+  }
+  .hero__col { align-items: center; }
+  .hero .hero__col h1 { font-size: var(--t-hero); }
+  .hero__col .hero__claim { font-size: var(--t-xl); }
+  .hero__col .hero__body { font-size: var(--t-lg); }
+  .hero__col .hero__actions { justify-content: center; }
+  .hero__media-sub { text-align: center; max-width: 52ch; margin-inline: auto; }
 }
 
 .hero__badge {
@@ -495,7 +543,7 @@ a { color: inherit; }
   gap: clamp(1.2rem, 4vw, 3rem);
   padding: var(--s-4) clamp(1.4rem, 4vw, 3rem);
   background: rgba(255,253,250,0.65);
-  backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(10px) saturate(140%);
   border: 1px solid rgba(22,12,5,0.07);
   border-radius: 24px;
   box-shadow: 0 3px 12px rgba(22,12,5,0.05), inset 0 1px 0 rgba(255,255,255,0.7);
@@ -536,6 +584,7 @@ a { color: inherit; }
   display: flex;
   width: max-content;
   animation: ticker-scroll 26s linear infinite;
+  will-change: transform;
 }
 .ticker__group {
   display: flex;
@@ -610,20 +659,9 @@ a { color: inherit; }
 /* ════════════════════════════════════════════
    VIDEO
    ════════════════════════════════════════════ */
-.video-section__head { text-align: center; }
-.video-section__head .kicker { justify-content: center; }
-.video-section__head .h2 { max-width: 20ch; margin-left: auto; margin-right: auto; }
-.video-section__head .lede {
-  max-width: 56ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .video-frame {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  margin: var(--s-12) auto 0;
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -633,7 +671,7 @@ a { color: inherit; }
 .video-frame wistia-player { display: block; }
 
 @media (max-width: 640px) {
-  .video-frame { border-radius: 14px; margin-top: var(--s-8); }
+  .video-frame { border-radius: 14px; }
 }
 
 /* ════════════════════════════════════════════
@@ -2106,8 +2144,8 @@ a { color: inherit; }
   gap: var(--s-3);
   padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
   background: rgba(22,12,5,0.88);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
   border-top: 1px solid rgba(232,137,78,0.25);
   transform: translateY(110%);
   transition: transform var(--slow) var(--ease-expo);
@@ -2595,20 +2633,34 @@ a { color: inherit; }
   </div>
 
   <div class="wrap hero__content">
-    <div class="kicker" style="margin-bottom: var(--s-6);">Für Coaches, Experten und Onlinekursersteller</div>
+    <div class="hero__grid">
+      <div class="hero__col">
+        <div class="kicker" style="margin-bottom: var(--s-6);">Für Coaches, Experten und Onlinekursersteller</div>
 
-    <h1>
-      <span class="line"><span>KI BUSINESS</span></span>
-      <span class="line"><span class="glow">CLUB</span></span>
-    </h1>
+        <h1>
+          <span class="line"><span>KI BUSINESS</span></span>
+          <span class="line"><span class="glow">CLUB</span></span>
+        </h1>
 
-    <p class="hero__claim">Dein schlüsselfertiges KI-Betriebssystem</p>
+        <p class="hero__claim">Dein schlüsselfertiges KI-Betriebssystem</p>
 
-    <p class="hero__body">Wir erarbeiten deine Positionierung, Angebots-Strategie &amp; kompletten Sales-Funnel und bauen dir maßgeschneiderte KI-Agenten und Automationen, die diese mit dir gemeinsam umsetzen. Das ist kein Do it Yourself Coaching, sondern ein fertiges Setup, das ab Tag 1 für dich arbeitet.</p>
+        <p class="hero__body">Wir erarbeiten deine Positionierung, Angebots-Strategie &amp; kompletten Sales-Funnel und bauen dir maßgeschneiderte KI-Agenten und Automationen, die diese mit dir gemeinsam umsetzen. Das ist kein Do it Yourself Coaching, sondern ein fertiges Setup, das ab Tag 1 für dich arbeitet.</p>
 
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Analyse sichern</a>
-      <a class="btn btn--ghost" href="#lieferung">Was du bekommst ↓</a>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Analyse sichern</a>
+          <a class="btn btn--ghost" href="#lieferung">Was du bekommst ↓</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <div class="video-frame">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/xcdhghhsd9.js" async type="module"></script>
+          <style>wistia-player[media-id='xcdhghhsd9']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xcdhghhsd9/swatch'); display: block; filter: blur(5px); padding-top: 56.25%; }</style>
+          <wistia-player media-id="xcdhghhsd9" aspect="1.7777777777777777"></wistia-player>
+        </div>
+        <p class="hero__media-sub">Erfahre in diesem Video, was dich im KI Business Club erwartet und wie das KI-gestützte Betriebssystem dir ab sofort <strong>5 Std.+ pro Woche</strong> spart.</p>
+      </div>
     </div>
 
     <div class="stats">
@@ -2736,20 +2788,39 @@ a { color: inherit; }
   </div>
 </section>
 
-<!-- ═══════════ VIDEO: DIGITALER ZWILLING ═══════════ -->
-<section class="section" id="video">
+<!-- ═══════════ LEISTUNGEN ═══════════ -->
+<section class="section">
   <div class="wrap">
-    <div class="video-section__head" data-reveal>
-      <div class="kicker">Schau rein</div>
-      <h2 class="h2">Wir bauen deinen <em>digitalen Zwilling</em></h2>
-      <p class="lede">Erfahre in diesem Video, was dich im KI Business Club erwartet und wie das KI-gestützte Betriebssystem dir ab sofort <strong>5 Std.+ pro Woche</strong> spart.</p>
-    </div>
+    <div class="points">
+      <article class="point point--lead" data-reveal>
+        <div class="point__tag">Herzstück</div>
+        <h3 class="point__title">Mentoring &amp; Support über volle 6 Monate</h3>
+        <p class="point__body">Über die volle 6-Monate-Laufzeit bist du nicht allein. Wir sind an deiner Seite und helfen dir dort weiter, wo du gerade festhängst.</p>
+      </article>
 
-    <div class="video-frame" data-reveal>
-      <script src="https://fast.wistia.com/player.js" async></script>
-      <script src="https://fast.wistia.com/embed/xcdhghhsd9.js" async type="module"></script>
-      <style>wistia-player[media-id='xcdhghhsd9']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xcdhghhsd9/swatch'); display: block; filter: blur(5px); padding-top: 56.25%; }</style>
-      <wistia-player media-id="xcdhghhsd9" aspect="1.7777777777777777"></wistia-player>
+      <article class="point point--calls" data-reveal style="--reveal-delay: 90ms;">
+        <div class="point__number">48</div>
+        <h3 class="point__title">Live-Calls</h3>
+        <p class="point__body">Zwei Calls pro Woche, in denen wir gemeinsam auf deine Fragen eingehen und schnell vorankommen.</p>
+      </article>
+
+      <article class="point" data-reveal style="--reveal-delay: 180ms;">
+        <div class="point__tag">Technik</div>
+        <h3 class="point__title">Fertiges KI-Setup</h3>
+        <p class="point__body">Innerhalb von 30 Tagen liefern wir dir dein Fundament, damit deine Umsetzung maximal erleichtert wird.</p>
+      </article>
+
+      <article class="point" data-reveal style="--reveal-delay: 270ms;">
+        <div class="point__tag">Community</div>
+        <h3 class="point__title">Private Community</h3>
+        <p class="point__body">Private Gruppe mit anderen, die gerade dasselbe aufbauen wie du. Lernen vom Erlebten anderer.</p>
+      </article>
+
+      <article class="point" data-reveal style="--reveal-delay: 360ms;">
+        <div class="point__tag">Auf Wunsch</div>
+        <h3 class="point__title">Dauerhafte Umsetzung für dich</h3>
+        <p class="point__body">Wir werden zu deiner persönlichen Boutique-Agentur für Social Media, KI und/oder Ads.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -2837,48 +2908,6 @@ a { color: inherit; }
     </div>
   </div>
 </section>
-<!-- ═══════════ LEISTUNGEN ═══════════ -->
-<section class="section">
-  <div class="wrap">
-    <div data-reveal>
-      <div class="kicker">Das bekommst du</div>
-      <h2 class="h2">Fünf konkrete <em>Leistungen</em></h2>
-    </div>
-
-    <div class="points">
-      <article class="point point--lead" data-reveal>
-        <div class="point__tag">Herzstück</div>
-        <h3 class="point__title">Mentoring &amp; Support über volle 6 Monate</h3>
-        <p class="point__body">Über die volle 6-Monate-Laufzeit bist du nicht allein. Wir sind an deiner Seite und helfen dir dort weiter, wo du gerade festhängst.</p>
-      </article>
-
-      <article class="point point--calls" data-reveal style="--reveal-delay: 90ms;">
-        <div class="point__number">48</div>
-        <h3 class="point__title">Live-Calls</h3>
-        <p class="point__body">Zwei Calls pro Woche, in denen wir gemeinsam auf deine Fragen eingehen und schnell vorankommen.</p>
-      </article>
-
-      <article class="point" data-reveal style="--reveal-delay: 180ms;">
-        <div class="point__tag">Technik</div>
-        <h3 class="point__title">Fertiges KI-Setup</h3>
-        <p class="point__body">Innerhalb von 30 Tagen liefern wir dir dein Fundament, damit deine Umsetzung maximal erleichtert wird.</p>
-      </article>
-
-      <article class="point" data-reveal style="--reveal-delay: 270ms;">
-        <div class="point__tag">Community</div>
-        <h3 class="point__title">Private Community</h3>
-        <p class="point__body">Private Gruppe mit anderen, die gerade dasselbe aufbauen wie du. Lernen vom Erlebten anderer.</p>
-      </article>
-
-      <article class="point" data-reveal style="--reveal-delay: 360ms;">
-        <div class="point__tag">Auf Wunsch</div>
-        <h3 class="point__title">Dauerhafte Umsetzung für dich</h3>
-        <p class="point__body">Wir werden zu deiner persönlichen Boutique-Agentur für Social Media, KI und/oder Ads.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <hr class="divider wrap">
 
 <!-- ═══════════ MODULES ═══════════ -->
