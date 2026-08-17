@@ -664,6 +664,22 @@
       letter-spacing: 0.06em; text-transform: uppercase;
     }
 
+    /* ── KI BUSINESS CLUB (Farbvariante) ── */
+    .anfragen-section--kbc { background: #10122B; }
+    .anfragen-section--kbc::before {
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 0%, rgba(107,93,211,.22) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(107,93,211,.1) 0%, transparent 60%);
+    }
+    .anfragen-section--kbc .anfragen-kicker { color: #9585EE; }
+    .anfragen-section--kbc .anfragen-btn {
+      background: linear-gradient(135deg, #9585EE, #6B5DD3);
+      box-shadow: 0 8px 28px rgba(107,93,211,.4);
+    }
+    .anfragen-section--kbc .anfragen-btn:hover {
+      box-shadow: 0 12px 36px rgba(107,93,211,.5);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       .product-grid { grid-template-columns: 1fr; gap: 22px; }
@@ -712,6 +728,16 @@
     <span class="tn-name">Hanna Marzian</span>
   </div>
 </div>
+
+<!-- KI BUSINESS CLUB -->
+<section class="anfragen-section anfragen-section--kbc reveal">
+  <div class="anfragen-inner">
+    <span class="anfragen-kicker">Community & Mentoring</span>
+    <h2 class="anfragen-headline">KI Business Club</h2>
+    <p class="anfragen-sub">Werde Teil der Community, die KI wirklich ins Business bringt. Austausch, Umsetzung und direkter Zugang zu Hanna und Martin.</p>
+    <a href="https://www.business-einfach-smart.com/ki-business-club/" class="anfragen-btn">Jetzt entdecken →</a>
+  </div>
+</section>
 
 <!-- BEZAHLTE PRODUKTE -->
 <section class="section">
@@ -833,13 +859,14 @@
   </div>
 </section>
 
-<!-- KI BUSINESS CLUB -->
+<!-- 1:1 ANFRAGEN -->
 <section class="anfragen-section reveal">
   <div class="anfragen-inner">
-    <span class="anfragen-kicker">Community & Mentoring</span>
-    <h2 class="anfragen-headline">KI Business Club</h2>
-    <p class="anfragen-sub">Werde Teil der Community, die KI wirklich ins Business bringt. Austausch, Umsetzung und direkter Zugang zu Hanna und Martin.</p>
-    <a href="https://www.business-einfach-smart.com/ki-business-club/" class="anfragen-btn">Jetzt entdecken →</a>
+    <span class="anfragen-kicker">VIP Mentorings & Services</span>
+    <h2 class="anfragen-headline">1:1 Begleitungen</h2>
+    <p class="anfragen-sub">Du weißt, was du willst, und möchtest es in enger Zusammenarbeit direkt angehen? Trage dich hierfür in ein Mentoring oder eine individuelle Agenturdienstleistung ein.</p>
+    <a href="anfragen.html" class="anfragen-btn">Jetzt bewerben →</a>
+    <p class="anfragen-note">Invest ab 20.000 € · Limitierte Plätze</p>
   </div>
 </section>
 
@@ -904,17 +931,6 @@
       </div>
 
     </div>
-  </div>
-</section>
-
-<!-- 1:1 ANFRAGEN -->
-<section class="anfragen-section reveal">
-  <div class="anfragen-inner">
-    <span class="anfragen-kicker">VIP Mentorings & Services</span>
-    <h2 class="anfragen-headline">1:1 Begleitungen</h2>
-    <p class="anfragen-sub">Du weißt, was du willst, und möchtest es in enger Zusammenarbeit direkt angehen? Trage dich hierfür in ein Mentoring oder eine individuelle Agenturdienstleistung ein.</p>
-    <a href="anfragen.html" class="anfragen-btn">Jetzt bewerben →</a>
-    <p class="anfragen-note">Invest ab 20.000 € · Limitierte Plätze</p>
   </div>
 </section>
 
