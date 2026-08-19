@@ -231,6 +231,10 @@ a { color: inherit; }
 }
 .nav__cta:hover { transform: translateY(-2px) scale(1.02); }
 .nav__cta:active { transform: translateY(0) scale(0.98); box-shadow: var(--shadow-sm); }
+/* Auf schmalen Screens passt nur das kurze Label in die Leiste */
+@media (max-width: 520px) {
+  .nav__cta-verb { display: none; }
+}
 
 /* ════════════════════════════════════════════
    HERO
@@ -2622,7 +2626,7 @@ a { color: inherit; }
     <a href="#ablauf" class="nav__link">Ablauf</a>
     <a href="#investition" class="nav__link">Preise</a>
   </div>
-  <a class="nav__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Analyse erhalten</a>
+  <a class="nav__cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Strategie-Call<span class="nav__cta-verb"> sichern</span></a>
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -2647,7 +2651,7 @@ a { color: inherit; }
         <p class="hero__body">Wir erarbeiten deine Positionierung, Angebots-Strategie &amp; kompletten Sales-Funnel und bauen dir maßgeschneiderte KI-Agenten und Automationen, die diese mit dir gemeinsam umsetzen. Das ist kein Do it Yourself Coaching, sondern ein fertiges Setup, das ab Tag 1 für dich arbeitet.</p>
 
         <div class="hero__actions">
-          <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Analyse sichern</a>
+          <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Strategie-Call sichern</a>
           <a class="btn btn--ghost" href="#lieferung">Was du bekommst ↓</a>
         </div>
       </div>
@@ -3043,7 +3047,7 @@ a { color: inherit; }
           <li><span class="perks__check">✓</span><span>Private Telegram-Gruppe und 1:1 Support</span></li>
         </ul>
         <div class="tier__foot">
-          <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Analyse sichern</a>
+          <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Strategie-Call sichern</a>
         </div>
       </article>
 
@@ -3118,7 +3122,7 @@ a { color: inherit; }
   <div class="wrap final__content" style="position: relative; z-index: 2;">
     <div data-reveal>
       <div class="kicker">Der nächste Schritt</div>
-      <h2 class="h2">Deine <em>Potential-Analyse</em></h2>
+      <h2 class="h2">Dein <em>Strategie-Call</em></h2>
     </div>
 
     <div class="final-steps">
@@ -3140,7 +3144,7 @@ a { color: inherit; }
     </div>
 
     <div class="final__action" data-reveal>
-      <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Analyse sichern</a>
+      <a class="btn btn--primary btn--magnetic" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Strategie-Call sichern</a>
     </div>
   </div>
 </section>
@@ -3164,7 +3168,7 @@ a { color: inherit; }
     <div class="sticky-cta__title">KI Business Club</div>
     <div class="sticky-cta__sub">System in 30 Tagen · ab 4.000 €</div>
   </div>
-  <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Analyse sichern</a>
+  <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdRdCwmBu0A6xXI5g75Xu4D5FVNkQxjVfE-BDZlLeOTvPIbzQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Jetzt Strategie-Call sichern</a>
 </div>
 
 <script>
