@@ -89,7 +89,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 88px 24px 76px;
+      padding: 44px 24px 36px;
       text-align: center;
       position: relative; overflow: hidden;
       background:
@@ -123,15 +123,14 @@
       animation: fadeDown 0.7s var(--ease) both;
     }
     .products-label {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 8px 20px;
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 28px;
+      display: block;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 4.2vw, 40px); font-weight: 800;
+      letter-spacing: 0.02em; text-transform: uppercase;
+      color: #FF6A00;
+      text-shadow: 0 2px 16px rgba(255,106,0,0.25);
+      margin-bottom: 36px;
     }
 
     .hero h1 {
@@ -156,21 +155,21 @@
     }
     .bes-w1 {
       font-family: 'Space Grotesk', sans-serif; font-weight: 900;
-      font-size: clamp(52px, 14vw, 128px);
-      letter-spacing: -0.04em; line-height: 1;
+      font-size: clamp(22px, 5vw, 38px);
+      letter-spacing: -0.03em; line-height: 1;
       color: #160C05;
     }
     .bes-mid {
       font-family: 'Cormorant', Georgia, serif; font-style: italic;
       font-weight: 500;
-      font-size: clamp(38px, 10vw, 96px);
+      font-size: clamp(16px, 3.5vw, 28px);
       letter-spacing: 0.01em; line-height: 1.05;
       color: #2A1608;
     }
     .bes-w3 {
       font-family: 'Space Grotesk', sans-serif; font-weight: 900;
-      font-size: clamp(52px, 14vw, 128px);
-      letter-spacing: -0.04em; line-height: 1;
+      font-size: clamp(22px, 5vw, 38px);
+      letter-spacing: -0.03em; line-height: 1;
       color: #D8622A;
     }
     .bes-dot-dark  { color: #D8622A; font-style: normal; }
@@ -415,6 +414,33 @@
       padding: 0.45em 0.75em; border-radius: 100px;
       box-shadow: 0 2px 10px rgba(255,106,0,0.45);
       align-self: center;
+    }
+    .price-sale__new { font-weight: 800; color: #FF6A00; }
+
+    .sale-chip s { text-decoration: line-through; opacity: .5; font-weight: 500; margin-right: 4px; }
+    .sale-chip strong { color: #FF3B1F; font-weight: 800; }
+
+    /* Sale starburst sticker */
+    .sale-sticker {
+      position: absolute; z-index: 4;
+      width: 74px; height: 74px;
+      left: 12px; top: 56px;
+      transform: rotate(-11deg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 4px;
+      background: linear-gradient(135deg, #FF7A1A, #E8432A);
+      clip-path: polygon(50% 0%, 61% 15%, 75% 6%, 78% 22%, 94% 20%, 90% 36%, 100% 50%, 90% 64%, 94% 80%, 78% 78%, 75% 94%, 61% 85%, 50% 100%, 39% 85%, 25% 94%, 22% 78%, 6% 80%, 10% 64%, 0% 50%, 10% 36%, 6% 20%, 22% 22%, 25% 6%, 39% 15%);
+      box-shadow: 0 6px 16px rgba(0,0,0,.28);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+    }
+    .sale-sticker__l1 {
+      font-size: 8.5px; font-weight: 900; letter-spacing: 0.4px;
+      line-height: 1.15; text-transform: uppercase;
+    }
+    .sale-sticker__l2 {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.2px;
+      margin-top: 2px; opacity: .95;
     }
 
     /* ── CARD BODY ── */
@@ -679,6 +705,34 @@
     .anfragen-section--kbc .anfragen-btn:hover {
       box-shadow: 0 12px 36px rgba(168,137,96,.5);
     }
+    .kbc-team {
+      display: flex; flex-direction: column; align-items: center;
+      margin-bottom: 24px;
+    }
+    .kbc-team-circle {
+      width: 84px; height: 84px;
+      border-radius: 50%; overflow: hidden;
+      border: 3px solid rgba(255,255,255,.9);
+      box-shadow: 0 0 0 2px rgba(216,98,42,.5), 0 8px 24px rgba(0,0,0,.3);
+    }
+    .kbc-team-circle img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center 15%;
+      transform: scale(1.35);
+      transform-origin: center 25%;
+    }
+    .kbc-team-names {
+      margin-top: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.04em;
+      display: flex; align-items: center; gap: 8px;
+      color: #FBF7F2;
+    }
+    .kbc-team-names .tn-amp {
+      color: var(--tan); font-family: 'Cormorant', serif;
+      font-style: italic; font-size: 16px; font-weight: 500;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
@@ -717,33 +771,11 @@
   </div>
 </section>
 
-<!-- TEAM -->
-<div class="team-section reveal">
-  <div class="team-circle">
-    <img src="Fotos/Design ohne Titel.jpg" alt="Martin Thun &amp; Hanna Marzian">
-  </div>
-  <div class="team-names">
-    <span class="tn-name">Martin Thun</span>
-    <span class="tn-amp">&amp;</span>
-    <span class="tn-name">Hanna Marzian</span>
-  </div>
-</div>
-
-<!-- KI BUSINESS CLUB -->
-<section class="anfragen-section anfragen-section--kbc reveal">
-  <div class="anfragen-inner">
-    <span class="anfragen-kicker">Für Coaches, Experten & Onlinekursersteller</span>
-    <h2 class="anfragen-headline">KI Business Club</h2>
-    <p class="anfragen-sub">Dein schlüsselfertiges KI-Betriebssystem: Wir erarbeiten deine Positionierung, Angebots-Strategie und deinen kompletten Sales-Funnel und bauen dir die passenden KI-Agenten dazu. Kein Do-it-yourself-Coaching, sondern ein fertiges Setup, das ab Tag 1 für dich arbeitet.</p>
-    <a href="https://www.business-einfach-smart.com/ki-business-club/" class="anfragen-btn">Jetzt entdecken →</a>
-  </div>
-</section>
-
 <!-- BEZAHLTE PRODUKTE -->
 <section class="section">
   <div class="container">
 
-    <p class="products-label">Produkte zum Start</p>
+    <p class="products-label">Summer Sale – nur noch bis 31.08!</p>
 
     <div class="product-grid">
 
@@ -751,7 +783,8 @@
       <article class="product-card reveal rd1">
         <div class="card-visual cv-ig">
           <span class="chip chip-tl">GPT & Skill Sammlung</span>
-          <span class="chip chip-tr">39 &thinsp;€</span>
+          <span class="chip chip-tr sale-chip"><s>49&thinsp;€</s> <strong>29&thinsp;€</strong></span>
+          <span class="sale-sticker"><span class="sale-sticker__l1">Summer<br>Sale</span><span class="sale-sticker__l2">bis 31.08!</span></span>
           <div class="card-wordmark">
             <span class="wm-sup">Instagram</span>
             <span class="wm-script" style="font-size:48px;">Marketing</span>
@@ -768,7 +801,7 @@
             <li><span class="feat-check fc-ig">✓</span>Sofort in deinen Workflow integrierbar</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">39&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">49&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="ig-ki-marketing-studio.html" class="card-btn btn-ig">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/3b487266/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -779,7 +812,8 @@
       <article class="product-card reveal rd2">
         <div class="card-visual cv-fir">
           <span class="chip chip-tl">📸 Videokurs</span>
-          <span class="chip chip-tr">49 &thinsp;€</span>
+          <span class="chip chip-tr sale-chip"><s>59&thinsp;€</s> <strong>29&thinsp;€</strong></span>
+          <span class="sale-sticker"><span class="sale-sticker__l1">Summer<br>Sale</span><span class="sale-sticker__l2">bis 31.08!</span></span>
           <div class="card-wordmark">
             <span class="wm-bold" style="font-size:36px;">Fake it</span>
             <span class="wm-script" style="font-size:58px;margin-top:-4px;">Real</span>
@@ -795,7 +829,7 @@
             <li><span class="feat-check fc-fir">✓</span>Für Creator, Coaches und Selbstständige</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">49&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">59&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">29&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="fake-it-real.html" class="card-btn btn-fir">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/64198c1b/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -806,7 +840,8 @@
       <article class="product-card reveal rd3">
         <div class="card-visual cv-awc">
           <span class="chip chip-tl">💻 Videokurs</span>
-          <span class="chip chip-tr">99 &thinsp;€</span>
+          <span class="chip chip-tr sale-chip"><s>149&thinsp;€</s> <strong>49&thinsp;€</strong></span>
+          <span class="sale-sticker"><span class="sale-sticker__l1">Summer<br>Sale</span><span class="sale-sticker__l2">bis 31.08!</span></span>
           <div class="card-wordmark">
             <span class="wm-awc-logo">AI WEBSITE CODE</span>
           </div>
@@ -821,7 +856,7 @@
             <li><span class="feat-check fc-awc">✓</span>Absolut kein Vorwissen nötig</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">99&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">149&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">49&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="ai-website-code.html" class="card-btn btn-awc">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/b1c1cf88/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -832,7 +867,8 @@
       <article class="product-card reveal rd4">
         <div class="card-visual cv-zero">
           <span class="chip chip-tl">⚡ Minikurs</span>
-          <span class="chip chip-tr">22 &thinsp;€</span>
+          <span class="chip chip-tr sale-chip"><s>29&thinsp;€</s> <strong>11&thinsp;€</strong></span>
+          <span class="sale-sticker"><span class="sale-sticker__l1">Summer<br>Sale</span><span class="sale-sticker__l2">bis 31.08!</span></span>
           <div class="card-wordmark">
             <span class="wm-zero-logo">ZERO</span>
             <span class="wm-sub" style="margin-top:6px;color:rgba(167,243,208,0.7);">KI ohne Abo &amp; Limits</span>
@@ -848,7 +884,7 @@
             <li><span class="feat-check fc-zero">✓</span>In unter einer Stunde startklar</li>
           </ul>
           <div class="card-footer">
-            <span class="card-price">22&thinsp;€ <small>einmalig</small></span>
+            <span class="card-price"><span class="price-sale"><s class="price-sale__old">29&thinsp;€</s><span class="price-sale__tag">Summer Sale</span><span class="price-sale__new">11&thinsp;€</span></span> <small>einmalig</small></span>
             <a href="zero-ki-ohne-abo/" class="card-btn btn-zero">Mehr erfahren →</a>
           </div>
           <a href="https://copecart.com/products/fedfdfed/checkout" target="_blank" rel="noopener" class="card-detail-link">Direkt zum Checkout ↗</a>
@@ -856,6 +892,26 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- KI BUSINESS CLUB -->
+<section class="anfragen-section anfragen-section--kbc reveal">
+  <div class="anfragen-inner">
+    <div class="kbc-team">
+      <div class="kbc-team-circle">
+        <img src="Fotos/Design ohne Titel.jpg" alt="Martin Thun &amp; Hanna Marzian">
+      </div>
+      <div class="kbc-team-names">
+        <span class="tn-name">Martin Thun</span>
+        <span class="tn-amp">&amp;</span>
+        <span class="tn-name">Hanna Marzian</span>
+      </div>
+    </div>
+    <span class="anfragen-kicker">Für Coaches, Experten & Onlinekursersteller</span>
+    <h2 class="anfragen-headline">KI Business Club</h2>
+    <p class="anfragen-sub">Dein schlüsselfertiges KI-Betriebssystem: Wir erarbeiten deine Positionierung, Angebots-Strategie und deinen kompletten Sales-Funnel und bauen dir die passenden KI-Agenten dazu. Kein Do-it-yourself-Coaching, sondern ein fertiges Setup, das ab Tag 1 für dich arbeitet.</p>
+    <a href="https://www.business-einfach-smart.com/ki-business-club/" class="anfragen-btn">Jetzt entdecken →</a>
   </div>
 </section>
 
