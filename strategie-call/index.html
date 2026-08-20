@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategie-Call sichern · KI Business Club</title>
+<meta name="description" content="Bewirb dich in 2 Minuten für deinen kostenlosen Strategie-Call zum KI Business Club.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/consent.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    background: #FFFFFF;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #160C05;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px 18px 48px;
+  }
+
+  .funnel { width: 100%; max-width: 480px; display: flex; flex-direction: column; }
+
+  /* TOPBAR */
+  .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; min-height: 24px; }
+  .topbar--hero { justify-content: center; }
+  .topbar--hero .brandmark { font-size: clamp(0.95rem, 0.8rem + 0.6vw, 1.15rem); }
+  .brandmark {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(0.72rem, 0.6rem + 0.5vw, 0.92rem);
+    letter-spacing: 0.16em;
+    color: #160C05;
+    white-space: nowrap;
+  }
+  .brandmark .dot { color: #D8622A; }
+  .back-btn {
+    margin-left: auto; background: none; border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem; font-weight: 600; color: #9A7A65;
+    display: none; align-items: center; gap: 5px;
+  }
+  .back-btn.show { display: inline-flex; }
+  .back-btn:hover { color: #160C05; }
+
+  /* PROGRESS */
+  .progress-wrap { height: 6px; background: #EADBCD; border-radius: 100px; overflow: hidden; margin-bottom: 8px; }
+  .progress-bar { height: 100%; width: 0%; background: #D8622A; border-radius: 100px; transition: width 0.35s ease; }
+  .progress-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #B89A84; margin-bottom: 22px; min-height: 14px; }
+
+  /* STEP */
+  .step { display: none; animation: fade 0.35s ease; }
+  .step.active { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .q-kicker { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #C0511E; margin-bottom: 10px; }
+  .q-title { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.015em; line-height: 1.25; margin-bottom: 8px; }
+  .q-sub { font-size: 0.95rem; color: #6B5146; margin-bottom: 22px; }
+
+  /* OPTIONS */
+  .opts { display: flex; flex-direction: column; gap: 10px; }
+  .opt {
+    position: relative; display: flex; align-items: center; gap: 13px;
+    background: #FFFFFF; border: 1.5px solid #E8E0D8; border-radius: 12px;
+    padding: 16px 18px; cursor: pointer; transition: all 0.15s ease;
+    font-size: 0.97rem; font-weight: 600; color: #2C231C;
+  }
+  .opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .opt .dot { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #D8C3B2; transition: all 0.15s ease; }
+  .opt:hover { border-color: #F5C4A8; background: #FFFAF6; }
+  .opt.selected { border-color: #D8622A; background: #FFF4ED; box-shadow: 0 4px 14px rgba(216,98,42,0.13); }
+  .opt.selected .dot { border-color: #D8622A; background: #D8622A; box-shadow: inset 0 0 0 3px #FFF4ED; }
+
+  /* MEHRFACHAUSWAHL */
+  .opts--multi .opt { align-items: flex-start; font-weight: 500; line-height: 1.45; }
+  .opts--multi .dot {
+    border-radius: 5px; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 0.72rem; font-weight: 800;
+  }
+  .opts--multi .opt.selected .dot { box-shadow: none; }
+  .opts--multi .opt.selected .dot::after { content: '✓'; }
+
+  /* FELDER */
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 0.8rem; font-weight: 700; color: #6B5146; margin-bottom: 6px; }
+  textarea, input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%; font-family: 'Inter', sans-serif; font-size: 0.97rem; color: #160C05;
+    background: #FFFFFF; border: 1.5px solid #E8E0D8; border-radius: 12px;
+    padding: 14px 16px; resize: vertical; transition: border 0.15s ease;
+  }
+  textarea { min-height: 118px; }
+  textarea:focus, input:focus { outline: none; border-color: #D8622A; }
+
+  /* CHECKBOX */
+  .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; font-size: 0.84rem; color: #6B5146; line-height: 1.5; cursor: pointer; }
+  .consent input { margin-top: 3px; width: 17px; height: 17px; accent-color: #D8622A; flex-shrink: 0; cursor: pointer; }
+  .consent a { color: #C0511E; }
+
+  /* BUTTON */
+  .btn {
+    width: 100%; font-family: 'Inter', sans-serif; font-size: 1.02rem; font-weight: 700;
+    background: #D8622A; color: #fff; border: none; border-radius: 12px;
+    padding: 17px 20px; cursor: pointer; transition: all 0.15s ease; margin-top: 18px;
+  }
+  .btn:hover { background: #C0511E; transform: translateY(-1px); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .hint { font-size: 0.82rem; color: #9A7A65; text-align: center; margin-top: 14px; }
+  .transparency { font-size: 0.8rem; color: #9A7A65; line-height: 1.55; margin-top: 18px; }
+
+  /* HERO */
+  .hero-tag {
+    display: inline-block; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #C0511E; background: #FFF0E8; border: 1px solid #F5C4A8;
+    border-radius: 100px; padding: 6px 15px; margin-bottom: 18px;
+  }
+  .hero-h1 { font-size: 2.05rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; margin-bottom: 14px; }
+  .hero-h1 em { color: #D8622A; font-style: normal; }
+  .hero-text { font-size: 1rem; color: #2C231C; margin-bottom: 18px; }
+  .facts { list-style: none; margin: 0 0 4px; }
+  .facts li { position: relative; padding-left: 26px; font-size: 0.94rem; color: #2C231C; margin-bottom: 9px; }
+  .facts li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: #D8622A; font-weight: 800; font-size: 0.95rem;
+  }
+
+  /* DANKE */
+  .thanks-icon {
+    width: 56px; height: 56px; border-radius: 50%; background: #E8F4EE; color: #1A6B3A;
+    display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .thanks-box {
+    background: #FFF4ED; border-left: 4px solid #D8622A; border-radius: 0 10px 10px 0;
+    padding: 14px 18px; margin: 18px 0; font-size: 0.94rem; color: #2C231C; line-height: 1.55;
+  }
+  .thanks-box b { color: #B83D14; }
+
+  .err { color: #B83D14; font-size: 0.85rem; font-weight: 600; margin-top: 10px; text-align: center; min-height: 16px; }
+  .err-inline { color: #B83D14; font-size: 0.85rem; font-weight: 600; margin-top: 8px; min-height: 4px; }
+  .field-error { border-color: #B83D14 !important; }
+
+  .footnote { text-align: center; font-size: 0.76rem; color: #B89A84; margin-top: 30px; }
+  .footnote a { color: #B89A84; }
+</style>
+</head>
+<body>
+<div class="funnel">
+
+  <div class="topbar topbar--hero">
+    <span class="brandmark">KI BUSINESS<span class="dot">.</span>CLUB</span>
+    <button type="button" class="back-btn" id="backBtn">&larr; zurück</button>
+  </div>
+
+  <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+  <div class="progress-label" id="progLabel"></div>
+
+  <form id="funnel" autocomplete="off">
+
+    <!-- ══ Web3Forms Pflichtfelder ══
+         access_key unten austauschen, wenn die Anfragen in ein anderes Postfach sollen -->
+    <input type="hidden" name="access_key" value="e7f8298b-dec7-4153-a4ef-578095db7fd6">
+    <input type="hidden" name="subject" value="Neue Bewerbung Strategie-Call (KI Business Club)">
+    <input type="hidden" name="from_name" value="Strategie-Call Formular">
+    <input type="hidden" name="Herkunft" value="business-einfach-smart.com/strategie-call/">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+    <!-- STEP 0: START -->
+    <div class="step active" data-q="0">
+      <h1 class="hero-h1">Dein <em>Strategie-Call</em></h1>
+      <p class="hero-text">Beantworte kurz die Fragen. Wir schauen uns dein Business an, identifizieren die größten Zeitfresser und erarbeiten deinen Fahrplan für die nächsten 6 Monate, den wir in einem 1:1 Call mit dir besprechen.</p>
+      <button type="button" class="btn" data-next>Zur ersten Frage</button>
+      <p class="transparency">Wenn es passt und die Zusammenarbeit sinnvoll ist, machen wir dir ein Angebot. Du kannst frei entscheiden, ob unser Angebot passt oder nicht.</p>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="step" data-q="1">
+      <div class="q-kicker">Dein Business</div>
+      <h2 class="q-title">Was ist aktuell deine größte Herausforderung?</h2>
+      <p class="q-sub">Schreib es so, wie du es einem Freund erzählen würdest. Genau darauf schauen wir im Call zuerst.</p>
+      <div class="field">
+        <textarea name="Herausforderung" data-required placeholder="Was sich gerade am meisten wie der Engpass anfühlt ..."></textarea>
+      </div>
+      <div class="err-inline"></div>
+      <button type="button" class="btn" data-next>Weiter</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" data-q="2">
+      <div class="q-kicker">Dein Ziel</div>
+      <h2 class="q-title">Welches Ergebnis willst du in 3 bis 6 Monaten sehen?</h2>
+      <p class="q-sub">Eine Zahl, ein Ziel, ein Zustand. Was wäre für dich ein klarer Erfolg?</p>
+      <div class="field">
+        <textarea name="Ziel_3_6_Monate" data-required placeholder="Zum Beispiel: planbar 10.000 € im Monat, ohne jeden Tag im Content zu hängen"></textarea>
+      </div>
+      <div class="err-inline"></div>
+      <button type="button" class="btn" data-next>Weiter</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" data-q="3">
+      <div class="q-kicker">Dein Business</div>
+      <h2 class="q-title">Was ist dein aktuelles Angebot?</h2>
+      <p class="q-sub">Was verkaufst du, an wen, zu welchem Preis? Ein, zwei Sätze reichen.</p>
+      <div class="field">
+        <textarea name="Angebot" data-required placeholder="Zum Beispiel: 1:1-Coaching für Ernährungsberaterinnen, 12 Wochen, 2.400 €"></textarea>
+      </div>
+      <div class="err-inline"></div>
+      <button type="button" class="btn" data-next>Weiter</button>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" data-q="4">
+      <div class="q-kicker">Deine Ausgangslage</div>
+      <h2 class="q-title">Wie viel Umsatz machst du aktuell pro Monat?</h2>
+      <div class="opts" data-radio="Monatsumsatz">
+        <label class="opt"><input type="radio" name="Monatsumsatz" value="unter 1.000 EUR"><span class="dot"></span>Unter 1.000 &euro;</label>
+        <label class="opt"><input type="radio" name="Monatsumsatz" value="1.000 bis 5.000 EUR"><span class="dot"></span>1.000 &euro; bis 5.000 &euro;</label>
+        <label class="opt"><input type="radio" name="Monatsumsatz" value="5.000 bis 10.000 EUR"><span class="dot"></span>5.000 &euro; bis 10.000 &euro;</label>
+        <label class="opt"><input type="radio" name="Monatsumsatz" value="über 10.000 EUR"><span class="dot"></span>Über 10.000 &euro;</label>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step" data-q="5">
+      <div class="q-kicker">Deine Ausgangslage</div>
+      <h2 class="q-title">Wie viele Stunden pro Woche gehen für Content, Technik und Orga drauf?</h2>
+      <p class="q-sub">Schätz einfach. Es geht um die Arbeit, die niemand sieht und die trotzdem jede Woche gemacht werden muss.</p>
+      <div class="opts" data-radio="Wochenstunden">
+        <label class="opt"><input type="radio" name="Wochenstunden" value="unter 5 Stunden"><span class="dot"></span>Unter 5 Stunden</label>
+        <label class="opt"><input type="radio" name="Wochenstunden" value="5 bis 10 Stunden"><span class="dot"></span>5 bis 10 Stunden</label>
+        <label class="opt"><input type="radio" name="Wochenstunden" value="10 bis 20 Stunden"><span class="dot"></span>10 bis 20 Stunden</label>
+        <label class="opt"><input type="radio" name="Wochenstunden" value="mehr als 20 Stunden"><span class="dot"></span>Mehr als 20 Stunden</label>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step" data-q="6">
+      <div class="q-kicker">Dein Ziel</div>
+      <h2 class="q-title">Wie dringend willst du das ändern?</h2>
+      <div class="opts" data-radio="Dringlichkeit">
+        <label class="opt"><input type="radio" name="Dringlichkeit" value="Sofort"><span class="dot"></span>Sofort</label>
+        <label class="opt"><input type="radio" name="Dringlichkeit" value="In den nächsten 3 Monaten"><span class="dot"></span>In den nächsten 3 Monaten</label>
+        <label class="opt"><input type="radio" name="Dringlichkeit" value="Ich möchte erstmal nur schauen"><span class="dot"></span>Ich möchte erstmal nur schauen</label>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step" data-q="7">
+      <div class="q-kicker">Rahmen</div>
+      <h2 class="q-title">Wenn wir im Gespräch feststellen, dass es passt: Kannst du das investieren?</h2>
+      <p class="q-sub">Der KI Business Club kostet 4.000 &euro; netto, Ratenzahlung ist möglich. Wir fragen das vorab, damit im Call niemand seine Zeit verliert.</p>
+      <div class="opts" data-radio="Investition">
+        <label class="opt"><input type="radio" name="Investition" value="Ja, ohne Probleme"><span class="dot"></span>Ja, ohne Probleme</label>
+        <label class="opt"><input type="radio" name="Investition" value="Ja, mit Ratenzahlung"><span class="dot"></span>Ja, mit Ratenzahlung</label>
+        <label class="opt"><input type="radio" name="Investition" value="Nein, aktuell nicht"><span class="dot"></span>Nein, aktuell nicht</label>
+      </div>
+    </div>
+
+    <!-- STEP 8: KONTAKT -->
+    <div class="step" data-q="8">
+      <div class="q-kicker">Fast geschafft</div>
+      <h2 class="q-title">Wohin dürfen wir deinen Termin schicken?</h2>
+      <p class="q-sub">Wir melden uns innerhalb von 24 Stunden mit einem Terminvorschlag, am liebsten per WhatsApp, das ist schneller als Mail.</p>
+
+      <div class="field">
+        <label for="f-ig">Instagram-Name</label>
+        <input type="text" id="f-ig" name="Instagram" data-required placeholder="@deinhandle">
+      </div>
+      <div class="field">
+        <label for="f-name">Dein Name</label>
+        <input type="text" id="f-name" name="Name" data-required placeholder="Vor- und Nachname">
+      </div>
+      <div class="field">
+        <label for="f-mail">E-Mail-Adresse</label>
+        <input type="email" id="f-mail" name="email" data-required placeholder="du@beispiel.de">
+      </div>
+      <div class="field">
+        <label for="f-tel">Telefonnummer für WhatsApp (optional)</label>
+        <input type="tel" id="f-tel" name="WhatsApp" placeholder="+49 170 1234567">
+      </div>
+      <div class="err-inline" id="errContact"></div>
+      <button type="button" class="btn" id="contactNext">Weiter</button>
+    </div>
+
+    <!-- STEP 9 -->
+    <div class="step" data-q="9">
+      <div class="q-kicker">Letzter Schritt</div>
+      <h2 class="q-title">Für welches Angebot interessierst du dich?</h2>
+      <p class="q-sub">Mehrfachauswahl möglich. Du bekommst anschließend eine persönliche E-Mail mit weiteren Informationen.</p>
+      <!-- Werte werden per JS in das Hidden-Feld "Interesse" zusammengefasst -->
+      <input type="hidden" name="Interesse" id="interesseField" value="">
+      <div class="opts opts--multi">
+        <label class="opt"><input type="checkbox" data-val="Done With You"><span class="dot"></span>Done With You: Wir bauen dein System in den ersten 30 Tagen, du setzt in den Monaten danach (mit unserer Begleitung) selbst um</label>
+        <label class="opt"><input type="checkbox" data-val="Done For You"><span class="dot"></span>Done For You: Wir übernehmen die laufende Umsetzung als Agentur</label>
+        <label class="opt"><input type="checkbox" data-val="1:1 VIP Mentoring"><span class="dot"></span>Ich bin interessiert an einem 1:1 VIP Mentoring</label>
+        <label class="opt"><input type="checkbox" data-val="Erstmal Analyse"><span class="dot"></span>Erstmal möchte ich die Analyse als Einschätzung, bevor ich mich entscheide</label>
+      </div>
+      <div class="err-inline" id="errMulti"></div>
+
+      <label class="consent">
+        <input type="checkbox" id="consentBox">
+        <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Mehr dazu in der <a href="../datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span>
+      </label>
+
+      <button type="submit" class="btn" id="submitBtn">Strategie-Call anfragen</button>
+      <div class="err" id="errMsg"></div>
+      <div class="hint">Kostenlos und unverbindlich. Kein Verkaufsdruck.</div>
+    </div>
+
+    <!-- STEP 10: DANKE -->
+    <div class="step" data-q="10">
+      <div class="thanks-icon">✓</div>
+      <h2 class="q-title">Deine Bewerbung ist drin.</h2>
+      <p class="hero-text">Wir lesen jede Bewerbung selbst und schauen uns vorher dein Profil an.</p>
+      <div class="thanks-box">
+        <b>Was jetzt passiert:</b> Du bekommst innerhalb von <b>24 Stunden</b> eine Nachricht mit einem Terminvorschlag für deinen Strategie-Call, per WhatsApp oder per E-Mail. Schau also auch kurz in deinen Spam-Ordner, falls nichts ankommt.
+      </div>
+      <p class="hint">Bis gleich, Hanna &amp; Martin</p>
+    </div>
+
+  </form>
+
+  <p class="footnote">
+    <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a> &nbsp;·&nbsp;
+    <a href="../datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+  </p>
+</div>
+
+<script>
+  const steps = Array.from(document.querySelectorAll('.step'));
+  const bar = document.getElementById('bar');
+  const progLabel = document.getElementById('progLabel');
+  const backBtn = document.getElementById('backBtn');
+  const topbar = document.querySelector('.topbar');
+  const form = document.getElementById('funnel');
+  const LAST = 10;          // Danke-Step
+  const CONTACT = 8;        // Kontakt-Step
+  const totalQ = 9;         // Schritte 1..9 zählen für den Fortschritt
+  let cur = 0;
+
+  function render() {
+    steps.forEach((s, i) => s.classList.toggle('active', i === cur));
+    const pct = cur === 0 ? 0 : Math.min(cur, totalQ) / totalQ * 100;
+    bar.style.width = pct + '%';
+    if (cur === 0 || cur === LAST) progLabel.textContent = '';
+    else if (cur === CONTACT) progLabel.textContent = 'Letzter Schritt';
+    else progLabel.textContent = 'Frage ' + cur + ' von ' + totalQ;
+    backBtn.classList.toggle('show', cur > 0 && cur < LAST);
+    topbar.classList.toggle('topbar--hero', cur === 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function go(i) { cur = Math.max(0, Math.min(steps.length - 1, i)); render(); }
+
+  // Pflichtfelder im aktuellen Step prüfen
+  function validateStep(step) {
+    const fields = step.querySelectorAll('[data-required]');
+    const errBox = step.querySelector('.err-inline');
+    let ok = true, first = null;
+    fields.forEach(f => {
+      const empty = !f.value.trim();
+      const badMail = f.type === 'email' && f.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.value.trim());
+      if (empty || badMail) {
+        f.classList.add('field-error');
+        if (!first) first = f;
+        ok = false;
+      } else {
+        f.classList.remove('field-error');
+      }
+    });
+    if (errBox) errBox.textContent = ok ? '' : 'Bitte füll das kurz aus, sonst können wir dir nicht sauber antworten.';
+    if (first) first.focus();
+    return ok;
+  }
+
+  document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => {
+    if (!validateStep(b.closest('.step'))) return;
+    go(cur + 1);
+  }));
+  backBtn.addEventListener('click', () => go(cur - 1));
+
+  document.getElementById('contactNext').addEventListener('click', () => {
+    const contactStep = steps[CONTACT];
+    const errBox = document.getElementById('errContact');
+    if (!validateStep(contactStep)) {
+      errBox.textContent = 'Bitte füll das kurz aus, sonst können wir dir nicht sauber antworten.';
+      return;
+    }
+    errBox.textContent = '';
+    go(cur + 1);
+  });
+
+  // Mehrfachauswahl: markieren, aber nicht automatisch weiter
+  const interesseField = document.getElementById('interesseField');
+
+  function syncInteresse() {
+    const gewaehlt = Array.from(document.querySelectorAll('.opts--multi input:checked')).map(i => i.dataset.val);
+    interesseField.value = gewaehlt.join(', ');
+    return gewaehlt.length;
+  }
+
+  document.querySelectorAll('.opts--multi .opt').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.preventDefault();
+      const box = opt.querySelector('input');
+      box.checked = !box.checked;
+      opt.classList.toggle('selected', box.checked);
+      syncInteresse();
+      document.getElementById('errMulti').textContent = '';
+    });
+  });
+
+  // Radio-Optionen: markieren und automatisch weiter
+  document.querySelectorAll('.opts:not(.opts--multi)').forEach(group => {
+    group.querySelectorAll('.opt').forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.preventDefault();
+        group.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        opt.querySelector('input').checked = true;
+        setTimeout(() => go(cur + 1), 280);
+      });
+    });
+  });
+
+  // Absenden via Web3Forms
+  const submitBtn = document.getElementById('submitBtn');
+  const errMsg = document.getElementById('errMsg');
+  const consentBox = document.getElementById('consentBox');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errMsg.textContent = '';
+
+    if (syncInteresse() === 0) {
+      document.getElementById('errMulti').textContent = 'Bitte wähl mindestens eine Option aus.';
+      return;
+    }
+    document.getElementById('errMulti').textContent = '';
+
+    if (!consentBox.checked) {
+      errMsg.textContent = 'Bitte bestätige kurz die Datenschutz-Zustimmung.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wird gesendet ...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (data.success) {
+        go(LAST);
+      } else {
+        throw new Error(data.message || 'Fehler');
+      }
+    } catch (err) {
+      errMsg.textContent = 'Etwas ist schiefgelaufen. Bitte versuch es nochmal oder schreib uns per DM.';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Strategie-Call anfragen';
+    }
+  });
+
+  render();
+</script>
+<script src="../assets/consent.js"></script>
+</body>
+</html>
