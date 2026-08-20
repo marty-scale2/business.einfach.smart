@@ -187,7 +187,7 @@
       <h2 class="q-title">Was ist aktuell deine größte Herausforderung?</h2>
       <p class="q-sub">Schreib es so, wie du es einem Freund erzählen würdest. Genau darauf schauen wir im Call zuerst.</p>
       <div class="field">
-        <textarea name="Herausforderung" data-required placeholder="Was sich gerade am meisten wie der Engpass anfühlt ..."></textarea>
+        <textarea name="Herausforderung" data-required></textarea>
       </div>
       <div class="err-inline"></div>
       <button type="button" class="btn" data-next>Weiter</button>
@@ -199,7 +199,7 @@
       <h2 class="q-title">Welches Ergebnis willst du in 3 bis 6 Monaten sehen?</h2>
       <p class="q-sub">Eine Zahl, ein Ziel, ein Zustand. Was wäre für dich ein klarer Erfolg?</p>
       <div class="field">
-        <textarea name="Ziel_3_6_Monate" data-required placeholder="Zum Beispiel: planbar 10.000 € im Monat, ohne jeden Tag im Content zu hängen"></textarea>
+        <textarea name="Ziel_3_6_Monate" data-required></textarea>
       </div>
       <div class="err-inline"></div>
       <button type="button" class="btn" data-next>Weiter</button>
@@ -211,7 +211,7 @@
       <h2 class="q-title">Was ist dein aktuelles Angebot?</h2>
       <p class="q-sub">Was verkaufst du, an wen, zu welchem Preis? Ein, zwei Sätze reichen.</p>
       <div class="field">
-        <textarea name="Angebot" data-required placeholder="Zum Beispiel: 1:1-Coaching für Ernährungsberaterinnen, 12 Wochen, 2.400 €"></textarea>
+        <textarea name="Angebot" data-required></textarea>
       </div>
       <div class="err-inline"></div>
       <button type="button" class="btn" data-next>Weiter</button>
@@ -273,19 +273,19 @@
 
       <div class="field">
         <label for="f-ig">Instagram-Name</label>
-        <input type="text" id="f-ig" name="Instagram" data-required placeholder="@deinhandle">
+        <input type="text" id="f-ig" name="Instagram" data-required>
       </div>
       <div class="field">
         <label for="f-name">Dein Name</label>
-        <input type="text" id="f-name" name="Name" data-required placeholder="Vor- und Nachname">
+        <input type="text" id="f-name" name="Name" data-required>
       </div>
       <div class="field">
         <label for="f-mail">E-Mail-Adresse</label>
-        <input type="email" id="f-mail" name="email" data-required placeholder="du@beispiel.de">
+        <input type="email" id="f-mail" name="email" data-required>
       </div>
       <div class="field">
         <label for="f-tel">Telefonnummer für WhatsApp (optional)</label>
-        <input type="tel" id="f-tel" name="WhatsApp" placeholder="+49 170 1234567">
+        <input type="tel" id="f-tel" name="WhatsApp">
       </div>
       <div class="err-inline" id="errContact"></div>
       <button type="button" class="btn" id="contactNext">Weiter</button>
@@ -387,6 +387,25 @@
     go(cur + 1);
   }));
   backBtn.addEventListener('click', () => go(cur - 1));
+
+  // Enter-Taste springt zur nächsten Frage (Shift+Enter in Textareas erlaubt Zeilenumbruch)
+  form.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    const t = e.target;
+    if (t.tagName === 'TEXTAREA') {
+      if (e.shiftKey) return;
+      e.preventDefault();
+      const btn = t.closest('.step').querySelector('[data-next]');
+      if (btn) btn.click();
+      return;
+    }
+    if (t.tagName === 'INPUT' && ['text', 'email', 'tel'].includes(t.type)) {
+      e.preventDefault();
+      const step = t.closest('.step');
+      const btn = step.querySelector('[data-next], #contactNext');
+      if (btn) btn.click();
+    }
+  });
 
   document.getElementById('contactNext').addEventListener('click', () => {
     const contactStep = steps[CONTACT];
