@@ -1665,6 +1665,7 @@
     ============================================================ */
     @media (max-width: 1024px) {
       .hero__inner { grid-template-columns: 1fr; }
+      .hero__content { min-width: 0; }
       .hero__visual { display: none; }
       .hero__meta { grid-template-columns: repeat(2, 1fr); }
       .solution__inner { grid-template-columns: 1fr; }
@@ -1682,6 +1683,8 @@
 
     @media (max-width: 768px) {
       .dual-cta { flex-direction: column; align-items: stretch; }
+      .dual-cta .btn { min-width: 0; width: 100%; }
+      .btn__main { white-space: normal; text-align: center; }
       .dual-cta__or { text-align: center; }
       .hero__meta { grid-template-columns: repeat(2, 1fr); }
       .problem__grid { grid-template-columns: 1fr; }
