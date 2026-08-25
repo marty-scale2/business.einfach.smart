@@ -811,7 +811,16 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 .section-cta{display:flex;justify-content:center;margin-top:clamp(34px,4.5vw,54px);text-align:center}.section-cta .btn{min-width:min(100%,320px)}.deep .section-cta .btn{border-color:#fff;box-shadow:5px 5px 0 var(--brand-light)}.deep .section-cta .btn:hover{box-shadow:7px 7px 0 var(--brand)}
 @media (max-width: 800px) {
   .twin-deck-scroll { height: auto; min-height: 0; }
-}</style>
+}
+.proof-strip{position:relative;z-index:5;margin-top:clamp(-58px,-5vw,-42px);margin-bottom:clamp(-56px,-4.5vw,-38px)}
+.proof-stats{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;overflow:hidden;background:rgba(255,255,255,.96);border:1px solid rgba(23,12,7,.1);border-radius:24px;box-shadow:0 18px 48px rgba(73,38,20,.12);backdrop-filter:blur(12px)}
+.proof-stat{position:relative;padding:clamp(24px,3vw,34px) clamp(12px,2.4vw,28px);text-align:center}
+.proof-stat:not(:last-child)::after{content:"";position:absolute;top:24%;right:0;width:1px;height:52%;background:var(--line)}
+.proof-stat__value{display:block;color:var(--ink);font-size:clamp(2.25rem,4vw,3.9rem);font-weight:900;line-height:.95;letter-spacing:-.055em}
+.proof-stat__accent{color:var(--brand)}
+.proof-stat__label{display:block;margin-top:10px;color:var(--muted);font-size:clamp(.82rem,1.25vw,1rem);font-weight:650;letter-spacing:.02em}
+@media (max-width:620px){.proof-strip{margin-top:-34px;margin-bottom:-30px}.proof-stats{border-radius:18px}.proof-stat{padding:20px 6px}.proof-stat__value{font-size:clamp(1.7rem,8vw,2.3rem)}.proof-stat__label{font-size:.72rem;line-height:1.25;margin-top:7px}.proof-stat:not(:last-child)::after{top:20%;height:60%}}
+</style>
 <noscript><style>.reveal,.stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -849,6 +858,15 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
     </div>
   </div>
 </header>
+<aside class="proof-strip" aria-label="Unsere Erfahrung">
+  <div class="wrap">
+    <div class="proof-stats reveal">
+      <div class="proof-stat"><strong class="proof-stat__value">100.000<span class="proof-stat__accent">+</span></strong><span class="proof-stat__label">Follower Community</span></div>
+      <div class="proof-stat"><strong class="proof-stat__value">7</strong><span class="proof-stat__label">Jahre Online-Business</span></div>
+      <div class="proof-stat"><strong class="proof-stat__value">150k <span class="proof-stat__accent">€</span></strong><span class="proof-stat__label">Begleitete Launches</span></div>
+    </div>
+  </div>
+</aside>
 <section class="pain" aria-labelledby="pain-title">
   <div class="wrap">
     <div class="section-head center pain__heading reveal"><div class="eyebrow">Kommt dir das bekannt vor?</div><h2 id="pain-title">Du hast genug Wissen. Aber noch kein <em>System daraus gemacht.</em></h2></div>
