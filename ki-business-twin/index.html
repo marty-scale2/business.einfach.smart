@@ -1338,17 +1338,19 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
     var isMobile=mobile.matches;
     var rect=scene.getBoundingClientRect();
     var viewport=window.innerHeight||document.documentElement.clientHeight;
-    var start=viewport*(isMobile ? .90 : .88);
+    var start=viewport*(isMobile ? .72 : .88);
     var end=viewport*(isMobile ? .04 : .18);
     var progress=clamp((start-rect.top)/Math.max(start-end,1));
     var compact=window.innerWidth<=1100;
     var fanX=isMobile?[-28,0,28]:(compact?[-300,-100,100]:[-360,-120,120]);
     var fanY=isMobile?[28,4,28]:[40,4,4];
     var fanR=isMobile?[-5,-1.4,5]:[-8,-2.8,2.8];
-    var merge=smooth((progress-.66)/.22);
-    var vanish=smooth((progress-.75)/.19);
+    var merge=smooth((progress-(isMobile ? .86 : .66))/(isMobile ? .08 : .22));
+    var vanish=smooth((progress-(isMobile ? .89 : .75))/(isMobile ? .07 : .19));
+    var mobileReveal=[.02,.38,.74];
     cards.slice(0,3).forEach(function(card,index){
-      var reveal=smooth((progress-(.03+index*.12))/.13);
+      var revealStart=isMobile ? mobileReveal[index] : (.03+index*.12);
+      var reveal=smooth((progress-revealStart)/(isMobile ? .10 : .13));
       var openX=lerp(fanX[index]*(isMobile?5:1.65),fanX[index],reveal);
       var openY=lerp(92,fanY[index],reveal);
       var x=lerp(openX,0,merge);
@@ -1358,7 +1360,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
       scale=lerp(scale,.86,merge);
       setCard(card,x,y,rotation,scale,reveal*(1-vanish));
     });
-    var result=smooth((progress-.83)/.17);
+    var result=smooth((progress-(isMobile ? .93 : .83))/(isMobile ? .07 : .17));
     setCard(cards[3],0,lerp(58,0,result),0,lerp(.78,1,result),result);
   }
   function requestUpdate(){if(!ticking){ticking=true;requestAnimationFrame(updateDeck)}}
