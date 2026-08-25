@@ -827,11 +827,10 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 .transformation{position:relative;display:grid;grid-template-columns:minmax(210px,.72fr) repeat(2,minmax(0,1fr));gap:18px;align-items:stretch;margin-top:clamp(34px,5vw,60px);padding:clamp(18px,2vw,26px);background:#fff;border:1px solid rgba(23,12,7,.12);border-radius:28px;box-shadow:0 22px 60px rgba(73,38,20,.12)}
 .transformation__intro{display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,2.4vw,28px)}
 .transformation__intro .eyebrow{margin-bottom:16px}
-.transformation__intro h3{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.8rem);line-height:1.04;letter-spacing:-.035em}
+.transformation__intro h3 strong{display:block;color:var(--brand);font:900 clamp(2.3rem,4.2vw,3.8rem)/.95 var(--accent);letter-spacing:-.055em}
+.transformation__intro h3 span{display:block;margin-top:13px;font-family:var(--sans);font-size:clamp(1.05rem,1.5vw,1.25rem);font-weight:750;line-height:1.42;letter-spacing:-.015em}
 .transformation__image{position:relative;overflow:hidden;margin:0;border-radius:20px;background:var(--warm-2);border:1px solid var(--line)}
 .transformation__image img{display:block;width:100%;height:100%;min-height:310px;object-fit:cover}
-.transformation__badge{position:absolute;left:14px;top:14px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);font-size:.76rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 5px 18px rgba(23,12,7,.12)}
-.transformation__badge--after{background:var(--brand);color:#fff}
 .results-wall{position:relative;column-count:3;column-gap:18px;margin-top:18px}
 .results-wall__item{display:inline-block;width:100%;break-inside:avoid;margin:0 0 18px;padding:10px;background:#fff;border:1px solid rgba(23,12,7,.1);border-radius:18px;box-shadow:0 14px 34px rgba(73,38,20,.1)}
 .results-wall__item img{display:block;width:100%;height:auto;border-radius:11px}
@@ -911,9 +910,9 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
       <h2 id="results-proof-title">Dein KI-System: trainiert mit Erfolgsprinzipien, mit denen unsere Kunden <em>echte Resultate erzielen.</em></h2>
     </div>
     <div class="transformation reveal">
-      <div class="transformation__intro"><div class="eyebrow">Vorher / Nachher</div><h3>Gleiche Person.<br>Andere Positionierung.</h3></div>
-      <figure class="transformation__image"><span class="transformation__badge">Vorher</span><img src="proof-kristin-vorher.png" alt="Kristins Instagram-Profil vor der neuen Positionierung" loading="lazy"></figure>
-      <figure class="transformation__image"><span class="transformation__badge transformation__badge--after">Nachher</span><img src="proof-kristin-nachher.jpg" alt="Kristins Instagram-Profil nach der neuen Positionierung" loading="lazy"></figure>
+      <div class="transformation__intro"><div class="eyebrow">Veränderung</div><h3><strong>+3.000 Follower</strong><span>nach Nutzung unserer Content-Strategie</span></h3></div>
+      <figure class="transformation__image"><img src="proof-kristin-vorher.png" alt="Früherer Stand von Kristins Instagram-Profil" loading="lazy"></figure>
+      <figure class="transformation__image"><img src="proof-kristin-nachher.jpg" alt="Aktueller Stand von Kristins Instagram-Profil" loading="lazy"></figure>
     </div>
     <div class="results-wall stagger" aria-label="Weitere Kundenergebnisse">
       <figure class="results-wall__item"><img src="proof-kampagne-79k.jpg" alt="Kampagnenergebnis mit 79.800 Euro Umsatz" loading="lazy"></figure>
