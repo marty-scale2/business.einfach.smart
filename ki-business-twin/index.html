@@ -860,7 +860,75 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 .results-wall__heading em{color:var(--brand);font-weight:600}
 .results-proof__note{position:relative;max-width:780px;margin:24px auto 0;text-align:center;color:var(--muted);font-size:.9rem}
 @media(max-width:900px){.transformation{grid-template-columns:repeat(2,minmax(0,1fr))}.transformation__intro{grid-column:1/-1;text-align:center;align-items:center;padding-bottom:4px}.results-wall{column-count:2}}
-@media(max-width:620px){.transformation{grid-template-columns:1fr;padding:12px;border-radius:21px}.transformation__intro{grid-column:auto}.transformation__image img{min-height:0;height:auto}.results-wall{column-count:1}.results-wall__item{margin-bottom:14px}}/* Mobile QA 2026 */
+@media(max-width:620px){.transformation{grid-template-columns:1fr;padding:12px;border-radius:21px}.transformation__intro{grid-column:auto}.transformation__image img{min-height:0;height:auto}.results-wall{column-count:1}.results-wall__item{margin-bottom:14px}}/* Codierte Hero-Visualisierung des konkreten Lieferumfangs */
+.hero__grid{grid-template-columns:1.08fr .92fr}
+.hero__visual{gap:30px}
+.hero-system{width:min(100%,620px);margin:0 auto}
+.hero-system__stage{position:relative;isolation:isolate;width:100%;aspect-ratio:1.22}
+.hero-system__stage::before{content:"";position:absolute;inset:8% 3% 3%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(216,98,42,.22),rgba(246,199,169,.12) 44%,transparent 72%);filter:blur(12px)}
+.hero-system__screen{position:absolute;top:2%;left:4%;right:4%;height:64%;z-index:1;overflow:visible;border:5px solid #24150e;border-radius:12px;background:#160c08;box-shadow:0 22px 45px rgba(48,24,11,.25);transform:perspective(900px) rotateX(.8deg) rotateY(-1.5deg);animation:systemScreenFloat 7s ease-in-out infinite}
+.hero-system__screen::after{content:"";position:absolute;left:42%;bottom:-11%;width:16%;height:10%;border:3px solid #24150e;border-top:0;border-radius:0 0 7px 7px;background:linear-gradient(90deg,#321d13,#69402c 52%,#321d13);box-shadow:0 5px 0 -2px #24150e}
+.hero-system__bar{height:13%;display:flex;align-items:center;gap:7px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.1);background:#2a1912;color:#d9c9bd;font:700 clamp(.42rem,.7vw,.58rem)/1 var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.hero-system__bar>b{color:#f7eade}
+.hero-system__bar>span:last-child{margin-left:auto;color:#c58a68}
+.hero-system__dots{display:flex;gap:4px;margin-right:2px}
+.hero-system__dots i{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.hero-system__dots i:nth-child(2){background:#f0aa7d}.hero-system__dots i:nth-child(3){background:#f9ddca}
+.hero-system__body{display:grid;grid-template-columns:34% 66%;height:87%}
+.hero-system__sidebar{padding:clamp(10px,1.5vw,17px);overflow:hidden;border-right:1px solid rgba(255,255,255,.1);background:#21130e}
+.hero-system__sidebar>small{display:block;margin-bottom:5px;color:var(--brand);font:800 clamp(.4rem,.66vw,.54rem)/1 var(--accent);letter-spacing:.13em;text-transform:uppercase}
+.hero-system__sidebar>strong{display:block;margin-bottom:10px;color:#fff4eb;font:700 clamp(.62rem,1vw,.82rem)/1.2 var(--serif)}
+.hero-system__files{display:grid;gap:5px}
+.hero-system__files span{display:flex;align-items:center;gap:5px;min-width:0;color:#d2c1b6;font:500 clamp(.42rem,.71vw,.58rem)/1.15 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap}
+.hero-system__files i{display:inline-grid;place-items:center;width:24px;padding:3px 1px;border-radius:3px;background:rgba(216,98,42,.2);color:#f1a87f;font:800 clamp(.32rem,.5vw,.42rem)/1 var(--accent);font-style:normal;flex:0 0 auto}
+.hero-system__workspace{padding:clamp(11px,1.8vw,20px);overflow:hidden;background:radial-gradient(circle at 85% 20%,rgba(216,98,42,.14),transparent 38%),#170d09}
+.hero-system__status{display:inline-flex;align-items:center;gap:5px;margin-bottom:10px;padding:5px 7px;border:1px solid rgba(110,231,168,.24);border-radius:999px;background:rgba(110,231,168,.07);color:#a8e8c5;font:700 clamp(.38rem,.62vw,.52rem)/1 var(--sans)}
+.hero-system__status i{width:5px;height:5px;border-radius:50%;background:#6ee7a8;box-shadow:0 0 0 3px rgba(110,231,168,.1)}
+.hero-system__workspace>small{display:block;color:#d3794d;font:800 clamp(.4rem,.65vw,.54rem)/1 var(--accent);letter-spacing:.12em}
+.hero-system__workspace h3{margin:6px 0;color:#fff8f2;font:600 clamp(.86rem,1.55vw,1.24rem)/1.05 var(--serif);letter-spacing:-.02em}
+.hero-system__workspace p{max-width:37ch;color:#cdbbb0;font-size:clamp(.43rem,.72vw,.6rem);line-height:1.5}
+.hero-system__prompt{margin-top:10px;padding:7px 9px;border-left:3px solid var(--brand);border-radius:3px;background:rgba(216,98,42,.1);color:#f1dfd3;font:600 clamp(.42rem,.7vw,.58rem)/1.35 var(--sans)}
+.hero-system__lines{display:grid;gap:5px;margin-top:9px}
+.hero-system__lines i{display:block;width:87%;height:3px;border-radius:99px;background:rgba(255,255,255,.15)}
+.hero-system__lines i:nth-child(2){width:72%}.hero-system__lines i:nth-child(3){width:55%;background:rgba(216,98,42,.34)}
+.hero-system__docs{position:absolute;left:-1%;bottom:1%;z-index:3;width:43%;height:47%;animation:systemDocsFloat 6.5s ease-in-out infinite}
+.hero-doc{position:absolute;bottom:3%;width:48%;height:79%;padding:10% 8%;overflow:hidden;border:1px solid #e9d6c8;border-radius:3px;background:#fffdfb;box-shadow:0 12px 24px rgba(54,28,14,.18)}
+.hero-doc--1{left:0;transform:rotate(-9deg)}.hero-doc--2{left:25%;bottom:8%;transform:rotate(-3deg)}.hero-doc--3{left:51%;bottom:14%;transform:rotate(5deg)}
+.hero-doc span{display:block;margin-bottom:7px;color:var(--brand);font:800 clamp(.32rem,.56vw,.46rem)/1 var(--accent);letter-spacing:.09em}
+.hero-doc strong{display:block;margin-bottom:10px;color:#342117;font:600 clamp(.62rem,1vw,.83rem)/.95 var(--serif)}
+.hero-doc>i{display:block;width:88%;height:3px;margin-top:5px;border-radius:99px;background:#eadfd7}
+.hero-doc>i:nth-of-type(2){width:70%}.hero-doc>i:nth-of-type(3){width:80%;background:var(--brand-light)}
+.hero-system__strategy{position:absolute;right:-2%;bottom:0;z-index:4;width:58%;height:48%;animation:systemCardsFloat 7.5s ease-in-out infinite}
+.hero-mini{position:absolute;bottom:3%;width:38%;height:82%;padding:9% 8%;overflow:hidden;border:1px solid rgba(255,255,255,.52);border-radius:10px;box-shadow:0 16px 26px rgba(49,25,10,.19)}
+.hero-mini--1{left:0;transform:rotate(-6deg);background:linear-gradient(150deg,#39785f,#8cac7c 66%,#c6c384);color:#fff}
+.hero-mini--2{left:31%;bottom:8%;transform:rotate(-1deg);background:linear-gradient(150deg,#7c4053,#b94f65 58%,#e9a083);color:#fff}
+.hero-mini--3{left:62%;transform:rotate(5deg);background:linear-gradient(150deg,#fff8f2,#f6c7a9 58%,#e7895d);color:#2f1b11}
+.hero-mini>span{display:block;margin-bottom:27%;font:900 clamp(.72rem,1.35vw,1.08rem)/1 var(--accent);opacity:.45}
+.hero-mini small{display:block;margin-bottom:8px;font:800 clamp(.3rem,.5vw,.42rem)/1.2 var(--accent);letter-spacing:.1em}
+.hero-mini strong{display:block;font:600 clamp(.56rem,.96vw,.8rem)/1.03 var(--serif)}
+.hero-system__caption{position:relative;margin:4px auto 0;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.86);box-shadow:0 9px 22px rgba(49,25,10,.08);color:var(--ink-soft);font-size:clamp(.68rem,1vw,.82rem);line-height:1.4;text-align:center}
+.hero-system__caption strong{color:var(--ink)}
+@keyframes systemScreenFloat{0%,100%{transform:perspective(900px) rotateX(.8deg) rotateY(-1.5deg) translateY(0)}50%{transform:perspective(900px) rotateX(.8deg) rotateY(-1.5deg) translateY(-5px)}}
+@keyframes systemDocsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@keyframes systemCardsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:960px){.hero__grid{grid-template-columns:1fr}.hero-system{max-width:650px}}
+@media(max-width:680px){
+  .hero .hero__visual{gap:24px}
+  .hero-system__stage{aspect-ratio:1.02}
+  .hero-system__screen{top:0;left:0;right:0;height:59%}
+  .hero-system__bar{padding-inline:8px}.hero-system__bar>span:last-child{display:none}
+  .hero-system__body{grid-template-columns:37% 63%}
+  .hero-system__sidebar,.hero-system__workspace{padding:10px}
+  .hero-system__files span:nth-child(n+5){display:none}
+  .hero-system__workspace p{font-size:.45rem}
+  .hero-system__prompt{margin-top:7px;padding:6px;font-size:.46rem}
+  .hero-system__docs{left:-3%;bottom:1%;width:49%;height:44%}
+  .hero-system__strategy{right:-4%;bottom:1%;width:64%;height:43%}
+  .hero-system__caption{margin-top:7px;padding:9px 12px;border-radius:13px;font-size:.74rem}
+}
+@media(max-width:390px){.hero-system__files span:nth-child(n+4){display:none}.hero-system__workspace p{display:none}.hero-system__prompt{margin-top:8px}}
+@media(prefers-reduced-motion:reduce){.hero-system__screen,.hero-system__docs,.hero-system__strategy{animation:none}}
+/* Mobile QA 2026 */
 @media (max-width:680px){
   html{scroll-padding-top:72px}
   body{font-size:16px}
@@ -942,17 +1010,27 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
       </div>
     </div>
     <div class="hero__visual" data-rise="3">
-      <div class="twin-scene" aria-hidden="true">
-        <div class="twin-box">
-          <div class="twin-box__inner">
-            <div class="twin-box__face twin-box__side"><span>KI Business Twin · Dein KI-Betriebssystem</span></div>
-            <div class="twin-box__face twin-box__front">
-              <div class="twin-box__brand">business.einfach.smart</div>
-              <div class="twin-box__wm"><span>KI Business</span><b>Twin</b><i>Done for you</i></div>
-              <div class="twin-box__meta">Dein persönliches KI-Betriebssystem<br>9 konkrete Ausarbeitungen · Perfekt verzahnt</div>
+      <div class="hero-system" role="img" aria-label="Dein KI Business Twin mit Business-Kontext, neun strategischen Ausarbeitungen und drei perfekt verzahnten Strategiebereichen">
+        <div class="hero-system__stage" aria-hidden="true">
+          <div class="hero-system__screen">
+            <div class="hero-system__bar"><span class="hero-system__dots"><i></i><i></i><i></i></span><b>KI BUSINESS TWIN</b><span>Dein Business-Kontext</span></div>
+            <div class="hero-system__body">
+              <aside class="hero-system__sidebar"><small>9 Ausarbeitungen</small><strong>Dein KI-Betriebssystem</strong><div class="hero-system__files"><span><i>HTML</i>Brand-Manifest</span><span><i>DOC</i>Content-Strategie</span><span><i>PDF</i>Angebotsstrategie</span><span><i>PDF</i>Traumkunden-Avatar</span><span><i>PDF</i>Sales-Prozess</span></div></aside>
+              <div class="hero-system__workspace"><div class="hero-system__status"><i></i> Business-Kontext geladen</div><small>DEINE KI-ARBEITSUMGEBUNG</small><h3>Dein Business ist verstanden.</h3><p>Positionierung, Angebot, Content und Verkauf greifen als gemeinsamer Kontext ineinander.</p><div class="hero-system__prompt">Was soll ich heute für dich vorbereiten?</div><div class="hero-system__lines"><i></i><i></i><i></i></div></div>
             </div>
           </div>
+          <div class="hero-system__docs">
+            <article class="hero-doc hero-doc--1"><span>PDF · 07</span><strong>Sales-<br>Fahrplan</strong><i></i><i></i><i></i></article>
+            <article class="hero-doc hero-doc--2"><span>PDF · 05</span><strong>Traumkunden-<br>Avatar</strong><i></i><i></i><i></i></article>
+            <article class="hero-doc hero-doc--3"><span>HTML · 01</span><strong>Brand-<br>Manifest</strong><i></i><i></i><i></i></article>
+          </div>
+          <div class="hero-system__strategy">
+            <article class="hero-mini hero-mini--1"><span>01</span><small>BRANDING &amp; CONTENT</small><strong>Branding- &amp;<br>Content-Strategie</strong></article>
+            <article class="hero-mini hero-mini--2"><span>02</span><small>DEIN ANGEBOT</small><strong>Angebots-<br>strategie</strong></article>
+            <article class="hero-mini hero-mini--3"><span>03</span><small>DEIN VERKAUF</small><strong>Verkaufs-<br>strategie</strong></article>
+          </div>
         </div>
+        <div class="hero-system__caption"><strong>Das bekommst du:</strong> 9 strategische Ausarbeitungen → ein einsatzbereites KI-Betriebssystem</div>
       </div>
       <div class="hero__price"><div class="hero__price-regular"><span>Regulärer Preis</span><s>1.490 €</s></div><div class="hero__price-special"><span>Special Price bis 28.08.</span><b aria-hidden="true">=</b><strong>888 €</strong></div><small class="hero__price-tax">Preis inkl. gesetzl. MwSt.</small></div>
     </div>
