@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI Business Twin · Dein KI-Betriebssystem fürs Business</title>
+<meta name="description" content="Wir arbeiten Positionierung, Angebot, Content und Verkauf individuell aus und bauen daraus dein persönliches KI-Betriebssystem: einsatzbereit für ChatGPT und Claude, fertig für dich gebaut innerhalb von 14 Tagen.">
+<meta property="og:title" content="KI Business Twin · Dein KI-Betriebssystem fürs Business">
+<meta property="og:description" content="Neun konkrete Ausarbeitungen, die perfekt ineinandergreifen – aufgebaut als dein persönliches KI-Betriebssystem für ChatGPT und Claude.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.business-einfach-smart.com/ki-business-twin/">
+<link rel="canonical" href="https://www.business-einfach-smart.com/ki-business-twin/">
+<meta name="theme-color" content="#160C05">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand:#D8622A; --brand-dark:#A8451B; --brand-light:#F6C7A9; --brand-pale:#FFF2E9;
+  --ink:#160C05; --ink-soft:#59463A; --muted:#7A6A5A; --line:#E5D9CC;
+  --paper:#FFFFFF; --warm:#FDFAF6; --warm-2:#F6EFE6; --green:#276749; --cream:#F9F1E7;
+  --serif:'Cormorant',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --accent:'Montserrat',system-ui,sans-serif; --max:1160px;
+  --shadow:0 18px 50px rgba(49,25,10,.10); --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+button,summary{font:inherit} :focus-visible{outline:3px solid var(--brand);outline-offset:4px}
+.wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}.narrow{width:min(820px,calc(100% - 48px));margin-inline:auto}
+section{padding:clamp(72px,9vw,120px) 0}.soft{background:var(--warm)}.deep{background:var(--ink);color:white}
+.eyebrow{font-family:var(--accent);font-size:.73rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);margin-bottom:16px}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance}h1{font-size:clamp(2.8rem,6.3vw,5.5rem);line-height:.98;letter-spacing:-.04em;font-weight:600}h2{font-size:clamp(2.35rem,4.8vw,4.25rem);line-height:1.02;letter-spacing:-.03em;font-weight:600;margin-bottom:22px}h2 em,h1 em{color:var(--brand);font-style:italic}.deep h2 em{color:#F2B48C}h3{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.13;font-weight:600}.lead{font-size:clamp(1.06rem,1.5vw,1.23rem);line-height:1.75;color:var(--ink-soft);max-width:65ch;text-wrap:pretty}.deep .lead{color:#F1E8DE}
+.section-head{margin-bottom:48px}.section-head.center{text-align:center}.section-head.center .lead{margin-inline:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(22,12,5,.08)}
+.nav__in{height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav__brand{display:inline-flex;flex-direction:column;line-height:1;font-family:var(--accent);text-transform:uppercase}
+.nav__brand small{font-size:.5rem;font-weight:800;letter-spacing:.28em;color:var(--brand-dark)}
+.nav__brand b{font-size:1.28rem;font-weight:900;letter-spacing:-.03em;color:var(--ink);text-shadow:2px 2px 0 var(--brand-light)}
+.nav__links{display:flex;align-items:center;gap:26px;font-size:.88rem;font-weight:600}.nav__links a:not(.nav__cta):hover{color:var(--brand)}
+.nav__cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:2px solid var(--ink);border-radius:9px;background:var(--brand);color:#fff;font-family:var(--accent);font-weight:800;letter-spacing:.02em;box-shadow:5px 5px 0 var(--ink);transition:.18s ease}
+.nav__cta{padding:10px 17px;font-size:.77rem}.btn{padding:16px 25px;font-size:.88rem}.btn:hover,.nav__cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);background:var(--brand-dark)}.btn--dark{background:var(--ink);border-color:var(--ink);box-shadow:5px 5px 0 var(--brand-light)}.btn--dark:hover{background:#352115;box-shadow:7px 7px 0 var(--brand)}
+.hero{padding:clamp(60px,7vw,96px) 0 clamp(72px,9vw,118px);background:radial-gradient(circle at 82% 10%,rgba(216,98,42,.18),transparent 31%),linear-gradient(170deg,#fff 0%,var(--warm) 100%);border-bottom:1px solid var(--line)}
+.hero__grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:clamp(28px,4vw,54px)}.hero__brand{margin-bottom:32px}
+.wm{font-family:var(--accent);text-transform:uppercase;display:inline-block;line-height:1}
+.wm__top{display:block;width:fit-content;font-size:clamp(1rem,2.6vw,2rem);font-weight:800;color:var(--brand-dark);line-height:1;margin-bottom:.14em;white-space:nowrap}
+.wm__main{display:block;width:fit-content;font-size:clamp(4.8rem,11vw,8.8rem);font-weight:900;line-height:.82;letter-spacing:-.05em;color:var(--ink);text-shadow:.055em .055em 0 var(--brand-light),.11em .11em 0 var(--brand-pale)}
+.wm__bar{display:block;margin-top:14px;background:var(--ink);color:var(--cream);font:700 clamp(.62rem,1.1vw,.82rem)/1 var(--accent);letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;text-align:center;padding:9px 8px 8px}
+.hero__sub{font-size:clamp(1.7rem,3.1vw,2.6rem);line-height:1.12;letter-spacing:-.02em;font-weight:600;max-width:27ch}.hero__lead{font-size:clamp(1.08rem,1.65vw,1.28rem);line-height:1.75;color:var(--ink-soft);max-width:62ch;margin:28px 0}.hero__lead strong{color:var(--ink)}
+.hero__cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px}.hero__price{font-size:.92rem;color:var(--muted)}.hero__price strong{color:var(--ink);font-size:1.05rem}
+.facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.fact{border:1px solid var(--line);background:rgba(255,255,255,.76);border-radius:999px;padding:8px 13px;font-size:.79rem;font-weight:600;color:var(--ink-soft)}
+.project{position:relative;border:2px solid var(--ink);border-radius:16px;background:#21150F;color:#F9F1E7;box-shadow:14px 14px 0 var(--brand-light),var(--shadow);overflow:hidden}.project__top{display:flex;align-items:center;gap:7px;padding:13px 16px;background:#342218;border-bottom:1px solid rgba(255,255,255,.1)}.dot{width:10px;height:10px;border-radius:50%;background:#E8894E}.dot:nth-child(2){background:#F2B48C}.dot:nth-child(3){background:#F8E2D2}.project__label{margin-left:auto;font:700 .67rem var(--accent);letter-spacing:.09em;text-transform:uppercase;color:#EFC5AA}.project__body{padding:25px 24px 28px;font:500 .86rem/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}.tree-folder{color:#F4A875;font-weight:700}.tree-file{color:#F9F1E7}.tree-muted{color:#BFAE9F}.project__status{display:flex;gap:9px;align-items:flex-start;margin:6px 16px 18px;padding:13px 14px;border-radius:10px;background:rgba(216,98,42,.17);border:1px solid rgba(232,137,78,.35);font-size:.8rem;line-height:1.5}.project__status b{color:#FFD9BF}.pulse{width:8px;height:8px;margin-top:5px;border-radius:50%;background:#6EE7A8;box-shadow:0 0 0 5px rgba(110,231,168,.12);flex:0 0 auto;animation:pulse 2.4s ease-in-out infinite}
+.quick{padding:34px 0;background:var(--ink);color:white}.quick__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}.quick__item{padding:8px 28px;border-right:1px solid rgba(255,255,255,.14)}.quick__item:first-child{padding-left:0}.quick__item:last-child{border:0}.quick__item strong{display:block;font-family:var(--serif);font-size:1.62rem;line-height:1.1;margin-bottom:8px}.quick__item strong::before{content:'✦';color:var(--brand);font-size:.72em;margin-right:10px;vertical-align:.1em}.quick__item>span{font-size:.92rem;color:#D8C8BA;text-wrap:balance}.quick__item strong .count{font-size:inherit;color:inherit}.slot{display:inline-block;height:1.06em;line-height:1.06;overflow:hidden;vertical-align:-.13em}.slot__reel{display:block;transition:transform 1.4s cubic-bezier(.16,.8,.26,.99)}.slot__reel b{display:block;height:1.06em;line-height:1.06;font-weight:inherit}
+.pain{background:var(--warm-2);border-bottom:1px solid var(--line)}.pain__grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(38px,6vw,78px);align-items:start}.pain__grid>div:first-child{align-self:stretch}.pain__intro{position:sticky;top:100px}.pain__list{display:grid;gap:13px}.pain__item{display:grid;grid-template-columns:42px 1fr;gap:16px;align-items:start;padding:21px 22px;border:1px solid var(--line);border-radius:14px;background:#fff}.pain__num{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--brand-pale);color:var(--brand-dark);font:900 .7rem var(--accent)}.pain__item h3{font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.35;letter-spacing:-.01em}.pain__turn{position:relative;z-index:2;margin-top:clamp(40px,5vw,60px);padding:clamp(25px,4vw,38px);border:2px solid var(--ink);border-radius:var(--radius);background:var(--brand);color:#fff;box-shadow:9px 9px 0 var(--ink);font-family:var(--serif);font-size:clamp(1.65rem,3vw,2.6rem);font-weight:600;line-height:1.16;text-align:center;text-wrap:balance}
+.for-you__head{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,72px);align-items:end;margin-bottom:42px}.for-you__head h2{margin-bottom:0}.for-you__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.for-you__item{display:flex;align-items:flex-start;gap:15px;padding:23px 24px;border:1px solid var(--brand-light);border-radius:14px;background:#fff}.for-you__mark{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:900;flex:0 0 auto;box-shadow:3px 3px 0 var(--brand-light)}.for-you__item p{color:var(--ink-soft);font-size:.95rem;line-height:1.65}.for-you__item strong{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.card{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 8px 30px rgba(49,25,10,.05)}.card__num{display:inline-grid;place-items:center;width:37px;height:37px;border-radius:9px;background:var(--brand-pale);color:var(--brand-dark);font:900 .75rem var(--accent);margin-bottom:19px}.card h3{margin-bottom:11px}.card p{font-size:.94rem;color:var(--ink-soft)}.card ul{list-style:none;margin-top:15px}.card li{position:relative;padding-left:20px;margin:8px 0;color:var(--ink-soft);font-size:.9rem}.card li::before{content:'✓';position:absolute;left:0;color:var(--brand);font-weight:800}
+.tech{display:grid;grid-template-columns:.94fr 1.06fr;gap:48px;align-items:start}.tech__demo{width:min(680px,calc(100% - 48px));margin:clamp(48px,6vw,72px) auto 0}.not-list{width:min(var(--max),calc(100% - 48px));margin:clamp(40px,5vw,58px) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.not-item{display:flex;gap:12px;align-items:flex-start;padding:20px 22px;border-radius:11px;background:#fff;border:1px solid var(--line);font-size:.9rem;color:var(--ink-soft)}.not-mark{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:var(--brand-pale);color:var(--brand-dark);font-weight:800;flex:0 0 auto}.tech__steps{display:grid;gap:17px}.tech-step{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:24px;border-radius:15px;background:white;border:1px solid var(--line)}.tech-step__num{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--ink);color:white;font:900 .82rem var(--accent);box-shadow:4px 4px 0 var(--brand-light)}.tech-step h3{font-size:1.55rem;margin-bottom:7px}.tech-step p{font-size:.92rem;color:var(--ink-soft)}
+.strands{display:grid;gap:42px}.strand__head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:17px}.strand__head span{font-size:.84rem;color:var(--muted)}.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.module{padding:24px;border-radius:14px;background:var(--warm);border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}.module:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(49,25,10,.09)}.module__num{font:900 .68rem var(--accent);letter-spacing:.1em;color:var(--brand);display:block;margin-bottom:12px}.module h3{font-family:var(--sans);font-size:1.02rem;font-weight:700;letter-spacing:-.02em;margin-bottom:7px}.module p{font-size:.84rem;color:var(--ink-soft);line-height:1.6}
+.compare{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;background:white;box-shadow:10px 10px 0 var(--brand-light)}.compare__col{padding:clamp(30px,4vw,50px)}.compare__col:first-child{background:var(--warm-2);border-right:1px solid var(--line)}.compare__label{font:800 .78rem var(--accent);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:25px}.compare__col:last-child .compare__label{color:var(--brand)}.compare ul{list-style:none;display:grid;gap:19px}.compare li{padding-left:28px;position:relative;font-size:clamp(1.02rem,1.25vw,1.14rem);line-height:1.65;color:var(--ink-soft)}.compare li::before{content:'×';position:absolute;left:0;color:#A77C65;font-weight:900;font-size:1.12em}.compare__col:last-child li::before{content:'✓';color:var(--green)}.compare strong{color:var(--ink)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.process-step{position:relative;padding:26px 23px;border:1px solid rgba(255,255,255,.18);border-radius:15px;background:rgba(255,255,255,.06)}.process-step__num{font:900 .72rem var(--accent);letter-spacing:.1em;color:#F2B48C;margin-bottom:17px}.process-step h3{font-size:1.45rem;margin-bottom:9px}.process-step p{font-size:.86rem;color:#D8C8BA}.process-step strong{color:white}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:22px}.fit__box{padding:34px;border-radius:var(--radius);border:1px solid var(--line);background:white}.fit__box--yes{border:2px solid var(--ink);box-shadow:8px 8px 0 var(--brand-light)}.fit h3{margin-bottom:20px}.fit ul{list-style:none;display:grid;gap:13px}.fit li{position:relative;padding-left:25px;font-size:.92rem;color:var(--ink-soft)}.fit li::before{content:'✓';position:absolute;left:0;color:var(--brand);font-weight:800}.fit__box:not(.fit__box--yes) li::before{content:'×';color:var(--muted)}
+.team-photo{margin:0 auto 46px;max-width:760px;transform:rotate(-1.4deg)}.team-photo img{width:100%;border-radius:14px;border:2px solid var(--ink);box-shadow:11px 11px 0 var(--brand-light)}.team-photo figcaption{margin-top:16px;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--muted)}
+.hosts{display:grid;grid-template-columns:1fr 1fr;gap:26px}.host{display:flex;flex-direction:column;border:2px solid var(--ink);border-radius:var(--radius);background:white;overflow:hidden;box-shadow:8px 8px 0 var(--brand-light)}.host img{width:100%;height:clamp(280px,26vw,360px);object-fit:cover;object-position:center 28%;border-bottom:2px solid var(--ink)}.host>div{padding:26px 28px 30px}.host h3{margin-bottom:3px}.host__role{font-size:.8rem;font-weight:700;color:var(--brand);margin-bottom:12px}.host p{font-size:.95rem;color:var(--ink-soft)}
+.anchor__layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(38px,6vw,70px);align-items:center}
+.bill{position:relative;background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:clamp(26px,4vw,44px);box-shadow:12px 12px 0 var(--brand-light)}
+.bill__head{font:800 .68rem var(--accent);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:18px;display:flex;justify-content:space-between}
+.bill__row{display:flex;align-items:baseline;gap:10px;padding:8px 0;font-size:.92rem;color:var(--ink-soft)}
+.bill__row i{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+.bill__row b{font-family:var(--accent);font-weight:800;color:var(--ink);white-space:nowrap}
+.bill__sum{display:flex;align-items:baseline;gap:10px;margin-top:14px;padding-top:16px;border-top:2px solid var(--ink);font-weight:700}
+.bill__sum i{flex:1}.bill__sum b{font:900 1.5rem var(--accent);letter-spacing:-.02em}
+.bill__stamp{position:absolute;right:clamp(-14px,-1vw,-8px);bottom:-30px;transform:rotate(-7deg);background:var(--brand);color:#fff;border:2px solid var(--ink);border-radius:12px;padding:14px 20px 16px;text-align:center;box-shadow:6px 6px 0 var(--ink)}
+.bill__stamp small{display:block;font:800 .62rem var(--accent);letter-spacing:.14em;text-transform:uppercase;color:#FFE1CD;margin-bottom:3px}
+.bill__stamp b{font:900 2.1rem/1 var(--accent);letter-spacing:-.03em}
+.reveal.in .bill__stamp{animation:stamp .5s cubic-bezier(.2,1.6,.4,1) .55s both}
+.price-layout{display:grid;grid-template-columns:1fr .9fr;gap:46px;align-items:center}.included{display:grid;gap:11px;margin-top:27px}.included__row{display:flex;align-items:flex-start;gap:13px;padding-bottom:11px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--ink-soft)}.included__row b{color:var(--ink)}.check{color:var(--brand);font-weight:900}.price-box{padding:clamp(34px,5vw,54px);border:2px solid var(--ink);border-radius:var(--radius);text-align:center;background:white;box-shadow:13px 13px 0 var(--brand)}.price-box__tag{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--brand-pale);color:var(--brand-dark);font:800 .66rem var(--accent);letter-spacing:.09em;text-transform:uppercase;margin-bottom:20px}.price-box__regular{font-size:.88rem;color:var(--muted)}.price-box__regular s{font-weight:700}.price-box__price{font:900 clamp(3.7rem,8vw,5.9rem)/1 var(--accent);letter-spacing:-.06em;margin:8px 0 5px;text-shadow:4px 4px 0 var(--brand-light)}.price-box__sub{font-size:.84rem;color:var(--muted);margin-bottom:25px}.price-box .btn{width:100%}.price-box__note{font-size:.75rem;color:var(--muted);margin-top:17px;line-height:1.5}
+.faq{display:grid;gap:12px;margin-top:38px}.faq details{border:1px solid var(--line);border-radius:13px;background:white;overflow:hidden}.faq summary{cursor:pointer;list-style:none;padding:20px 54px 20px 22px;font-weight:700;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';position:absolute;right:22px;top:15px;font:500 1.7rem var(--serif);color:var(--brand)}.faq details[open] summary::after{content:'–'}.faq__answer{padding:0 22px 21px;color:var(--ink-soft);font-size:.92rem;max-width:74ch}
+.closer{text-align:center}.closer h2{font-size:clamp(2.2rem,4.6vw,4rem)}.closer .lead{margin-inline:auto}.closer .lead strong{color:#fff}
+.final{text-align:center;background:radial-gradient(circle at 50% 110%,rgba(216,98,42,.17),transparent 45%),white}.final .lead{margin:0 auto 28px}
+.footer{padding:44px 0;background:var(--warm-2);border-top:1px solid var(--line);text-align:center}.footer__brand{font:800 .9rem var(--accent);letter-spacing:.05em;margin-bottom:8px}.footer__brand span{color:var(--brand)}.footer__links{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;margin:20px 0;font-size:.82rem;color:var(--muted)}.footer__copy{font-size:.72rem;color:var(--muted)}
+.beige{background:var(--warm-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tint{background:var(--brand-pale);border-top:1px solid var(--brand-light);border-bottom:1px solid var(--brand-light)}
+h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand-light));background-repeat:no-repeat;background-size:0% .14em;background-position:0 94%;transition:background-size .8s ease .25s}
+.deep h2 em{background-image:linear-gradient(0deg,rgba(242,180,140,.32),rgba(242,180,140,.32))}
+.loaded .hero h1 em,.reveal.in h1 em,.reveal.in h2 em{background-size:100% .14em}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg)}
+.btn:hover::after{animation:shine .6s ease}
+@keyframes boxturn{from{transform:rotateX(-5deg) rotateY(9deg)}to{transform:rotateX(-5deg) rotateY(40deg)}}
+@keyframes shadowpulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.88);opacity:.75}}
+@keyframes shine{to{left:130%}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+:is(.reveal.in .stagger,.reveal.in.stagger)>*{opacity:1;transform:none}
+:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(1){transition-delay:.05s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(2){transition-delay:.13s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(3){transition-delay:.21s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(4){transition-delay:.29s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(5){transition-delay:.37s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(6){transition-delay:.45s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(7){transition-delay:.53s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(8){transition-delay:.61s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(9){transition-delay:.69s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(10){transition-delay:.77s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(11){transition-delay:.85s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(12){transition-delay:.93s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(13){transition-delay:1.01s}
+.hero [data-rise]{opacity:0;animation:rise .7s ease forwards}
+.hero [data-rise="1"]{animation-delay:.05s}.hero [data-rise="2"]{animation-delay:.18s}.hero [data-rise="3"]{animation-delay:.31s}.hero [data-rise="4"]{animation-delay:.44s}.hero [data-rise="5"]{animation-delay:.57s}
+.hero__visual{display:grid;place-items:center;padding:18px 0}
+.twin-scene{position:relative}
+.twin-box{--bw:min(302px,68vw);--bh:388px;--bd:64px;position:relative;width:var(--bw);height:var(--bh);perspective:1200px;animation:float 7s ease-in-out infinite}
+.twin-box::after{content:'';position:absolute;left:2%;right:-10%;bottom:-44px;height:30px;background:radial-gradient(50% 50% at 50% 50%,rgba(22,12,5,.30),transparent 72%);animation:shadowpulse 7s ease-in-out infinite}
+.twin-box__inner{position:absolute;inset:0;transform-style:preserve-3d;animation:boxturn 9s ease-in-out infinite alternate}
+.twin-box__face{position:absolute;left:50%;top:50%;backface-visibility:hidden}
+.twin-box__front{width:var(--bw);height:var(--bh);transform:translate(-50%,-50%) translateZ(calc(var(--bd)/2 - 1px));background:#21150F;border:2px solid var(--ink);border-radius:6px;display:flex;flex-direction:column;justify-content:space-between;padding:24px 22px 20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.twin-box__side{width:var(--bd);height:var(--bh);transform:translate(-50%,-50%) rotateY(-90deg) translateZ(calc(var(--bw)/2 - 1px));background:var(--brand);border:2px solid var(--ink);border-radius:6px;display:grid;place-items:center}
+.twin-box__side span{writing-mode:vertical-rl;transform:rotate(180deg);font:800 .6rem var(--accent);letter-spacing:.3em;color:#fff;text-transform:uppercase;white-space:nowrap}
+.twin-box__brand{font:800 .56rem var(--accent);letter-spacing:.28em;text-transform:uppercase;color:#BFAE9F}
+.twin-box__wm{font-family:var(--accent);text-transform:uppercase;line-height:1}
+.twin-box__wm span{display:block;font-size:.92rem;font-weight:800;letter-spacing:.26em;color:var(--brand-light);margin-bottom:8px}
+.twin-box__wm b{display:block;font-size:3.9rem;font-weight:900;letter-spacing:-.04em;color:#F9F1E7;text-shadow:5px 5px 0 rgba(216,98,42,.5)}
+.twin-box__wm i{display:block;margin-top:14px;background:var(--brand);color:#fff;font-style:normal;font-weight:700;font-size:.6rem;letter-spacing:.3em;text-indent:.3em;text-align:center;padding:8px 6px 7px;border-radius:3px}
+.twin-box__meta{font-size:.68rem;line-height:1.6;font-weight:600;color:#D8C8BA;border-top:1px solid rgba(255,255,255,.14);padding-top:12px}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(110,231,168,.12)}50%{box-shadow:0 0 0 9px rgba(110,231,168,.05)}}
+@keyframes stamp{from{opacity:0;transform:rotate(-7deg) scale(1.7)}to{opacity:1;transform:rotate(-7deg) scale(1)}}
+@media(max-width:960px){.hero__grid,.pain__grid,.for-you__head,.tech,.price-layout,.anchor__layout{grid-template-columns:1fr}.hero__visual{max-width:600px}.pain__intro,.tech__copy{position:static}.quick__grid{grid-template-columns:repeat(2,1fr);gap:22px}.quick__item{padding:0 22px}.quick__item:nth-child(2){border-right:0}.modules,.process,.not-list{grid-template-columns:1fr 1fr}.hosts{grid-template-columns:1fr}.bill{margin-bottom:34px}}
+@media(max-width:680px){.wrap,.narrow{width:min(100% - 34px,var(--max))}section{padding:68px 0}.nav__links a:not(.nav__cta){display:none}.nav__cta{font-size:.7rem;padding:9px 12px}.hero{padding-top:48px}.hero .hero__sub{font-size:1.9rem}.hero__cta,.hero__cta .btn{width:100%}.hero__price{text-align:center;width:100%}.facts{gap:8px}.fact{font-size:.72rem}.project__body{font-size:.72rem;padding:20px 16px}.quick__grid,.for-you__grid,.grid,.modules,.compare,.process,.fit,.not-list{grid-template-columns:1fr}.quick__item,.quick__item:first-child{padding:0 0 17px;border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.quick__item:last-child{border-bottom:0}.strand__head{display:block}.strand__head span{display:block;margin-top:5px}.compare__col:first-child{border-right:0;border-bottom:1px solid var(--line)}.host img{height:260px}.price-box{box-shadow:8px 8px 0 var(--brand)}.btn{width:100%}.bill__stamp{position:static;transform:rotate(-3deg);margin:22px auto 0;width:fit-content}.reveal.in .bill__stamp{animation-name:stampMobile}.team-photo{transform:rotate(0)}}
+@keyframes stampMobile{from{opacity:0;transform:rotate(-3deg) scale(1.5)}to{opacity:1;transform:rotate(-3deg) scale(1)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.stagger>*,.hero [data-rise]{opacity:1;transform:none;transition:none;animation:none}.hero__visual,.pulse,.reveal.in .bill__stamp,.twin-box,.twin-box::after,.twin-box__inner{animation:none}.twin-box__inner{transform:rotateX(-5deg) rotateY(22deg)}.btn::after{display:none}h1 em,h2 em{background-size:100% .14em;transition:none}}
+/* Design-Feinschliff: stärkere Typografie, mehr Tiefe und mehr Persönlichkeit */body{font-size:17px}section{padding:clamp(82px,9.5vw,132px) 0}.section-head{margin-bottom:clamp(48px,6vw,64px)}.section-head.center::after{content:"";display:block;width:58px;height:5px;margin:28px auto 0;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-light));box-shadow:22px 0 0 var(--ink)}.eyebrow{font-size:.82rem;letter-spacing:.15em;margin-bottom:18px}.lead{font-size:clamp(1.12rem,1.55vw,1.3rem);line-height:1.78}.btn{padding:17px 27px;font-size:.96rem}.fact{font-size:.9rem;padding:9px 15px;background:#fff;box-shadow:0 5px 16px rgba(49,25,10,.06)}.quick__item>span{font-size:1rem;line-height:1.55}.soft{background:radial-gradient(circle at 8% 15%,rgba(216,98,42,.08),transparent 25%),var(--warm)}.beige{background:radial-gradient(circle at 92% 12%,rgba(246,199,169,.38),transparent 30%),var(--warm-2)}.tint{background:radial-gradient(circle at 8% 12%,rgba(255,255,255,.75),transparent 26%),var(--brand-pale)}.deep{background:radial-gradient(circle at 82% 10%,rgba(216,98,42,.16),transparent 32%),var(--ink)}.pain__item,.for-you__item,.card,.module,.tech-step,.fit__box,.host,.faq details{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.pain__item{padding:24px 25px;border-left:4px solid var(--brand-light);box-shadow:0 8px 22px rgba(49,25,10,.05)}.pain__item:hover{transform:translateX(5px);border-left-color:var(--brand);box-shadow:0 12px 28px rgba(49,25,10,.09)}.pain__item h3{font-size:1.1rem;line-height:1.5}.pain__photo{position:relative;margin-top:34px;transform:rotate(-1.5deg)}.pain__photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 32%;border:2px solid var(--ink);border-radius:16px;box-shadow:10px 10px 0 var(--brand-light)}.pain__photo figcaption{position:absolute;right:-12px;bottom:-18px;max-width:250px;padding:12px 16px;border:2px solid var(--ink);border-radius:11px;background:#fff;box-shadow:5px 5px 0 var(--brand);font-size:.88rem;line-height:1.35;color:var(--ink-soft)}.pain__photo figcaption strong{display:block;color:var(--ink);font-size:1rem}.for-you__item{padding:27px 27px;border:2px solid rgba(216,98,42,.24);box-shadow:0 9px 24px rgba(49,25,10,.06)}.for-you__item:nth-child(4n+2),.for-you__item:nth-child(4n+3){background:var(--warm)}.for-you__item:hover{transform:translateY(-4px);border-color:var(--brand);box-shadow:7px 7px 0 var(--brand-light)}.for-you__item p{font-size:1.05rem;line-height:1.72}.for-you__mark{width:34px;height:34px;font-size:1rem}.card{position:relative;overflow:hidden;padding:35px;border:2px solid rgba(22,12,5,.12);box-shadow:0 12px 32px rgba(49,25,10,.07)}.card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--brand),var(--brand-light))}.card:hover{transform:translateY(-6px);border-color:var(--ink);box-shadow:9px 9px 0 var(--brand-light)}.card__num{width:42px;height:42px;font-size:.82rem}.card p{font-size:1.05rem;line-height:1.72}.card li{font-size:1.01rem;line-height:1.65;margin:10px 0;padding-left:23px}.card li::before{font-size:1.05em}.tech-step{padding:28px;border:2px solid rgba(22,12,5,.10);box-shadow:6px 6px 0 rgba(246,199,169,.7)}.tech-step:hover{transform:translateY(-4px);border-color:var(--ink);box-shadow:8px 8px 0 var(--brand-light)}.tech-step h3{font-size:1.7rem}.tech-step p,.not-item{font-size:1.02rem;line-height:1.7}.not-item{padding:23px 24px;box-shadow:0 8px 22px rgba(49,25,10,.05)}.project__body{font-size:.94rem}.strand__head span{font-size:.98rem}.module{position:relative;overflow:hidden;padding:29px;background:#fff;border:2px solid rgba(22,12,5,.10);box-shadow:0 9px 25px rgba(49,25,10,.06)}.module::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--brand-light);transition:height .2s ease}.module:hover{transform:translateY(-6px);border-color:var(--brand);box-shadow:8px 8px 0 var(--brand-light)}.module:hover::after{height:7px;background:var(--brand)}.module__num{font-size:.77rem}.module h3{font-size:1.16rem;line-height:1.4}.module p{font-size:1rem;line-height:1.72}.compare__label{font-size:.82rem}.process-step{padding:31px 27px;border:1px solid rgba(255,255,255,.25);border-top:4px solid var(--brand);background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.04));box-shadow:0 14px 32px rgba(0,0,0,.18)}.process-step__num{font-size:.78rem;line-height:1.5}.process-step h3{font-size:1.62rem}.process-step p{font-size:1rem;line-height:1.72}.fit__box{padding:39px;box-shadow:0 10px 28px rgba(49,25,10,.06)}.fit__box--yes{box-shadow:10px 10px 0 var(--brand-light)}.fit li{font-size:1.04rem;line-height:1.68;padding-left:29px}.fit li::before{font-size:1.08em}.team-section{position:relative;overflow:hidden}.team-section::before{content:"H + M";position:absolute;right:-20px;top:20px;font:900 clamp(5rem,14vw,11rem)/1 var(--accent);letter-spacing:-.08em;color:rgba(216,98,42,.055);pointer-events:none}.hosts{gap:32px}.host{box-shadow:10px 10px 0 var(--brand-light)}.host:hover{transform:translateY(-5px);box-shadow:13px 13px 0 var(--brand)}.host>div{padding:30px 32px 34px}.host h3{font-size:2rem}.host__role{font-size:.9rem;letter-spacing:.02em}.host p{font-size:1.04rem;line-height:1.72}.bill{box-shadow:14px 14px 0 var(--brand-light)}.bill__head{font-size:.78rem}.bill__row{font-size:1rem;line-height:1.5;padding:10px 0}.included__row{font-size:1.04rem;line-height:1.65;padding-bottom:14px}.price-box{box-shadow:15px 15px 0 var(--brand)}.price-box__tag{font-size:.76rem}.price-box__regular{font-size:1rem}.price-box__sub{font-size:.94rem}.price-box__note{font-size:.87rem;line-height:1.65}.faq{gap:15px}.faq details{border:2px solid rgba(22,12,5,.10);box-shadow:0 7px 20px rgba(49,25,10,.04)}.faq details[open]{border-color:var(--brand);box-shadow:7px 7px 0 var(--brand-light)}.faq summary{padding:23px 58px 23px 25px;font-size:1.06rem}.faq__answer{padding:0 25px 25px;font-size:1rem;line-height:1.75}@media(max-width:960px){.pain__photo{max-width:560px}.pain__photo figcaption{right:8px}.process-step{padding:28px 25px}}@media(max-width:680px){body{font-size:16px}section{padding:74px 0}.section-head{margin-bottom:42px}.eyebrow{font-size:.76rem}.lead{font-size:1.08rem}.pain__photo{margin:30px 8px 28px 0}.pain__photo figcaption{position:relative;right:auto;bottom:auto;margin:-14px 12px 0 auto;width:calc(100% - 28px)}.for-you__item,.card,.fit__box{padding:25px}.module{padding:25px}.tech-step{padding:24px}.host>div{padding:26px}.faq summary{font-size:1rem}.project__body{font-size:.8rem}}
+.pain__heading{max-width:940px;margin-inline:auto}.pain__grid{grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,76px);align-items:start}.pain__story{position:sticky;top:102px;display:grid;gap:30px}.pain__story .lead{max-width:54ch;font-size:clamp(1.15rem,1.55vw,1.3rem)}.pain__story .pain__photo{margin-top:0}.host__photos{display:grid;grid-template-columns:1.06fr .94fr;height:clamp(310px,32vw,410px);border-bottom:2px solid var(--ink);overflow:hidden}.host__photos img{width:100%;height:100%;object-fit:cover;object-position:center 28%;border:0}.host__photos img+img{border-left:2px solid var(--ink);object-position:center 22%}@media(max-width:960px){.pain__story{position:static}.pain__story .lead{max-width:65ch}.host__photos{height:380px}}@media(max-width:680px){.pain__heading{text-align:center}.host__photos{height:300px}.pain__story{gap:24px}}
+
+/* Zentrierte Abschnitts-Headlines und klarer Abschluss */
+.for-you__head {
+  display: block;
+  max-width: 920px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+.for-you__head h2 { margin-bottom: 0; }
+.for-you__head .lead {
+  max-width: 760px;
+  margin: 24px auto 0;
+}
+.tech { display: block; }
+.tech__copy {
+  max-width: 940px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+.tech__copy .lead {
+  max-width: 780px;
+  margin-inline: auto;
+}
+.tech__steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.footer {
+  background: var(--ink);
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.footer__brand { color: #fff; }
+.footer__links { color: #d8c8ba; }
+.footer__links a:hover { color: var(--brand-light); }
+.footer__copy { color: #a99a8d; }
+@media (max-width: 680px) {
+  .tech__steps { grid-template-columns: 1fr; }
+}
+/* Kompakte Zielgruppen-Sektion mit persönlichem Bild */
+.for-you__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  gap: clamp(44px, 7vw, 88px);
+  align-items: center;
+}
+.for-you__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.for-you__list li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(22,12,5,.16);
+}
+.for-you__list li:first-child { padding-top: 0; }
+.for-you__list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.for-you__list p {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.68;
+}
+.for-you__list strong { color: var(--ink); }
+.for-you__list .for-you__mark {
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+  font-size: .82rem;
+  box-shadow: 3px 3px 0 var(--brand-light);
+}
+.for-you__photo {
+  position: relative;
+  margin: 0 12px 12px 0;
+}
+.for-you__photo::before {
+  content: "";
+  position: absolute;
+  inset: 18px -12px -12px 18px;
+  border-radius: 22px;
+  background: var(--brand);
+}
+.for-you__photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 2px solid var(--ink);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(49,25,10,.15);
+}
+@media (max-width: 960px) {
+  .for-you__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .for-you__photo {
+    width: min(100%, 560px);
+    margin: 0 auto 12px;
+  }
+}
+@media (max-width: 680px) {
+  .for-you__list li {
+    grid-template-columns: 30px 1fr;
+    gap: 13px;
+    padding: 16px 0;
+  }
+  .for-you__list p { font-size: 1rem; }
+  .for-you__photo { width: calc(100% - 12px); }
+}
+/* Kompakter Kartenfächer für den digitalen Zwilling */
+#lieferumfang { overflow: hidden; }
+#lieferumfang .section-head { margin-bottom: clamp(34px, 4vw, 52px); }
+.twin-deck {
+  position: relative;
+  isolation: isolate;
+  width: min(1120px, 100%);
+  height: 500px;
+  margin: 0 auto;
+}
+.twin-card {
+  --x: 0px;
+  --y: 0px;
+  --r: 0deg;
+  --from-x: 0px;
+  --from-r: 0deg;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 300px;
+  min-height: 418px;
+  padding: 30px 28px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.58);
+  border-radius: 25px;
+  box-shadow: 0 24px 48px rgba(49,25,10,.19);
+  opacity: 0;
+  transform: translateX(-50%) translate(var(--from-x), 88px) rotate(var(--from-r)) scale(.86);
+  transition: opacity .42s ease, transform .78s cubic-bezier(.2,.82,.2,1), box-shadow .25s ease;
+  will-change: transform, opacity;
+}
+.twin-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 9%, rgba(255,255,255,.38), transparent 30%), radial-gradient(circle at 84% 82%, rgba(255,255,255,.15), transparent 34%);
+  pointer-events: none;
+}
+.twin-card > * { position: relative; z-index: 1; }
+.twin-deck.in .twin-card {
+  opacity: 1;
+  transform: translateX(-50%) translate(var(--x), var(--y)) rotate(var(--r)) scale(1);
+}
+.twin-card--1 {
+  --x: -360px; --y: 40px; --r: -8deg; --from-x: -650px; --from-r: -18deg;
+  z-index: 1;
+  color: #fff;
+  background: linear-gradient(150deg, #2d7458 0%, #6d9b78 44%, #b6ba78 100%);
+  transition-delay: .06s;
+}
+.twin-card--2 {
+  --x: -120px; --y: 4px; --r: -2.8deg; --from-x: -360px; --from-r: -12deg;
+  z-index: 3;
+  color: #fff;
+  background: linear-gradient(150deg, #713e4f 0%, #a8455b 45%, #e59678 100%);
+  transition-delay: .20s;
+}
+.twin-card--3 {
+  --x: 120px; --y: 4px; --r: 2.8deg; --from-x: 360px; --from-r: 12deg;
+  z-index: 4;
+  color: var(--ink);
+  background: linear-gradient(150deg, #fff8f2 0%, #f6c7a9 52%, #e7895d 100%);
+  transition-delay: .34s;
+}
+.twin-card--4 {
+  --x: 360px; --y: 40px; --r: 8deg; --from-x: 650px; --from-r: 18deg;
+  z-index: 2;
+  color: #fff;
+  background: linear-gradient(150deg, #160c05 0%, #67301a 55%, #d8622a 100%);
+  transition-delay: .48s;
+}
+.twin-card:hover,
+.twin-card:focus-visible {
+  z-index: 10;
+  outline: none;
+  box-shadow: 0 30px 58px rgba(49,25,10,.28);
+  transform: translateX(-50%) translate(var(--x), calc(var(--y) - 16px)) rotate(0deg) scale(1.025);
+}
+.twin-card:focus-visible { box-shadow: 0 0 0 4px var(--paper), 0 0 0 8px var(--brand), 0 30px 58px rgba(49,25,10,.28); }
+.twin-card__num {
+  display: block;
+  margin-bottom: 52px;
+  font: 900 2.8rem/1 var(--accent);
+  letter-spacing: -.07em;
+  opacity: .42;
+}
+.twin-card__kicker {
+  display: block;
+  margin-bottom: 12px;
+  font: 800 .69rem/1.2 var(--accent);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .78;
+}
+.twin-card h3 {
+  margin-bottom: 15px;
+  color: inherit;
+  font: 800 clamp(1.6rem, 2vw, 1.9rem)/1.04 var(--serif);
+  letter-spacing: -.045em;
+}
+.twin-card p {
+  min-height: 67px;
+  margin-bottom: 18px;
+  color: inherit;
+  font-size: .9rem;
+  line-height: 1.55;
+  opacity: .88;
+}
+.twin-card ul { list-style: none; margin: 0; }
+.twin-card li {
+  position: relative;
+  margin: 7px 0;
+  padding-left: 17px;
+  color: inherit;
+  font-size: .78rem;
+  line-height: 1.38;
+  opacity: .92;
+}
+.twin-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 900;
+}
+@media (max-width: 1100px) {
+  .twin-deck { height: 475px; }
+  .twin-card { width: 270px; min-height: 400px; padding: 27px 24px 25px; }
+  .twin-card--1 { --x: -300px; }
+  .twin-card--2 { --x: -100px; }
+  .twin-card--3 { --x: 100px; }
+  .twin-card--4 { --x: 300px; }
+  .twin-card__num { margin-bottom: 43px; }
+  .twin-card h3 { font-size: 1.58rem; }
+}
+@media (max-width: 800px) {
+  #lieferumfang { overflow: hidden; }
+  .twin-deck {
+    display: flex;
+    gap: 18px;
+    width: calc(100vw - 16px);
+    height: auto;
+    margin-left: calc((100vw - 100% - 16px) / -2);
+    padding: 10px 28px 38px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .twin-deck::-webkit-scrollbar { display: none; }
+  .twin-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex: 0 0 min(82vw, 330px);
+    width: auto;
+    min-height: 405px;
+    scroll-snap-align: center;
+    transform: translateY(46px) scale(.94);
+  }
+  .twin-deck.in .twin-card { transform: none; }
+  .twin-card:hover,
+  .twin-card:focus-visible { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .twin-card {
+    opacity: 1 !important;
+    transition: none !important;
+    transform: translateX(-50%) translate(var(--x), var(--y)) rotate(var(--r)) !important;
+  }
+}
+@media (max-width: 800px) and (prefers-reduced-motion: reduce) {
+  .twin-card { transform: none !important; }
+}
+/* Kompakter Business-Desktop mit sichtbaren Dateitypen */
+.business-desktop-section {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+    radial-gradient(circle at 18% 4%, rgba(216,98,42,.20), transparent 28%),
+    radial-gradient(circle at 88% 88%, rgba(168,69,27,.14), transparent 30%),
+    var(--ink);
+  background-size: 34px 34px, 34px 34px, auto, auto, auto;
+}
+.business-desktop__intro { max-width: 940px; }
+.business-desktop-section h2 { color: #fff; }
+.business-desktop-section h2 em { color: var(--brand); }
+.business-desktop-section .lead { color: #d8c8ba; }
+.business-desktop {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 22px;
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 28px 70px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+}
+.business-desktop__bar {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  background: rgba(0,0,0,.22);
+  font: 700 .68rem/1 var(--accent);
+  letter-spacing: .1em;
+  color: #bba99c;
+}
+.desktop-dots { display: flex; gap: 7px; }
+.desktop-dots i { width: 9px; height: 9px; border-radius: 50%; background: #d8622a; }
+.desktop-dots i:nth-child(2) { background: #f2b48c; }
+.desktop-dots i:nth-child(3) { background: #6d9b78; }
+.desktop-path { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.desktop-count {
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  color: #f2b48c;
+  background: rgba(216,98,42,.10);
+}
+.brain-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+  padding: clamp(26px, 3.5vw, 42px);
+}
+.brain-column { position: relative; min-width: 0; }
+.brain-column:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 54%;
+  right: -27px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  color: #f08a4d;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.brain-column__head {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 13px;
+  align-items: end;
+  min-height: 83px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(216,98,42,.55);
+}
+.brain-column__head > span {
+  color: #ef874a;
+  font: 900 3.4rem/.8 var(--accent);
+  letter-spacing: -.08em;
+}
+.brain-column__head h3 {
+  margin: 0 0 4px;
+  color: #fff;
+  font: 800 1.42rem/1 var(--sans);
+  letter-spacing: -.035em;
+}
+.brain-column__head p { color: #ac9d91; font-size: .72rem; line-height: 1.35; }
+.brain-files { display: grid; gap: 12px; }
+.brain-file {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  min-height: 122px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+}
+.brain-file:hover {
+  z-index: 2;
+  transform: translateY(-3px);
+  border-color: rgba(240,138,77,.75);
+  background: linear-gradient(145deg, rgba(216,98,42,.13), rgba(255,255,255,.04));
+  box-shadow: 0 14px 30px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.file-icon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 44px;
+  height: 55px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  border-radius: 7px 7px 8px 8px;
+  color: #fff;
+  font: 900 .52rem/1 var(--accent);
+  letter-spacing: .04em;
+  box-shadow: 0 8px 18px rgba(0,0,0,.23);
+}
+.file-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 13px;
+  height: 13px;
+  background: rgba(255,255,255,.55);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+.file-icon--html { background: linear-gradient(145deg, #ef874a, #a8451b); }
+.file-icon--doc { background: linear-gradient(145deg, #5f8dd8, #28529a); }
+.file-icon--pdf { background: linear-gradient(145deg, #e06761, #9e2925); }
+.brain-file__num {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #ef874a;
+  font: 900 .6rem/1 var(--accent);
+  letter-spacing: .08em;
+}
+.brain-file h4 {
+  overflow-wrap: anywhere;
+  margin-bottom: 5px;
+  color: #fff;
+  font: 700 1rem/1.2 var(--sans);
+  letter-spacing: -.025em;
+}
+.brain-file p { color: #bcaea4; font-size: .75rem; line-height: 1.43; }
+@media (max-width: 960px) {
+  .brain-columns { grid-template-columns: 1fr; gap: 30px; }
+  .brain-column:not(:last-child)::after { display: none; }
+  .brain-files { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .brain-file { grid-template-columns: 1fr; align-content: start; min-height: 205px; }
+  .brain-column__head { min-height: 0; }
+}
+@media (max-width: 680px) {
+  .business-desktop__bar { grid-template-columns: 70px 1fr; padding: 0 15px; }
+  .desktop-path { font-size: .57rem; }
+  .desktop-count { display: none; }
+  .brain-columns { padding: 24px 17px; }
+  .brain-files { grid-template-columns: 1fr; }
+  .brain-file { grid-template-columns: 48px 1fr; min-height: 112px; }
+  .brain-column__head { grid-template-columns: 43px 1fr; }
+  .brain-column__head > span { font-size: 3rem; }
+}
+/* Kompakter Ablauf mit Martin und neue Über-uns-Karten */
+.process-compact { padding: clamp(76px, 8vw, 106px) 0; }
+.process-compact__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(340px, .96fr);
+  gap: clamp(46px, 7vw, 86px);
+  align-items: stretch;
+}
+.process-compact__content { align-self: center; }
+.process-compact .section-head { margin-bottom: 26px; }
+.process-compact h2 {
+  max-width: 720px;
+  font-size: clamp(2.25rem, 4.2vw, 3.7rem);
+  line-height: 1.02;
+}
+.process-compact .lead { max-width: 48ch; font-size: 1.02rem; line-height: 1.65; }
+.process-mini { border-top: 1px solid rgba(255,255,255,.20); }
+.process-mini__step {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 17px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+.process-mini__step > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--brand);
+  font: 900 .78rem/1 var(--accent);
+  box-shadow: 3px 3px 0 rgba(242,180,140,.35);
+}
+.process-mini__label {
+  margin-bottom: 4px;
+  color: #f2b48c;
+  font: 800 .64rem/1.2 var(--accent);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.process-mini__step h3 {
+  margin-bottom: 6px;
+  color: #fff;
+  font: 700 1.28rem/1.2 var(--sans);
+  letter-spacing: -.025em;
+}
+.process-mini__step p { color: #d8c8ba; font-size: .9rem; line-height: 1.58; }
+.process-compact__photo {
+  min-height: 540px;
+  margin: 0 10px 10px 0;
+  border-radius: 24px;
+  background: var(--brand);
+  box-shadow: 10px 10px 0 var(--brand);
+  overflow: hidden;
+}
+.process-compact__photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 2px solid #fff;
+  border-radius: 24px;
+}
+.about-us {
+  background: radial-gradient(circle at 86% 8%, rgba(246,199,169,.28), transparent 28%), var(--warm);
+}
+.about-us__heading { margin-bottom: 92px; }
+.about-us__heading h2 { margin: 0; font-size: clamp(3.5rem, 7vw, 6.2rem); }
+.about-us__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 48px);
+}
+.about-card {
+  position: relative;
+  min-height: 430px;
+  padding: 92px clamp(28px, 4vw, 46px) 40px;
+  border: 1px solid rgba(22,12,5,.12);
+  border-radius: 25px;
+  background: linear-gradient(145deg, #fff, #fdf6f0);
+  box-shadow: 0 16px 38px rgba(49,25,10,.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.about-card:hover { transform: translateY(-5px); box-shadow: 0 23px 48px rgba(49,25,10,.15); }
+.about-card__portrait {
+  position: absolute;
+  top: -64px;
+  left: clamp(28px, 4vw, 46px);
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: center 24%;
+  border: 5px solid var(--brand);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 7px var(--brand-pale), 0 12px 24px rgba(49,25,10,.16);
+}
+.about-card h3 { margin-bottom: 3px; font-size: clamp(2rem, 3.2vw, 3rem); }
+.about-card__handle {
+  margin-bottom: 20px;
+  color: var(--brand-dark);
+  font: 800 .86rem/1.2 var(--accent);
+  letter-spacing: .06em;
+}
+.about-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 27px; }
+.about-card__tags span {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  color: var(--ink-soft);
+  font: 800 .68rem/1 var(--accent);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.about-card > p { color: var(--ink-soft); font-size: 1rem; line-height: 1.78; }
+@media (max-width: 900px) {
+  .process-compact__layout { grid-template-columns: 1fr; }
+  .process-compact__photo { width: min(100%, 620px); min-height: 460px; margin: 0 auto 10px; }
+  .process-compact__photo img { min-height: 460px; }
+}
+@media (max-width: 720px) {
+  .about-us__grid { grid-template-columns: 1fr; gap: 94px; }
+  .about-us__heading { margin-bottom: 88px; }
+  .about-card { min-height: 0; padding: 86px 27px 32px; }
+  .about-card__portrait { left: 27px; width: 120px; height: 120px; }
+}
+@media (max-width: 680px) {
+  .process-compact h2 { font-size: 2.35rem; }
+  .process-compact__photo, .process-compact__photo img { min-height: 390px; }
+  .process-mini__step { grid-template-columns: 37px 1fr; gap: 14px; }
+  .process-mini__step > span { width: 34px; height: 34px; }
+}
+/* Eigenständiges Zitatband zwischen Zielgruppe und Leistungsdarstellung */
+.belief-band {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  color: #fff;
+  background: var(--brand);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.belief-band::before {
+  content: "“";
+  position: absolute;
+  top: -54px;
+  left: clamp(12px, 5vw, 72px);
+  color: rgba(255,255,255,.14);
+  font: 600 clamp(10rem, 20vw, 18rem)/1 var(--serif);
+  pointer-events: none;
+}
+.belief-band .wrap { padding: clamp(38px, 5.5vw, 64px) 24px; }
+.belief-band blockquote {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: balance;
+  font: 600 clamp(1.75rem, 3.5vw, 3.15rem)/1.22 var(--serif);
+  letter-spacing: -.025em;
+}
+@media (max-width: 680px) {
+  .belief-band .wrap { padding: 38px 20px; }
+  .belief-band blockquote { font-size: 1.72rem; }
+}
+/* Drei Strategie-Karten verschmelzen beim Scrollen zum fertigen KI-Betriebssystem */
+.twin-deck-scroll {
+  position: relative;
+  height: 500px;
+  min-height: 0;
+}
+.twin-deck-scroll .twin-deck {
+  position: relative;
+  top: auto;
+}
+.twin-deck-scroll .twin-card {
+  opacity: 0;
+  pointer-events: none;
+  transition: box-shadow .25s ease;
+  transition-delay: 0s;
+}
+.twin-deck-scroll .twin-card--4 { z-index: 8; }
+.twin-deck-scroll .twin-card--3 { z-index: 4; }
+@media (max-width: 800px) {
+  .twin-deck-scroll { height: auto; min-height: 0; }
+  .twin-deck-scroll .twin-deck { position: relative; top: auto; }
+  .twin-deck-scroll .twin-card {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  .twin-deck-scroll .twin-card:hover,
+  .twin-deck-scroll .twin-card:focus-visible { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .twin-deck-scroll { height: auto; min-height: 540px; }
+  .twin-deck-scroll .twin-deck { position: relative; top: auto; }
+  .twin-deck-scroll .twin-card {
+    opacity: 1 !important;
+    pointer-events: auto;
+    transition: none !important;
+    transform: translateX(-50%) translate(var(--x), var(--y)) rotate(var(--r)) !important;
+  }
+}
+@media (max-width: 800px) and (prefers-reduced-motion: reduce) {
+  .twin-deck-scroll { min-height: 0; }
+  .twin-deck-scroll .twin-card { transform: none !important; }
+}/* Korrigiertes Scroll-Deck ohne künstliche Leerstrecke */
+#lieferumfang { padding-bottom: clamp(58px, 6vw, 86px); }
+.section-cta{display:flex;justify-content:center;margin-top:clamp(34px,4.5vw,54px);text-align:center}.section-cta .btn{min-width:min(100%,320px)}.deep .section-cta .btn{border-color:#fff;box-shadow:5px 5px 0 var(--brand-light)}.deep .section-cta .btn:hover{box-shadow:7px 7px 0 var(--brand)}
+@media (max-width: 800px) {
+  .twin-deck-scroll { height: auto; min-height: 0; }
+}</style>
+<noscript><style>.reveal,.stagger>*{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<main id="top">
+<header class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="hero__brand" data-rise="1" aria-label="KI Business Twin – Done for you">
+        <span class="wm"><span class="wm__top" id="wmTop">KI Business</span><span class="wm__main" id="wmMain">Twin</span><span class="wm__bar">Done for you</span></span>
+      </div>
+      <h1 class="hero__sub" data-rise="2">Dein Business: fertig durchdacht und als <em>persönliches KI-Betriebssystem</em> aufgebaut.</h1>
+      <p class="hero__lead" data-rise="3">Wir schärfen deine Positionierung, dein Angebot, deinen Content und deinen Verkaufsweg und bauen daraus dein persönliches KI-Betriebssystem. <strong>Individuell für dein Business und einsatzbereit in 14 Tagen.</strong></p>
+      <div class="hero__cta" data-rise="4">
+        <a class="btn" href="https://copecart.com/products/3b490580/checkout">Meinen Twin erstellen lassen <span aria-hidden="true">→</span></a>
+        <div class="hero__price">Launchpreis: <strong>888 € einmalig</strong> inkl. MwSt.<br>statt später 1.490 €</div>
+      </div>
+      <div class="facts" data-rise="5">
+        <span class="fact">✓ 100 % auf dich abgestimmt</span>
+        <span class="fact">✓ Mit ChatGPT, Claude und allen KI-Modellen nutzbar</span>
+      </div>
+    </div>
+    <div class="hero__visual" data-rise="3">
+      <div class="twin-scene" aria-hidden="true">
+        <div class="twin-box">
+          <div class="twin-box__inner">
+            <div class="twin-box__face twin-box__side"><span>KI Business Twin · Dein KI-Betriebssystem</span></div>
+            <div class="twin-box__face twin-box__front">
+              <div class="twin-box__brand">business.einfach.smart</div>
+              <div class="twin-box__wm"><span>KI Business</span><b>Twin</b><i>Done for you</i></div>
+              <div class="twin-box__meta">Dein persönliches KI-Betriebssystem<br>9 konkrete Ausarbeitungen · Perfekt verzahnt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="pain" aria-labelledby="pain-title">
+  <div class="wrap">
+    <div class="section-head center pain__heading reveal"><div class="eyebrow">Kommt dir das bekannt vor?</div><h2 id="pain-title">Du hast genug Wissen. Aber noch kein <em>System daraus gemacht.</em></h2></div>
+    <div class="pain__grid">
+      <div class="pain__list reveal stagger">
+        <article class="pain__item"><span class="pain__num">01</span><h3>Jeder neue KI-Chat beginnt wieder bei null.</h3></article>
+        <article class="pain__item"><span class="pain__num">02</span><h3>Dein Content kostet zu viel Zeit und klingt trotzdem nicht nach dir.</h3></article>
+        <article class="pain__item"><span class="pain__num">03</span><h3>Positionierung, Angebote und Ideen liegen verteilt in deinem Kopf, Notizen und Dokumenten.</h3></article>
+        <article class="pain__item"><span class="pain__num">04</span><h3>Die KI liefert generische Antworten, weil sie dein Business nicht wirklich kennt.</h3></article>
+        <article class="pain__item"><span class="pain__num">05</span><h3>Statt konsequent umzusetzen, triffst du dieselben strategischen Entscheidungen immer wieder neu.</h3></article>
+      </div>
+      <div class="pain__story reveal"><p class="lead">Du hast bereits ein echtes Angebot, Erfahrung und wertvolles Kundenwissen. Trotzdem kostet es dich im Alltag immer wieder Zeit, daraus klare Kommunikation, relevanten Content und einen verlässlichen Verkaufsweg zu machen.</p><figure class="pain__photo"><img src="img-team.jpg" alt="Hanna Marzian und Martin Thun" loading="lazy"></figure></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="pain__turn reveal">Der KI Business Twin bringt Klarheit in dein Business und macht diese Klarheit direkt für deine tägliche KI-Arbeit nutzbar.</div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Jetzt Business Twin sichern <span aria-hidden="true">→</span></a></div></div>
+</section>
+<div class="quick">
+  <div class="wrap quick__grid">
+    <div class="quick__item"><strong><span class="count" data-target="1">1</span> persönlicher Übergabe-Call</strong><span>Installation, Inbetriebnahme und erste&nbsp;Anwendung.</span></div>
+    <div class="quick__item"><strong><span class="count" data-target="9">9</span> konkrete Ausarbeitungen</strong><span>Perfekt verzahnt und individuell auf dein Business&nbsp;abgestimmt.</span></div>
+    <div class="quick__item"><strong><span class="count" data-target="1">1</span> fertiges KI-Betriebssystem</strong><span>Individuell auf dein Business abgestimmt und mit jedem KI-Modell nutzbar.</span></div>
+    <div class="quick__item"><strong><span class="count" data-target="14">14</span> Tage</strong><span>Bis zu deinem fertigen Business&nbsp;Twin.</span></div>
+  </div>
+</div>
+<section class="for-you tint" aria-labelledby="for-you-title">
+  <div class="wrap">
+    <div class="section-head center for-you__head reveal">
+      <div><h2 id="for-you-title">Der KI Business Twin ist <em>für dich, wenn …</em></h2></div>
+      
+    </div>
+    <div class="for-you__layout">
+      <ul class="for-you__list reveal stagger">
+        <li><span class="for-you__mark">✓</span><p>du als Coach, Experte oder Dienstleister*in tätig bist und <strong>keine klare Strategie für planbare Umsätze</strong> hast.</p></li>
+        <li><span class="for-you__mark">✓</span><p>du KI wirklich so nutzen willst, dass sie dir <strong>mehrere Stunden Zeit spart</strong>, anstatt deinen Fokus zu rauben.</p></li>
+        <li><span class="for-you__mark">✓</span><p>du willst, dass KI dir die mühsamen Arbeiten abnimmt, damit du deine <strong>kreative Energie</strong> in die Aufgaben stecken kannst, für die es wirklich <strong>DICH</strong> braucht.</p></li>
+        <li><span class="for-you__mark">✓</span><p>dein Wissen bisher in deinem Kopf, Notizen und einzelnen Chats verteilt ist und du daraus <strong>ein verlässliches System</strong> machen willst.</p></li>
+        <li><span class="for-you__mark">✓</span><p>du dein Business so aufsetzen möchtest, dass es <strong>mit jeder KI-Innovation wächst</strong>, ohne dass du etwas machen musst.</p></li>
+      </ul>
+      <figure class="for-you__photo reveal">
+        <img src="img-hanna.jpg" alt="Hanna Marzian – Mitgründerin von BUSINESS.EINFACH.SMART" loading="lazy">
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Ja, ich will meinen Twin <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section id="lieferumfang">
+  <div class="wrap">
+    <div class="section-head center reveal"><div class="eyebrow">Was du wirklich erhältst</div><h2>Wir bauen deinen <em>digitalen Zwilling.</em></h2></div>
+    <div class="twin-deck-scroll" data-deck-scroll>
+      <div class="twin-deck" aria-label="Die vier Bestandteile deines digitalen Zwillings">
+        <article class="twin-card twin-card--1" tabindex="0"><span class="twin-card__num">01</span><span class="twin-card__kicker">Branding &amp; Content</span><h3>Branding- &amp;<br>Content-Strategie</h3><p>Eine klare Marke und eine Content-Strategie, die deine Expertise sichtbar macht.</p><ul><li>Positionierung &amp; Kernbotschaft</li><li>Markenstimme &amp; Content-Säulen</li><li>Themenplan &amp; fertige Beiträge</li></ul></article>
+        <article class="twin-card twin-card--2" tabindex="0"><span class="twin-card__num">02</span><span class="twin-card__kicker">Dein Angebot</span><h3>Deine Angebots-<br>strategie</h3><p>Ein Angebot, das klar positioniert ist und für deine Traumkunden verständlich wird.</p><ul><li>Traumkunde &amp; Kaufmotive</li><li>Kernangebot &amp; Produktlogik</li><li>Freebie oder Entry Offer</li></ul></article>
+        <article class="twin-card twin-card--3" tabindex="0"><span class="twin-card__num">03</span><span class="twin-card__kicker">Dein Verkauf</span><h3>Deine Verkaufs-<br>strategie</h3><p>Ein klarer Weg vom ersten Kontakt bis zur Kaufentscheidung.</p><ul><li>Lead-Generierung</li><li>Vertrauensaufbau</li><li>Sales-Prozess</li></ul></article>
+        <article class="twin-card twin-card--4" tabindex="0"><span class="twin-card__num">04</span><span class="twin-card__kicker">Das Ergebnis</span><h3>Dein fertiges KI-<br>Betriebssystem</h3><p>Alle drei Strategien greifen als gemeinsamer KI-Kontext ineinander.</p><ul><li>Flexibel &amp; jederzeit erweiterbar</li><li>Für ChatGPT, Claude &amp; weitere Modelle</li><li>Übergabe &amp; gemeinsamer erster Einsatz</li></ul></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Meinen Twin erstellen lassen <span aria-hidden="true">→</span></a></div></div>
+</section>
+
+<section class="business-desktop-section">
+  <div class="wrap">
+    <div class="section-head business-desktop__intro reveal"><div class="eyebrow">Eine Ebene tiefer:</div><h2>9 konkrete Ausarbeitungen:<br>Klarheit für dich. <em>Kontext für deine KI.</em></h2><p class="lead">Positionierung, Zielgruppe, Angebot, Content, Leads und Verkauf greifen perfekt ineinander. Jede Ausarbeitung übernimmt ihren klaren Teil – gemeinsam geben sie deiner KI den vollständigen Kontext für dein Business.</p></div>
+    <div class="business-desktop reveal">
+      <div class="business-desktop__bar"><span class="desktop-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="desktop-path">KI BUSINESS TWIN / DEIN BUSINESS-SYSTEM</span><span class="desktop-count">9 Ausarbeitungen</span></div>
+      <div class="brain-columns">
+        <div class="brain-column"><div class="brain-column__head"><span>1</span><div><h3>Positionierung</h3><p>Damit Menschen sofort verstehen, wofür du stehst</p></div></div><div class="brain-files stagger">
+          <article class="brain-file"><span class="file-icon file-icon--html" aria-hidden="true">HTML</span><div><span class="brain-file__num">01</span><h4>Brand-Manifest</h4><p>Nische, Positionierung, Kernbotschaft und Markenstimme.</p></div></article>
+          <article class="brain-file"><span class="file-icon file-icon--doc" aria-hidden="true">DOC</span><div><span class="brain-file__num">02</span><h4>Content-Strategie</h4><p>Säulen, Themen und Formate für deine realistischen Ressourcen.</p></div></article>
+          <article class="brain-file"><span class="file-icon file-icon--doc" aria-hidden="true">DOC</span><div><span class="brain-file__num">03</span><h4>Fertige Beiträge</h4><p>Veröffentlichungsfertige Inhalte als Start und Qualitätsreferenz.</p></div></article>
+        </div></div>
+        <div class="brain-column"><div class="brain-column__head"><span>2</span><div><h3>Angebot</h3><p>Damit Interessenten wissen, was sie bei dir kaufen</p></div></div><div class="brain-files stagger">
+          <article class="brain-file"><span class="file-icon file-icon--html" aria-hidden="true">HTML</span><div><span class="brain-file__num">04</span><h4>Angebots-Strategie</h4><p>Produktlogik, Kernangebot und die klare nächste Entscheidung.</p></div></article>
+          <article class="brain-file"><span class="file-icon file-icon--pdf" aria-hidden="true">PDF</span><div><span class="brain-file__num">05</span><h4>Traumkunden-Avatar</h4><p>Kaufsituation, Wünsche, Einwände, Sprache und Motive.</p></div></article>
+          <article class="brain-file"><span class="file-icon file-icon--doc" aria-hidden="true">DOC</span><div><span class="brain-file__num">06</span><h4>Freebie oder Entry Offer</h4><p>Dein konzipierter Einstieg in den passenden Verkaufsweg.</p></div></article>
+        </div></div>
+        <div class="brain-column"><div class="brain-column__head"><span>3</span><div><h3>Sales</h3><p>Damit aus Aufmerksamkeit ein klarer Kundenweg wird</p></div></div><div class="brain-files stagger">
+          <article class="brain-file"><span class="file-icon file-icon--pdf" aria-hidden="true">PDF</span><div><span class="brain-file__num">07</span><h4>Lead-Generierung</h4><p>Priorisierte Wege und nächste Schritte für passende Leads.</p></div></article>
+          <article class="brain-file"><span class="file-icon file-icon--pdf" aria-hidden="true">PDF</span><div><span class="brain-file__num">08</span><h4>Vertrauensaufbau</h4><p>Inhalte und Kontaktpunkte bis zur echten Kaufbereitschaft.</p></div></article>
+          <article class="brain-file"><span class="file-icon file-icon--pdf" aria-hidden="true">PDF</span><div><span class="brain-file__num">09</span><h4>Sales-Prozess</h4><p>Dein klarer Ablauf vom Interesse bis zur Kaufentscheidung.</p></div></article>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Komplettes System sichern <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section class="tint">
+  <div class="wrap">
+    <div class="section-head center reveal"><div class="eyebrow">Der Unterschied im Alltag</div><h2>Das hier schenkt dir<br><em>kostbare Lebenszeit zurück.</em></h2></div>
+    <div class="compare reveal"><div class="compare__col"><div class="compare__label">Ohne Business Twin</div><ul><li>Du öffnest den nächsten leeren Chat – und verbringst wieder wertvolle Zeit damit, dein Business von vorne zu erklären.</li><li>Du kämpfst dich durch generische Texte, die nicht nach dir klingen, überarbeitest sie endlos und löschst am Ende doch alles wieder.</li><li>Content, Angebotsideen und Verkaufsansätze liegen über Notizen, Tabs und alte Chats verstreut. Aus einer kleinen Aufgabe wird jedes Mal ein zäher Kraftakt.</li></ul></div><div class="compare__col"><div class="compare__label">Mit deinem KI-Betriebssystem</div><ul><li><strong>Die KI kennt deine Positionierung, dein Angebot und deine Sprache und liefert eine Grundlage, die wirklich zu dir passt.</strong></li><li><strong>Content, Angebot und Kundengewinnung folgen einem klaren roten Faden statt täglicher Einzelarbeit.</strong></li><li><strong>Du gewinnst Zeit und mentalen Freiraum zurück – für deine Kunden, deine Kreativität und dein Leben außerhalb des Business.</strong></li></ul></div></div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Ich will Zeit zurückgewinnen <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section class="deep process-compact" id="ablauf">
+  <div class="wrap process-compact__layout">
+    <div class="process-compact__content reveal">
+      <div class="section-head"><div class="eyebrow">Ablauf</div><h2>Vom Onboarding zum fertigen Twin in <em>14 Tagen.</em></h2><p class="lead">Sobald dein Fragebogen vollständig vorliegt, starten die 14 Tage. Danach übernehmen wir.</p></div>
+      <div class="process-mini stagger">
+        <article class="process-mini__step"><span>1</span><div><div class="process-mini__label">Schritt 1</div><h3>Fragebogen ausfüllen</h3><p>Du kaufst deinen Twin und beantwortest einmalig die wichtigsten Fragen zu deinem Business. Das dauert ungefähr 10 Minuten.</p></div></article>
+        <article class="process-mini__step"><span>2</span><div><div class="process-mini__label">Schritt 2</div><h3>Wir bauen deinen Twin</h3><p>Wir schärfen Positionierung, Angebot, Content und Verkaufsweg, entwickeln deine neun individuellen Ausarbeitungen und verzahnen alles zu deinem KI-Betriebssystem.</p></div></article>
+        <article class="process-mini__step"><span>3</span><div><div class="process-mini__label">Schritt 3</div><h3>Übergabe-Call</h3><p>Wir installieren und aktivieren den Twin gemeinsam bei dir und starten direkt mit deiner ersten Aufgabe.</p></div></article>
+      </div>
+    </div>
+    <figure class="process-compact__photo reveal"><img src="img-martin.jpg" alt="Martin Thun richtet den KI Business Twin ein" loading="lazy"></figure>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Twin jetzt starten <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="section-head center reveal"><div class="eyebrow">Für Selbstständige mit bestehendem Angebot</div><h2>Für Menschen, die Substanz haben,<br>aber noch kein <em>System daraus gemacht</em> haben.</h2></div>
+    <div class="fit reveal stagger"><div class="fit__box fit__box--yes"><h3>Der Twin passt zu dir, wenn …</h3><ul><li>du bereits Erfahrung, Wissen und ein echtes Angebot mitbringst</li><li>deine Außenwirkung noch nicht zeigt, wie gut du wirklich bist</li><li>du Content und Kundengewinnung nicht jede Woche neu erfinden willst</li><li>du KI nicht nur für einzelne Texte nutzen willst, sondern als mitdenkendes System, das dir bei Strategie, Content und Verkauf täglich Arbeit abnimmt</li><li>du ein individuelles Done-for-you-Fundament statt eines weiteren Kurses suchst</li></ul></div><div class="fit__box"><h3>Der Twin passt nicht, wenn …</h3><ul><li>du noch gar nicht weißt, welches Problem du für wen löst</li><li>du einen autonomen Bot erwartest, der dein Business alleine führt</li><li>du ein Custom GPT oder eine neue SaaS-Software kaufen möchtest</li><li>du laufendes Posting, Ads oder komplette Funnel-Technik erwartest</li><li>du dein System nach der Übergabe nicht verwenden oder pflegen möchtest</li></ul></div></div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Das passt zu mir <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section class="soft about-us">
+  <div class="wrap">
+    <div class="about-us__heading reveal"><div class="eyebrow">Die Menschen hinter deinem Twin</div><h2>Über <em>uns</em></h2></div>
+    <div class="about-us__grid reveal stagger">
+      <article class="about-card"><img class="about-card__portrait" src="hanna-portrait.jpg" alt="Hanna Marzian" loading="lazy"><h3>Hanna Marzian</h3><div class="about-card__handle">@hanna.gpt</div><div class="about-card__tags"><span>Content</span><span>Reichweite</span><span>Instagram</span></div><p>100.000 Instagram-Follower, organisch aufgebaut. Hanna weiß aus eigener Erfahrung, welche Hooks tragen, welche Formate funktionieren und wie aus Ideen Content wird, der Menschen erreicht. Dieses Handwerk fließt in deine Positionierung und dein Content-System ein.</p></article>
+      <article class="about-card"><img class="about-card__portrait" src="martin-portrait.jpg" alt="Martin Thun" loading="lazy"><h3>Martin Thun</h3><div class="about-card__handle">@martin_thun_</div><div class="about-card__tags"><span>KI-Setup</span><span>Technik</span><span>Angebot</span><span>Sales</span></div><p>Sieben Jahre Online-Unternehmer und Gründer der KI-Agentur scale². Martin hat Kundenprojekte und Launches bis 150.000 € begleitet. Er verbindet Angebot, Sales und KI-Setup zu einem System, das nicht nur gut klingt, sondern in deinem Alltag funktioniert.</p></article>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Hanna &amp; Martin bauen meinen Twin <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section class="beige">
+  <div class="wrap anchor__layout">
+    <div class="reveal"><div class="eyebrow">Zum Vergleich</div><h2>Was das woanders <em>kostet.</em></h2><p class="lead">Wenn du dir diese neun spezialisierten Bereiche Stück für Stück bei einer Agentur einkaufst, sieht die Rechnung ungefähr so aus. Beim Twin bekommst du alles aus einer Hand, aufeinander abgestimmt und direkt als KI-Betriebssystem eingebaut.</p></div>
+    <div class="reveal">
+      <div class="bill">
+        <div class="bill__head"><span>Agentur-Einzelposten</span><span>ca.</span></div>
+        <div class="stagger">
+          <div class="bill__row"><span>Positionierung und Angebotsstrategie</span><i></i><b>1.500–2.500 €</b></div>
+          <div class="bill__row"><span>Content-Strategie inkl. Startinhalten</span><i></i><b>1.500–2.000 €</b></div>
+          <div class="bill__row"><span>Lead- und Verkaufsprozess</span><i></i><b>1.000–1.500 €</b></div>
+          <div class="bill__row"><span>Individuelles KI-System aufsetzen</span><i></i><b>1.000–2.000 €</b></div>
+        </div>        <div class="bill__sum"><span>Zusammen</span><i></i><b>5.000–8.000 €</b></div>
+        <div class="bill__stamp"><small>Du zahlst</small><b>888 €</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Jetzt zum Launchpreis sichern <span aria-hidden="true">→</span></a></div></div>
+</section>
+<section id="invest">
+  <div class="wrap price-layout">
+    <div class="reveal"><div class="eyebrow">Deine Investition</div><h2>Launchpreis</h2>
+      <div class="included stagger"><div class="included__row"><span class="check">✓</span><span><b>Strukturiertes Onboarding</b> für deinen vollständigen Business-Kontext</span></div><div class="included__row"><span class="check">✓</span><span><b>Neun perfekt verzahnte Ausarbeitungen</b></span></div><div class="included__row"><span class="check">✓</span><span><b>Einsatzbereites KI-Betriebssystem</b> für ChatGPT und Claude</span></div><div class="included__row"><span class="check">✓</span><span><b>Fertige Startinhalte</b> für deinen direkten Einsatz</span></div><div class="included__row"><span class="check">✓</span><span><b>Persönlicher Übergabe-Call</b> zur Installation innerhalb von 14 Tagen</span></div></div>
+    </div>
+    <div class="price-box reveal"><div class="price-box__tag">Launchpreis</div><div class="price-box__regular">Später regulär <s>1.490 €</s></div><div class="price-box__price">888 €</div><div class="price-box__sub">einmalig · inkl. MwSt. · keine laufende Gebühr an uns</div><a class="btn" href="https://copecart.com/products/3b490580/checkout">Ich will meinen Twin <span aria-hidden="true">→</span></a><p class="price-box__note">Sichere Zahlungsabwicklung über CopeCart. Direkt nach dem Kauf erhältst du dein Onboarding. Sobald deine Angaben und Ausgangsmaterialien vollständig sind, starten wir mit der Umsetzung und koordinieren deinen persönlichen Übergabe-Call.</p></div>
+  </div>
+</section>
+<section class="soft" id="faq">
+  <div class="narrow">
+    <div class="section-head center reveal"><div class="eyebrow">Häufige Fragen</div><h2>Bevor du dich entscheidest.</h2></div>
+    <div class="faq reveal stagger">
+      <details><summary>Wie geht es nach dem Kauf weiter?</summary><div class="faq__answer">Direkt nach dem Kauf erhältst du eine Bestätigungsmail mit deinem Onboarding-Formular. Sobald deine Angaben und die vereinbarten Ausgangsmaterialien vollständig vorliegen, entwickeln wir deinen Twin innerhalb von 14 Tagen. Anschließend installieren und aktivieren wir das Setup gemeinsam im persönlichen Übergabe-Call.</div></details>
+      <details><summary>Ist der KI Business Twin ein Custom GPT oder ein echtes Betriebssystem?</summary><div class="faq__answer">Nein. „KI-Betriebssystem“ beschreibt die Funktion für dein Business, keine neue Software für deinen Computer. Du erhältst ein individuell entwickeltes Wissens- und Arbeitssystem, das für ChatGPT, Claude und weitere KI-Modelle vorbereitet ist. Du bekommst kein Custom GPT und keinen neuen Chatbot.</div></details>
+      <details><summary>Liest die KI automatisch mein komplettes Business?</summary><div class="faq__answer">Dein Twin stellt der jeweiligen KI den passenden Business-Kontext für deine Aufgabe bereit. Dadurch kann sie Positionierung, Zielgruppe, Angebot und Sprache berücksichtigen. Der Twin ist keine dauerhafte Modellprogrammierung, sondern ein flexibles, mitwachsendes Wissens- und Arbeitssystem.</div></details>
+      <details><summary>Bleibt mein Business Twin in meiner Hand?</summary><div class="faq__answer">Ja. Du erhältst das vollständige System und kannst dein Business-Wissen jederzeit anpassen und erweitern. Wenn du eine KI für eine Aufgabe nutzt, werden die dafür relevanten Inhalte nach den Bedingungen des gewählten KI-Anbieters verarbeitet.</div></details>
+      <details><summary>Welche Version von ChatGPT oder Claude brauche ich?</summary><div class="faq__answer">Du benötigst für die von uns vorgesehene Nutzung einen kostenpflichtigen Tarif, zum Beispiel ChatGPT Plus/Pro beziehungsweise Claude Pro oder einen vergleichbaren Business-Tarif. Du zahlst keine laufende Gebühr an uns. Die Kosten und Nutzungslimits des gewählten KI-Anbieters sind nicht im Kaufpreis enthalten.</div></details>
+      <details><summary>Kann ich auch andere KI-Modelle verwenden?</summary><div class="faq__answer">Ja. Das System ist bewusst nicht an einen einzelnen Anbieter gebunden. Über eine kompatible KI-Arbeitsumgebung wie OpenCode kannst du deinen Twin auch mit weiteren unterstützten KI-Modellen verwenden. Je nach gewähltem Anbieter können zusätzliche Nutzungskosten entstehen.</div></details>
+
+      <details><summary>Wann erhalte ich meinen Twin?</summary><div class="faq__answer">Innerhalb von 14 Tagen, sobald dein Onboarding abgeschlossen ist und uns alle vereinbarten Ausgangsmaterialien vollständig vorliegen. Zum Abschluss findet der persönliche Übergabe-Call statt.</div></details>
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="narrow reveal"><div class="eyebrow">Dein nächster Schritt</div><h2>Hör auf, deiner KI dein Business immer wieder <em>neu zu erklären.</em></h2><p class="lead">Lass es einmal sauber ausarbeiten und als System aufbauen. In 14 Tagen hast du dein persönliches KI-Betriebssystem, das deine Strategie zusammenhält und mit dir weiterwachsen kann.</p><a class="btn btn--dark" href="https://copecart.com/products/3b490580/checkout">Ich will meinen Twin <span aria-hidden="true">→</span></a></div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer__brand">BUSINESS<span>.</span>EINFACH<span>.</span>SMART</div><div>Hanna Marzian × Martin Thun</div><div class="footer__links"><a href="https://www.business-einfach-smart.com/impressum.html">Impressum</a><a href="https://www.business-einfach-smart.com/datenschutz.html">Datenschutz</a><a href="https://www.business-einfach-smart.com/agb.html">AGB</a></div><div class="footer__copy">© 2026 Hanna Marzian &amp; Martin Thun · Alle Rechte vorbehalten</div></div></footer>
+<script>
+(function(){
+  window.addEventListener('load',function(){document.documentElement.classList.add('loaded')});
+  function fitWordmark(){
+    var top=document.getElementById('wmTop'),main=document.getElementById('wmMain');
+    if(!top||!main)return;
+    top.style.letterSpacing='0px';top.style.marginRight='0px';
+    var target=main.getBoundingClientRect().width,natural=top.getBoundingClientRect().width,chars=top.textContent.trim().length;
+    if(!target||!natural||!chars)return;
+    var extra=(target-natural)/chars;
+    top.style.letterSpacing=extra.toFixed(3)+'px';top.style.marginRight=(-extra).toFixed(3)+'px';
+  }
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitWordmark)}
+  window.addEventListener('load',fitWordmark);
+  window.addEventListener('resize',function(){clearTimeout(window.__twinWordmarkTimer);window.__twinWordmarkTimer=setTimeout(fitWordmark,120)});
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO='IntersectionObserver' in window;
+  var items=document.querySelectorAll('.reveal');
+  if(!hasIO||reduced){items.forEach(function(el){el.classList.add('in')})}
+  else{
+    var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+    items.forEach(function(el){observer.observe(el)});
+  }
+  var counters=document.querySelectorAll('.count');
+  if(counters.length&&hasIO&&!reduced){
+    var buildSlots=function(el){
+      var target=String(el.getAttribute('data-target')||'0');
+      el.textContent='';
+      var reels=[];
+      target.split('').forEach(function(d){
+        var digit=parseInt(d,10);
+        var slot=document.createElement('span');slot.className='slot';
+        var reel=document.createElement('span');reel.className='slot__reel';
+        for(var n=0;n<=9;n++){var b=document.createElement('b');b.textContent=n;reel.appendChild(b)}
+        for(var m=0;m<=digit;m++){var b2=document.createElement('b');b2.textContent=m;reel.appendChild(b2)}
+        slot.appendChild(reel);el.appendChild(slot);
+        reels.push({reel:reel,steps:10+digit});
+      });
+      return reels;
+    };
+    var spin=function(el){
+      var reels=buildSlots(el);
+      requestAnimationFrame(function(){requestAnimationFrame(function(){
+        reels.forEach(function(r,i){
+          r.reel.style.transitionDelay=(i*140)+'ms';
+          r.reel.style.transform='translateY(-'+(r.steps*1.06)+'em)';
+        });
+      })});
+    };
+    var cObs=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){cObs.unobserve(en.target);spin(en.target)}})},{threshold:.6});
+    counters.forEach(function(c){cObs.observe(c)});
+  }
+})();
+</script>
+<script>
+(function(){
+  var scene=document.querySelector('[data-deck-scroll]');
+  if(!scene)return;
+  var cards=Array.prototype.slice.call(scene.querySelectorAll('.twin-card'));
+  if(cards.length<4)return;
+  var mobile=window.matchMedia('(max-width: 800px)');
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var ticking=false;
+  function clamp(value){return Math.max(0,Math.min(1,value))}
+  function smooth(value){var t=clamp(value);return t*t*(3-2*t)}
+  function lerp(from,to,amount){return from+(to-from)*amount}
+  function setCard(card,x,y,rotation,scale,opacity){
+    card.style.opacity=opacity.toFixed(3);
+    card.style.transform='translateX(-50%) translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px) rotate('+rotation.toFixed(2)+'deg) scale('+scale.toFixed(3)+')';
+    card.style.pointerEvents=opacity>.72?'auto':'none';
+    card.setAttribute('aria-hidden',opacity>.08?'false':'true');
+  }
+  function clearDeck(){
+    cards.forEach(function(card){card.style.opacity='';card.style.transform='';card.style.pointerEvents='';card.removeAttribute('aria-hidden')});
+  }
+  function updateDeck(){
+    ticking=false;
+    if(mobile.matches||reduced.matches){clearDeck();return}
+    var rect=scene.getBoundingClientRect();
+    var viewport=window.innerHeight||document.documentElement.clientHeight;
+    var start=viewport*.88;
+    var end=viewport*.18;
+    var progress=clamp((start-rect.top)/Math.max(start-end,1));
+    var compact=window.innerWidth<=1100;
+    var fanX=compact?[-300,-100,100]:[-360,-120,120];
+    var fanY=[40,4,4];
+    var fanR=[-8,-2.8,2.8];
+    var merge=smooth((progress-.66)/.22);
+    var vanish=smooth((progress-.75)/.19);
+    cards.slice(0,3).forEach(function(card,index){
+      var reveal=smooth((progress-(.03+index*.12))/.13);
+      var openX=lerp(fanX[index]*1.65,fanX[index],reveal);
+      var openY=lerp(92,fanY[index],reveal);
+      var x=lerp(openX,0,merge);
+      var y=lerp(openY,18,merge);
+      var rotation=lerp(fanR[index]*1.5,fanR[index],reveal)*(1-merge);
+      var scale=lerp(.84,1,reveal);
+      scale=lerp(scale,.86,merge);
+      setCard(card,x,y,rotation,scale,reveal*(1-vanish));
+    });
+    var result=smooth((progress-.83)/.17);
+    setCard(cards[3],0,lerp(58,0,result),0,lerp(.78,1,result),result);
+  }
+  function requestUpdate(){if(!ticking){ticking=true;requestAnimationFrame(updateDeck)}}
+  window.addEventListener('scroll',requestUpdate,{passive:true});
+  window.addEventListener('resize',requestUpdate);
+  window.addEventListener('load',requestUpdate);
+  if(mobile.addEventListener){mobile.addEventListener('change',requestUpdate);reduced.addEventListener('change',requestUpdate)}
+  updateDeck();
+})();
+</script></body>
+</html>
