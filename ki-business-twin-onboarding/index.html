@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI Business Twin · Dein Onboarding</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#160C05">
+<!-- ═══════════════════════════════════════════════════════════════
+     VOR LIVEGANG AUSFÜLLEN. Suche im Code nach "TODO"
+     1. WEB3FORMS_ACCESS_KEY  : Key von web3forms.com eintragen
+     2. BOOKING_URL           : Link zur Kickoff-Terminbuchung
+     3. TELEGRAM_HANDLE       : @martin_businesseinfachsmart (eingetragen)
+     Ziel: business-einfach-smart.com/twin-onboarding/
+     Dateiname im Repo: twin-onboarding/index.html
+     ═══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,600&family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#D8622A; --brand-dark:#A8451B; --brand-light:#F6C7A9; --brand-pale:#FFF2E9;
+  --ink:#160C05; --ink-soft:#59463A; --muted:#7A6A5A; --line:#E5D9CC;
+  --paper:#FFFFFF; --warm:#FDFAF6; --warm-2:#F6EFE6; --cream:#F9F1E7;
+  --serif:'Cormorant',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --accent:'Montserrat',system-ui,sans-serif;
+  --shadow:0 18px 50px rgba(49,25,10,.10); --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(circle at 88% 2%,rgba(216,98,42,.13),transparent 30%),
+             linear-gradient(175deg,#fff 0%,var(--warm) 100%);
+  background-attachment:fixed;min-height:100vh}
+a{color:var(--brand-dark)}
+.wrap{width:min(760px,calc(100% - 40px));margin-inline:auto}
+
+/* ---------- Header ---------- */
+.top{padding:44px 0 30px;text-align:center}
+.wm{font-family:var(--accent);text-transform:uppercase;display:inline-block;line-height:1}
+.wm__top{display:block;font-size:.86rem;font-weight:800;letter-spacing:.2em;color:var(--brand-dark);margin-bottom:.3em}
+.wm__main{display:block;font-size:clamp(3rem,9vw,4.4rem);font-weight:900;line-height:.85;letter-spacing:-.045em;
+  color:var(--ink);text-shadow:.05em .05em 0 var(--brand-light),.1em .1em 0 var(--brand-pale)}
+.wm__bar{display:block;margin-top:12px;background:var(--ink);color:var(--cream);
+  font:700 .6rem/1 var(--accent);letter-spacing:.36em;text-indent:.36em;
+  text-transform:uppercase;text-align:center;padding:9px 8px 8px}
+
+/* ---------- Intro ---------- */
+.intro{background:var(--paper);border:2px solid var(--ink);border-radius:var(--radius);
+  box-shadow:8px 8px 0 var(--brand-light);padding:clamp(24px,4vw,36px);margin-bottom:34px}
+.intro h1{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.08;
+  letter-spacing:-.02em;font-weight:600;margin-bottom:14px}
+.intro h1 em{color:var(--brand);font-style:italic}
+.intro p{color:var(--ink-soft);font-size:1.02rem;margin-bottom:12px}
+.intro p:last-child{margin-bottom:0}
+.intro strong{color:var(--ink)}
+.steps{display:grid;gap:10px;margin:20px 0 4px;padding:18px 20px;
+  background:var(--brand-pale);border-radius:11px;border:1px solid var(--brand-light)}
+.steps div{display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:start;font-size:.93rem;color:var(--ink-soft)}
+.steps b{display:grid;place-items:center;width:23px;height:23px;border-radius:7px;
+  background:var(--brand);color:#fff;font:800 .68rem var(--accent);margin-top:2px}
+
+/* ---------- Sections ---------- */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(22px,3.5vw,32px);margin-bottom:22px;box-shadow:var(--shadow)}
+.sec-head{display:flex;align-items:center;gap:13px;margin-bottom:5px}
+.sec-num{display:grid;place-items:center;flex:0 0 auto;width:36px;height:36px;border-radius:10px;
+  background:var(--ink);color:var(--cream);font:900 .76rem var(--accent)}
+.sec-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:-.01em;line-height:1.15}
+.sec-hint{font-size:.9rem;color:var(--muted);margin:0 0 22px 49px}
+@media(max-width:620px){.sec-hint{margin-left:0}}
+
+.f{margin-bottom:21px}
+.f:last-child{margin-bottom:0}
+label{display:block;font-weight:600;font-size:.96rem;line-height:1.4}
+.req{color:var(--brand);font-weight:700}
+.hint{display:block;font-weight:400;font-size:.85rem;color:var(--muted);margin-top:3px;line-height:1.5}
+input[type=text],input[type=email],textarea,select{
+  width:100%;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--warm);
+  border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;transition:.15s ease;margin-top:7px}
+textarea{resize:vertical;min-height:96px;line-height:1.6}
+textarea.tall{min-height:150px}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--brand);
+  background:#fff;box-shadow:0 0 0 3px rgba(216,98,42,.13)}
+input::placeholder,textarea::placeholder{color:#B5A695}
+select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237A6A5A' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;background-size:17px;padding-right:40px}
+
+/* Zwei Spalten: Eingabefelder sitzen immer auf gleicher Höhe,
+   auch wenn ein Label zweizeilig ist und das andere nicht */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;margin-bottom:21px}
+.grid2:last-child{margin-bottom:0}
+.grid2 .f{display:flex;flex-direction:column;margin-bottom:0}
+.grid2 .f > input,.grid2 .f > select,.grid2 .f > textarea{margin-top:auto}
+@media(max-width:620px){
+  .grid2{grid-template-columns:1fr;gap:21px}
+  .grid2 .f > input,.grid2 .f > select,.grid2 .f > textarea{margin-top:7px}
+}
+
+.optional-note{display:flex;gap:11px;padding:14px 16px;margin-bottom:22px;border-radius:11px;
+  background:var(--warm-2);border:1px solid var(--line);font-size:.9rem;color:var(--ink-soft);line-height:1.55}
+.optional-note span{flex:0 0 auto;font-size:1.05rem}
+
+/* ---------- Submit ---------- */
+.submit-zone{text-align:center;padding:12px 0 60px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;
+  border:2px solid var(--ink);border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;
+  font-family:var(--accent);font-weight:800;font-size:.92rem;letter-spacing:.02em;
+  padding:17px 34px;box-shadow:5px 5px 0 var(--ink);transition:.18s ease}
+.btn:hover:not(:disabled){transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);background:var(--brand-dark)}
+.btn:disabled{opacity:.6;cursor:wait}
+.submit-hint{font-size:.88rem;color:var(--muted);margin-top:15px}
+.err{display:none;margin-top:16px;padding:13px 16px;border-radius:10px;
+  background:#FDECEA;border:1px solid #F5C6C0;color:#932c22;font-size:.92rem}
+.err.show{display:block}
+
+/* ---------- Success ---------- */
+.success{display:none;text-align:center;padding:60px 0 80px}
+.success.show{display:block}
+.success__box{background:var(--paper);border:2px solid var(--ink);border-radius:var(--radius);
+  box-shadow:10px 10px 0 var(--brand-light);padding:clamp(30px,5vw,48px)}
+.success__mark{width:64px;height:64px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;
+  background:var(--brand);color:#fff;font-size:1.9rem;border:2px solid var(--ink)}
+.success h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.5rem);font-weight:600;
+  line-height:1.1;margin-bottom:14px}
+.success p{color:var(--ink-soft);max-width:46ch;margin:0 auto 12px}
+.success .btn{margin-top:24px}
+
+/* ---------- Footer ---------- */
+footer{text-align:center;padding:0 0 46px;font-size:.82rem;color:var(--muted);line-height:1.7}
+footer b{font-family:var(--accent);font-weight:900;letter-spacing:.04em;color:var(--ink-soft)}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <span class="wm">
+      <span class="wm__top">KI Business</span>
+      <span class="wm__main">Twin</span>
+      <span class="wm__bar">Onboarding</span>
+    </span>
+  </div>
+
+  <div id="formArea">
+
+    <div class="intro">
+      <h1>Willkommen. Jetzt bauen wir <em>deinen Twin.</em></h1>
+      <p>Schön, dass du dabei bist. Damit wir dein KI-Betriebssystem wirklich individuell für dich ausarbeiten können, brauchen wir zuerst ein klares Bild von deinem Business.</p>
+      <p><strong>Antworte so konkret wie möglich.</strong> Lieber ein ehrlicher Halbsatz als eine schöne Formulierung, die nicht stimmt. Was hier reinkommt, ist die Grundlage für alles, was wir dir bauen.</p>
+
+      <div class="steps">
+        <div><b>1</b><span>Du füllst dieses Formular aus (ca. 15 Minuten)</span></div>
+        <div><b>2</b><span>Du buchst direkt im Anschluss deinen persönlichen Kickoff-Call</span></div>
+        <div><b>3</b><span>Ab dem Kickoff bauen wir deinen Twin und übergeben ihn dir innerhalb von 30 Tagen</span></div>
+      </div>
+    </div>
+
+    <form id="onboardingForm" novalidate>
+
+      <!-- TODO 1: Access Key von web3forms.com eintragen -->
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="Neues Twin-Onboarding eingegangen">
+      <input type="hidden" name="from_name" value="KI Business Twin Onboarding">
+      <input type="hidden" name="Produkt" value="KI Business Twin">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+      <!-- ══════════ 01 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Wer du bist</h2></div>
+        <p class="sec-hint">Damit wir dich der Bestellung zuordnen und dich erreichen können.</p>
+
+        <div class="grid2">
+          <div class="f">
+            <label for="name">Dein Name <span class="req">*</span></label>
+            <input type="text" id="name" name="Name" required autocomplete="name">
+          </div>
+          <div class="f">
+            <label for="email">E-Mail-Adresse <span class="req">*</span>
+              <span class="hint">Bitte dieselbe wie beim Kauf.</span></label>
+            <input type="email" id="email" name="E-Mail" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="f">
+            <label for="instagram">Dein Instagram-Account <span class="req">*</span></label>
+            <input type="text" id="instagram" name="Instagram" placeholder="@deinaccount" required>
+          </div>
+          <div class="f">
+            <label for="selbststaendig">Wie lange bist du selbstständig?</label>
+            <select id="selbststaendig" name="Dauer Selbststaendigkeit">
+              <option value="">Bitte wählen</option>
+              <option>Noch im Aufbau oder nebenberuflich</option>
+              <option>Unter 1 Jahr</option>
+              <option>1 bis 3 Jahre</option>
+              <option>3 bis 5 Jahre</option>
+              <option>Über 5 Jahre</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="kanaele">Welche weiteren Kanäle hast du?
+            <span class="hint">Website, Newsletter, YouTube, LinkedIn, TikTok, Podcast. Gerne mit Link.</span></label>
+          <textarea id="kanaele" name="Weitere Kanaele"></textarea>
+        </div>
+      </section>
+
+      <!-- ══════════ 02 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Dein Business heute</h2></div>
+        <p class="sec-hint">Der ehrliche Ist-Zustand. Hier wird nichts bewertet.</p>
+
+        <div class="f">
+          <label for="hauptangebot">Was ist dein aktuelles Hauptangebot? <span class="req">*</span>
+            <span class="hint">Name, Format, Preis. Und was davon bringt dir den größten Umsatzanteil?</span></label>
+          <textarea id="hauptangebot" name="Hauptangebot" required></textarea>
+        </div>
+
+        <div class="f">
+          <label for="umsatz">Wo stehst du umsatztechnisch aktuell?
+            <span class="hint">Monatlich oder jährlich, und woraus setzt es sich zusammen (1:1, Kurs, Produkt, Dienstleistung)?</span></label>
+          <textarea id="umsatz" name="Umsatz aktuell"></textarea>
+        </div>
+
+        <div class="grid2">
+          <div class="f">
+            <label for="kunden">Wie viele Kunden betreust du aktuell aktiv?</label>
+            <input type="text" id="kunden" name="Aktive Kunden">
+          </div>
+          <div class="f">
+            <label for="stunden">Stunden pro Woche fürs Business?</label>
+            <input type="text" id="stunden" name="Stunden pro Woche">
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="kundengewinnung">Wie gewinnst du aktuell neue Kunden? <span class="req">*</span>
+            <span class="hint">Woher kommt der größte Teil? Instagram, Empfehlungen, Newsletter, Webinar?</span></label>
+          <textarea id="kundengewinnung" name="Kundengewinnung" required></textarea>
+        </div>
+      </section>
+
+      <!-- ══════════ 03 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Positionierung &amp; Kunden</h2></div>
+        <p class="sec-hint">Die Basis für dein Brand-Manifest. Roh reicht, wir schärfen im Call nach.</p>
+
+        <div class="f">
+          <label for="positionierung">Deine Positionierung in einem Satz <span class="req">*</span>
+            <span class="hint">Wofür stehst du, für wen? Auch wenn er noch nicht sitzt.</span></label>
+          <textarea id="positionierung" name="Positionierung" required></textarea>
+        </div>
+
+        <div class="f">
+          <label for="kernprobleme">Welche 1 bis 3 Kernprobleme deiner Kunden löst du? <span class="req">*</span>
+            <span class="hint">Bring es auf den Punkt, unter 10 Wörter je Problem.</span></label>
+          <textarea id="kernprobleme" name="Kernprobleme" required></textarea>
+        </div>
+
+        <div class="f">
+          <label for="traumkunde">Wer ist dein Traumkunde?
+            <span class="hint">Nicht nur Demografie: Wie tickt die Person, was ist ihre Situation, wovon hat sie die Nase voll?</span></label>
+          <textarea id="traumkunde" name="Traumkunde"></textarea>
+        </div>
+
+        <div class="f">
+          <label for="unterschied">Was unterscheidet dich von anderen in deinem Markt?
+            <span class="hint">Auch das, was du selbst für „normal" hältst. Oft steckt genau da dein USP.</span></label>
+          <textarea id="unterschied" name="Unterschied zum Markt"></textarea>
+        </div>
+      </section>
+
+      <!-- ══════════ 04 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Content &amp; Verkauf</h2></div>
+        <p class="sec-hint">Grundlage für Content-Strategie, Beiträge und Sales-Prozess.</p>
+
+        <div class="f">
+          <label for="content">Was postest du aktuell, und was funktioniert davon?
+            <span class="hint">Formate, Themen. Und wo du merkst, dass es ins Leere läuft.</span></label>
+          <textarea id="content" name="Content aktuell"></textarea>
+        </div>
+
+        <div class="f">
+          <label for="kaufweg">Wie kaufen deine Kunden aktuell? <span class="req">*</span>
+            <span class="hint">DM, Salespage, Kennenlern-Call, direkter Checkout?</span></label>
+          <textarea id="kaufweg" name="Kaufweg" required></textarea>
+        </div>
+
+        <div class="grid2">
+          <div class="f">
+            <label for="freebie">Hast du ein Freebie oder Einstiegsangebot?</label>
+            <input type="text" id="freebie" name="Freebie" placeholder="Ja, welches? Oder: nein">
+          </div>
+          <div class="f">
+            <label for="liste">E-Mail-Liste vorhanden?</label>
+            <input type="text" id="liste" name="E-Mail-Liste" placeholder="Größe, oder: nein">
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="ergebnisse">Deine stärksten Kundenergebnisse bisher
+            <span class="hint">So konkret wie möglich: Ausgangslage, Zeitraum, Resultat. Das brauchen wir für Social Proof.</span></label>
+          <textarea id="ergebnisse" name="Kundenergebnisse"></textarea>
+        </div>
+      </section>
+
+      <!-- ══════════ 05 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Technik &amp; KI</h2></div>
+        <p class="sec-hint">Damit wir dein KI-Betriebssystem auf dein Setup abstimmen.</p>
+
+        <div class="f">
+          <label for="tools">Dein technisches Setup <span class="req">*</span>
+            <span class="hint">Alle relevanten Tools: KI, CRM, E-Mail, Payment, Kursplattform, Design, Video.</span></label>
+          <textarea id="tools" name="Tech Setup" required></textarea>
+        </div>
+
+        <div class="grid2">
+          <div class="f">
+            <label for="ki_level">Wie erfahren bist du mit KI-Tools? <span class="req">*</span></label>
+            <select id="ki_level" name="KI Erfahrung" required>
+              <option value="">Bitte wählen</option>
+              <option>Neueinsteiger</option>
+              <option>Gelegentlich, ChatGPT hin und wieder</option>
+              <option>Regelmäßig im Arbeitsalltag</option>
+              <option>Fortgeschritten, eigene Workflows und Prompts</option>
+            </select>
+          </div>
+          <div class="f">
+            <label for="ki_abo">Welchen KI-Zugang hast du aktuell? <span class="req">*</span>
+              <span class="hint">Für dein Twin brauchst du einen kostenpflichtigen Tarif, z.&nbsp;B. ChatGPT Plus oder Claude Pro.</span></label>
+            <select id="ki_abo" name="KI Zugang" required>
+              <option value="">Bitte wählen</option>
+              <option>ChatGPT Plus oder Pro</option>
+              <option>Claude Pro oder Max</option>
+              <option>Beides</option>
+              <option>Aktuell nur Gratis-Version</option>
+              <option>Noch gar keinen</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="f">
+          <label for="ki_erfahrung">Was hast du mit KI bisher probiert? Was hat funktioniert, was nicht?</label>
+          <textarea id="ki_erfahrung" name="KI Erfahrungen"></textarea>
+        </div>
+      </section>
+
+      <!-- ══════════ 06 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Ziel &amp; Engpass</h2></div>
+        <p class="sec-hint">Damit wir wissen, worauf wir das ganze System ausrichten.</p>
+
+        <div class="f">
+          <label for="ziel">Wo willst du hin? <span class="req">*</span>
+            <span class="hint">Konkret mit Zeitangabe, monatlich oder jährlich.</span></label>
+          <textarea id="ziel" name="Ziel" required></textarea>
+        </div>
+
+        <div class="f">
+          <label for="engpass">Was ist gerade dein größter Engpass? <span class="req">*</span>
+            <span class="hint">Zeit, Reichweite, Content, Sales, unklares Angebot, Technik-Chaos, etwas anderes?</span></label>
+          <textarea id="engpass" name="Engpass" required></textarea>
+        </div>
+
+        <div class="f">
+          <label for="erfolg">Woran würdest du in 30 Tagen merken, dass sich der Twin gelohnt hat?</label>
+          <textarea id="erfolg" name="Erfolgskriterium"></textarea>
+        </div>
+      </section>
+
+      <!-- ══════════ 07 ══════════ -->
+      <section class="card">
+        <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Alles andere</h2></div>
+        <p class="sec-hint">Optional, aber je mehr wir haben, desto besser wird dein Twin.</p>
+
+        <div class="optional-note">
+          <span>💬</span>
+          <div>Du musst hier nichts Ausformuliertes abliefern. <strong>Roh und ungeordnet ist genau richtig.</strong>
+          Wenn du lieber sprichst als schreibst: schick uns stattdessen eine Sprachnachricht per Telegram an
+          <strong>@martin_businesseinfachsmart</strong>. Auch zehn Minuten Gerede helfen uns mehr als drei perfekte Sätze.</div>
+        </div>
+
+        <div class="f">
+          <label for="rohinput">Was sollten wir sonst noch über dich und dein Business wissen?
+            <span class="hint">Alles, was dir im Kopf rumgeht: Ideen, Pläne, Frust, Lieblingskunden, Sätze die du oft sagst, Dinge die du niemals sagen würdest.</span></label>
+          <textarea id="rohinput" name="Rohinput" class="tall"></textarea>
+        </div>
+
+        <div class="f">
+          <label for="material">Links zu vorhandenem Material
+            <span class="hint">Salespages, bestehende Strategiedokumente, Notion-Seiten, Google Docs, Markenleitfäden. Bitte auf Zugriff achten.</span></label>
+          <textarea id="material" name="Material Links"></textarea>
+        </div>
+      </section>
+
+      <div class="submit-zone">
+        <button type="submit" class="btn" id="submitBtn">
+          Onboarding absenden <span aria-hidden="true">&rarr;</span>
+        </button>
+        <div class="err" id="errBox"></div>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ══════════ Erfolg ══════════ -->
+  <div class="success" id="successArea">
+    <div class="success__box">
+      <div class="success__mark">✓</div>
+      <h2>Angekommen. Jetzt dein Kickoff.</h2>
+      <p>Wir haben deine Antworten. Der nächste Schritt ist dein persönlicher Kickoff-Call. <strong>Ab diesem Termin laufen deine 30 Tage.</strong></p>
+      <p>Buch dir am besten gleich einen Slot, dann geht es sofort los.</p>
+      <!-- TODO 2: Buchungslink eintragen -->
+      <a class="btn" href="BOOKING_URL" id="bookingBtn">Kickoff-Call buchen <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <b>BUSINESS.EINFACH.SMART</b><br>
+    Hanna Marzian &amp; Martin Thun<br>
+    © 2026 · Alle Rechte vorbehalten
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('onboardingForm');
+  var btn  = document.getElementById('submitBtn');
+  var err  = document.getElementById('errBox');
+
+  function fail(msg){
+    err.textContent = msg;
+    err.classList.add('show');
+    btn.disabled = false;
+    btn.innerHTML = 'Onboarding absenden <span aria-hidden="true">&rarr;</span>';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.classList.remove('show');
+
+    var missing = null;
+    var required = form.querySelectorAll('[required]');
+    for (var i = 0; i < required.length; i++){
+      if (!required[i].value.trim()){ missing = required[i]; break; }
+    }
+    if (missing){
+      missing.focus();
+      missing.scrollIntoView({behavior:'smooth', block:'center'});
+      return fail('Bitte fülle noch die markierten Pflichtfelder aus.');
+    }
+    var mail = document.getElementById('email');
+    if (mail.value.indexOf('@') < 1 || mail.value.indexOf('.') < 0){
+      mail.focus();
+      mail.scrollIntoView({behavior:'smooth', block:'center'});
+      return fail('Die E-Mail-Adresse sieht nicht richtig aus.');
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet ...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data && data.success){
+        document.getElementById('formArea').style.display = 'none';
+        document.getElementById('successArea').classList.add('show');
+        window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+        fail('Das hat leider nicht geklappt. Bitte versuch es nochmal oder schreib uns direkt.');
+      }
+    })
+    .catch(function(){
+      fail('Verbindungsproblem. Bitte prüf deine Internetverbindung und versuch es nochmal.');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
