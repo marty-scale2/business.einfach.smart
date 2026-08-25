@@ -837,7 +837,67 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 .results-wall__item img{display:block;width:100%;height:auto;border-radius:11px}
 .results-proof__note{position:relative;max-width:780px;margin:24px auto 0;text-align:center;color:var(--muted);font-size:.9rem}
 @media(max-width:900px){.transformation{grid-template-columns:repeat(2,minmax(0,1fr))}.transformation__intro{grid-column:1/-1;text-align:center;align-items:center;padding-bottom:4px}.results-wall{column-count:2}}
-@media(max-width:620px){.transformation{grid-template-columns:1fr;padding:12px;border-radius:21px}.transformation__intro{grid-column:auto}.transformation__image img{min-height:0;height:auto}.results-wall{column-count:1}.results-wall__item{margin-bottom:14px}}</style>
+@media(max-width:620px){.transformation{grid-template-columns:1fr;padding:12px;border-radius:21px}.transformation__intro{grid-column:auto}.transformation__image img{min-height:0;height:auto}.results-wall{column-count:1}.results-wall__item{margin-bottom:14px}}/* Mobile QA 2026 */
+@media (max-width:680px){
+  html{scroll-padding-top:72px}
+  body{font-size:16px}
+  .wrap,.narrow{width:min(100% - 32px,var(--max))}
+  section{padding:64px 0}
+  h1,h2,h3{overflow-wrap:anywhere}
+  h2{font-size:clamp(2rem,10vw,2.5rem);line-height:1.07}
+  .section-head{margin-bottom:38px}
+  .hero{padding:40px 0 76px}
+  .hero__grid{gap:34px}
+  .hero__brand{margin-bottom:24px}
+  .hero__lead{font-size:1.03rem;line-height:1.65;margin:22px 0}
+  .hero__visual{gap:42px;padding-top:8px}
+  .facts{display:grid;grid-template-columns:1fr;gap:9px}
+  .fact{width:100%;font-size:.79rem;line-height:1.4}
+  .btn,.nav__cta{min-height:52px;white-space:normal;text-align:center;line-height:1.25}
+  .hero__price{padding:19px 18px 18px;box-shadow:5px 5px 0 var(--brand-light)}
+  .hero__price-regular{flex-wrap:wrap;gap:8px 12px}
+  .hero__price-special strong{font-size:clamp(2.55rem,14vw,3.35rem)}
+  .proof-stats__headline{padding:14px 14px 13px;font-size:.82rem;line-height:1.35}
+  .proof-stat{min-width:0;padding:18px 4px}
+  .proof-stat__value{font-size:clamp(1.45rem,6.7vw,1.8rem);letter-spacing:-.06em}
+  .proof-stat__label{font-size:.66rem;line-height:1.25;overflow-wrap:anywhere}
+  .pain__item{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:18px 16px}
+  .pain__num{width:32px;height:32px}
+  .pain__item h3{font-size:1rem}
+  .pain__turn{box-shadow:6px 6px 0 var(--ink)}
+  .for-you__head{margin-bottom:36px}
+  .for-you__layout{gap:40px}
+  .twin-deck{-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain;scroll-padding-inline:28px}
+  .business-desktop{border-radius:17px}
+  .brain-columns{padding:21px 14px}
+  .process-compact__photo,.process-compact__photo img{min-height:340px}
+  .about-us__heading h2{font-size:3rem}
+  .about-card{padding-inline:23px}
+  .fit__box--yes{box-shadow:6px 6px 0 var(--brand-light)}
+  .bill{padding:24px 18px}
+  .bill__row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;font-size:.9rem}
+  .bill__row i{display:none}
+  .bill__row b{text-align:right;font-size:.82rem}
+  .bill__sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+  .bill__sum i{display:none}
+  .bill__sum b{font-size:1.18rem;text-align:right}
+  .bill__stamp{right:-6px;bottom:-26px;padding:12px 16px 14px}
+  .bill__stamp b{font-size:1.8rem}
+  .price-box{padding:30px 20px;box-shadow:7px 7px 0 var(--brand)}
+  .price-box__price{font-size:3.45rem}
+  .faq summary{min-height:56px;padding:18px 52px 18px 18px;display:flex;align-items:center}
+  .faq summary::after{right:18px;top:50%;transform:translateY(-50%)}
+  .faq__answer{padding:0 18px 20px}
+  .results-proof__note{font-size:.82rem;line-height:1.55}
+}
+@media (max-width:390px){
+  .wm__main{font-size:clamp(4rem,20vw,4.8rem)}
+  .wm__bar{letter-spacing:.28em;text-indent:.28em}
+  .proof-stat__value{font-size:1.42rem}
+  .proof-stat__label{font-size:.62rem}
+  .hero__price-special span{font-size:.7rem}
+}
+</style>
 <noscript><style>.reveal,.stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
