@@ -9,8 +9,8 @@
 <!-- ═══════════════════════════════════════════════════════════════
      VOR LIVEGANG AUSFÜLLEN. Suche im Code nach "TODO"
      1. WEB3FORMS_ACCESS_KEY  : bd11ca17-f2a4-45ab-9f17-45675c689342 (eingetragen)
-     2. BOOKING_URL           : Link zur Kickoff-Terminbuchung
-     3. TELEGRAM_HANDLE       : @martin_businesseinfachsmart (eingetragen)
+     2. TELEGRAM_HANDLE       : @martin_businesseinfachsmart (eingetragen)
+     Kein Buchungslink mehr nötig: nach dem Absenden meldet ihr euch aktiv beim Kunden.
      Ziel: business-einfach-smart.com/twin-onboarding/
      Dateiname im Repo: twin-onboarding/index.html
      ═══════════════════════════════════════════════════════════════ -->
@@ -115,17 +115,27 @@ select{appearance:none;cursor:pointer;
   background:#FDECEA;border:1px solid #F5C6C0;color:#932c22;font-size:.92rem}
 .err.show{display:block}
 
-/* ---------- Success ---------- */
-.success{display:none;text-align:center;padding:60px 0 80px}
-.success.show{display:block}
-.success__box{background:var(--paper);border:2px solid var(--ink);border-radius:var(--radius);
-  box-shadow:10px 10px 0 var(--brand-light);padding:clamp(30px,5vw,48px)}
-.success__mark{width:64px;height:64px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;
-  background:var(--brand);color:#fff;font-size:1.9rem;border:2px solid var(--ink)}
-.success h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.5rem);font-weight:600;
-  line-height:1.1;margin-bottom:14px}
-.success p{color:var(--ink-soft);max-width:46ch;margin:0 auto 12px}
-.success .btn{margin-top:24px}
+/* ---------- Success Popup ---------- */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;
+  padding:24px;background:rgba(22,12,5,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  opacity:0;transition:opacity .25s ease}
+.modal-overlay.show{display:flex}
+.modal-overlay.in{opacity:1}
+.modal{position:relative;width:min(440px,100%);background:var(--paper);border:2px solid var(--ink);
+  border-radius:var(--radius);box-shadow:10px 10px 0 var(--brand-light);
+  padding:clamp(32px,5vw,44px) clamp(26px,4vw,36px) clamp(28px,4vw,34px);text-align:center;
+  transform:translateY(14px) scale(.97);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.modal-overlay.in .modal{transform:translateY(0) scale(1)}
+.modal__close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
+  border:1.5px solid var(--line);background:var(--warm);display:grid;place-items:center;
+  cursor:pointer;color:var(--muted);font-size:.95rem;line-height:1;transition:.15s ease}
+.modal__close:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.modal__mark{width:60px;height:60px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;
+  background:var(--brand);color:#fff;font-size:1.7rem;border:2px solid var(--ink)}
+.modal h2{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.15rem);font-weight:600;
+  line-height:1.15;margin-bottom:13px}
+.modal p{color:var(--ink-soft);font-size:.98rem;line-height:1.65}
+.modal .btn{margin-top:26px}
 
 /* ---------- Footer ---------- */
 footer{text-align:center;padding:0 0 46px;font-size:.82rem;color:var(--muted);line-height:1.7}
@@ -154,7 +164,7 @@ footer b{font-family:var(--accent);font-weight:900;letter-spacing:.04em;color:va
 
       <div class="steps">
         <div><b>1</b><span>Du füllst dieses Formular aus (ca. 15 Minuten)</span></div>
-        <div><b>2</b><span>Du buchst direkt im Anschluss deinen persönlichen Kickoff-Call</span></div>
+        <div><b>2</b><span>Wir melden uns in den nächsten Tagen bei dir zur Terminabstimmung</span></div>
         <div><b>3</b><span>Ab dem Kickoff bauen wir deinen Twin und übergeben ihn dir innerhalb von 30 Tagen</span></div>
       </div>
     </div>
@@ -409,15 +419,14 @@ footer b{font-family:var(--accent);font-weight:900;letter-spacing:.04em;color:va
     </form>
   </div>
 
-  <!-- ══════════ Erfolg ══════════ -->
-  <div class="success" id="successArea">
-    <div class="success__box">
-      <div class="success__mark">✓</div>
-      <h2>Angekommen. Jetzt dein Kickoff.</h2>
-      <p>Wir haben deine Antworten. Der nächste Schritt ist dein persönlicher Kickoff-Call. <strong>Ab diesem Termin laufen deine 30 Tage.</strong></p>
-      <p>Buch dir am besten gleich einen Slot, dann geht es sofort los.</p>
-      <!-- TODO 2: Buchungslink eintragen -->
-      <a class="btn" href="BOOKING_URL" id="bookingBtn">Kickoff-Call buchen <span aria-hidden="true">&rarr;</span></a>
+  <!-- ══════════ Erfolg (Popup) ══════════ -->
+  <div class="modal-overlay" id="successOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <button type="button" class="modal__close" id="successClose" aria-label="Schließen">✕</button>
+      <div class="modal__mark">✓</div>
+      <h2 id="successTitle">Das hat geklappt!</h2>
+      <p>So geht's weiter: Wir tragen alle Daten zusammen, erstellen deinen Business Twin und melden uns in den nächsten Tagen bei dir zwecks Terminabstimmung und Übergabe!</p>
+      <button type="button" class="btn" id="successOk">Alles klar</button>
     </div>
   </div>
 
@@ -434,6 +443,27 @@ footer b{font-family:var(--accent);font-weight:900;letter-spacing:.04em;color:va
   var form = document.getElementById('onboardingForm');
   var btn  = document.getElementById('submitBtn');
   var err  = document.getElementById('errBox');
+  var overlay = document.getElementById('successOverlay');
+
+  function openSuccess(){
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function(){ overlay.classList.add('in'); });
+    document.getElementById('successClose').focus();
+  }
+  function closeSuccess(){
+    overlay.classList.remove('in');
+    document.body.style.overflow = '';
+    setTimeout(function(){ overlay.classList.remove('show'); }, 250);
+  }
+  document.getElementById('successClose').addEventListener('click', closeSuccess);
+  document.getElementById('successOk').addEventListener('click', closeSuccess);
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeSuccess();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('show')) closeSuccess();
+  });
 
   function fail(msg){
     err.textContent = msg;
@@ -473,9 +503,8 @@ footer b{font-family:var(--accent);font-weight:900;letter-spacing:.04em;color:va
     .then(function(r){ return r.json(); })
     .then(function(data){
       if (data && data.success){
-        document.getElementById('formArea').style.display = 'none';
-        document.getElementById('successArea').classList.add('show');
-        window.scrollTo({top:0, behavior:'smooth'});
+        btn.textContent = 'Angekommen ✓';
+        openSuccess();
       } else {
         fail('Das hat leider nicht geklappt. Bitte versuch es nochmal oder schreib uns direkt.');
       }
