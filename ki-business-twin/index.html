@@ -48,7 +48,7 @@ h1,h2,h3{font-family:var(--serif);text-wrap:balance}h1{font-size:clamp(2.8rem,6.
 .wm__main{display:block;width:fit-content;font-size:clamp(4.8rem,11vw,8.8rem);font-weight:900;line-height:.82;letter-spacing:-.05em;color:var(--ink);text-shadow:.055em .055em 0 var(--brand-light),.11em .11em 0 var(--brand-pale)}
 .wm__bar{display:block;margin-top:14px;background:var(--ink);color:var(--cream);font:700 clamp(.62rem,1.1vw,.82rem)/1 var(--accent);letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;text-align:center;padding:9px 8px 8px}
 .hero__sub{font-size:clamp(1.7rem,3.1vw,2.6rem);line-height:1.12;letter-spacing:-.02em;font-weight:600;max-width:27ch}.hero__lead{font-size:clamp(1.08rem,1.65vw,1.28rem);line-height:1.75;color:var(--ink-soft);max-width:62ch;margin:28px 0}.hero__lead strong{color:var(--ink)}
-.hero__cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px}.hero__price{font-size:.92rem;color:var(--muted)}.hero__price strong{color:var(--ink);font-size:1.05rem}
+.hero__cta{display:flex;flex-direction:column;align-items:flex-start;gap:22px}.hero__price{width:min(100%,470px);padding:21px 24px 20px;border:2px solid var(--ink);border-radius:14px;background:var(--ink);color:#fff;box-shadow:7px 7px 0 var(--brand-light);text-align:left}.hero__price-regular{display:flex;align-items:baseline;gap:13px}.hero__price-regular span{color:#BFAE9F;font:800 .68rem/1 var(--accent);letter-spacing:.12em;text-transform:uppercase}.hero__price-regular s{color:#F5E9DE;font:900 clamp(1.8rem,3vw,2.35rem)/1 var(--accent);letter-spacing:-.045em;text-decoration-color:var(--brand);text-decoration-thickness:.13em}.hero__price-special{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 12px;margin-top:12px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18)}.hero__price-special span{color:var(--brand-light);font:800 clamp(.75rem,1.1vw,.88rem)/1.35 var(--accent);letter-spacing:.05em;text-transform:uppercase}.hero__price-special b{color:var(--brand);font:900 1.2rem/1 var(--accent)}.hero__price-special strong{color:#fff;font:900 clamp(2.65rem,5vw,4rem)/.92 var(--accent);letter-spacing:-.06em;text-shadow:3px 3px 0 var(--brand-dark)}.hero__price-tax{display:block;margin-top:9px;color:#BFAE9F;font-size:.7rem;line-height:1.4}
 .facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.fact{border:1px solid var(--line);background:rgba(255,255,255,.76);border-radius:999px;padding:8px 13px;font-size:.79rem;font-weight:600;color:var(--ink-soft)}
 .project{position:relative;border:2px solid var(--ink);border-radius:16px;background:#21150F;color:#F9F1E7;box-shadow:14px 14px 0 var(--brand-light),var(--shadow);overflow:hidden}.project__top{display:flex;align-items:center;gap:7px;padding:13px 16px;background:#342218;border-bottom:1px solid rgba(255,255,255,.1)}.dot{width:10px;height:10px;border-radius:50%;background:#E8894E}.dot:nth-child(2){background:#F2B48C}.dot:nth-child(3){background:#F8E2D2}.project__label{margin-left:auto;font:700 .67rem var(--accent);letter-spacing:.09em;text-transform:uppercase;color:#EFC5AA}.project__body{padding:25px 24px 28px;font:500 .86rem/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}.tree-folder{color:#F4A875;font-weight:700}.tree-file{color:#F9F1E7}.tree-muted{color:#BFAE9F}.project__status{display:flex;gap:9px;align-items:flex-start;margin:6px 16px 18px;padding:13px 14px;border-radius:10px;background:rgba(216,98,42,.17);border:1px solid rgba(232,137,78,.35);font-size:.8rem;line-height:1.5}.project__status b{color:#FFD9BF}.pulse{width:8px;height:8px;margin-top:5px;border-radius:50%;background:#6EE7A8;box-shadow:0 0 0 5px rgba(110,231,168,.12);flex:0 0 auto;animation:pulse 2.4s ease-in-out infinite}
 .quick{padding:34px 0;background:var(--ink);color:white}.quick__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}.quick__item{padding:8px 28px;border-right:1px solid rgba(255,255,255,.14)}.quick__item:first-child{padding-left:0}.quick__item:last-child{border:0}.quick__item strong{display:block;font-family:var(--serif);font-size:1.62rem;line-height:1.1;margin-bottom:8px}.quick__item strong::before{content:'✦';color:var(--brand);font-size:.72em;margin-right:10px;vertical-align:.1em}.quick__item>span{font-size:.92rem;color:#D8C8BA;text-wrap:balance}.quick__item strong .count{font-size:inherit;color:inherit}.slot{display:inline-block;height:1.06em;line-height:1.06;overflow:hidden;vertical-align:-.13em}.slot__reel{display:block;transition:transform 1.4s cubic-bezier(.16,.8,.26,.99)}.slot__reel b{display:block;height:1.06em;line-height:1.06;font-weight:inherit}
@@ -74,7 +74,7 @@ h1,h2,h3{font-family:var(--serif);text-wrap:balance}h1{font-size:clamp(2.8rem,6.
 .bill__stamp small{display:block;font:800 .62rem var(--accent);letter-spacing:.14em;text-transform:uppercase;color:#FFE1CD;margin-bottom:3px}
 .bill__stamp b{font:900 2.1rem/1 var(--accent);letter-spacing:-.03em}
 .reveal.in .bill__stamp{animation:stamp .5s cubic-bezier(.2,1.6,.4,1) .55s both}
-.price-layout{display:grid;grid-template-columns:1fr .9fr;gap:46px;align-items:center}.included{display:grid;gap:11px;margin-top:27px}.included__row{display:flex;align-items:flex-start;gap:13px;padding-bottom:11px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--ink-soft)}.included__row b{color:var(--ink)}.check{color:var(--brand);font-weight:900}.price-box{padding:clamp(34px,5vw,54px);border:2px solid var(--ink);border-radius:var(--radius);text-align:center;background:white;box-shadow:13px 13px 0 var(--brand)}.price-box__tag{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--brand-pale);color:var(--brand-dark);font:800 .66rem var(--accent);letter-spacing:.09em;text-transform:uppercase;margin-bottom:20px}.price-box__regular{font-size:.88rem;color:var(--muted)}.price-box__regular s{font-weight:700}.price-box__price{font:900 clamp(3.7rem,8vw,5.9rem)/1 var(--accent);letter-spacing:-.06em;margin:8px 0 5px;text-shadow:4px 4px 0 var(--brand-light)}.price-box__sub{font-size:.84rem;color:var(--muted);margin-bottom:25px}.price-box .btn{width:100%}.price-box__note{font-size:.75rem;color:var(--muted);margin-top:17px;line-height:1.5}
+.price-layout{display:grid;grid-template-columns:1fr .9fr;gap:46px;align-items:center}.included{display:grid;gap:11px;margin-top:27px}.included__row{display:flex;align-items:flex-start;gap:13px;padding-bottom:11px;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--ink-soft)}.included__row b{color:var(--ink)}.check{color:var(--brand);font-weight:900}.price-box{padding:clamp(34px,5vw,54px);border:2px solid var(--ink);border-radius:var(--radius);text-align:center;background:white;box-shadow:13px 13px 0 var(--brand)}.price-box__tag{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--brand-pale);color:var(--brand-dark);font:800 .66rem var(--accent);letter-spacing:.09em;text-transform:uppercase;margin-bottom:20px}.price-box__regular{font-size:.88rem;color:var(--muted)}.price-box__regular s{display:inline-block;margin-left:4px;color:var(--ink);font:900 clamp(1.55rem,2.8vw,2.15rem)/1 var(--accent);letter-spacing:-.045em;text-decoration-color:var(--brand);text-decoration-thickness:.11em}.price-box__price{font:900 clamp(3.25rem,6.7vw,5rem)/1 var(--accent);letter-spacing:-.06em;margin:12px 0 8px;text-shadow:4px 4px 0 var(--brand-light)}.price-box__sub{font-size:.84rem;color:var(--muted);margin-bottom:25px}.price-box .btn{width:100%}.price-box__note{font-size:.75rem;color:var(--muted);margin-top:17px;line-height:1.5}
 .faq{display:grid;gap:12px;margin-top:38px}.faq details{border:1px solid var(--line);border-radius:13px;background:white;overflow:hidden}.faq summary{cursor:pointer;list-style:none;padding:20px 54px 20px 22px;font-weight:700;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';position:absolute;right:22px;top:15px;font:500 1.7rem var(--serif);color:var(--brand)}.faq details[open] summary::after{content:'–'}.faq__answer{padding:0 22px 21px;color:var(--ink-soft);font-size:.92rem;max-width:74ch}
 .closer{text-align:center}.closer h2{font-size:clamp(2.2rem,4.6vw,4rem)}.closer .lead{margin-inline:auto}.closer .lead strong{color:#fff}
 .final{text-align:center;background:radial-gradient(circle at 50% 110%,rgba(216,98,42,.17),transparent 45%),white}.final .lead{margin:0 auto 28px}
@@ -96,7 +96,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 :is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(1){transition-delay:.05s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(2){transition-delay:.13s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(3){transition-delay:.21s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(4){transition-delay:.29s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(5){transition-delay:.37s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(6){transition-delay:.45s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(7){transition-delay:.53s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(8){transition-delay:.61s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(9){transition-delay:.69s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(10){transition-delay:.77s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(11){transition-delay:.85s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(12){transition-delay:.93s}:is(.reveal.in .stagger,.reveal.in.stagger)>*:nth-child(13){transition-delay:1.01s}
 .hero [data-rise]{opacity:0;animation:rise .7s ease forwards}
 .hero [data-rise="1"]{animation-delay:.05s}.hero [data-rise="2"]{animation-delay:.18s}.hero [data-rise="3"]{animation-delay:.31s}.hero [data-rise="4"]{animation-delay:.44s}.hero [data-rise="5"]{animation-delay:.57s}
-.hero__visual{display:grid;place-items:center;padding:18px 0}
+.hero__visual{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(48px,5vw,68px);width:100%;margin-inline:auto;padding:18px 0}
 .twin-scene{position:relative}
 .twin-box{--bw:min(302px,68vw);--bh:388px;--bd:64px;position:relative;width:var(--bw);height:var(--bh);perspective:1200px;animation:float 7s ease-in-out infinite}
 .twin-box::after{content:'';position:absolute;left:2%;right:-10%;bottom:-44px;height:30px;background:radial-gradient(50% 50% at 50% 50%,rgba(22,12,5,.30),transparent 72%);animation:shadowpulse 7s ease-in-out infinite}
@@ -116,7 +116,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 @keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(110,231,168,.12)}50%{box-shadow:0 0 0 9px rgba(110,231,168,.05)}}
 @keyframes stamp{from{opacity:0;transform:rotate(-7deg) scale(1.7)}to{opacity:1;transform:rotate(-7deg) scale(1)}}
 @media(max-width:960px){.hero__grid,.pain__grid,.for-you__head,.tech,.price-layout,.anchor__layout{grid-template-columns:1fr}.hero__visual{max-width:600px}.pain__intro,.tech__copy{position:static}.quick__grid{grid-template-columns:repeat(2,1fr);gap:22px}.quick__item{padding:0 22px}.quick__item:nth-child(2){border-right:0}.modules,.process,.not-list{grid-template-columns:1fr 1fr}.hosts{grid-template-columns:1fr}.bill{margin-bottom:34px}}
-@media(max-width:680px){.wrap,.narrow{width:min(100% - 34px,var(--max))}section{padding:68px 0}.nav__links a:not(.nav__cta){display:none}.nav__cta{font-size:.7rem;padding:9px 12px}.hero{padding-top:48px}.hero .hero__sub{font-size:1.9rem}.hero__cta,.hero__cta .btn{width:100%}.hero__price{text-align:center;width:100%}.facts{gap:8px}.fact{font-size:.72rem}.project__body{font-size:.72rem;padding:20px 16px}.quick__grid,.for-you__grid,.grid,.modules,.compare,.process,.fit,.not-list{grid-template-columns:1fr}.quick__item,.quick__item:first-child{padding:0 0 17px;border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.quick__item:last-child{border-bottom:0}.strand__head{display:block}.strand__head span{display:block;margin-top:5px}.compare__col:first-child{border-right:0;border-bottom:1px solid var(--line)}.host img{height:260px}.price-box{box-shadow:8px 8px 0 var(--brand)}.btn{width:100%}.bill__stamp{position:static;transform:rotate(-3deg);margin:22px auto 0;width:fit-content}.reveal.in .bill__stamp{animation-name:stampMobile}.team-photo{transform:rotate(0)}}
+@media(max-width:680px){.wrap,.narrow{width:min(100% - 34px,var(--max))}section{padding:68px 0}.nav__links a:not(.nav__cta){display:none}.nav__cta{font-size:.7rem;padding:9px 12px}.hero{padding-top:48px}.hero .hero__sub{font-size:1.9rem}.hero__cta,.hero__cta .btn{width:100%}.hero__price{text-align:left;width:100%}.facts{gap:8px}.fact{font-size:.72rem}.project__body{font-size:.72rem;padding:20px 16px}.quick__grid,.for-you__grid,.grid,.modules,.compare,.process,.fit,.not-list{grid-template-columns:1fr}.quick__item,.quick__item:first-child{padding:0 0 17px;border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.quick__item:last-child{border-bottom:0}.strand__head{display:block}.strand__head span{display:block;margin-top:5px}.compare__col:first-child{border-right:0;border-bottom:1px solid var(--line)}.host img{height:260px}.price-box{box-shadow:8px 8px 0 var(--brand)}.btn{width:100%}.bill__stamp{position:static;transform:rotate(-3deg);margin:22px auto 0;width:fit-content}.reveal.in .bill__stamp{animation-name:stampMobile}.team-photo{transform:rotate(0)}}
 @keyframes stampMobile{from{opacity:0;transform:rotate(-3deg) scale(1.5)}to{opacity:1;transform:rotate(-3deg) scale(1)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.stagger>*,.hero [data-rise]{opacity:1;transform:none;transition:none;animation:none}.hero__visual,.pulse,.reveal.in .bill__stamp,.twin-box,.twin-box::after,.twin-box__inner{animation:none}.twin-box__inner{transform:rotateX(-5deg) rotateY(22deg)}.btn::after{display:none}h1 em,h2 em{background-size:100% .14em;transition:none}}
 /* Design-Feinschliff: stärkere Typografie, mehr Tiefe und mehr Persönlichkeit */body{font-size:17px}section{padding:clamp(82px,9.5vw,132px) 0}.section-head{margin-bottom:clamp(48px,6vw,64px)}.section-head.center::after{content:"";display:block;width:58px;height:5px;margin:28px auto 0;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-light));box-shadow:22px 0 0 var(--ink)}.eyebrow{font-size:.82rem;letter-spacing:.15em;margin-bottom:18px}.lead{font-size:clamp(1.12rem,1.55vw,1.3rem);line-height:1.78}.btn{padding:17px 27px;font-size:.96rem}.fact{font-size:.9rem;padding:9px 15px;background:#fff;box-shadow:0 5px 16px rgba(49,25,10,.06)}.quick__item>span{font-size:1rem;line-height:1.55}.soft{background:radial-gradient(circle at 8% 15%,rgba(216,98,42,.08),transparent 25%),var(--warm)}.beige{background:radial-gradient(circle at 92% 12%,rgba(246,199,169,.38),transparent 30%),var(--warm-2)}.tint{background:radial-gradient(circle at 8% 12%,rgba(255,255,255,.75),transparent 26%),var(--brand-pale)}.deep{background:radial-gradient(circle at 82% 10%,rgba(216,98,42,.16),transparent 32%),var(--ink)}.pain__item,.for-you__item,.card,.module,.tech-step,.fit__box,.host,.faq details{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.pain__item{padding:24px 25px;border-left:4px solid var(--brand-light);box-shadow:0 8px 22px rgba(49,25,10,.05)}.pain__item:hover{transform:translateX(5px);border-left-color:var(--brand);box-shadow:0 12px 28px rgba(49,25,10,.09)}.pain__item h3{font-size:1.1rem;line-height:1.5}.pain__photo{position:relative;margin-top:34px;transform:rotate(-1.5deg)}.pain__photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 32%;border:2px solid var(--ink);border-radius:16px;box-shadow:10px 10px 0 var(--brand-light)}.pain__photo figcaption{position:absolute;right:-12px;bottom:-18px;max-width:250px;padding:12px 16px;border:2px solid var(--ink);border-radius:11px;background:#fff;box-shadow:5px 5px 0 var(--brand);font-size:.88rem;line-height:1.35;color:var(--ink-soft)}.pain__photo figcaption strong{display:block;color:var(--ink);font-size:1rem}.for-you__item{padding:27px 27px;border:2px solid rgba(216,98,42,.24);box-shadow:0 9px 24px rgba(49,25,10,.06)}.for-you__item:nth-child(4n+2),.for-you__item:nth-child(4n+3){background:var(--warm)}.for-you__item:hover{transform:translateY(-4px);border-color:var(--brand);box-shadow:7px 7px 0 var(--brand-light)}.for-you__item p{font-size:1.05rem;line-height:1.72}.for-you__mark{width:34px;height:34px;font-size:1rem}.card{position:relative;overflow:hidden;padding:35px;border:2px solid rgba(22,12,5,.12);box-shadow:0 12px 32px rgba(49,25,10,.07)}.card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--brand),var(--brand-light))}.card:hover{transform:translateY(-6px);border-color:var(--ink);box-shadow:9px 9px 0 var(--brand-light)}.card__num{width:42px;height:42px;font-size:.82rem}.card p{font-size:1.05rem;line-height:1.72}.card li{font-size:1.01rem;line-height:1.65;margin:10px 0;padding-left:23px}.card li::before{font-size:1.05em}.tech-step{padding:28px;border:2px solid rgba(22,12,5,.10);box-shadow:6px 6px 0 rgba(246,199,169,.7)}.tech-step:hover{transform:translateY(-4px);border-color:var(--ink);box-shadow:8px 8px 0 var(--brand-light)}.tech-step h3{font-size:1.7rem}.tech-step p,.not-item{font-size:1.02rem;line-height:1.7}.not-item{padding:23px 24px;box-shadow:0 8px 22px rgba(49,25,10,.05)}.project__body{font-size:.94rem}.strand__head span{font-size:.98rem}.module{position:relative;overflow:hidden;padding:29px;background:#fff;border:2px solid rgba(22,12,5,.10);box-shadow:0 9px 25px rgba(49,25,10,.06)}.module::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--brand-light);transition:height .2s ease}.module:hover{transform:translateY(-6px);border-color:var(--brand);box-shadow:8px 8px 0 var(--brand-light)}.module:hover::after{height:7px;background:var(--brand)}.module__num{font-size:.77rem}.module h3{font-size:1.16rem;line-height:1.4}.module p{font-size:1rem;line-height:1.72}.compare__label{font-size:.82rem}.process-step{padding:31px 27px;border:1px solid rgba(255,255,255,.25);border-top:4px solid var(--brand);background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.04));box-shadow:0 14px 32px rgba(0,0,0,.18)}.process-step__num{font-size:.78rem;line-height:1.5}.process-step h3{font-size:1.62rem}.process-step p{font-size:1rem;line-height:1.72}.fit__box{padding:39px;box-shadow:0 10px 28px rgba(49,25,10,.06)}.fit__box--yes{box-shadow:10px 10px 0 var(--brand-light)}.fit li{font-size:1.04rem;line-height:1.68;padding-left:29px}.fit li::before{font-size:1.08em}.team-section{position:relative;overflow:hidden}.team-section::before{content:"H + M";position:absolute;right:-20px;top:20px;font:900 clamp(5rem,14vw,11rem)/1 var(--accent);letter-spacing:-.08em;color:rgba(216,98,42,.055);pointer-events:none}.hosts{gap:32px}.host{box-shadow:10px 10px 0 var(--brand-light)}.host:hover{transform:translateY(-5px);box-shadow:13px 13px 0 var(--brand)}.host>div{padding:30px 32px 34px}.host h3{font-size:2rem}.host__role{font-size:.9rem;letter-spacing:.02em}.host p{font-size:1.04rem;line-height:1.72}.bill{box-shadow:14px 14px 0 var(--brand-light)}.bill__head{font-size:.78rem}.bill__row{font-size:1rem;line-height:1.5;padding:10px 0}.included__row{font-size:1.04rem;line-height:1.65;padding-bottom:14px}.price-box{box-shadow:15px 15px 0 var(--brand)}.price-box__tag{font-size:.76rem}.price-box__regular{font-size:1rem}.price-box__sub{font-size:.94rem}.price-box__note{font-size:.87rem;line-height:1.65}.faq{gap:15px}.faq details{border:2px solid rgba(22,12,5,.10);box-shadow:0 7px 20px rgba(49,25,10,.04)}.faq details[open]{border-color:var(--brand);box-shadow:7px 7px 0 var(--brand-light)}.faq summary{padding:23px 58px 23px 25px;font-size:1.06rem}.faq__answer{padding:0 25px 25px;font-size:1rem;line-height:1.75}@media(max-width:960px){.pain__photo{max-width:560px}.pain__photo figcaption{right:8px}.process-step{padding:28px 25px}}@media(max-width:680px){body{font-size:16px}section{padding:74px 0}.section-head{margin-bottom:42px}.eyebrow{font-size:.76rem}.lead{font-size:1.08rem}.pain__photo{margin:30px 8px 28px 0}.pain__photo figcaption{position:relative;right:auto;bottom:auto;margin:-14px 12px 0 auto;width:calc(100% - 28px)}.for-you__item,.card,.fit__box{padding:25px}.module{padding:25px}.tech-step{padding:24px}.host>div{padding:26px}.faq summary{font-size:1rem}.project__body{font-size:.8rem}}
@@ -333,6 +333,13 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
   letter-spacing: .15em;
   text-transform: uppercase;
   opacity: .78;
+}
+.twin-card__result-label {
+  margin: 4px 0 44px;
+  font: 900 clamp(1.35rem, 2.1vw, 1.75rem)/1 var(--accent);
+  letter-spacing: -.035em;
+  text-transform: none;
+  opacity: 1;
 }
 .twin-card h3 {
   margin-bottom: 15px;
@@ -803,8 +810,186 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 #lieferumfang { padding-bottom: clamp(58px, 6vw, 86px); }
 .section-cta{display:flex;justify-content:center;margin-top:clamp(34px,4.5vw,54px);text-align:center}.section-cta .btn{min-width:min(100%,320px)}.deep .section-cta .btn{border-color:#fff;box-shadow:5px 5px 0 var(--brand-light)}.deep .section-cta .btn:hover{box-shadow:7px 7px 0 var(--brand)}
 @media (max-width: 800px) {
-  .twin-deck-scroll { height: auto; min-height: 0; }
-}</style>
+  .twin-deck-scroll { height: 520px; min-height: 520px; }
+  .twin-deck-scroll .twin-deck {
+    position: relative;
+    top: auto;
+    display: block;
+    width: 100%;
+    height: 470px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .twin-deck-scroll .twin-card {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: min(82vw, 330px);
+    min-height: 405px;
+    opacity: 0;
+    pointer-events: none;
+    scroll-snap-align: none;
+  }
+}
+.proof-strip{position:relative;z-index:5;margin-top:clamp(-58px,-5vw,-42px);margin-bottom:clamp(-56px,-4.5vw,-38px)}
+.proof-stats{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;overflow:hidden;background:rgba(255,255,255,.96);border:1px solid rgba(23,12,7,.1);border-radius:24px;box-shadow:0 18px 48px rgba(73,38,20,.12);backdrop-filter:blur(12px)}
+.proof-stats__headline{grid-column:1/-1;padding:18px 24px 17px;border-bottom:1px solid var(--line);color:var(--ink-soft);font:750 clamp(.9rem,1.4vw,1.08rem)/1.4 var(--sans);text-align:center}
+.proof-stat{position:relative;padding:clamp(24px,3vw,34px) clamp(12px,2.4vw,28px);text-align:center}
+.proof-stat:not(:last-child)::after{content:"";position:absolute;top:24%;right:0;width:1px;height:52%;background:var(--line)}
+.proof-stat__value{display:block;color:var(--ink);font-size:clamp(2.25rem,4vw,3.9rem);font-weight:900;line-height:.95;letter-spacing:-.055em}
+.proof-stat__accent{color:var(--brand)}
+.proof-stat__label{display:block;margin-top:10px;color:var(--muted);font-size:clamp(.82rem,1.25vw,1rem);font-weight:650;letter-spacing:.02em}
+@media (max-width:620px){.proof-strip{margin-top:-34px;margin-bottom:-30px}.proof-stats{border-radius:18px}.proof-stat{padding:20px 6px}.proof-stat__value{font-size:clamp(1.7rem,8vw,2.3rem)}.proof-stat__label{font-size:.72rem;line-height:1.25;margin-top:7px}.proof-stat:not(:last-child)::after{top:20%;height:60%}}
+.results-proof{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff 0%,var(--brand-pale) 55%,var(--warm-2) 100%);border-bottom:1px solid var(--line)}
+.results-proof::before{content:"";position:absolute;width:440px;height:440px;right:-220px;top:80px;border-radius:50%;background:rgba(216,98,42,.08);filter:blur(2px)}
+.results-proof__head{position:relative;max-width:980px;margin-inline:auto}
+.results-proof__head h2{max-width:980px;margin-inline:auto}
+.transformation{position:relative;display:grid;grid-template-columns:minmax(210px,.72fr) repeat(2,minmax(0,1fr));gap:18px;align-items:stretch;margin-top:clamp(34px,5vw,60px);padding:clamp(18px,2vw,26px);background:#fff;border:1px solid rgba(23,12,7,.12);border-radius:28px;box-shadow:0 22px 60px rgba(73,38,20,.12)}
+.transformation__intro{display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,2.4vw,28px)}
+.transformation__intro .eyebrow{margin-bottom:16px}
+.transformation__intro h3 strong{display:block;color:var(--brand);font:900 clamp(2.3rem,4.2vw,3.8rem)/.95 var(--accent);letter-spacing:-.055em}
+.transformation__intro h3 span{display:block;margin-top:13px;font-family:var(--sans);font-size:clamp(1.05rem,1.5vw,1.25rem);font-weight:750;line-height:1.42;letter-spacing:-.015em}
+.transformation__image{position:relative;overflow:hidden;margin:0;border-radius:20px;background:var(--warm-2);border:1px solid var(--line)}
+.transformation__image img{display:block;width:100%;height:100%;min-height:310px;object-fit:cover}
+.results-wall{position:relative;column-count:3;column-gap:18px;margin-top:18px}
+.results-wall__item{display:inline-block;width:100%;break-inside:avoid;margin:0 0 18px;padding:10px;background:#fff;border:1px solid rgba(23,12,7,.1);border-radius:18px;box-shadow:0 14px 34px rgba(73,38,20,.1)}
+.results-wall__item img{display:block;width:100%;height:auto;border-radius:11px}
+.results-wall__heading{position:relative;max-width:820px;margin:clamp(44px,6vw,72px) auto 24px;text-align:center;font:600 clamp(2rem,4.2vw,3.45rem)/1.05 var(--serif);letter-spacing:-.035em;color:var(--ink)}
+.results-wall__heading em{color:var(--brand);font-weight:600}
+.results-proof__note{position:relative;max-width:780px;margin:24px auto 0;text-align:center;color:var(--muted);font-size:.9rem}
+@media(max-width:900px){.transformation{grid-template-columns:repeat(2,minmax(0,1fr))}.transformation__intro{grid-column:1/-1;text-align:center;align-items:center;padding-bottom:4px}.results-wall{column-count:2}}
+@media(max-width:620px){.transformation{grid-template-columns:1fr;padding:12px;border-radius:21px}.transformation__intro{grid-column:auto}.transformation__image img{min-height:0;height:auto}.results-wall{column-count:1}.results-wall__item{margin-bottom:14px}}/* Codierte Hero-Visualisierung des konkreten Lieferumfangs */
+.hero__grid{grid-template-columns:1.08fr .92fr}
+.hero__visual{gap:30px}
+.hero-system{width:min(100%,620px);margin:0 auto}
+.hero-system__stage{position:relative;isolation:isolate;width:100%;aspect-ratio:1.22}
+.hero-system__stage::before{content:"";position:absolute;inset:8% 3% 3%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(216,98,42,.22),rgba(246,199,169,.12) 44%,transparent 72%);filter:blur(12px)}
+.hero-system__screen{position:absolute;top:2%;left:4%;right:4%;height:64%;z-index:1;overflow:visible;border:5px solid #24150e;border-radius:12px;background:#160c08;box-shadow:0 22px 45px rgba(48,24,11,.25);transform:perspective(900px) rotateX(.8deg) rotateY(-1.5deg);animation:systemScreenFloat 7s ease-in-out infinite}
+.hero-system__screen::after{content:"";position:absolute;left:42%;bottom:-11%;width:16%;height:10%;border:3px solid #24150e;border-top:0;border-radius:0 0 7px 7px;background:linear-gradient(90deg,#321d13,#69402c 52%,#321d13);box-shadow:0 5px 0 -2px #24150e}
+.hero-system__bar{height:13%;display:flex;align-items:center;gap:7px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.1);background:#2a1912;color:#d9c9bd;font:700 clamp(.42rem,.7vw,.58rem)/1 var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.hero-system__bar>b{color:#f7eade}
+.hero-system__bar>span:last-child{margin-left:auto;color:#c58a68}
+.hero-system__dots{display:flex;gap:4px;margin-right:2px}
+.hero-system__dots i{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.hero-system__dots i:nth-child(2){background:#f0aa7d}.hero-system__dots i:nth-child(3){background:#f9ddca}
+.hero-system__body{display:grid;grid-template-columns:34% 66%;height:87%}
+.hero-system__sidebar{padding:clamp(10px,1.5vw,17px);overflow:hidden;border-right:1px solid rgba(255,255,255,.1);background:#21130e}
+.hero-system__sidebar>small{display:block;margin-bottom:5px;color:var(--brand);font:800 clamp(.4rem,.66vw,.54rem)/1 var(--accent);letter-spacing:.13em;text-transform:uppercase}
+.hero-system__sidebar>strong{display:block;margin-bottom:10px;color:#fff4eb;font:700 clamp(.62rem,1vw,.82rem)/1.2 var(--serif)}
+.hero-system__files{display:grid;gap:5px}
+.hero-system__files span{display:flex;align-items:center;gap:5px;min-width:0;color:#d2c1b6;font:500 clamp(.42rem,.71vw,.58rem)/1.15 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap}
+.hero-system__files i{display:inline-grid;place-items:center;width:24px;padding:3px 1px;border-radius:3px;background:rgba(216,98,42,.2);color:#f1a87f;font:800 clamp(.32rem,.5vw,.42rem)/1 var(--accent);font-style:normal;flex:0 0 auto}
+.hero-system__workspace{padding:clamp(11px,1.8vw,20px);overflow:hidden;background:radial-gradient(circle at 85% 20%,rgba(216,98,42,.14),transparent 38%),#170d09}
+.hero-system__status{display:inline-flex;align-items:center;gap:5px;margin-bottom:10px;padding:5px 7px;border:1px solid rgba(110,231,168,.24);border-radius:999px;background:rgba(110,231,168,.07);color:#a8e8c5;font:700 clamp(.38rem,.62vw,.52rem)/1 var(--sans)}
+.hero-system__status i{width:5px;height:5px;border-radius:50%;background:#6ee7a8;box-shadow:0 0 0 3px rgba(110,231,168,.1)}
+.hero-system__workspace>small{display:block;color:#d3794d;font:800 clamp(.4rem,.65vw,.54rem)/1 var(--accent);letter-spacing:.12em}
+.hero-system__workspace h3{margin:6px 0;color:#fff8f2;font:600 clamp(.86rem,1.55vw,1.24rem)/1.05 var(--serif);letter-spacing:-.02em}
+.hero-system__workspace p{max-width:37ch;color:#cdbbb0;font-size:clamp(.43rem,.72vw,.6rem);line-height:1.5}
+.hero-system__prompt{margin-top:10px;padding:7px 9px;border-left:3px solid var(--brand);border-radius:3px;background:rgba(216,98,42,.1);color:#f1dfd3;font:600 clamp(.42rem,.7vw,.58rem)/1.35 var(--sans)}
+.hero-system__lines{display:grid;gap:5px;margin-top:9px}
+.hero-system__lines i{display:block;width:87%;height:3px;border-radius:99px;background:rgba(255,255,255,.15)}
+.hero-system__lines i:nth-child(2){width:72%}.hero-system__lines i:nth-child(3){width:55%;background:rgba(216,98,42,.34)}
+.hero-system__docs{position:absolute;left:-1%;bottom:1%;z-index:3;width:43%;height:47%;animation:systemDocsFloat 6.5s ease-in-out infinite}
+.hero-doc{position:absolute;bottom:3%;width:48%;height:79%;padding:10% 8%;overflow:hidden;border:1px solid #e9d6c8;border-radius:3px;background:#fffdfb;box-shadow:0 12px 24px rgba(54,28,14,.18)}
+.hero-doc--1{left:0;transform:rotate(-9deg)}.hero-doc--2{left:25%;bottom:8%;transform:rotate(-3deg)}.hero-doc--3{left:51%;bottom:14%;transform:rotate(5deg)}
+.hero-doc span{display:block;margin-bottom:7px;color:var(--brand);font:800 clamp(.32rem,.56vw,.46rem)/1 var(--accent);letter-spacing:.09em}
+.hero-doc strong{display:block;margin-bottom:10px;color:#342117;font:600 clamp(.62rem,1vw,.83rem)/.95 var(--serif)}
+.hero-doc>i{display:block;width:88%;height:3px;margin-top:5px;border-radius:99px;background:#eadfd7}
+.hero-doc>i:nth-of-type(2){width:70%}.hero-doc>i:nth-of-type(3){width:80%;background:var(--brand-light)}
+.hero-system__strategy{position:absolute;right:-2%;bottom:0;z-index:4;width:58%;height:48%;animation:systemCardsFloat 7.5s ease-in-out infinite}
+.hero-mini{position:absolute;bottom:3%;width:38%;height:82%;padding:9% 8%;overflow:hidden;border:1px solid rgba(255,255,255,.52);border-radius:10px;box-shadow:0 16px 26px rgba(49,25,10,.19)}
+.hero-mini--1{left:0;transform:rotate(-6deg);background:linear-gradient(150deg,#39785f,#8cac7c 66%,#c6c384);color:#fff}
+.hero-mini--2{left:31%;bottom:8%;transform:rotate(-1deg);background:linear-gradient(150deg,#7c4053,#b94f65 58%,#e9a083);color:#fff}
+.hero-mini--3{left:62%;transform:rotate(5deg);background:linear-gradient(150deg,#fff8f2,#f6c7a9 58%,#e7895d);color:#2f1b11}
+.hero-mini>span{display:block;margin-bottom:27%;font:900 clamp(.72rem,1.35vw,1.08rem)/1 var(--accent);opacity:.45}
+.hero-mini small{display:block;margin-bottom:8px;font:800 clamp(.3rem,.5vw,.42rem)/1.2 var(--accent);letter-spacing:.1em}
+.hero-mini strong{display:block;font:600 clamp(.56rem,.96vw,.8rem)/1.03 var(--serif)}
+
+
+@keyframes systemScreenFloat{0%,100%{transform:perspective(900px) rotateX(.8deg) rotateY(-1.5deg) translateY(0)}50%{transform:perspective(900px) rotateX(.8deg) rotateY(-1.5deg) translateY(-5px)}}
+@keyframes systemDocsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@keyframes systemCardsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:960px){.hero__grid{grid-template-columns:1fr}.hero-system{max-width:650px}}
+@media(max-width:680px){
+  .hero .hero__visual{gap:24px}
+  .hero-system__stage{aspect-ratio:1.02}
+  .hero-system__screen{top:0;left:0;right:0;height:59%}
+  .hero-system__bar{padding-inline:8px}.hero-system__bar>span:last-child{display:none}
+  .hero-system__body{grid-template-columns:37% 63%}
+  .hero-system__sidebar,.hero-system__workspace{padding:10px}
+  .hero-system__files span:nth-child(n+5){display:none}
+  .hero-system__workspace p{font-size:.45rem}
+  .hero-system__prompt{margin-top:7px;padding:6px;font-size:.46rem}
+  .hero-system__docs{left:-3%;bottom:1%;width:49%;height:44%}
+  .hero-system__strategy{right:-4%;bottom:1%;width:64%;height:43%}
+
+}
+@media(max-width:390px){.hero-system__files span:nth-child(n+4){display:none}.hero-system__workspace p{display:none}.hero-system__prompt{margin-top:8px}}
+@media(prefers-reduced-motion:reduce){.hero-system__screen,.hero-system__docs,.hero-system__strategy{animation:none}}
+/* Mobile QA 2026 */
+@media (max-width:680px){
+  html{scroll-padding-top:72px}
+  body{font-size:16px}
+  .pain__grid{grid-template-columns:1fr;gap:36px}
+  .wrap,.narrow{width:min(100% - 32px,var(--max))}
+  section{padding:64px 0}
+  h1,h2,h3{overflow-wrap:anywhere}
+  h2{font-size:clamp(2rem,10vw,2.5rem);line-height:1.07}
+  .section-head{margin-bottom:38px}
+  .hero{padding:40px 0 76px}
+  .hero__grid{gap:34px}
+  .hero__brand{margin-bottom:24px}
+  .hero__lead{font-size:1.03rem;line-height:1.65;margin:22px 0}
+  .hero__visual{gap:42px;padding-top:8px}
+  .facts{display:grid;grid-template-columns:1fr;gap:9px}
+  .fact{width:100%;font-size:.79rem;line-height:1.4}
+  .btn,.nav__cta{min-height:52px;white-space:normal;text-align:center;line-height:1.25}
+  .hero__price{padding:19px 18px 18px;box-shadow:5px 5px 0 var(--brand-light)}
+  .hero__price-regular{flex-wrap:wrap;gap:8px 12px}
+  .hero__price-special strong{font-size:clamp(2.55rem,14vw,3.35rem)}
+  .proof-stats__headline{padding:14px 14px 13px;font-size:.82rem;line-height:1.35}
+  .proof-stat{min-width:0;padding:18px 4px}
+  .proof-stat__value{font-size:clamp(1.45rem,6.7vw,1.8rem);letter-spacing:-.06em}
+  .proof-stat__label{font-size:.66rem;line-height:1.25;overflow-wrap:anywhere}
+  .pain__item{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:18px 16px}
+  .pain__num{width:32px;height:32px}
+  .pain__item h3{font-size:1rem}
+  .pain__turn{box-shadow:6px 6px 0 var(--ink)}
+  .for-you__head{margin-bottom:36px}
+  .for-you__layout{gap:40px}
+  .twin-deck{-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain;scroll-padding-inline:28px}
+  .business-desktop{border-radius:17px}
+  .brain-columns{padding:21px 14px}
+  .process-compact__photo,.process-compact__photo img{min-height:340px}
+  .about-us__heading h2{font-size:3rem}
+  .about-card{padding-inline:23px}
+  .fit__box--yes{box-shadow:6px 6px 0 var(--brand-light)}
+  .bill{padding:24px 18px}
+  .bill__row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;font-size:.9rem}
+  .bill__row i{display:none}
+  .bill__row b{text-align:right;font-size:.82rem}
+  .bill__sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+  .bill__sum i{display:none}
+  .bill__sum b{font-size:1.18rem;text-align:right}
+  .bill__stamp{right:-6px;bottom:-26px;padding:12px 16px 14px}
+  .bill__stamp b{font-size:1.8rem}
+  .price-box{padding:30px 20px;box-shadow:7px 7px 0 var(--brand)}
+  .price-box__price{font-size:3.45rem}
+  .faq summary{min-height:56px;padding:18px 52px 18px 18px;display:flex;align-items:center}
+  .faq summary::after{right:18px;top:50%;transform:translateY(-50%)}
+  .faq__answer{padding:0 18px 20px}
+  .results-proof__note{font-size:.82rem;line-height:1.55}
+}
+@media (max-width:390px){
+  .wm__main{font-size:clamp(4rem,20vw,4.8rem)}
+  .wm__bar{letter-spacing:.28em;text-indent:.28em}
+  .proof-stat__value{font-size:1.42rem}
+  .proof-stat__label{font-size:.62rem}
+  .hero__price-special span{font-size:.7rem}
+}
+</style>
 <noscript><style>.reveal,.stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -819,7 +1004,6 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
       <p class="hero__lead" data-rise="3">Wir schärfen deine Positionierung, dein Angebot, deinen Content und deinen Verkaufsweg und bauen daraus dein persönliches KI-Betriebssystem. <strong>Individuell für dein Business und einsatzbereit in 14 Tagen.</strong></p>
       <div class="hero__cta" data-rise="4">
         <a class="btn" href="https://copecart.com/products/3b490580/checkout">Meinen Twin erstellen lassen <span aria-hidden="true">→</span></a>
-        <div class="hero__price">Launchpreis: <strong>888 € einmalig</strong> inkl. MwSt.<br>statt später 1.490 €</div>
       </div>
       <div class="facts" data-rise="5">
         <span class="fact">✓ 100 % auf dich abgestimmt</span>
@@ -827,21 +1011,42 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
       </div>
     </div>
     <div class="hero__visual" data-rise="3">
-      <div class="twin-scene" aria-hidden="true">
-        <div class="twin-box">
-          <div class="twin-box__inner">
-            <div class="twin-box__face twin-box__side"><span>KI Business Twin · Dein KI-Betriebssystem</span></div>
-            <div class="twin-box__face twin-box__front">
-              <div class="twin-box__brand">business.einfach.smart</div>
-              <div class="twin-box__wm"><span>KI Business</span><b>Twin</b><i>Done for you</i></div>
-              <div class="twin-box__meta">Dein persönliches KI-Betriebssystem<br>9 konkrete Ausarbeitungen · Perfekt verzahnt</div>
+      <div class="hero-system" role="img" aria-label="Dein KI Business Twin mit Business-Kontext, neun strategischen Ausarbeitungen und drei perfekt verzahnten Strategiebereichen">
+        <div class="hero-system__stage" aria-hidden="true">
+          <div class="hero-system__screen">
+            <div class="hero-system__bar"><span class="hero-system__dots"><i></i><i></i><i></i></span><b>KI BUSINESS TWIN</b><span>Dein Business-Kontext</span></div>
+            <div class="hero-system__body">
+              <aside class="hero-system__sidebar"><small>9 Ausarbeitungen</small><strong>Dein KI-Betriebssystem</strong><div class="hero-system__files"><span><i>HTML</i>Brand-Manifest</span><span><i>DOC</i>Content-Strategie</span><span><i>PDF</i>Angebotsstrategie</span><span><i>PDF</i>Traumkunden-Avatar</span><span><i>PDF</i>Sales-Prozess</span></div></aside>
+              <div class="hero-system__workspace"><div class="hero-system__status"><i></i> Business-Kontext geladen</div><small>DEINE KI-ARBEITSUMGEBUNG</small><h3>Bereit für deine nächste Aufgabe.</h3><p>Positionierung, Angebot, Content und Verkauf greifen als gemeinsamer Kontext ineinander.</p><div class="hero-system__prompt">Was soll ich heute für dich vorbereiten?</div><div class="hero-system__lines"><i></i><i></i><i></i></div></div>
             </div>
           </div>
+          <div class="hero-system__docs">
+            <article class="hero-doc hero-doc--1"><span>PDF · 07</span><strong>Sales-<br>Fahrplan</strong><i></i><i></i><i></i></article>
+            <article class="hero-doc hero-doc--2"><span>PDF · 05</span><strong>Traumkunden-<br>Avatar</strong><i></i><i></i><i></i></article>
+            <article class="hero-doc hero-doc--3"><span>HTML · 01</span><strong>Brand-<br>Manifest</strong><i></i><i></i><i></i></article>
+          </div>
+          <div class="hero-system__strategy">
+            <article class="hero-mini hero-mini--1"><span>01</span><small>BRANDING &amp; CONTENT</small><strong>Branding- &amp;<br>Content-Strategie</strong></article>
+            <article class="hero-mini hero-mini--2"><span>02</span><small>DEIN ANGEBOT</small><strong>Angebots-<br>strategie</strong></article>
+            <article class="hero-mini hero-mini--3"><span>03</span><small>DEIN VERKAUF</small><strong>Verkaufs-<br>strategie</strong></article>
+          </div>
         </div>
+
       </div>
+      <div class="hero__price"><div class="hero__price-regular"><span>Regulärer Preis</span><s>1.999 €</s></div><div class="hero__price-special"><span>Special Price bis 28.08.</span><b aria-hidden="true">=</b><strong>888 €</strong></div><small class="hero__price-tax">Preis inkl. gesetzl. MwSt.</small></div>
     </div>
   </div>
 </header>
+<aside class="proof-strip" aria-label="Unsere Erfahrung">
+  <div class="wrap">
+    <div class="proof-stats reveal">
+      <div class="proof-stats__headline">Dein Business-System basierend auf Erfahrungen aus …</div>
+      <div class="proof-stat"><strong class="proof-stat__value">100.000<span class="proof-stat__accent">+</span></strong><span class="proof-stat__label">Follower Community</span></div>
+      <div class="proof-stat"><strong class="proof-stat__value">10</strong><span class="proof-stat__label">Jahre Online-Business</span></div>
+      <div class="proof-stat"><strong class="proof-stat__value">150k <span class="proof-stat__accent">€</span></strong><span class="proof-stat__label">Monate</span></div>
+    </div>
+  </div>
+</aside>
 <section class="pain" aria-labelledby="pain-title">
   <div class="wrap">
     <div class="section-head center pain__heading reveal"><div class="eyebrow">Kommt dir das bekannt vor?</div><h2 id="pain-title">Du hast genug Wissen. Aber noch kein <em>System daraus gemacht.</em></h2></div>
@@ -862,12 +1067,36 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 
   <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Jetzt Business Twin sichern <span aria-hidden="true">→</span></a></div></div>
 </section>
-<div class="quick">
+<section class="results-proof" aria-labelledby="results-proof-title">
+  <div class="wrap">
+    <div class="section-head center results-proof__head reveal">
+      <div class="eyebrow">Ergebnisse aus unserer Arbeit</div>
+      <h2 id="results-proof-title">Dein KI-System: trainiert mit Erfolgsprinzipien, mit denen unsere Kunden <em>echte Resultate erzielen.</em></h2>
+    </div>
+    <div class="transformation reveal">
+      <div class="transformation__intro"><div class="eyebrow">Veränderung</div><h3><strong>+3.000 Follower</strong><span>in nur wenigen Wochen nach Nutzung unserer Content-Strategie</span></h3></div>
+      <figure class="transformation__image"><img src="proof-kristin-vorher.png" alt="Früherer Stand von Kristins Instagram-Profil" loading="lazy"></figure>
+      <figure class="transformation__image"><img src="proof-kristin-nachher.jpg" alt="Aktueller Stand von Kristins Instagram-Profil" loading="lazy"></figure>
+    </div>
+    <h3 class="results-wall__heading reveal"><em>Weitere Erfolge unserer Kunden</em> während der Zusammenarbeit mit uns</h3>
+    <div class="results-wall reveal stagger" aria-label="Weitere Kundenergebnisse">
+      <figure class="results-wall__item"><img src="proof-kampagne-79k.jpg" alt="Kampagnenergebnis mit 79.800 Euro Umsatz" loading="lazy"></figure>
+      <figure class="results-wall__item"><img src="proof-launch-60k.jpg" alt="Kundennachricht zu einem Launch mit 60.000 Euro Ziel" loading="lazy"></figure>
+      <figure class="results-wall__item"><img src="proof-vip-4000.jpg" alt="Kundennachricht zu einem verkauften VIP-Mentoring für 4.000 Euro" loading="lazy"></figure>
+      <figure class="results-wall__item"><img src="proof-mentoring-3200.jpg" alt="Kundennachricht zu einem verkauften Mentoring für 3.200 Euro" loading="lazy"></figure>
+      <figure class="results-wall__item"><img src="proof-martin-testimonial.jpg" alt="Weiteres Kundenergebnis aus Martins Arbeit" loading="lazy"></figure>
+      <figure class="results-wall__item"><img src="proof-vor-pitch-2.jpg" alt="Kundenergebnis aus der Zusammenarbeit mit Hanna und Martin" loading="lazy"></figure>
+      <figure class="results-wall__item"><img src="proof-pitch-1.jpg" alt="Weiteres Kundenergebnis aus der Zusammenarbeit mit Hanna und Martin" loading="lazy"></figure>
+    </div>
+    <p class="results-proof__note reveal">Die gezeigten Ergebnisse stammen aus unserer bisherigen Arbeit mit Kunden. Individuelle Resultate hängen immer von Angebot, Ausgangslage und Umsetzung ab.</p>
+    <div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Meinen Twin erstellen lassen <span aria-hidden="true">→</span></a></div>
+  </div>
+</section><div class="quick">
   <div class="wrap quick__grid">
-    <div class="quick__item"><strong><span class="count" data-target="1">1</span> persönlicher Übergabe-Call</strong><span>Installation, Inbetriebnahme und erste&nbsp;Anwendung.</span></div>
-    <div class="quick__item"><strong><span class="count" data-target="9">9</span> konkrete Ausarbeitungen</strong><span>Perfekt verzahnt und individuell auf dein Business&nbsp;abgestimmt.</span></div>
     <div class="quick__item"><strong><span class="count" data-target="1">1</span> fertiges KI-Betriebssystem</strong><span>Individuell auf dein Business abgestimmt und mit jedem KI-Modell nutzbar.</span></div>
-    <div class="quick__item"><strong><span class="count" data-target="14">14</span> Tage</strong><span>Bis zu deinem fertigen Business&nbsp;Twin.</span></div>
+    <div class="quick__item"><strong>Fertig in <span class="count" data-target="14">14</span> Tagen</strong><span>Dein persönlicher Business Twin – entwickelt und einsatzbereit.</span></div>
+    <div class="quick__item"><strong><span class="count" data-target="9">9</span> strategische Ausarbeitungen</strong><span>Perfekt verzahnt und individuell für dein Business entwickelt.</span></div>
+    <div class="quick__item"><strong>inkl. <span class="count" data-target="1">1</span>:1 Setup- &amp; Strategie-Call</strong><span>Gemeinsame Installation, Aktivierung und strategischer Start.</span></div>
   </div>
 </div>
 <section class="for-you tint" aria-labelledby="for-you-title">
@@ -897,10 +1126,10 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
     <div class="section-head center reveal"><div class="eyebrow">Was du wirklich erhältst</div><h2>Wir bauen deinen <em>digitalen Zwilling.</em></h2></div>
     <div class="twin-deck-scroll" data-deck-scroll>
       <div class="twin-deck" aria-label="Die vier Bestandteile deines digitalen Zwillings">
-        <article class="twin-card twin-card--1" tabindex="0"><span class="twin-card__num">01</span><span class="twin-card__kicker">Branding &amp; Content</span><h3>Branding- &amp;<br>Content-Strategie</h3><p>Eine klare Marke und eine Content-Strategie, die deine Expertise sichtbar macht.</p><ul><li>Positionierung &amp; Kernbotschaft</li><li>Markenstimme &amp; Content-Säulen</li><li>Themenplan &amp; fertige Beiträge</li></ul></article>
+        <article class="twin-card twin-card--1" tabindex="0"><span class="twin-card__num">01</span><span class="twin-card__kicker">Branding &amp; Content</span><h3>Branding- &amp;<br>Content-Strategie</h3><p>Eine klare Marke und eine Content-Strategie, die deine Expertise sichtbar macht.</p><ul><li>Positionierung &amp; Kernbotschaft</li><li>Branding &amp; Content-Fahrplan</li><li>inkl. fertige Beiträge</li></ul></article>
         <article class="twin-card twin-card--2" tabindex="0"><span class="twin-card__num">02</span><span class="twin-card__kicker">Dein Angebot</span><h3>Deine Angebots-<br>strategie</h3><p>Ein Angebot, das klar positioniert ist und für deine Traumkunden verständlich wird.</p><ul><li>Traumkunde &amp; Kaufmotive</li><li>Kernangebot &amp; Produktlogik</li><li>Freebie oder Entry Offer</li></ul></article>
         <article class="twin-card twin-card--3" tabindex="0"><span class="twin-card__num">03</span><span class="twin-card__kicker">Dein Verkauf</span><h3>Deine Verkaufs-<br>strategie</h3><p>Ein klarer Weg vom ersten Kontakt bis zur Kaufentscheidung.</p><ul><li>Lead-Generierung</li><li>Vertrauensaufbau</li><li>Sales-Prozess</li></ul></article>
-        <article class="twin-card twin-card--4" tabindex="0"><span class="twin-card__num">04</span><span class="twin-card__kicker">Das Ergebnis</span><h3>Dein fertiges KI-<br>Betriebssystem</h3><p>Alle drei Strategien greifen als gemeinsamer KI-Kontext ineinander.</p><ul><li>Flexibel &amp; jederzeit erweiterbar</li><li>Für ChatGPT, Claude &amp; weitere Modelle</li><li>Übergabe &amp; gemeinsamer erster Einsatz</li></ul></article>
+        <article class="twin-card twin-card--4" tabindex="0"><span class="twin-card__kicker twin-card__result-label">Das Ergebnis</span><h3>Dein KI-gestütztes<br>Business Betriebssystem</h3><p>Alle drei Strategien greifen als gemeinsamer KI-Kontext ineinander.</p><ul><li>Flexibel &amp; jederzeit erweiterbar</li><li>Für ChatGPT, Claude &amp; weitere Modelle</li><li>Übergabe &amp; gemeinsamer erster Einsatz</li></ul></article>
       </div>
     </div>
   </div>
@@ -960,7 +1189,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 </section>
 <section>
   <div class="wrap">
-    <div class="section-head center reveal"><div class="eyebrow">Für Selbstständige mit bestehendem Angebot</div><h2>Für Menschen, die Substanz haben,<br>aber noch kein <em>System daraus gemacht</em> haben.</h2></div>
+    <div class="section-head center reveal"><h2>Für Selbstständige, die Substanz haben,<br>aber noch <em>kein System daraus gemacht</em> haben.</h2></div>
     <div class="fit reveal stagger"><div class="fit__box fit__box--yes"><h3>Der Twin passt zu dir, wenn …</h3><ul><li>du bereits Erfahrung, Wissen und ein echtes Angebot mitbringst</li><li>deine Außenwirkung noch nicht zeigt, wie gut du wirklich bist</li><li>du Content und Kundengewinnung nicht jede Woche neu erfinden willst</li><li>du KI nicht nur für einzelne Texte nutzen willst, sondern als mitdenkendes System, das dir bei Strategie, Content und Verkauf täglich Arbeit abnimmt</li><li>du ein individuelles Done-for-you-Fundament statt eines weiteren Kurses suchst</li></ul></div><div class="fit__box"><h3>Der Twin passt nicht, wenn …</h3><ul><li>du noch gar nicht weißt, welches Problem du für wen löst</li><li>du einen autonomen Bot erwartest, der dein Business alleine führt</li><li>du ein Custom GPT oder eine neue SaaS-Software kaufen möchtest</li><li>du laufendes Posting, Ads oder komplette Funnel-Technik erwartest</li><li>du dein System nach der Übergabe nicht verwenden oder pflegen möchtest</li></ul></div></div>
   </div>
 
@@ -975,7 +1204,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
     </div>
   </div>
 
-  <div class="wrap"><div class="section-cta reveal"><a class="btn" href="https://copecart.com/products/3b490580/checkout">Hanna &amp; Martin bauen meinen Twin <span aria-hidden="true">→</span></a></div></div>
+
 </section>
 <section class="beige">
   <div class="wrap anchor__layout">
@@ -989,7 +1218,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
           <div class="bill__row"><span>Lead- und Verkaufsprozess</span><i></i><b>1.000–1.500 €</b></div>
           <div class="bill__row"><span>Individuelles KI-System aufsetzen</span><i></i><b>1.000–2.000 €</b></div>
         </div>        <div class="bill__sum"><span>Zusammen</span><i></i><b>5.000–8.000 €</b></div>
-        <div class="bill__stamp"><small>Du zahlst</small><b>888 €</b></div>
+        <div class="bill__stamp"><small>Dein Invest:</small><b>888 €</b></div>
       </div>
     </div>
   </div>
@@ -999,14 +1228,14 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 <section id="invest">
   <div class="wrap price-layout">
     <div class="reveal"><div class="eyebrow">Deine Investition</div><h2>Launchpreis</h2>
-      <div class="included stagger"><div class="included__row"><span class="check">✓</span><span><b>Strukturiertes Onboarding</b> für deinen vollständigen Business-Kontext</span></div><div class="included__row"><span class="check">✓</span><span><b>Neun perfekt verzahnte Ausarbeitungen</b></span></div><div class="included__row"><span class="check">✓</span><span><b>Einsatzbereites KI-Betriebssystem</b> für ChatGPT und Claude</span></div><div class="included__row"><span class="check">✓</span><span><b>Fertige Startinhalte</b> für deinen direkten Einsatz</span></div><div class="included__row"><span class="check">✓</span><span><b>Persönlicher Übergabe-Call</b> zur Installation innerhalb von 14 Tagen</span></div></div>
+      <div class="included stagger"><div class="included__row"><span class="check">✓</span><span><b>Strukturiertes Onboarding</b> für deinen vollständigen Business-Kontext</span></div><div class="included__row"><span class="check">✓</span><span><b>Einsatzbereites KI-Betriebssystem</b> für ChatGPT, Claude und alle weiteren KI-Modelle</span></div><div class="included__row"><span class="check">✓</span><span><b>Persönlicher Übergabe-Call</b> zur Installation innerhalb von 14 Tagen</span></div></div>
     </div>
-    <div class="price-box reveal"><div class="price-box__tag">Launchpreis</div><div class="price-box__regular">Später regulär <s>1.490 €</s></div><div class="price-box__price">888 €</div><div class="price-box__sub">einmalig · inkl. MwSt. · keine laufende Gebühr an uns</div><a class="btn" href="https://copecart.com/products/3b490580/checkout">Ich will meinen Twin <span aria-hidden="true">→</span></a><p class="price-box__note">Sichere Zahlungsabwicklung über CopeCart. Direkt nach dem Kauf erhältst du dein Onboarding. Sobald deine Angaben und Ausgangsmaterialien vollständig sind, starten wir mit der Umsetzung und koordinieren deinen persönlichen Übergabe-Call.</p></div>
+    <div class="price-box reveal"><div class="price-box__tag">Launchpreis</div><div class="price-box__regular">Später regulär <s>1.999 €</s></div><div class="price-box__price">888 €</div><div class="price-box__sub">einmalig · inkl. MwSt. · keine laufende Gebühr an uns</div><a class="btn" href="https://copecart.com/products/3b490580/checkout">Ich will meinen Twin <span aria-hidden="true">→</span></a><p class="price-box__note">Sichere Zahlungsabwicklung über CopeCart. Direkt nach dem Kauf erhältst du dein Onboarding. Sobald deine Angaben und Ausgangsmaterialien vollständig sind, starten wir mit der Umsetzung und koordinieren deinen persönlichen Übergabe-Call.</p></div>
   </div>
 </section>
 <section class="soft" id="faq">
   <div class="narrow">
-    <div class="section-head center reveal"><div class="eyebrow">Häufige Fragen</div><h2>Bevor du dich entscheidest.</h2></div>
+    <div class="section-head center reveal"><div class="eyebrow">Häufige Fragen</div><h2>FAQ</h2></div>
     <div class="faq reveal stagger">
       <details><summary>Wie geht es nach dem Kauf weiter?</summary><div class="faq__answer">Direkt nach dem Kauf erhältst du eine Bestätigungsmail mit deinem Onboarding-Formular. Sobald deine Angaben und die vereinbarten Ausgangsmaterialien vollständig vorliegen, entwickeln wir deinen Twin innerhalb von 14 Tagen. Anschließend installieren und aktivieren wir das Setup gemeinsam im persönlichen Übergabe-Call.</div></details>
       <details><summary>Ist der KI Business Twin ein Custom GPT oder ein echtes Betriebssystem?</summary><div class="faq__answer">Nein. „KI-Betriebssystem“ beschreibt die Funktion für dein Business, keine neue Software für deinen Computer. Du erhältst ein individuell entwickeltes Wissens- und Arbeitssystem, das für ChatGPT, Claude und weitere KI-Modelle vorbereitet ist. Du bekommst kein Custom GPT und keinen neuen Chatbot.</div></details>
@@ -1024,7 +1253,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
 </section>
 
 <section class="final">
-  <div class="narrow reveal"><div class="eyebrow">Dein nächster Schritt</div><h2>Hör auf, deiner KI dein Business immer wieder <em>neu zu erklären.</em></h2><p class="lead">Lass es einmal sauber ausarbeiten und als System aufbauen. In 14 Tagen hast du dein persönliches KI-Betriebssystem, das deine Strategie zusammenhält und mit dir weiterwachsen kann.</p><a class="btn btn--dark" href="https://copecart.com/products/3b490580/checkout">Ich will meinen Twin <span aria-hidden="true">→</span></a></div>
+  <div class="narrow reveal"><div class="eyebrow">Dein nächster Schritt</div><h2>Hör auf, jedes Mal <em>bei 0 anzufangen.</em></h2><p class="lead">Lass deine Strategie sauber ausarbeiten und als System aufbauen. In 14 Tagen hast du dein persönliches KI-Betriebssystem, das deine Strategie zusammenhält und mit dir weiterwachsen kann.</p><a class="btn btn--dark" href="https://copecart.com/products/3b490580/checkout">Ich will meinen Twin <span aria-hidden="true">→</span></a></div>
 </section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footer__brand">BUSINESS<span>.</span>EINFACH<span>.</span>SMART</div><div>Hanna Marzian × Martin Thun</div><div class="footer__links"><a href="https://www.business-einfach-smart.com/impressum.html">Impressum</a><a href="https://www.business-einfach-smart.com/datenschutz.html">Datenschutz</a><a href="https://www.business-einfach-smart.com/agb.html">AGB</a></div><div class="footer__copy">© 2026 Hanna Marzian &amp; Martin Thun · Alle Rechte vorbehalten</div></div></footer>
@@ -1105,21 +1334,24 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
   }
   function updateDeck(){
     ticking=false;
-    if(mobile.matches||reduced.matches){clearDeck();return}
+    if(reduced.matches){clearDeck();return}
+    var isMobile=mobile.matches;
     var rect=scene.getBoundingClientRect();
     var viewport=window.innerHeight||document.documentElement.clientHeight;
-    var start=viewport*.88;
-    var end=viewport*.18;
+    var start=viewport*(isMobile ? .72 : .88);
+    var end=viewport*(isMobile ? .04 : .18);
     var progress=clamp((start-rect.top)/Math.max(start-end,1));
     var compact=window.innerWidth<=1100;
-    var fanX=compact?[-300,-100,100]:[-360,-120,120];
-    var fanY=[40,4,4];
-    var fanR=[-8,-2.8,2.8];
-    var merge=smooth((progress-.66)/.22);
-    var vanish=smooth((progress-.75)/.19);
+    var fanX=isMobile?[-28,0,28]:(compact?[-300,-100,100]:[-360,-120,120]);
+    var fanY=isMobile?[28,4,28]:[40,4,4];
+    var fanR=isMobile?[-5,-1.4,5]:[-8,-2.8,2.8];
+    var merge=smooth((progress-(isMobile ? .86 : .66))/(isMobile ? .08 : .22));
+    var vanish=smooth((progress-(isMobile ? .89 : .75))/(isMobile ? .07 : .19));
+    var mobileReveal=[.02,.38,.74];
     cards.slice(0,3).forEach(function(card,index){
-      var reveal=smooth((progress-(.03+index*.12))/.13);
-      var openX=lerp(fanX[index]*1.65,fanX[index],reveal);
+      var revealStart=isMobile ? mobileReveal[index] : (.03+index*.12);
+      var reveal=smooth((progress-revealStart)/(isMobile ? .10 : .13));
+      var openX=lerp(fanX[index]*(isMobile?5:1.65),fanX[index],reveal);
       var openY=lerp(92,fanY[index],reveal);
       var x=lerp(openX,0,merge);
       var y=lerp(openY,18,merge);
@@ -1128,7 +1360,7 @@ h1 em,h2 em{background-image:linear-gradient(0deg,var(--brand-light),var(--brand
       scale=lerp(scale,.86,merge);
       setCard(card,x,y,rotation,scale,reveal*(1-vanish));
     });
-    var result=smooth((progress-.83)/.17);
+    var result=smooth((progress-(isMobile ? .93 : .83))/(isMobile ? .07 : .17));
     setCard(cards[3],0,lerp(58,0,result),0,lerp(.78,1,result),result);
   }
   function requestUpdate(){if(!ticking){ticking=true;requestAnimationFrame(updateDeck)}}
